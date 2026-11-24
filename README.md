@@ -1,6 +1,7 @@
 # Gradivo za dijake Srednje elektro-računalniške šole Maribor
 
 predmet: Računalništvo
+
 program: Tehniška gimnazija
 
 
