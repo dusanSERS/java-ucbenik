@@ -1,0 +1,213 @@
+<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Računalništvo</title><link rel="stylesheet" href="../style.css"><script src="../search-data.js" defer></script><script src="../script.js" defer></script></head><body data-base="../"><header><div><strong>Računalništvo</strong><small>Učno gradivo · programiranje in Java</small></div><button id="menu" aria-expanded="true">☰ Poglavja</button><div id="progress"></div></header><aside id="sidebar"><a href="../index.html">Domov</a><br><label for="search">Iskanje po gradivu</label><input id="search" type="search"><div id="results"></div><nav><a class="tab " href="../01-uvodna-ura/index.html"><span>01</span>Uvodna ura</a><a class="tab " href="../02-algoritmi/index.html"><span>02</span>Algoritmi</a><a class="tab " href="../03-pisanje-algoritmov-diagram-poteka/index.html"><span>03</span>Pisanje algoritmov – diagram poteka</a><a class="tab " href="../04-deli-programov---izrazi-stavki-trditev/index.html"><span>04</span>Deli programov - Izrazi, stavki, trditev</a><a class="tab " href="../05-programski-jeziki/index.html"><span>05</span>Programski jeziki</a><a class="tab " href="../06-programiranje/index.html"><span>06</span>Programiranje</a><a class="tab " href="../07-zlaganje-prevajanje-in-tolmačenje-programske-kode/index.html"><span>07</span>Zlaganje, prevajanje in tolmačenje programske kode</a><a class="tab " href="../08-programski-jezik-java-programiranje-v-javi/index.html"><span>08</span>Programski jezik JAVA – programiranje v javi</a><a class="tab " href="../09-sestavni-deli-programa-java/index.html"><span>09</span>Sestavni deli programa java</a><a class="tab " href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html"><span>10</span>Sintaksa in semantika in osnovna pravila</a><a class="tab " href="../11-spremenljivke/index.html"><span>11</span>Spremenljivke</a><a class="tab " href="../12-operatorji/index.html"><span>12</span>Operatorji</a><a class="tab " href="../13-izpis-na-ekran/index.html"><span>13</span>Izpis na ekran</a><a class="tab " href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html"><span>14</span>Branje vrednosti iz tipkovnice (user input)</a><a class="tab " href="../15-krmilni-stavki/index.html"><span>15</span>Krmilni stavki</a><a class="tab " href="../16-zanke/index.html"><span>16</span>Zanke</a><a class="tab " href="../17-polja-ali-tabele-ang.-array/index.html"><span>17</span>Polja ali tabele (ang. array)</a><a class="tab " href="../18-pomnilnik-v-javi/index.html"><span>18</span>Pomnilnik v javi</a><a class="tab " href="../19-prenos-vrednosti-parametrov-v-metodo/index.html"><span>19</span>Prenos vrednosti parametrov v metodo</a><a class="tab active" href="../20-objektno-programiranje/index.html"><span>20</span>Objektno programiranje</a><a class="tab " href="../21-stringi/index.html"><span>21</span>Stringi</a></nav></aside><main><article class="chapter" data-index="19" id="objektno-programiranje"><div class="eyebrow">POGLAVJE 20 / 21</div><h1>Objektno programiranje</h1><nav aria-label="Podpoglavja" class="subnav"><a class="level-h2" href="#podpoglavje-1">Uvod</a><a class="level-h2" href="#podpoglavje-2">Osnovni pojmi objektnega programiranja</a><a class="level-h2" href="#podpoglavje-3">Primerjava proceduralnega in objektnega načina
+programiranja</a><a class="level-h2" href="#podpoglavje-4">Ključna ideja objektnega programiranja</a><a class="level-h2" href="#podpoglavje-5">KVIZ: Osnove objektnega programiranja (Java)</a></nav><p><strong>vir</strong>: https://www.youtube.com/watch?v=pTB0EiLXUC8</p><h2 id="podpoglavje-1"><strong>Uvod</strong></h2><p>Pri proceduralnem programiranju je program sestavljen iz funkcij in
+podatkov, ki so pogosto ločeni. Tak pristop je primeren za manjše
+programe, vendar pri večjih sistemih hitro postane nepregleden. Podatki
+se prenašajo med funkcijami, kar povečuje možnost napak.</p><p>Z razvojem večjih informacijskih sistemov (programov) se je pojavila
+potreba po bolj strukturiranem pristopu. Objektno programiranje (OOP –
+object oriented programming) rešuje ta problem tako, da združi podatke
+in funkcije v eno celoto – objekt.</p><p>Zgodovinsko gledano se je OOP začel razvijati v 80. letih z jeziki
+kot so Smalltalk, kasneje C++ in Java. (Programski jezik C na primer ni
+OO-PJ)</p><h2 id="podpoglavje-2"><strong>Osnovni pojmi objektnega programiranja</strong></h2><p>Razred (class) je <strong>načrt</strong> (ang. template ali
+blueprint) za ustvarjanje objektov. Objekt (object) je konkretna
+<strong>instanca</strong> (primerek) razreda. Atributi so lastnosti
+objekta, metode pa funkcije, ki delujejo nad podatki objekta.</p><p><strong>Primer</strong>: preriši iz table.</p><p>razred: Dijak - vsak dijak ima lastnosti: ime, priimek, starost.</p><p>objekti: Tjaš, Alen, Hana, Daniela, … Vsi objekti imajo iste
+lastnosti, vendar druge vrednosti. Tjaš (ime: Tjaš, priimek: Neuvirt,
+starost:18). Alen (ime: Alen, priimek: Sužnik, starost: 18)...</p><h2 id="podpoglavje-3"><strong>Primerjava proceduralnega in objektnega načina
+programiranja</strong></h2><table>
+<colgroup>
+<col style="width: 51%"/>
+<col style="width: 48%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Primer brez objektnega programiranja</strong></th>
+<th><strong>Primer z objektno usmerjenim pristopom</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><pre><code>public class Main {</code></pre>
+<pre><code>public static void main(String[] args) {</code></pre>
+<pre><code>String ime = "Miha";</code></pre>
+<pre><code>int starost = 17;</code></pre>
+<p>izpis(ime, starost);</p>
+<pre><code>}</code></pre>
+<pre><code>public static void izpis(String ime, int starost) {</code></pre>
+<pre><code>System.out.println(ime + " je star " + starost);</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></td>
+<td><pre><code>public class Main {</code></pre>
+<pre><code>public static void main(String[] args) {</code></pre>
+<p>Dijak d1 = new Dijak();</p>
+<p>d1.ime = "Miha";</p>
+<p>d1.starost = 17;</p>
+<p>d1.izpis();</p>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre>
+<p>class Dijak {</p>
+<pre><code>String ime;</code></pre>
+<pre><code>int starost;</code></pre>
+<p>void izpis() {</p>
+<pre><code>System.out.println(ime + " je star " + starost);</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></td>
+</tr>
+<tr class="even">
+<td>V tem primeru podatki niso povezani v celoto. Vsakič jih moramo
+prenašati kot parametre.</td>
+<td>V tem primeru so podatki in funkcije združeni v objektu. Program je
+bolj pregleden in lažje razširljiv.</td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-4"><strong>Ključna ideja objektnega programiranja</strong></h2><p>Objektno programiranje združuje podatke in funkcionalnost v eno
+enoto. Tako dobimo bolj modularen, razumljiv in razširljiv program.</p><p>Rešujemo torej enake probleme vendar na drug način.</p><p><strong>Naloga:</strong> Napiši sintaktično pravilno programsko kodo
+(brez definicije razreda) za</p><div class="exercise"><label for="a183">Tvoj odgovor / rešitev</label><textarea data-save="" id="a183" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d183" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 53%"/>
+<col style="width: 46%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>ustvarjanje dveh točk (dva nova objekta)</th>
+<th><p>Tocka t1 = new Tocka();</p>
+<p>Tocka t2 = new Tocka();</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>prva naj ima koordinate T1(1,2), druga pa T2(-1,6)</td>
+<td><p>t1.x = 1;</p>
+<p>t1.y = 2;</p>
+<p>t2.x = -1;</p>
+<p>t2.y = 6;</p></td>
+</tr>
+<tr class="even">
+<td>izpis koordinat prve in druge točke</td>
+<td><p>t1.izpis(); // x=1, y=2</p>
+<p>t2.izpis(); //x=-1, y=6</p></td>
+</tr>
+<tr class="odd">
+<td>izračun razdalje točk do izhodišča in</td>
+<td><p>t1.razdalja(0,0); // ok, ni pa najboljša rešitev</p>
+<p>Tocka t3 = new Tocka();</p>
+<p>t3.x=0;</p>
+<p>t3.y=0;</p>
+<p>t1.razdalja();</p>
+<p>t2.razdalja(); // ne bo ok !!!!</p>
+<p>t2.razdalja(t3); // odl !!!!</p>
+<p>t1.rdi();</p>
+<p>t1.razdaljaDoIzhodisa(); // najboljše</p></td>
+</tr>
+<tr class="even">
+<td>razdaljo med točko T1 in točko T2</td>
+<td>t1.razdaljaMedTocko(t2);</td>
+</tr>
+</tbody>
+</table><p>Pravila:</p><ol type="1">
+<li><p>Ustvarjanje novega objekta:</p></li>
+</ol><div class="exercise"><label for="a184">Tvoj odgovor / rešitev</label><textarea data-save="" id="a184" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d184" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>new Ime_razreda()</p><h2 id="podpoglavje-5"><strong>KVIZ: Osnove objektnega programiranja (Java)</strong></h2><table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><ol type="1">
+<li><p>Kaj je <strong>razred (class)</strong>?</p></li>
+</ol>
+<p>a) Objekt v programu<br/>
+b) Funkcija za izpis podatkov<br/>
+c) Načrt za ustvarjanje objektov<br/>
+d) Spremenljivka</p>
+<ol start="2" type="1">
+<li><p>Kaj je <strong>objekt (object)</strong>?</p></li>
+</ol>
+<p>a) Načrt za program<br/>
+b) Konkretna instanca razreda<br/>
+c) Tip podatka<br/>
+d) Funkcija</p>
+<ol start="3" type="1">
+<li><p>Katera ključna beseda se uporablja za ustvarjanje
+objekta?</p></li>
+</ol>
+<p>a) class<br/>
+b) static<br/>
+c) new<br/>
+d) void</p>
+<ol start="4" type="1">
+<li><p>Kateri zapis pravilno ustvari objekt razreda Avto?</p></li>
+</ol>
+<p>a) Avto a;<br/>
+b) Avto = new a();<br/>
+c) Avto a = new Avto();<br/>
+d) new Avto a();</p>
+<ol start="5" type="1">
+<li><p>Kaj predstavlja naslednji zapis?</p></li>
+</ol>
+<p>Avto a = new Avto();</p>
+<p>a) Deklaracijo metode<br/>
+b) Ustvarjanje objekta<br/>
+c) Klic funkcije<br/>
+d) Definicijo razreda</p>
+<ol start="6" type="1">
+<li><p>Katera trditev je pravilna?</p></li>
+</ol>
+<p>a) Razred nastane iz objekta<br/>
+b) Objekt je načrt za razred<br/>
+c) Razred opisuje lastnosti in metode objektov<br/>
+d) Objekt ne vsebuje podatkov</p></th>
+<th><ol start="7" type="1">
+<li><p>Kaj pomeni, da ima objekt <strong>lastnosti
+(atribute)</strong>?</p></li>
+</ol>
+<p>a) Ima funkcije<br/>
+b) Ima podatke<br/>
+c) Ima razrede<br/>
+d) Ima zanke</p>
+<ol start="8" type="1">
+<li><p>Kako bi pravilno nastavili lastnost objekta?</p></li>
+</ol>
+<p>a) Avto.ime = "Fiat";<br/>
+b) a = "Fiat";<br/>
+c) a.ime = "Fiat";<br/>
+d) ime.a = "Fiat";</p>
+<ol start="9" type="1">
+<li><p>Kateri zapis je pravilen za ustvarjanje objekta in nastavitev
+podatkov?</p></li>
+</ol>
+<p>a)</p>
+<p>Avto a;</p>
+<p>a.znamka = "Fiat";</p>
+<p>b)</p>
+<p>new Avto a;</p>
+<p>c)</p>
+<p>Avto a = new Avto();</p>
+<p>a.znamka = "Fiat";</p>
+<p>d)</p>
+<p>Avto = "Fiat";</p>
+<ol start="10" type="1">
+<li><p>Kako bi zapisali ustvarjanje objekta avto in nastavili
+podatke:</p></li>
+</ol>
+<ul>
+<li><p>znamka: Fiat</p></li>
+<li><p>model: Uno</p></li>
+<li><p>letnica: 2012</p></li>
+</ul>
+<p>Predpostavimo razred Avto.</p>
+<p>a)</p>
+<p>Avto avto = new Avto("Fiat", "Uno", 2012);</p>
+<p>b)</p>
+<p>Avto avto = new Avto();</p>
+<p>avto.znamka = "Fiat";</p>
+<p>avto.model = "Uno";</p>
+<p>avto.letnica = 2012;</p>
+<p>c)</p>
+<p>new Avto avto;</p>
+<p>d)</p>
+<p>Avto = Fiat, Uno, 2012;</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><div class="bottom"><a href="../19-prenos-vrednosti-parametrov-v-metodo/index.html">← Prejšnje poglavje</a><a href="../21-stringi/index.html">Naslednje poglavje →</a></div></article></main></body></html>

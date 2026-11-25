@@ -1,0 +1,348 @@
+<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Računalništvo</title><link rel="stylesheet" href="../style.css"><script src="../search-data.js" defer></script><script src="../script.js" defer></script></head><body data-base="../"><header><div><strong>Računalništvo</strong><small>Učno gradivo · programiranje in Java</small></div><button id="menu" aria-expanded="true">☰ Poglavja</button><div id="progress"></div></header><aside id="sidebar"><a href="../index.html">Domov</a><br><label for="search">Iskanje po gradivu</label><input id="search" type="search"><div id="results"></div><nav><a class="tab " href="../01-uvodna-ura/index.html"><span>01</span>Uvodna ura</a><a class="tab " href="../02-algoritmi/index.html"><span>02</span>Algoritmi</a><a class="tab " href="../03-pisanje-algoritmov-diagram-poteka/index.html"><span>03</span>Pisanje algoritmov – diagram poteka</a><a class="tab " href="../04-deli-programov---izrazi-stavki-trditev/index.html"><span>04</span>Deli programov - Izrazi, stavki, trditev</a><a class="tab " href="../05-programski-jeziki/index.html"><span>05</span>Programski jeziki</a><a class="tab " href="../06-programiranje/index.html"><span>06</span>Programiranje</a><a class="tab " href="../07-zlaganje-prevajanje-in-tolmačenje-programske-kode/index.html"><span>07</span>Zlaganje, prevajanje in tolmačenje programske kode</a><a class="tab " href="../08-programski-jezik-java-programiranje-v-javi/index.html"><span>08</span>Programski jezik JAVA – programiranje v javi</a><a class="tab active" href="../09-sestavni-deli-programa-java/index.html"><span>09</span>Sestavni deli programa java</a><a class="tab " href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html"><span>10</span>Sintaksa in semantika in osnovna pravila</a><a class="tab " href="../11-spremenljivke/index.html"><span>11</span>Spremenljivke</a><a class="tab " href="../12-operatorji/index.html"><span>12</span>Operatorji</a><a class="tab " href="../13-izpis-na-ekran/index.html"><span>13</span>Izpis na ekran</a><a class="tab " href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html"><span>14</span>Branje vrednosti iz tipkovnice (user input)</a><a class="tab " href="../15-krmilni-stavki/index.html"><span>15</span>Krmilni stavki</a><a class="tab " href="../16-zanke/index.html"><span>16</span>Zanke</a><a class="tab " href="../17-polja-ali-tabele-ang.-array/index.html"><span>17</span>Polja ali tabele (ang. array)</a><a class="tab " href="../18-pomnilnik-v-javi/index.html"><span>18</span>Pomnilnik v javi</a><a class="tab " href="../19-prenos-vrednosti-parametrov-v-metodo/index.html"><span>19</span>Prenos vrednosti parametrov v metodo</a><a class="tab " href="../20-objektno-programiranje/index.html"><span>20</span>Objektno programiranje</a><a class="tab " href="../21-stringi/index.html"><span>21</span>Stringi</a></nav></aside><main><article class="chapter" data-index="8" id="sestavni-deli-programa-java"><div class="eyebrow">POGLAVJE 09 / 21</div><h1>Sestavni deli programa java</h1><nav aria-label="Podpoglavja" class="subnav"><a class="level-h2" href="#podpoglavje-1">1) Ključne besede (keywords)</a><a class="level-h2" href="#podpoglavje-2">2) Identifikatorji (identifiers)</a><a class="level-h2" href="#podpoglavje-3">3) Literali (literals)</a><a class="level-h2" href="#podpoglavje-4">4) Operatorji</a><a class="level-h2" href="#podpoglavje-5">Matematični:</a><a class="level-h2" href="#podpoglavje-6">Prireditveni:</a><a class="level-h2" href="#podpoglavje-7">Primerjalni:</a><a class="level-h2" href="#podpoglavje-8">Logični:</a><a class="level-h2" href="#podpoglavje-9">Povezovanje nizov:</a><a class="level-h2" href="#podpoglavje-10">5) Ločila (punctuation / separators)</a><a class="level-h2" href="#podpoglavje-11">6) Komentarji</a><a class="level-h2" href="#podpoglavje-12">7) Izjave (statements) – tudi stavki</a><a class="level-h2" href="#podpoglavje-13">8) Bloki kode</a><a class="level-h2" href="#podpoglavje-14">9) Razredi, metode in paketi</a><a class="level-h2" href="#podpoglavje-15">1) Ključne besede (keywords)</a><a class="level-h2" href="#podpoglavje-16">Ključne besede v tem programu:</a><a class="level-h2" href="#podpoglavje-17">2) Identifikatorji (imena)</a><a class="level-h2" href="#podpoglavje-18">3) Literali</a><a class="level-h2" href="#podpoglavje-19">4) Operatorji</a><a class="level-h2" href="#podpoglavje-20">5) Ločila (separators / punctuation)</a><a class="level-h2" href="#podpoglavje-21">6) Komentarji</a><a class="level-h2" href="#podpoglavje-22">7) Izjave (statements)</a><a class="level-h2" href="#podpoglavje-23">8) Bloki kode</a><a class="level-h2" href="#podpoglavje-24">9) Razredi, metode, paketi</a></nav><p>Program v javi je sestavljen iz sledečih elementov:</p><ul>
+<li><p>ključne besede,</p></li>
+<li><p>identifikatorji,</p></li>
+<li><p>literali,</p></li>
+<li><p>operatorji,</p></li>
+<li><p>ločila,</p></li>
+<li><p>komentarji,</p></li>
+<li><p>izjave,</p></li>
+<li><p>bloki kode,</p></li>
+<li><p>razredi, metode, bloki.</p></li>
+</ul><h2 id="podpoglavje-1"><strong>1) Ključne besede (keywords)</strong></h2><p>To so rezervirane besede, ki imajo v javi poseben pomen. Ne smeš jih
+uporabiti kot ime spremenljivke ali metode.</p><p>Primeri:<br/>
+class, public, static, void, int, double, if, else, while, for, return,
+new, boolean, try, catch …</p><h2 id="podpoglavje-2"><strong>2) Identifikatorji (identifiers)</strong></h2><p>Imena, ki jih programer izbere sam:</p><ul>
+<li><p>imena <strong>spremenljivk</strong> (x, starost,
+temperatura)</p></li>
+<li><p>imena <strong>metod</strong> (izracunajBMI())</p></li>
+<li><p>imena <strong>razredov</strong> (Student)</p></li>
+<li><p>imena <strong>paketov</strong></p></li>
+</ul><h2 id="podpoglavje-3"><strong>3) Literali (literals)</strong></h2><p>To so <strong>konstantne vrednosti</strong>, zapisane neposredno v
+kodi:</p><ul>
+<li><p><strong>številski</strong>: 10, 3.14, -5</p></li>
+<li><p><strong>znakovni</strong>: 'a', '\n'</p></li>
+<li><p><strong>nizovni</strong>: "Dober dan"</p></li>
+<li><p><strong>logični</strong>: true, false</p></li>
+<li><p><strong>null literal</strong>: null</p></li>
+</ul><h2 id="podpoglavje-4"><strong>4) Operatorji</strong></h2><p>Simboli, ki izvajajo operacije nad vrednostmi.</p><h2 id="podpoglavje-5"><strong>Matematični:</strong></h2><p>+ - * / %</p><h2 id="podpoglavje-6"><strong>Prireditveni:</strong></h2><p>=, +=, -=, *=, /=, %=</p><h2 id="podpoglavje-7"><strong>Primerjalni:</strong></h2><p>==, !=, &lt;, &gt;, &lt;=, &gt;=</p><h2 id="podpoglavje-8"><strong>Logični:</strong></h2><p>&amp;&amp;, ||, !</p><h2 id="podpoglavje-9"><strong>Povezovanje nizov:</strong></h2><p>+</p><h2 id="podpoglavje-10"><strong>5) Ločila (punctuation / separators)</strong></h2><p>Simboli, ki ločujejo dele kode.</p><p>Najpogostejša:</p><ul>
+<li><p><strong>podpičje</strong> ; – konča stavek</p></li>
+<li><p><strong>vejice</strong> , – ločuje elemente</p></li>
+<li><p><strong>pika</strong> . – dostop do članov
+(objekt.metoda)</p></li>
+<li><p><strong>oklepaji</strong>:</p>
+<ul>
+<li><p>() za metode, pogoje</p></li>
+<li><p>{} za bloke kode (razredi, metode, if, while)</p></li>
+<li><p>[] za tabele</p></li>
+</ul></li>
+<li><p><strong>dvojni dvopičji</strong> :: – reference na
+metode</p></li>
+<li><p><strong>dve poševnici</strong> // – komentar</p></li>
+</ul><h2 id="podpoglavje-11"><strong>6) Komentarji</strong></h2><p>Del kode, ki se ne izvede. Za razlago.</p><ul>
+<li><pre><code>Enovrstični:
+
+// to je komentar</code></pre></li>
+<li><p>Večvrstični:<br/>
+/* komentar ... */</p></li>
+<li><p>Dokumentacijski (Javadoc):<br/>
+/** razlaga razreda ali metode */</p></li>
+</ul><h2 id="podpoglavje-12"><strong>7) Izjave (statements) – tudi stavki</strong></h2><p>Posamezni ukazi, ki jih Java izvede.</p><p>Primeri:</p><ul>
+<li><p>prireditev: x = 5;</p></li>
+<li><p>pogoj: if (x &gt; 10) {...}</p></li>
+<li><p>zanka: for (int i=0; i&lt;10; i++) {...}</p></li>
+<li><p>return: return x;</p></li>
+</ul><h2 id="podpoglavje-13"><strong>8) Bloki kode</strong></h2><p>Koda v { }.</p><p>Primer:</p><pre><code>if (a &gt; b) {</code></pre><pre><code>System.out.println("A je večji");</code></pre><pre><code>}</code></pre><h2 id="podpoglavje-14"><strong>9) Razredi, metode in paketi</strong></h2><p>Temeljne strukture:</p><ul>
+<li><p><strong>paketi</strong> organizirajo datoteke (npr. package
+moj.program;)</p></li>
+<li><p><strong>razredi</strong> so osnovni gradniki Jave</p></li>
+<li><p><strong>metode</strong> izvajajo funkcionalnost</p></li>
+</ul><p><strong>Naloga</strong>: Za spodnji program zapiši osnovne elemente
+programa java.</p><div class="exercise"><label for="a113">Tvoj odgovor / rešitev</label><textarea data-save="" id="a113" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d113" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>import java.util.Scanner; // vključevanje razreda</code></pre>
+<p>class Main {</p>
+<pre><code>public static void main(String[] args) {</code></pre>
+<p>Scanner myObj = new Scanner(System.in); // izdelava objekta z imenom
+myObj</p>
+<pre><code>System.out.print("Vpiši svoje ime:");</code></pre>
+<pre><code>String ime = myObj.nextLine(); // uporaba metode</code></pre>
+<pre><code>System.out.print("Vpiši svojo starost:");</code></pre>
+<p>byte starost = myObj.nextByte(); // uporaba metode</p>
+<pre><code>System.out.print("Vpiši svojo težo na eno decimalko:");</code></pre>
+<pre><code>float teza = myObj.nextFloat(); // uporaba metode</code></pre>
+<p>myObj.nextLine();</p>
+<pre><code>System.out.print("Vpiši svoj spol (m/z):");</code></pre>
+<pre><code>char spol = myObj.nextLine().charAt(0); // char nima svoje metode -
+moramo pretvoriti String v char - 0 prvi znak v nizu</code></pre>
+<pre><code>System.out.println("Ime ti je: " + ime);</code></pre>
+<p>if( spol == 'm')</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.println("Star si: " + starost);</code></pre>
+<pre><code>System.out.println("Težek si: " + teza);</code></pre>
+<pre><code>}</code></pre>
+<p>else</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.println("Stara si: " + starost);</code></pre>
+<pre><code>System.out.println("Težka si: " + teza + "kg");</code></pre>
+<pre><code>}</code></pre>
+<pre><code>System.out.print("KONEC PROGRAMA!");</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Rešitev:</p><h2 id="podpoglavje-15"><strong>1) Ključne besede (keywords)</strong></h2><h2 id="podpoglavje-16"><strong>Ključne besede v tem programu:</strong></h2><ul>
+<li><p>import</p></li>
+<li><p>class</p></li>
+<li><p>public</p></li>
+<li><p>static</p></li>
+<li><p>void</p></li>
+<li><p>new</p></li>
+<li><p>tipi: byte, float, char, String (tip je poseben primer – String
+je razred, ne keyword, ampak za dijake ga navadno obravnavamo skupaj z
+ostalimi tipi)</p></li>
+<li><p>if, else</p></li>
+</ul><h2 id="podpoglavje-17"><strong>2) Identifikatorji (imena)</strong></h2><p>To so imena, ki si jih izberemo sami (ali jih je izbral nekdo v
+knjižnici):</p><ul>
+<li><p>Imena <strong>razredov</strong>:</p>
+<ul>
+<li><p>Main (tvoj razred)</p></li>
+<li><p>Scanner (razred iz knjižnice)</p></li>
+</ul></li>
+<li><p>Imena <strong>spremenljivk</strong>:</p>
+<ul>
+<li><p>myObj</p></li>
+<li><p>ime</p></li>
+<li><p>starost</p></li>
+<li><p>teza</p></li>
+<li><p>spol</p></li>
+<li><p>args (parameter metode main)</p></li>
+</ul></li>
+<li><p>Imena <strong>metod</strong>:</p>
+<ul>
+<li><p>main</p></li>
+<li><p>println</p></li>
+<li><p>print</p></li>
+<li><p>nextLine</p></li>
+<li><p>nextByte</p></li>
+<li><p>nextFloat</p></li>
+<li><p>charAt</p></li>
+</ul></li>
+<li><p>Imena <strong>paketov</strong> (v importu):</p>
+<ul>
+<li><p>java</p></li>
+<li><p>util</p></li>
+<li><p>Scanner (zadnji del importa je razred v paketu)</p></li>
+</ul></li>
+</ul><h2 id="podpoglavje-18"><strong>3) Literali</strong></h2><p>To so vrednosti, zapisane “na trdo” v kodi:</p><ul>
+<li><p><strong>Nizovni literali</strong> (String):</p>
+<ul>
+<li><p>"Vpiši svoje ime:"</p></li>
+<li><p>"Vpiši svojo starost:"</p></li>
+<li><p>"Vpiši svojo težo na eno decimalko:"</p></li>
+<li><p>"Vpiši svoj spol (m/z):"</p></li>
+<li><p>"Ime ti je: "</p></li>
+<li><p>"Star si: "</p></li>
+<li><p>"Težek si: "</p></li>
+<li><p>"Stara si: "</p></li>
+<li><p>"Težka si: "</p></li>
+<li><p>"kg"</p></li>
+<li><p>"KONEC PROGRAMA!"</p></li>
+</ul></li>
+<li><p><strong>Znakovni literali</strong> (char):</p>
+<ul>
+<li><p>'m'</p></li>
+<li><p>0 v charAt(0) je dejansko <strong>številski literal</strong> tipa
+int, uporablja se kot indeks.</p></li>
+</ul></li>
+<li><p>V tem programu <strong>ni</strong> logičnih literalov (true,
+false) in ni null.</p></li>
+</ul><h2 id="podpoglavje-19"><strong>4) Operatorji</strong></h2><p>V tvojem programu nastopajo:</p><ul>
+<li><p><strong>Prireditveni</strong>:</p>
+<ul>
+<li><p>=</p></li>
+<li><p>Scanner myObj = new Scanner(System.in);</p></li>
+<li><pre><code>String ime = myObj.nextLine();</code></pre></li>
+<li><p>byte starost = myObj.nextByte();</p></li>
+<li><pre><code>float teza = myObj.nextFloat();</code></pre></li>
+<li><pre><code>char spol = myObj.nextLine().charAt(0);</code></pre></li>
+</ul></li>
+<li><p><strong>Primerjalni</strong>:</p>
+<ul>
+<li><p>==</p></li>
+<li><p>if (spol == 'm')</p></li>
+</ul></li>
+<li><p><strong>Povezovanje nizov</strong>:</p>
+<ul>
+<li><p>+</p></li>
+<li><pre><code>System.out.println("Ime ti je: " + ime);</code></pre></li>
+<li><pre><code>System.out.println("Star si: " + starost);</code></pre></li>
+<li><pre><code>System.out.println("Težka si: " + teza + "kg");</code></pre></li>
+</ul></li>
+</ul><p>Aritmetičnih (+ - * / %) tukaj <em>ne uporabljamo</em> za računanje,
+samo za lepljenje nizov.</p><h2 id="podpoglavje-20"><strong>5) Ločila (separators / punctuation)</strong></h2><p>Nekaj primerov iz programa:</p><ul>
+<li><p><strong>Podpičje ;</strong> – konča izjavo:</p>
+<ul>
+<li><pre><code>import java.util.Scanner;</code></pre></li>
+<li><p>Scanner myObj = new Scanner(System.in);</p></li>
+</ul></li>
+<li><p><strong>Vejice ,</strong> – ločujejo elemente v seznamu
+parametrov:</p>
+<ul>
+<li><p>v tem programu je nimaš, a bi jo recimo imel v metodi z več
+parametri.</p></li>
+</ul></li>
+<li><p><strong>Pika .</strong> – dostop do članov:</p>
+<ul>
+<li><p>System.out.println(...)</p></li>
+<li><p>myObj.nextLine()</p></li>
+<li><p>System.in</p></li>
+</ul></li>
+<li><p><strong>Oklepaji ()</strong>:</p>
+<ul>
+<li><p>pri klicu metod: main(String[] args), nextLine(), nextByte(),
+charAt(0), println("...")</p></li>
+<li><p>pri pogoju: if (spol == 'm')</p></li>
+</ul></li>
+<li><p><strong>Zaviti oklepaji { }</strong> – bloki:</p>
+<ul>
+<li><p>telo razreda Main { ... }</p></li>
+<li><p>telo metode main { ... }</p></li>
+<li><p>telesi if { ... } in else { ... }</p></li>
+</ul></li>
+<li><p><strong>Oglati oklepaji []</strong>:</p>
+<ul>
+<li><p>pri parametru String[] args – polje nizov.</p></li>
+</ul></li>
+<li><p>Dvojni dvopičji :: in // v tem programu ne nastopata.</p></li>
+</ul><h2 id="podpoglavje-21"><strong>6) Komentarji</strong></h2><p>V tem konkretnem programu <strong>nimaš komentarjev</strong>, ampak
+bi jih lahko imel, npr.:</p><p>// Uvozimo razred Scanner</p><pre><code>import java.util.Scanner;</code></pre><p>ali</p><p>/* Večvrstični komentar</p><p>o delovanju programa */</p><h2 id="podpoglavje-22"><strong>7) Izjave (statements)</strong></h2><p>Vsak “ukaz”, ki se izvede:</p><ul>
+<li><p>Import (na vrhu datoteke):</p>
+<ul>
+<li><pre><code>import java.util.Scanner;</code></pre></li>
+</ul></li>
+<li><p>Ustvarjanje objekta:</p>
+<ul>
+<li><p>Scanner myObj = new Scanner(System.in);</p></li>
+</ul></li>
+<li><p>Izpis in branje:</p>
+<ul>
+<li><pre><code>System.out.print("Vpiši svoje ime:");</code></pre></li>
+<li><pre><code>String ime = myObj.nextLine();</code></pre></li>
+<li></li>
+<li><pre><code>System.out.print("Vpiši svojo starost:");</code></pre></li>
+<li><p>byte starost = myObj.nextByte();</p></li>
+<li></li>
+<li><pre><code>System.out.print("Vpiši svojo težo na eno decimalko:");</code></pre></li>
+<li><pre><code>float teza = myObj.nextFloat();</code></pre></li>
+<li></li>
+<li><p>myObj.nextLine();</p></li>
+<li><pre><code>System.out.print("Vpiši svoj spol (m/z):");</code></pre></li>
+<li><pre><code>char spol = myObj.nextLine().charAt(0);</code></pre></li>
+</ul></li>
+<li><p>Izpis:</p>
+<ul>
+<li><pre><code>System.out.println("Ime ti je: " + ime);</code></pre></li>
+</ul></li>
+<li><p>Pogojna izjava if z else:</p>
+<ul>
+<li><pre><code>if (spol == 'm') {</code></pre></li>
+<li><pre><code>System.out.println("Star si: " + starost);</code></pre></li>
+<li><pre><code>System.out.println("Težek si: " + teza);</code></pre></li>
+<li><p>} else {</p></li>
+<li><pre><code>System.out.println("Stara si: " + starost);</code></pre></li>
+<li><pre><code>System.out.println("Težka si: " + teza + "kg");</code></pre></li>
+<li><pre><code>}</code></pre></li>
+</ul></li>
+<li><p>Zadnji izpis:</p>
+<ul>
+<li><pre><code>System.out.print("KONEC PROGRAMA!");</code></pre></li>
+</ul></li>
+</ul><p>Vsaka vrstica, ki se konča s ;, je <strong>izjava</strong>. if (...)
+{ ... } else { ... } je <strong>sestavljena izjava</strong> s
+pod-bloki.</p><h2 id="podpoglavje-23"><strong>8) Bloki kode</strong></h2><p>Blok = koda med { in }:</p><ul>
+<li><p>Blok razreda:</p></li>
+</ul><blockquote>
+<p>class Main {</p>
+<p>// vse to je blok razreda Main</p>
+<pre><code>}</code></pre>
+</blockquote><ul>
+<li><p>Blok metode main:</p></li>
+</ul><blockquote>
+<pre><code>public static void main(String[] args) {</code></pre>
+<p>// celoten program tukaj</p>
+<pre><code>}</code></pre>
+</blockquote><ul>
+<li><p>Blok if:</p></li>
+</ul><blockquote>
+<pre><code>if (spol == 'm') {</code></pre>
+<pre><code>System.out.println("Star si: " + starost);</code></pre>
+<pre><code>System.out.println("Težek si: " + teza);</code></pre>
+<pre><code>}</code></pre>
+</blockquote><ul>
+<li><p>Blok else:</p></li>
+</ul><blockquote>
+<p>else</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.println("Stara si: " + starost);</code></pre>
+<pre><code>System.out.println("Težka si: " + teza + "kg");</code></pre>
+<pre><code>}</code></pre>
+</blockquote><h2 id="podpoglavje-24"><strong>9) Razredi, metode, paketi</strong></h2><ul>
+<li><p><strong>Paket / knjižnica:</strong></p></li>
+</ul><blockquote>
+<pre><code>import java.util.Scanner;</code></pre>
+<p>java.util je paket, kjer se nahaja razred Scanner.</p>
+</blockquote><ul>
+<li><p><strong>Razred:</strong></p></li>
+</ul><blockquote>
+<p>class Main {</p>
+<p>...</p>
+<pre><code>}</code></pre>
+<p>To je tvoj glavni razred.</p>
+</blockquote><ul>
+<li><p><strong>Metoda main:</strong></p></li>
+</ul><blockquote>
+<pre><code>public static void main(String[] args) {</code></pre>
+<p>...</p>
+<pre><code>}</code></pre>
+<p>Vhodna točka programa.</p>
+<p>Ključne besede: public static void</p>
+<p>Parametri: String[] args</p>
+</blockquote><ul>
+<li><p><strong>Metode, ki jih uporabljaš:</strong></p></li>
+</ul><blockquote>
+<p>new Scanner(System.in) – konstruktor razreda Scanner</p>
+<p>myObj.nextLine(), myObj.nextByte(), myObj.nextFloat() – metode za
+branje</p>
+<p>myObj.nextLine().charAt(0) – najprej metoda nextLine(), nato metoda
+charAt(0) na vrnjenem nizu</p>
+<p>System.out.print(...), System.out.println(...) – metode za izpis na
+zaslon</p>
+</blockquote><p><strong>Naloga</strong>: V programu označi sestavne dele programa in
+jih poimenuj.</p><div class="exercise"><label for="a114">Tvoj odgovor / rešitev</label><textarea data-save="" id="a114" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d114" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public class Main {</code></pre>
+<pre><code>public static void main(String[] args) {</code></pre>
+<pre><code>System.out.println("Pozdravljen!");</code></pre>
+<pre><code>System.out.println("Dobrodošel v Javi.");</code></pre>
+<pre><code>int a = 10;</code></pre>
+<pre><code>int b = 5;</code></pre>
+<pre><code>int vsota = a + b;</code></pre>
+<pre><code>System.out.println("Vsota je: " + vsota);</code></pre>
+<pre><code>System.out.println("Lep dan!");</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><div class="bottom"><a href="../08-programski-jezik-java-programiranje-v-javi/index.html">← Prejšnje poglavje</a><a href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html">Naslednje poglavje →</a></div></article></main></body></html>

@@ -1,0 +1,1912 @@
+<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Računalništvo</title><link rel="stylesheet" href="../style.css"><script src="../search-data.js" defer></script><script src="../script.js" defer></script></head><body data-base="../"><header><div><strong>Računalništvo</strong><small>Učno gradivo · programiranje in Java</small></div><button id="menu" aria-expanded="true">☰ Poglavja</button><div id="progress"></div></header><aside id="sidebar"><a href="../index.html">Domov</a><br><label for="search">Iskanje po gradivu</label><input id="search" type="search"><div id="results"></div><nav><a class="tab " href="../01-uvodna-ura/index.html"><span>01</span>Uvodna ura</a><a class="tab " href="../02-algoritmi/index.html"><span>02</span>Algoritmi</a><a class="tab " href="../03-pisanje-algoritmov-diagram-poteka/index.html"><span>03</span>Pisanje algoritmov – diagram poteka</a><a class="tab " href="../04-deli-programov---izrazi-stavki-trditev/index.html"><span>04</span>Deli programov - Izrazi, stavki, trditev</a><a class="tab " href="../05-programski-jeziki/index.html"><span>05</span>Programski jeziki</a><a class="tab " href="../06-programiranje/index.html"><span>06</span>Programiranje</a><a class="tab " href="../07-zlaganje-prevajanje-in-tolmačenje-programske-kode/index.html"><span>07</span>Zlaganje, prevajanje in tolmačenje programske kode</a><a class="tab " href="../08-programski-jezik-java-programiranje-v-javi/index.html"><span>08</span>Programski jezik JAVA – programiranje v javi</a><a class="tab " href="../09-sestavni-deli-programa-java/index.html"><span>09</span>Sestavni deli programa java</a><a class="tab " href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html"><span>10</span>Sintaksa in semantika in osnovna pravila</a><a class="tab " href="../11-spremenljivke/index.html"><span>11</span>Spremenljivke</a><a class="tab " href="../12-operatorji/index.html"><span>12</span>Operatorji</a><a class="tab " href="../13-izpis-na-ekran/index.html"><span>13</span>Izpis na ekran</a><a class="tab " href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html"><span>14</span>Branje vrednosti iz tipkovnice (user input)</a><a class="tab " href="../15-krmilni-stavki/index.html"><span>15</span>Krmilni stavki</a><a class="tab " href="../16-zanke/index.html"><span>16</span>Zanke</a><a class="tab active" href="../17-polja-ali-tabele-ang.-array/index.html"><span>17</span>Polja ali tabele (ang. array)</a><a class="tab " href="../18-pomnilnik-v-javi/index.html"><span>18</span>Pomnilnik v javi</a><a class="tab " href="../19-prenos-vrednosti-parametrov-v-metodo/index.html"><span>19</span>Prenos vrednosti parametrov v metodo</a><a class="tab " href="../20-objektno-programiranje/index.html"><span>20</span>Objektno programiranje</a><a class="tab " href="../21-stringi/index.html"><span>21</span>Stringi</a></nav></aside><main><article class="chapter" data-index="16" id="polja-ali-tabele-ang.-array"><div class="eyebrow">POGLAVJE 17 / 21</div><h1>Polja ali tabele (ang. array)</h1><nav aria-label="Podpoglavja" class="subnav"><a class="level-h3" href="#podpoglavje-1">Ključne lastnosti polj</a><a class="level-h3" href="#podpoglavje-2">Deklaracija in
+inicializacija polj</a><a class="level-h2" href="#podpoglavje-3">Deklaracija</a><a class="level-h2" href="#podpoglavje-4">Inicializacija</a><a class="level-h2" href="#podpoglavje-5">Še ena deklaracija (če poznamo vrednosti pri
+deklaraciji)</a><a class="level-h2" href="#podpoglavje-6">Dostop do vrednosti</a><a class="level-h2" href="#podpoglavje-7">Velikost polja</a><a class="level-h2" href="#podpoglavje-8">Pogoste napake</a><a class="level-h2" href="#podpoglavje-9">Delo s polji</a><a class="level-h2" href="#podpoglavje-10">Ponovimo:</a><a class="level-h2" href="#podpoglavje-11">Kratki kviz polja (array):</a><a class="level-h2" href="#podpoglavje-12">1 Kaj predstavlja tabela (array) v Javi?</a><a class="level-h2" href="#podpoglavje-13">2 Kako pravilno deklariramo in inicializiramo tabelo celih
+števil v Javi?</a><a class="level-h2" href="#podpoglavje-14">2a Kako zaradi lažje predstave in dela narišemo
+polje?</a><a class="level-h2" href="#podpoglavje-15">3 Kakšen je indeks prvega elementa v tabeli?</a><a class="level-h2" href="#podpoglavje-16">4 Kaj vrne izraz t.length?</a><a class="level-h2" href="#podpoglavje-17">5 Kaj se zgodi, če dostopamo do elementa izven meja
+tabele?</a><a class="level-h2" href="#podpoglavje-18">6 Kaj pomeni, da ima tabela v Javi fiksno
+velikost?</a><a class="level-h2" href="#podpoglavje-19">7 Kako dostopamo do tretjega elementa v tabeli int[]
+a?</a><a class="level-h2" href="#podpoglavje-20">8 Kakšna je privzeta vrednost elementov v tabeli tipa
+int?</a><a class="level-h2" href="#podpoglavje-21">9 Napiši en razlog, zakaj so tabele uporabne v
+programiranju.</a><a class="level-h2" href="#podpoglavje-22">10 Katero zanko najpogosteje uporabljamo za pregled vseh
+elementov tabele?</a><a class="level-h2" href="#podpoglavje-23">11 Napiši sled programa. Beleži vrednost spremenljivk in
+izpis!</a><a class="level-h2" href="#podpoglavje-24">p1</a><a class="level-h2" href="#podpoglavje-25">p2</a><a class="level-h2" href="#podpoglavje-26">Dvodimenzionalna polja
+(tabele, matrike)</a><a class="level-h3" href="#podpoglavje-27">Izgled dvodimenzionalnega
+polja</a><a class="level-h3" href="#podpoglavje-28">Uporaba</a><a class="level-h2" href="#podpoglavje-29">Deklaracija</a><a class="level-h2" href="#podpoglavje-30">Risba</a><a class="level-h2" href="#podpoglavje-31">Sprememba vrednosti v polju</a><a class="level-h2" href="#podpoglavje-32">Lastnosti</a><a class="level-h2" href="#podpoglavje-33">Pogoste napake s polji ( semantične , med
+izvajanjem programa)</a><a class="level-h2" href="#podpoglavje-34">Velikost polja</a><a class="level-h2" href="#podpoglavje-35">Delo z 2D polji</a><a class="level-h2" href="#podpoglavje-36">Metode (procedure, funkcije , podprogram - sopomenki)</a><a class="level-h2" href="#podpoglavje-37">Pojmi</a><a class="level-h2" href="#podpoglavje-38">Minimalni standardi znanj</a><a class="level-h2" href="#podpoglavje-39">Uvod</a><a class="level-h2" href="#podpoglavje-40">Predlagajmo rešitev</a><a class="level-h2" href="#podpoglavje-41">Kaj je metoda?</a><a class="level-h2" href="#podpoglavje-42">Kako uporabimo metodo?</a><a class="level-h2" href="#podpoglavje-43">Primer iz vsakdanjega življenja:</a><a class="level-h2" href="#podpoglavje-44">Imena metod</a><a class="level-h2" href="#podpoglavje-45">Definicija metode</a><a class="level-h2" href="#podpoglavje-46">Klic metode</a><a class="level-h2" href="#podpoglavje-47">Metoda s parametri</a><a class="level-h2" href="#podpoglavje-48">Prenos parametrov v metodo (po vrednosti)</a><a class="level-h2" href="#podpoglavje-49">Metoda, ki vrne rezultat</a><a class="level-h2" href="#podpoglavje-50">Zakaj so metode pomembne</a><a class="level-h2" href="#podpoglavje-51">Primer z zanko</a><a class="level-h3" href="#podpoglavje-52">Naloge za dijake - metode</a><a class="level-h2" href="#podpoglavje-53">Dodatno interaktivno preverjanje</a></nav><p>Oglej si video. <a href="https://www.youtube.com/watch?v=ei_4Nt7XWOw">yt</a></p><p>Polje (<em>array</em>) omogoča shranjevanje <strong>več
+vrednosti</strong> istega podatkovnega tipa <strong>v eni
+spremenljivki</strong>.</p><p>Primer:</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>int ocena = 4; // hranimo eno samo vrednost</code></pre>
+<p>int [] ocene = <mark>{4,5,4,2,3}</mark>; // hranimo 5 vrednosti</p>
+<pre><code>System.out.println(ocena);
+
+System.out.println(ocene);</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Izpis:</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>4</p>
+<p><mark>[I@10f87f48</mark></p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Če je prvi izpis pričakovan, je drugi nenavaden. V drugem primeru
+izpišemo naslov (ang. reference) v pomnilniku. Pri vseh referenčnih
+tipih se v spremenljivki hrani naslov v pomnilniku (RAM), kjer so
+dejansko shranjeni podatki.</p><table>
+<colgroup>
+<col style="width: 51%"/>
+<col style="width: 48%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>"primitivni" podatkovni tip (ang. primitivne)</strong></th>
+<th><strong>referenčni podatkovni tipi (ang. reference)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>byte</p>
+<p>short</p>
+<p>int</p>
+<p>long</p>
+<p>float</p>
+<p>double</p>
+<p>char</p>
+<p>boolean</p></td>
+<td><p>String</p>
+<p><mark>Array</mark></p>
+<p>Random</p>
+<p>Scanner</p>
+<p>Object</p></td>
+</tr>
+</tbody>
+</table><p>Če želimo dostopati do elementa polja, moramo do njega dostopati
+drugače. Dodati moramo številko <strong>indeksa</strong>.</p><ul>
+<li><p>Indeks je zaporedna številka, ki pove, na katerem mestu v polju
+se nahaja element polja.</p></li>
+<li><p>Indeks napišemo v oglati oklepaj.</p></li>
+<li><p>Prvi indeks je 0.</p></li>
+</ul><p>Primer:</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>System.out.println(ocene[0]); // 1. mesto v
+polju
+
+System.out.println(ocene[3]); // 4. mesto v
+polju</code></pre>
+<pre><code>System.out.println(ocene[5]); // 5. mesto v
+polju (tega elementa NI)</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Izpis:</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>4</p>
+<p>2</p>
+<p><mark>Exception in thread "main"
+java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for
+length 5</mark></p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Skica polja <strong>ocene</strong> kot tabela:</p><table>
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 13%"/>
+<col style="width: 13%"/>
+<col style="width: 13%"/>
+<col style="width: 13%"/>
+<col style="width: 13%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>indeks</strong></th>
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>vrednost</strong></td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+<td>2</td>
+<td>3</td>
+</tr>
+</tbody>
+</table><h3 id="podpoglavje-1">Ključne lastnosti polj</h3><ol type="1">
+<li><p><strong>Fiksna dolžina:</strong> Velikost polja je določena ob
+njegovi inicializaciji in se med izvajanjem programa ne more
+spreminjati.</p></li>
+<li><p><strong>Homogenost:</strong> Vsi elementi v polju so istega
+podatkovnega tipa.</p></li>
+<li><p><strong>Indeksiranje:</strong> Do elementov polja lahko dostopamo
+z uporabo indeksov, ki začnejo pri 0.</p></li>
+<li><p><strong>Privzete vrednosti:</strong> Če začetne vrednosti ne
+določimo, so privzete vrednosti 0 in null pri Stringu.</p></li>
+</ol><h3 id="podpoglavje-2">Deklaracija in
+inicializacija polj</h3><h2 id="podpoglavje-3"><strong>Deklaracija</strong></h2><p>podatkovni_tip [] ime_spremenljivke;</p><p>ali</p><p>podatkovni_tip ime_spremenljivke[];</p><p>Primer:</p><p>float [] temperature; // deklaracija polja realnih vrednosti z imenom
+temperature - velikost še ni določena</p><h2 id="podpoglavje-4"><strong>Inicializacija</strong></h2><p>ime_spremenljivke = new podatkovni_tip[velikost_polja];</p><p>Velikost polja mora biti celo število;</p><p>Primer:</p><p>temperature = new float[30]; // polje za 30 realno številskih
+vrednosti. Vrednosti v polju so 0,0.</p><p>Lahko napišemo tudi v enem stavku</p><p>float [] nekaj = new float[30];</p><h2 id="podpoglavje-5"><strong>Še ena deklaracija (če poznamo vrednosti pri
+deklaraciji)</strong></h2><p>podatkovni_tip [] ime_spremenljivke = {vrednost1, vrednost2, …};</p><p>Primer:</p><p>int []ocene = {4,4,5,5,5}; // to polje je veliko 5</p><h2 id="podpoglavje-6"><strong>Dostop do vrednosti</strong></h2><p>ime_polja[indeks]</p><p>Primer:</p><p>int []ocene = {4,4,5,5,5};</p><pre><code>System.out.print(ocene[2]); // izpis tretjega elementa</code></pre><p>ocene[0] = 1; // sprememba prvega elementa</p><h2 id="podpoglavje-7"><strong>Velikost polja</strong></h2><pre><code>int a = ocene.length; // zapišemo ime polja, piko in besedo length (v
+primeru vrednost 5)</code></pre><h2 id="podpoglavje-8"><strong>Pogoste napake</strong></h2><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>int [] a = new int[10];</p>
+<p>a[1]; <mark>// ni prvi element</mark></p>
+<pre><code>int b[];</code></pre>
+<p>b[0] = 10; // <mark>pozabljena inicializacija</mark></p>
+<p>String [] c = {"ena","dva",3,'4'}; // <mark>mešanje podatkovnih
+tipov</mark></p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-9"><strong>Delo s polji</strong></h2><p>Za sprehod skozi polje uporabimo zanko. Najbolj pogosto for. Začetno
+vrednost nastavimo na 0, zadnja vrednost je vedno za ena manj kot
+velikost polja. Števec povečujemo za ena.</p><table>
+<colgroup>
+<col style="width: 48%"/>
+<col style="width: 51%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>int a [] = {10,9,5,7};</code></pre>
+<pre><code>int i = 0;</code></pre>
+<p>while(i &lt; a.length)</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.println(a[i] + " ");</code></pre>
+<p>i++;</p>
+<pre><code>}</code></pre></th>
+<th><pre><code>int a [] = {10,9,5,7};</code></pre>
+<pre><code>for (int i = 0; i &lt; a.length; i++)</code></pre>
+<pre><code>{</code></pre>
+<pre><code>System.out.println(a[i] + " ");</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Izpis</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>10 9 5 7</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Ideja: Vse ostane isto razen indeksa. Indeks pa</p><p>a[<mark>0</mark>]</p><p>a[<mark>1</mark>]</p><p>a[<mark>2</mark>]</p><p>a[<mark>3</mark>]</p><p>a[<mark>4</mark>]</p><h2 id="podpoglavje-10"><strong>Ponovimo:</strong></h2><p>Inicializacija polja</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>public static void main(String[] args) {<br/>
+// 1<br/>
+char [] a = new char[5];<br/>
+<br/>
+// 2<br/>
+char [] b;<br/>
+b = new char[5];<br/>
+<br/>
+// 3<br/>
+char [] c = {'a','b','1','A',','};<br/>
+<br/>
+// 4<br/>
+char d [] = new char[5];<br/>
+<br/>
+// 5<br/>
+char e [];<br/>
+e = new char[5];<br/>
+<br/>
+// 6<br/>
+char f [] = {'a','b','1','A',','};<br/>
+<br/>
+// 7 - NAPAČNO - manjka inicializacija<br/>
+char g [];<br/>
+}</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-11"><strong>Kratki kviz polja (array):</strong></h2><h2 id="podpoglavje-12"><strong>1 Kaj predstavlja tabela (array) v Javi?</strong></h2><p>A) Spremenljivko, ki hrani en podatek<br/>
+B) Spremenljivko, ki hrani več vrednosti različnih tipov<br/>
+C) Spremenljivko, ki hrani več vrednosti istega tipa<br/>
+D) Primitivno spremenljivko</p><h2 id="podpoglavje-13"><strong>2 Kako pravilno deklariramo in inicializiramo tabelo celih
+števil v Javi?</strong></h2><p>A) int t;<br/>
+B) int t[] = new int;<br/>
+C) int[] t = new int[5];<br/>
+D) int t = new int[5];<br/>
+E) int t[] = new int[5];</p><h2 id="podpoglavje-14"><strong>2a Kako zaradi lažje predstave in dela narišemo
+polje?</strong></h2><p>A) z valjem<br/>
+B) s kvadrom<br/>
+C) s tabelo<br/>
+D) s krogom<br/>
+E) s škatlo</p><h2 id="podpoglavje-15"><strong>3 Kakšen je indeks prvega elementa v tabeli?</strong></h2><p>A) 1<br/>
+B) 0<br/>
+C) -1<br/>
+D) Odvisno od velikosti tabele</p><h2 id="podpoglavje-16"><strong>4 Kaj vrne izraz t.length?</strong></h2><p>A) Zadnji indeks tabele t<br/>
+B) Število elementov v tabeli t<br/>
+C) Največjo vrednost v tabeli t<br/>
+D) Velikost tabele t v bajtih</p><h2 id="podpoglavje-17"><strong>5 Kaj se zgodi, če dostopamo do elementa izven meja
+tabele?</strong></h2><p>A) Program se normalno izvede<br/>
+B) Java vrne vrednost 0<br/>
+C) Pojavi se napaka med prevajanjem<br/>
+D) Pojavi se ArrayIndexOutOfBoundsException</p><h2 id="podpoglavje-18"><strong>6 Kaj pomeni, da ima tabela v Javi fiksno
+velikost?</strong></h2><p>_______________________________________</p><h2 id="podpoglavje-19"><strong>7 Kako dostopamo do tretjega elementa v tabeli int[]
+a?</strong></h2><p>_______________________________________</p><h2 id="podpoglavje-20"><strong>8 Kakšna je privzeta vrednost elementov v tabeli tipa
+int?</strong></h2><p>_______________________________________</p><h2 id="podpoglavje-21"><strong>9 Napiši en razlog, zakaj so tabele uporabne v
+programiranju.</strong></h2><p>_______________________________________</p><h2 id="podpoglavje-22"><strong>10 Katero zanko najpogosteje uporabljamo za pregled vseh
+elementov tabele?</strong></h2><p>_______________________________________</p><h2 id="podpoglavje-23"><strong>11 Napiši sled programa. Beleži vrednost spremenljivk in
+izpis!</strong></h2><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>public class Polja3 {<br/>
+public static void main(String[] args) {<br/>
+float pol [] = new float[7];<br/>
+pol[1]=7;<br/>
+pol[2]=-1;<br/>
+pol[4]=1.2f;<br/>
+pol[6]=-10f;<br/>
+<br/>
+for(int a = 6 ; a &gt; 1 ; a--)<br/>
+{<br/>
+if(a % 2 == 0)<br/>
+System.<em>out</em>.print("S ");<br/>
+else<br/>
+System.<em>out</em>.print("L ");<br/>
+System.<em>out</em>.print(pol[a]);<br/>
+if(pol[a] &lt; 0 )<br/>
+System.<em>out</em>.print(" &lt;0");<br/>
+else<br/>
+System.<em>out</em>.print(" &gt;=0");<br/>
+System.<em>out</em>.println();<br/>
+}<br/>
+}<br/>
+}</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p><strong>12 Polje z imenom kocke velikosti 1000 napolni z naključnimi
+števili med 1 in 6. Izpiši celotno polje.</strong></p><p><strong>Naloge:</strong></p><ol type="1">
+<li><p>Ustvari polje 5 celih števil. Polje imenuj p1. Vstavi števila
+1,6,5,3,2. V tem vrstnem redu.</p></li>
+</ol><div class="exercise"><label for="a151">Tvoj odgovor / rešitev</label><textarea data-save="" id="a151" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d151" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><h2 id="podpoglavje-24"><strong>p1</strong></h2><table>
+<colgroup>
+<col style="width: 19%"/>
+<col style="width: 19%"/>
+<col style="width: 19%"/>
+<col style="width: 20%"/>
+<col style="width: 20%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>4</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>6</td>
+<td>5</td>
+<td>3</td>
+<td>2</td>
+</tr>
+</tbody>
+</table><p>Prva možnost</p><p>int [] p1 = new int[5];</p><p>p1[0] = 1;</p><p>p1[1] = 6;</p><p>p1[2] = 5;</p><p>p1[3] = 3;</p><p>p1[4] = 2;</p><p>Druga možnost</p><p>int [] p1 = {1,6,5,3,2};</p><ol start="2" type="1">
+<li><p>Ustvari polje za 3 imena sošolcev. Polje imenuj p2. V novi
+vrstici jih shrani v polje. Enega po enega.</p></li>
+</ol><div class="exercise"><label for="a152">Tvoj odgovor / rešitev</label><textarea data-save="" id="a152" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d152" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><h2 id="podpoglavje-25"><strong>p2</strong></h2><table>
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>1</th>
+<th>2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>"Peter"</td>
+<td>"Pia"</td>
+<td>"Maja"</td>
+</tr>
+</tbody>
+</table><ol start="3" type="1">
+<li><p>Izpiši na ekran vse vrednosti iz polja p2. Ne uporabi zanke.
+Uporabi samo en stavek.</p></li>
+<li><p>Izpiši na ekran vse vrednosti iz polja p1. Uporabi zanko
+for.</p></li>
+<li><p>Iz polja p1 izpiši samo števila deljiva s 3. Uporabi zank
+while.</p></li>
+<li><p>Ustvari polje p3 za 200 števil. V polje vstavi naključna števila
+med -50 in -40.</p></li>
+</ol><div class="exercise"><label for="a153">Tvoj odgovor / rešitev</label><textarea data-save="" id="a153" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d153" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><h2 id="podpoglavje-26">Dvodimenzionalna polja
+(tabele, matrike)</h2><h3 id="podpoglavje-27">Izgled dvodimenzionalnega
+polja</h3><p>Dvodimenzionalno tabelo si lahko predstavljamo kot tabelo s stolpci
+in vrsticami. Spodnja tabele velikosti 3x3 hrani cela števila.
+Predstavlja stanje v igri križec - krožec (tic-tac-toe), kjer igrata dva
+igralca. Vrednost 0 predstavlja, da v celici še ni vpisano nič. Število
+1 predstavlja krožec, število 2 križec.</p><table>
+<colgroup>
+<col style="width: 24%"/>
+<col style="width: 24%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><table>
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></th>
+<th><table>
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>1</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></th>
+<th><table>
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>1</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></th>
+<th><table>
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>1</th>
+<th>1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><mark>2</mark></td>
+<td><mark>2</mark></td>
+<td><mark>2</mark></td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>začetno stanje</td>
+<td>igralec 1 začel</td>
+<td>igralec 2 nadaljeval</td>
+<td>igralca 2 zmaga</td>
+</tr>
+</tbody>
+</table><h3 id="podpoglavje-28">Uporaba</h3><h2 id="podpoglavje-29"><strong>Deklaracija</strong></h2><table>
+<colgroup>
+<col style="width: 42%"/>
+<col style="width: 57%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2"><p>a)</p>
+<p>podatkovni_tip [][] ime_spremenljivke = new
+podatkovni_tip[vel1][vel2];</p>
+<p>b)</p>
+<p>podatkovni_tip [][] ime_spremenljivke =</p>
+<p>ime_spremenljivke = new podatkovni_tip[vel1][vel2];</p>
+<p>c)</p>
+<p>podatkovni_tip [][] ime_spremenljivke = {{a1,a2, ...},{b1,b2, ..},
+...};</p>
+<p>d)</p>
+<p>podatkovni_tip ime_spremenljivke[][] = new
+podatkovni_tip[vel1][vel2];</p>
+<p><strong>Razlaga</strong>:</p>
+<p>število zaprtih oklepajev pomeni število dimenzij</p>
+<p>[]pomeni eno dimenzijo</p>
+<p>[][] pomeni dve dimenziji</p>
+<p>[][][] pomeni tri dimenzije</p>
+<p>vel1...velikost prve dimenzije</p>
+<p>vel2...velikost druge dimenzije</p>
+<p><strong>Opomba</strong>:</p>
+<ul>
+<li><p>Število dimenzij pri PJ java ni teoretično omejeno, je pa
+praktično na 255.</p></li>
+<li><p>več kot dve dimenziji težko narišemo</p></li>
+<li><p>več kot tri dimenzije si težko predstavljamo (tudi narišemo
+težko)</p></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>a)</p>
+<p>int [][] polje1 = new int[4][3];</p></td>
+<td><table>
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>0</th>
+<th>0</th>
+<th>0</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="even">
+<td><p>b)</p>
+<p>float [][] polje2;</p>
+<p>polje2 = new float[2][2];</p></td>
+<td><table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>0.0f</th>
+<th>0.0f</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0.0f</td>
+<td>0.0f</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="odd">
+<td><p>c)</p>
+<p>double [][] polje3 = {{6,1,2},{-2,8,4}};</p></td>
+<td><table style="width:100%;">
+<colgroup>
+<col style="width: 36%"/>
+<col style="width: 31%"/>
+<col style="width: 31%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>6</th>
+<th>1</th>
+<th>2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>-2</td>
+<td>8</td>
+<td>4</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr class="even">
+<td><p>d)</p>
+<pre><code>String polje4 [][] = new String[3][2];</code></pre></td>
+<td><table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>null</th>
+<th>null</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>null</td>
+<td>null</td>
+</tr>
+<tr class="even">
+<td>null</td>
+<td>null</td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-30"><strong>Risba</strong></h2><p>int [][] p2D_1 = new int[2][3];</p><p>skica polja p2D_1 (polje se inicializira z vrednostmi 0)</p><table>
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>0</strong></th>
+<th><strong>1</strong></th>
+<th><strong>2</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>0</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td><strong>1</strong></td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table><p>Opomba: S poudarjeni številkami so označeni indeksi.</p><h2 id="podpoglavje-31"><strong>Sprememba vrednosti v polju</strong></h2><p>p2D_1[0][0]=1;</p><p>p2D_1[0][1]=2;</p><p>p2D_1[0][2]=3;</p><p>p2D_1[1][0]=3;</p><p>p2D_1[1][1]=4;</p><p>p2D_1[1][2]=5;</p><p>skica polja p2D_1 po spremembah celic</p><table>
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th><strong>0</strong></th>
+<th><strong>1</strong></th>
+<th><strong>2</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>0</strong></td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<td><strong>1</strong></td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-32"><strong>Lastnosti</strong></h2><ul>
+<li><p>V polju so vse vrednosti istega tipa (samo int, samo String,
+...)</p></li>
+<li><p>Velikosti polja ne moremo spreminjati, ko jo enkrat
+določimo.</p></li>
+<li><p>Polje lahko uporabljamo samo tako, da dostopamo do ene same
+celice naenkrat.</p></li>
+<li><p>Vrednost v celicah lahko poljubno spreminjamo.</p></li>
+</ul><h2 id="podpoglavje-33"><strong>Pogoste napake s polji (<mark>semantične</mark>, med
+izvajanjem programa)</strong></h2><ol type="a">
+<li><p>dostopanje do elementov polja brez indeksa ( polje = 1 namesto
+polje[2][1] = 1)</p></li>
+<li><p>dostop do elementa, ki ne obstaja. Prevelik ali premajhen
+indeks.</p></li>
+</ol><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>java.lang.ArrayIndexOutOfBoundsException: Index 3 out of bounds
+for length 3 at Main.main(Main.java:25)</p>
+<p><strong>Kaj izvemo iz tega sporočila o napaki?</strong></p>
+<ul>
+<li><p>Napaka med izvajanjem.</p></li>
+<li><p>Semantična napaka.</p></li>
+<li><p>Datoteka Main.java</p></li>
+<li><p>Vrstica 25</p></li>
+<li><p>napačna raba indeksa</p></li>
+<li><p>napaka pri indeksu 3 (v oglatem oklepaju)</p></li>
+<li><p>Izsek kode v vrstici 25: p2D_1[0][3]=1;</p></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-34"><strong>Velikost polja</strong></h2><p>Za pridobitev velikosti polja uporabimo lastnost <em>length</em>.</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>int x = 2;</code></pre>
+<pre><code>int y = 3;</code></pre>
+<p>int [][] p2D_1 = new int[2][3];</p>
+<p>x = p2D_1.length; // 2 - koliko je vrstic</p>
+<p>y = p2D_1[0].length; // 3 - koliko je stolpcev v prvi vrstici</p>
+<p>y = p2D_1[1].length; // 3 - koliko je stolpcev v drugi
+vrstici</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-35"><strong>Delo z 2D polji</strong></h2><p>Uporabimo zanko v zanki. Najbolj pogosto zanko for. Najprej bomo
+imeli eno zanko za izpis vrstic. Nato še eno zanko za vsako vrstico
+(stolpce).</p><table>
+<colgroup>
+<col style="width: 57%"/>
+<col style="width: 42%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>int [][] p2D_4 = {{1,2},{3,4},{5,6}};</p>
+<pre><code>for ( i = 0; i &lt; myNumbers.length; ++i) {</code></pre>
+<pre><code>for ( i = 0; i &lt; myNumbers.length; ++i) {</code></pre>
+<pre><code>System.out.print(myNumbers[i][j]);</code></pre>
+<pre><code>}</code></pre>
+<pre><code>System.out.println();</code></pre>
+<pre><code>}</code></pre></th>
+<th><p>Izpis:</p>
+<p>1 2</p>
+<p>3 4</p>
+<p>5 6</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p><strong>Primer:</strong></p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>public class Main</p>
+<pre><code>{</code></pre>
+<pre><code>public static void main(String[] args) {</code></pre>
+<p>int [][] p2D_1 = new int[2][3];</p>
+<p>int [][] p2D_2;</p>
+<p>p2D_2 = new int[2][3];</p>
+<p>int [][] p2D_3 = {{1,2,3},{4,5,6}}; // velikost polja se določi
+avtomatsko (2x3)</p>
+<p>int [][] p2D_4 = {{1,2},{3,4},{5,6}}; // velikost polja se določi
+avtomatsko (3x2)</p>
+<p>int [][] p2D_3_1 = {{1,2},{4,5,6},{1}};</p>
+<pre><code>int p2D_4[][] = new int[2][3];</code></pre>
+<p>p2D_1[0][0]=1;</p>
+<p>p2D_1[0][1]=2;</p>
+<p>p2D_1[0][2]=3;</p>
+<p>p2D_1[1][0]=3;</p>
+<p>p2D_1[1][1]=4;</p>
+<p>p2D_1[1][2]=5;</p>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p><strong>Naloge:</strong></p><table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>1. Kaj predstavlja dvodimenzionalno polje?</strong><br/>
+a) Zaporedje znakov<br/>
+b) Samo eno vrstico podatkov<br/>
+<mark>c) Tabelo z vrsticami in stolpci</mark><br/>
+d) Spremenljivko za besedilo</th>
+<th><strong>2. Koliko elementov ima polje velikosti 3 ×
+4?</strong><br/>
+<mark>a) 12</mark><br/>
+b) 7<br/>
+c) 34<br/>
+d) 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>3. Kako dostopamo do elementa v dvodimenzionalnem polju v
+Javi?</strong><br/>
+a) polje(i,j)<br/>
+<mark>b) polje[i][j]</mark><br/>
+c) polje&lt;i,j&gt;<br/>
+d) polje{i}{j}</td>
+<td><strong>4. Kaj pomeni vrednost 0 v prikazu igre križec-krožec iz
+primera?</strong><br/>
+a) Zmaga igralca 1<br/>
+b) Križec<br/>
+c) Neveljavna celica<br/>
+<mark>d) Prazna celica</mark> (to je bil dogovor – to ni nujno tak v
+»ameriki«)</td>
+</tr>
+<tr class="even">
+<td><strong>5. Koliko vrstic ima polje int[][] a = new
+int[5][3];?</strong><br/>
+a) 3<br/>
+b) 15<br/>
+c) 8<br/>
+<mark>d) 5</mark></td>
+<td><strong>6. Kaj izpiše a.length za polje int[][] a = new
+int[4][6];?</strong><br/>
+a) Napako<br/>
+b) 6<br/>
+c) 24<br/>
+<mark>d) 4</mark></td>
+</tr>
+<tr class="odd">
+<td><strong>7. Kaj izpiše a[0].length za polje int[][] a = new
+int[4][6];?</strong><br/>
+a) 4<br/>
+b) 0<br/>
+<mark>c) 6</mark><br/>
+d) 24</td>
+<td><strong>8. Kateri indeks je NEVELJAVEN za polje int[][] b = new
+int[3][3];?</strong><br/>
+<mark>a) b[3][0]</mark><br/>
+b) b[2][2]<br/>
+c) b[0][1]<br/>
+d) b[1][2]</td>
+</tr>
+<tr class="even">
+<td><p><strong>9. Kaj naredi naslednja koda?</strong></p>
+<pre><code>for (int i = 0; i &lt; a.length; i++)</code></pre>
+<pre><code>for (int j = 0; j &lt; a[i].length; j++)</code></pre>
+<p>a[i][j] = 0;</p>
+<p><mark>a) Nastavi vse elemente na 0</mark><br/>
+b) Izpiše elemente<br/>
+c) Obrne vrstni red<br/>
+d) Sešteje elemente</p>
+<p><mark>Tudi če tega ne napišemo, so vrednosti po deklaraciji
+0.</mark></p></td>
+<td><p><strong>10. Kolikšna je vrednost spremenljivke vsota po
+izvedbi?</strong></p>
+<p>int[][] a = {</p>
+<p>{1, 2},</p>
+<p>{3, 4}</p>
+<p>};</p>
+<pre><code>int vsota = 0;</code></pre>
+<pre><code>for (int i = 0; i &lt; 2; i++)</code></pre>
+<pre><code>for (int j = 0; j &lt; 2; j++)</code></pre>
+<p>vsota += a[i][j];</p>
+<p>a) 4<br/>
+<mark>b) 10</mark><br/>
+c) 6<br/>
+d) 8</p></td>
+</tr>
+</tbody>
+</table><p><strong>Naloga 1:</strong></p><p>V polje shrani števila</p><table>
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>5</th>
+<th>7</th>
+<th>2</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>6</td>
+<td>1</td>
+<td>3</td>
+<td></td>
+</tr>
+</tbody>
+</table><ul>
+<li><p>izpiši drugo vrstico (z zanko)</p></li>
+<li><p>izpiši tretji stolpec (z zanko)</p></li>
+<li><p>izpiši vse vrednosti (z zanko)</p></li>
+</ul><p><strong>Naloga 2:</strong></p><p>V polje števil 2 x 7 shrani naključna števila med 5 in 10.</p><p><strong>Naloga 3:</strong></p><p>Imamo polje a celih števil 10x10. Izpiši vrednosti po diagonali od
+desne spodaj proti levi zgoraj.</p><p><strong>Naloga 4:</strong></p><p>Imamo polje višin 2D (relief). Katera je lokacija največje relativne
+višine.</p><p><strong>Naloge</strong>:</p><ol type="1">
+<li><p>Imamo polje, ki smo ga deklarirali tako:</p></li>
+</ol><div class="exercise"><label for="a154">Tvoj odgovor / rešitev</label><textarea data-save="" id="a154" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d154" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p>int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };</p>
+</blockquote><ol type="a">
+<li><p>Kaj izpišejo sledeči stavki:</p></li>
+</ol><div class="exercise"><label for="a155">Tvoj odgovor / rešitev</label><textarea data-save="" id="a155" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d155" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 77%"/>
+<col style="width: 22%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>System.out.print(myNumbers[1][1]);</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>System.out.print(myNumbers[2][3]);</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>System.out.print(myNumbers.length);</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>System.out.print(myNumbers[1].length);</td>
+<td></td>
+</tr>
+</tbody>
+</table><ol start="2" type="1">
+<li><p>Popravi program, ki bi naj izpisal vse elemente iz polja
+<em>myNumbers</em> ločene s presledkom. Vsako dimenzijo v svojo vrstico.
+Zraven vsake zanke napiši komentar, kaj je namen te zanke.</p></li>
+</ol><div class="exercise"><label for="a156">Tvoj odgovor / rešitev</label><textarea data-save="" id="a156" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d156" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>int[][] myNumbers = { {1, 2, 3, 4}, {5, 6, 7} };</p>
+<pre><code>int i;</code></pre>
+<pre><code>for ( i = 0; i &lt; myNumbers.length; ++i) {</code></pre>
+<pre><code>for ( i = 0; i &lt; myNumbers.length; ++i) {</code></pre>
+<pre><code>System.out.println(myNumbers[i][j]);</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><ol start="3" type="1">
+<li><p>V polje z imenom p1 velikost 3 x 3 vnesi naključne vrednosti med
+100 in 200 (v vsako celico v polju), razen števila 171 in 199.</p></li>
+</ol><div class="exercise"><label for="a157">Tvoj odgovor / rešitev</label><textarea data-save="" id="a157" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d157" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><ol type="a">
+<li><p>Najprej polje deklariraj, nato vnesi naključne
+vrednosti.</p></li>
+<li><p>Deklariraj še eno tabelo z imenom p2 velikost 1 x 3. V to polje
+prepiši tretji stolpec iz polja p1.</p></li>
+<li><p>Deklariraj še eno tabelo z imenom p3 velikost 1 x 3. V to polje
+prepiši vrednosti iz diagonale polja p1.</p></li>
+</ol><div class="exercise"><label for="a158">Tvoj odgovor / rešitev</label><textarea data-save="" id="a158" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d158" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p>Pri vseh nalogah najprej naredi načrt. Nariši tabelo z indeksi (kaj
+pride kam). Nato napiši program.</p>
+</blockquote><ol start="4" type="1">
+<li><p>Napiši program, ki poljubno tabelo dimenzij n x n prekucne v
+desno. Vrednosti se spremenijo.</p></li>
+</ol><div class="exercise"><label for="a159">Tvoj odgovor / rešitev</label><textarea data-save="" id="a159" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d159" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>1</th>
+<th>2</th>
+<th>3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>8</td>
+<td>9</td>
+</tr>
+</tbody>
+</table><p><strong>Naloga:</strong></p><p>V 2D polju velikost 9x9 imamo shranjena števila med 1 in 9. Drugih
+števil ni. Naloga je preveriti, ali števila rešijo SUDOKU problem. V
+vrsticah, stolpcih in manjših 3x3 kvadratih se ne sme ponoviti isto
+število.</p><p>Mi bomo problem razdelili na manjše kose. Za začetek bomo preverili,
+če je »pravilna« ena vrstica. Imamo sledečo vrstico kode:</p><p>int [] p = {1,2,4,3,7,9,6,5,8};</p><p><mark>Najprej z besedami napiši, kako bi rešil problem. Upoštevaj, da
+lahko uporabiš <strong>samo znane ukaze</strong> (primer: poglej, če je
+v vrstici število 9 <strong>ne obstaja</strong>, lahko pa preveriš,
+katero število se nahaja na prvem mestu v polju; lahko tudi primerjaš
+števila, jih povečuješ, ponoviš določeno akcijo, narediš nekaj samo, če
+je pogoj izpolnjen, ITD).</mark></p><p>1. poizkus (Val):</p><ol type="1">
+<li><p>Preveri če se katerokoli število v polju ponvi -. NAROBE – ni
+tkšnega ukaza</p></li>
+</ol><div class="exercise"><label for="a160">Tvoj odgovor / rešitev</label><textarea data-save="" id="a160" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d160" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>2.poizkus (Jure)</p><ol type="1">
+<li><p>Vsakič ko se število pojavi! - NAROBE</p></li>
+</ol><div class="exercise"><label for="a161">Tvoj odgovor / rešitev</label><textarea data-save="" id="a161" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d161" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>3.poizkus (Tara)</p><blockquote>
+<p>V slovenščini.</p>
+</blockquote><ol type="a">
+<li><p>Najprej pogledam prvo število v polju.</p></li>
+</ol><div class="exercise"><label for="a162">Tvoj odgovor / rešitev</label><textarea data-save="" id="a162" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d162" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p>------</p>
+<p>4.poizkus(??)</p>
+<p>Števec nastavi na 0</p>
+<p>Število 1 primerjaj z vsakim številom po vrsti v polju.</p>
+<p>Če je enak števec povečaj za 1 in nadaljuj za naslednjim številom</p>
+<p>Če ne najdeš, lahko končaš s programom. Polje ni pravilno.</p>
+<p>Število 2 primerjaj z vsakim številom po vrsti v polju.</p>
+<p>Če najdeš števec povečaj za 1 in nadaljuj za naslednjim številom</p>
+<p>Če ne najdeš, lahko končaš s programom. Polje ni pravilno.</p>
+<p>Število 3 primerjaj z vsakim številom po vrsti v polju.</p>
+<p>Če najdeš števec povečaj za 1 in nadaljuj za naslednjim številom</p>
+<p>Če ne najdeš, lahko končaš s programom. Polje ni pravilno.</p>
+</blockquote><p>Nadaljuj do števila 9 (vključno)</p><p>Če je števec enako 9, je vrstica v polju pravilna.</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Primer rešitve, ki ne upošteva pogoja (Če ne najdeš, lahko končaš
+s programom. Polje ni pravilno.)</p>
+<p>int [] p = {1,2,4,3,7,9,6,5,8};</p>
+<pre><code>int sp = 0;</code></pre>
+<pre><code>for( int i = 1 ; i &lt;= 9 ; i++)</code></pre>
+<pre><code>{</code></pre>
+<pre><code>int j = 0;</code></pre>
+<pre><code>for( ; j &lt; 9 ; j++)</code></pre>
+<pre><code>{</code></pre>
+<p>if( i == p[j])</p>
+<pre><code>{</code></pre>
+<p>sp++;</p>
+<p>break;</p>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre>
+<p>if( sp == 9 ) sout("polje je ok")</p>
+<p>else sout("polje ni OK")</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Primer:</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public class Naloga01 {</code></pre>
+<p>/// TUKAJ PIŠEM DEFINICJO METODE</p>
+<p>/// METODE NIKOLI NIČ NE IZPIŠEJO</p>
+<p>/// v metodah nimamo stavka sout!!!!!!</p>
+<p>/// OPOMBICA: razen v primeru, ko izrecno tako piše</p>
+<p>static int sestej2 (int ppok , int t4jioghi)</p>
+<pre><code>{</code></pre>
+<pre><code>int vsota;</code></pre>
+<p>vsota = ppok + t4jioghi;</p>
+<pre><code>return (vsota);</code></pre>
+<pre><code>}</code></pre>
+<pre><code>public static void main(String[] args) {</code></pre>
+<pre><code>System.out.println("-----ZACETEK-----");</code></pre>
+<pre><code>int x = sestej2(3,4); //tukaj uporabim - kličem metodo</code></pre>
+<p>// Kaj lahko naredim z vrednostjo, ki jo metoda vrne?</p>
+<p>// 1. shrani v spremenljivko</p>
+<p>// 2. izpiše</p>
+<p>// 3. nič</p>
+<p>// 4. uporabim drugje</p>
+<pre><code>System.out.println( sestej2(3,4) );</code></pre>
+<pre><code>System.out.println(x);</code></pre>
+<p>sestej2(8,-1); //tukaj uporabim - kličem metodo</p>
+<p>sestej2(sestej2(8,sestej2(8,-1)),sestej2(8,-1)); //tukaj uporabim -
+kličem metodo</p>
+<pre><code>int ppok = scn.nextInt();</code></pre>
+<pre><code>int drugo = scn.nextInt();</code></pre>
+<p>sestej2(ppok,drugo);</p>
+<pre><code>System.out.println("-----KONEC-----");</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p><strong>Naloga polja:</strong></p><p>Imamo 2 dimenzionalno polje celih števil z imenom
+<em><mark>stevila</mark></em>. Velikosti polja in števil v polju ne
+poznamo, (vemo pa, da polje ni žagasto - se pravi , da je pravilnih
+oblik ali 3x4, ali 2x2, ali 4x10, ...).</p><ol type="1">
+<li><p>Nariši primer, kako bi lahko takšno polje izgledalo. (označi
+indekse, vpiši izmišljena števila, tabela naj bo večja kot 3 x 3 in
+manjša kot 5 x 5, )</p></li>
+<li><p>V spremenljivko m shrani, koliko vrstic ima polje
+<em>stevila</em>.</p></li>
+<li><p>V spremenljivko n shrani, koliko stolpcev ima polje
+<em>stevila</em>.</p></li>
+<li><p>Zamenjaj vrednosti prve in druge celice v polju. V prvi
+vrstici.</p></li>
+<li><p>Izpiši celotno drugo vrstico (med števili presledki), če ta
+obstaja.</p></li>
+<li><p>Izpiši celoten peti stolpec, če ta obstaja. Vsako število v svojo
+vrstico.</p></li>
+<li><p>V spremenljivko r shrani naključno število med 2 in 20.</p></li>
+<li><p>Iz polja <em>stevila</em> izpiši število na koordinatah [r,r].
+Predpostavljaj (ne preverjaj), da je to je to mogoče.</p></li>
+<li><p>Seštej vsa števila v tretji vrstici.</p></li>
+<li><p>Spremeni vsa liha števila v celotnem polju na vrednost
+0.</p></li>
+<li><p>Izdelaj novo enodimenzionalno polje, ki je tako veliko kot je
+število stolpcev v tabeli <em>stevila</em>. V to polje prepiši vse
+vrednosti iz 7. vrstice, če obstaja.</p></li>
+<li><p>Poišči najmanjši element v prvi vrstici.</p></li>
+<li><p>Uredi števila v drugi vrstici po velikosti. Najprej napiši (v
+slovenščini), kako bi števila uredil. Nato ta postopek
+implementiraj.</p></li>
+<li></li>
+</ol><div class="exercise"><label for="a163">Tvoj odgovor / rešitev</label><textarea data-save="" id="a163" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d163" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><h2 id="podpoglavje-36"><strong>Metode</strong>
+(procedure, <strong>funkcije</strong>, podprogram - sopomenki)</h2><p><em><strong>Cilji</strong></em></p><p>Dijaki spoznajo:</p><ul>
+<li><p>pojem metode,</p></li>
+<li><p>zgradbo metode,</p></li>
+<li><p>parametre metode.</p></li>
+</ul><p>Naučijo se:</p><ul>
+<li><p>pisati lastne metode in</p></li>
+<li><p>jih uporabiti v programih.</p></li>
+</ul><p>Natančneje se spoznajo s posebno metodo main().</p><h2 id="podpoglavje-37"><em><strong>Pojmi</strong></em></h2><ul>
+<li><p>Deklaracija metode,</p></li>
+<li><p>podpis metode,</p></li>
+<li><p>parametri metode (formalni, dejanski, po vrednost, po
+referenci),</p></li>
+<li><p>klic metode,</p></li>
+<li><p>metoda main().</p></li>
+</ul><h2 id="podpoglavje-38"><em><strong>Minimalni standardi znanj</strong></em></h2><ul>
+<li><p>Dijak pozna zgradbo metode,</p></li>
+<li><p>pozna vrste parametrov,</p></li>
+<li><p>zna napisati enostavno metodo.</p></li>
+</ul><h2 id="podpoglavje-39"><strong>Uvod</strong></h2><p>Pri programiranju pogosto naletimo na situacijo, ko moramo
+<strong>isti del kode uporabiti večkrat</strong>. Tudi po 5 krat, 100
+krat, 1000 krat.</p><table>
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 60%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>char znak = '-';</code></pre>
+<pre><code>for(int i = 0; i &lt; 14; i++) {
+    
+    System.out.print(znak);
+    
+}
+
+System.out.println();
+
+
+
+System.out.println("MENI");</code></pre>
+<pre><code>char znak = '-';</code></pre>
+<pre><code>for(int i = 0; i &lt; 14; i++) {
+    
+    System.out.print(znak);
+    
+}
+
+System.out.println();</code></pre></th>
+<th><p><strong>Naloga</strong>:</p>
+<ul>
+<li><p>Kaj naredi program? Napiši rezultat kode.</p></li>
+<li><p>Kateri del kode se ponovi? Označi čim večji del!</p></li>
+<li><p>Kako bi spremenil program, da bo črta dolga 20 znakov?</p></li>
+<li><p>Koliko sprememb je bilo potrebno narediti? Napiši formulo v
+katero vključiš število sprememb (n) in število pojavitev istega dela
+programa (x).</p></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Program večkrat izriše črto. Enaka koda je
+<strong>podvojena</strong>.</p><p>To ima več slabosti:</p><ul>
+<li><p>program je daljši</p></li>
+<li><p>težje ga beremo</p></li>
+<li><p>če želimo nekaj spremeniti, moramo popraviti več mest</p></li>
+</ul><h2 id="podpoglavje-40"><strong>Predlagajmo rešitev</strong></h2><p>Ponavljajoči del kod zapišimo samo enkrat. Ko bomo ta del kode
+potrebovali, ga bomo poklicali. Po imenu.</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public class Primer {</code></pre>
+<p>public static void main(String[] args)</p>
+<pre><code>{</code></pre>
+<p>crta(14,'-');</p>
+<pre><code>System.out.println("MENI");</code></pre>
+<p>crta(14,'-');</p>
+<pre><code>}</code></pre>
+<p>static void crta(int stevilo_ponovitev, char kaj)</p>
+<pre><code>{</code></pre>
+<pre><code>char znak = kaj;</code></pre>
+<pre><code>for(int i = 0; i &lt; 14; i++)</code></pre>
+<pre><code>{
+    
+    System.out.print(znak);
+    
+}</code></pre>
+<pre><code>System.out.println();</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-41"><strong>Kaj je metoda?</strong></h2><ul>
+<li><p>Metoda je del programa, ki opravi določeno nalogo.</p></li>
+<li><p>Metoda je torej <strong>majhen program znotraj
+programa</strong>.</p></li>
+</ul><h2 id="podpoglavje-42"><strong>Kako uporabimo metodo?</strong></h2><ul>
+<li><p>Metodo lahko <strong>pokličemo večkrat</strong>.</p></li>
+<li><p>Metoda se zažene, ko jo pokličemo.</p></li>
+</ul><h2 id="podpoglavje-43"><strong>Primer iz vsakdanjega življenja:</strong></h2><ul>
+<li><p>kuhanje → recept</p></li>
+<li><p>matematika → funkcija</p></li>
+<li><p>programiranje → metoda</p></li>
+</ul><p>Če želimo metodo uporabiti, jo moramo prej definirati! Definiramo jo
+znotraj razreda, vendar ne v drugi metodi ( main() je metoda).</p><h2 id="podpoglavje-44"><strong>Imena metod</strong></h2><ul>
+<li><p>Za imenovanje metod veljajo enaka pravila kot za imena
+spremenljivk.</p></li>
+</ul><p>Priporočila (konvencije - dogovorjena pravila) za poimenovanje:</p><ul>
+<li><p>Ime metode se začne z malo začetnico.</p></li>
+</ul><p>izpisiPodatke()<br/>
+izracunajVsoto()<br/>
+preberiDatoteko()</p><ul>
+<li><p>Če je ime sestavljeno iz več besed, uporabljamo t. i.
+<em>camelCase</em>.</p></li>
+</ul><p>izracunajPovprecje()<br/>
+preveriGeslo()<br/>
+shraniDatoteko()</p><ul>
+<li><p>Ime metode naj bo glagol ali glagolska zveza, ker metoda običajno
+izvede neko dejanje.</p></li>
+</ul><p>izpisiRezultat()<br/>
+izracunajVsoto()<br/>
+preveriUporabnika()<br/>
+shraniPodatke()</p><p>Primer slabega poimenovanja: metoda1, hisa, A</p><h2 id="podpoglavje-45">Definicija metode</h2><p>Preden začnemo delati metodo, moramo imeti sledeče podatke:</p><ul>
+<li><p>kaj bo metoda delala</p></li>
+<li><p>katere podatke bo potrebovala (število in vrsto)</p></li>
+<li><p>kaj bo metoda vrnila</p></li>
+<li><p>ostale podatke (vidnost, vrsto, …)</p></li>
+</ul><p>Primer: naredi metodo, ki izračuna količnik dveh celih števil.</p><p>Primer metode, ki izpiše pozdrav.</p><table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 49%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public class Primer {</code></pre>
+<p>static void crta()</p>
+<pre><code>{</code></pre>
+<pre><code>for(int i = 0; i &lt; 14; i++)</code></pre>
+<pre><code>{
+    
+    System.out.print("-");
+    
+}</code></pre>
+<pre><code>}</code></pre>
+<p>public static void main(String[] args)</p>
+<pre><code>{</code></pre>
+<p>crta();</p>
+<pre><code>System.out.println("MENI");</code></pre>
+<p>crta();</p>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+<th><table>
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 78%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>del</strong></th>
+<th><strong>pomen</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>static</td>
+<td>vrsta metode - objektna ali statična</td>
+</tr>
+<tr class="even">
+<td>void</td>
+<td>rezultat metode - kaj metoda vrne</td>
+</tr>
+<tr class="odd">
+<td>pozdrav</td>
+<td>ime metode</td>
+</tr>
+<tr class="even">
+<td>()</td>
+<td>parametri metode</td>
+</tr>
+<tr class="odd">
+<td>{ }</td>
+<td>telo metode</td>
+</tr>
+</tbody>
+</table></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Rezultat:</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>--------------</p>
+<p>MENI</p>
+<p>--------------</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Program je <strong>krajši in bolj pregleden</strong>.</p><h2 id="podpoglavje-46"><strong>Klic metode</strong></h2><p>Metodo pokličemo z njenim imenom.</p><p>pozdrav();</p><p>Pomembno:</p><p>Metoda se mora nahajati <strong>znotraj razreda</strong>, vendar
+<strong>izven metode main</strong>.</p><h2 id="podpoglavje-47"><strong>Metoda s parametri</strong></h2><p>Metoda lahko prejme <strong>vhodne podatke</strong>. Vhodni podatki
+so pomembni za izvedbo metode. Vhodnih podatki niso nujni, lahko jih je
+več, lahko so različnega tipa ali tudi vrste (polje, objekt, ...).</p><p>Ko izdelujemo metodo, mormo imeti v mislih splošne vrednosti (npr.:
+celo število med 1 in 5 in ne konkretnih vrednosti npr.: 5).</p><p>Primer:</p><pre><code>public class Primer {</code></pre><p>static void izpisiVsoto(int a, int b) {</p><pre><code>System.out.println(a + b);</code></pre><pre><code>}</code></pre><pre><code>public static void main(String[] args) {</code></pre><p>izpisiVsoto(3, 5);</p><p>izpisiVsoto(10, 7);</p><pre><code>}</code></pre><pre><code>}</code></pre><p>Rezultat:</p><p>8</p><p>17</p><p>a in b sta <strong>formalna</strong> <strong>parametra
+metode</strong>.</p><p>Pri klicu metode, se morajo parametri ujemati po:</p><ul>
+<li><p>številu,</p></li>
+<li><p>tipu in</p></li>
+<li><p>vrsti.</p></li>
+</ul><h2 id="podpoglavje-48"><strong>Prenos parametrov v metodo (po vrednosti)</strong></h2><p>V Javi se pri klicu metode vsi parametri prenašajo v metode po
+vrednosti (<em>pass by value</em>). To pomeni, da metoda dobi kopijo
+vrednosti, ne pa originalne spremenljivke.</p><p>Zato spremembe v metodi ne vplivajo na originalno spremenljivko.</p><table>
+<colgroup>
+<col style="width: 53%"/>
+<col style="width: 46%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public class Test {</code></pre>
+<p>static void spremeni(int a) {</p>
+<p>a = a + 10;</p>
+<pre><code>}</code></pre>
+<pre><code>public static void main(String[] args) {</code></pre>
+<pre><code>int a = 5;</code></pre>
+<pre><code>System.out.println(a);</code></pre>
+<p>spremeni(a);</p>
+<pre><code>System.out.println(a);</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+<th>Komentar: imena spremenljivk so poljubna. Imena sp. V metodi niso
+povezana s spr. pri klicu.</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p><strong>Naloga</strong> (učitelj): Pokaži prenos po vrednosti. Sledi
+programu. Skiciraj pomnilnik.</p><div class="exercise"><label for="a164">Tvoj odgovor / rešitev</label><textarea data-save="" id="a164" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d164" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public class Test {</code></pre>
+<p>static void spremeniPolje(int [] polje) {</p>
+<p>polje [0] = polje [0] + 10;</p>
+<pre><code>}</code></pre>
+<p>static void izpisPolja( int []polje)</p>
+<pre><code>{</code></pre>
+<pre><code>for( int i = 0 ; i &lt; polje.length ; i++)</code></pre>
+<pre><code>System.out.print( polje[i] + " ");</code></pre>
+<pre><code>}</code></pre>
+<pre><code>public static void main(String[] args) {</code></pre>
+<p>int []a = {1,4,4,9};</p>
+<p>izpisPolja(a); // izpiše: 1 4 4 9</p>
+<p>spremeniPolje(a);</p>
+<p>izpisPolja(a); // ?</p>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Pri objektih Java še vedno prenaša <strong>po vrednosti</strong>,
+vendar je ta vrednost <strong>referenca (naslov) objekta</strong>.</p><p>To pomeni:</p><ul>
+<li><p>metoda dobi kopijo reference</p></li>
+<li><p>obe referenci kažeta na <strong>isti objekt</strong></p></li>
+</ul><p><strong>Naloga</strong>: <strong>Pretvori</strong> v zanko for</p><div class="exercise"><label for="a165">Tvoj odgovor / rešitev</label><textarea data-save="" id="a165" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d165" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 35%"/>
+<col style="width: 34%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>int i = 0; //</code></pre>
+<p>while(i &lt; 10)</p>
+<pre><code>{</code></pre>
+<p>i++;</p>
+<p>sout(i);</p>
+<pre><code>}</code></pre>
+<p>sout("KONEC");</p></th>
+<th><pre><code>for( i = 0 ; i &lt;10; i++)</code></pre>
+<pre><code>{</code></pre>
+<p><mark>sout(i);</mark></p>
+<pre><code>}</code></pre>
+<p>sout("KONEC");</p></th>
+<th><pre><code>for(int i = 0; i &lt; 10 ; )</code></pre>
+<pre><code>{</code></pre>
+<p>i++;</p>
+<p>sout(i);</p>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p><strong>Komentar</strong>: stavki se morajo pri obeh primerih
+izvajati v istem vrstnem redu!</p><h2 id="podpoglavje-49"><strong>Metoda, ki vrne rezultat</strong></h2><p>Metoda lahko tudi <strong>vrne vrednost</strong>. Lahko vrne samo eno
+vrednost.</p><pre><code>public class Primer {</code></pre><p>static int vsota(int a, int b) {</p><pre><code>return a + b;</code></pre><pre><code>}</code></pre><pre><code>public static void main(String[] args) {</code></pre><pre><code>int rezultat = vsota(4, 6);</code></pre><pre><code>System.out.println(rezultat);</code></pre><pre><code>}</code></pre><pre><code>}</code></pre><p>Tukaj metoda:</p><ul>
+<li><p>izračuna vsoto</p></li>
+<li><p>rezultat <strong>vrne</strong></p></li>
+</ul><p>Kaj lahko naredimo z vrednostjo, ki jo metoda vrne?</p><ul>
+<li><p>Izpišemo</p></li>
+<li><p>nič</p></li>
+<li><p>Shranimo v spremenljivko</p></li>
+<li><p>Uporabimo (v drugi metodi)</p></li>
+</ul><h2 id="podpoglavje-50"><strong>Zakaj so metode pomembne</strong></h2><p>Metode omogočajo:</p><ul>
+<li><p>bolj <strong>pregleden program</strong></p></li>
+<li><p><strong>ponovno uporabo kode</strong></p></li>
+<li><p>lažje <strong>testiranje</strong></p></li>
+<li><p>razdelitev programa na <strong>manjše dele</strong></p></li>
+</ul><p>Veliki programi so sestavljeni iz <strong>veliko metod</strong>.</p><h2 id="podpoglavje-51"><strong>Primer z zanko</strong></h2><p>Ker dijaki že poznajo zanke:</p><pre><code>public class Primer {</code></pre><p>static void izpisiCrto() {</p><pre><code>for (int i = 0; i &lt; 20; i++) {</code></pre><pre><code>System.out.print("-");</code></pre><pre><code>}</code></pre><pre><code>System.out.println();</code></pre><pre><code>}</code></pre><pre><code>public static void main(String[] args) {</code></pre><p>izpisiCrto();</p><pre><code>System.out.println("NASLOV");</code></pre><p>izpisiCrto();</p><pre><code>}</code></pre><pre><code>}</code></pre><p><strong>Naloge za dijake (za konec ure)</strong></p><div class="exercise"><label for="a166">Tvoj odgovor / rešitev</label><textarea data-save="" id="a166" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d166" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p><strong>Naloga 1</strong></p><p>Napiši metodo:</p><div class="exercise"><label for="a167">Tvoj odgovor / rešitev</label><textarea data-save="" id="a167" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d167" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>static void pozdrav()</p><p>ki izpiše:</p><p>Dobrodošli v programu</p><p>Metodo pokliči 3x.</p><p><strong>Naloga 2</strong></p><p>Napiši metodo:</p><div class="exercise"><label for="a168">Tvoj odgovor / rešitev</label><textarea data-save="" id="a168" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d168" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>static void kvadrat(int x)</p><p>ki izpiše kvadrat števila.</p><p>Primer:</p><p>kvadrat(4)</p><p>izpiše</p><p>16</p><p><strong>Naloga 3</strong></p><p>Napiši metodo:</p><div class="exercise"><label for="a169">Tvoj odgovor / rešitev</label><textarea data-save="" id="a169" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d169" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>static int vsota(int a, int b)</p><p>ki vrne vsoto dveh števil.</p><p><strong>Naloga 4 (težja)</strong></p><div class="exercise"><label for="a170">Tvoj odgovor / rešitev</label><textarea data-save="" id="a170" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d170" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Napiši metodo:</p><div class="exercise"><label for="a171">Tvoj odgovor / rešitev</label><textarea data-save="" id="a171" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d171" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>static int max(int a, int b)</p><p>ki vrne večje število.</p><p><strong>Naloga 5 (s poljem)</strong></p><div class="exercise"><label for="a172">Tvoj odgovor / rešitev</label><textarea data-save="" id="a172" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d172" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Napiši metodo:</p><div class="exercise"><label for="a173">Tvoj odgovor / rešitev</label><textarea data-save="" id="a173" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d173" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>static void izpisiPolje(int[] polje)</p><p>ki izpiše vse elemente polja.</p><p>✅ <strong>Cilj prve ure:</strong></p><p>Dijaki razumejo:</p><ul>
+<li><p>kaj je metoda</p></li>
+<li><p>kako jo napišemo</p></li>
+<li><p>kako jo pokličemo</p></li>
+<li><p>parametre</p></li>
+<li><p>vračanje vrednosti</p></li>
+</ul><h3 id="podpoglavje-52">Naloge za dijake - metode</h3><div class="exercise"><label for="a174">Tvoj odgovor / rešitev</label><textarea data-save="" id="a174" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d174" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 60%"/>
+<col style="width: 39%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>public class Metode</p>
+<pre><code>{</code></pre>
+<p>static float sestej(float a, float b, float c)</p>
+<pre><code>{</code></pre>
+<pre><code>float vsota;</code></pre>
+<p>vsota = a + b+ c;</p>
+<pre><code>return vsota;</code></pre>
+<pre><code>}</code></pre>
+<p>public static void main(String a[])</p>
+<pre><code>{</code></pre>
+<p>sestej(1,2,3);</p>
+<pre><code>float rez = sestej(1,2.0f,4);</code></pre>
+<p>a(1);</p>
+<pre><code>System.out.print(rez);</code></pre>
+<pre><code>}</code></pre>
+<p>static void a(int b)</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.print(sestej(b,b,b));</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+<th><ol type="1">
+<li><p>V programski kodi podčrtaj in s črko označi:</p></li>
+</ol>
+<ul>
+<li><p>definicija metode (A)</p></li>
+<li><p>glava definicija metode (B)</p>
+<ul>
+<li><p>ime metode (C)</p></li>
+<li><p>tip metode (D)</p></li>
+<li><p>formalni parametri (E)</p></li>
+</ul></li>
+<li><p>telo definicije metode (F)</p>
+<ul>
+<li><p>vračanje vrednosti (G)</p></li>
+</ul></li>
+<li><p>klic metode (H)</p></li>
+<li><p>dejanski argumenti(I)</p></li>
+</ul>
+<ol start="2" type="1">
+<li><p>Kaj izpiše metoda?</p></li>
+<li><p>Kako v kodi prepoznamo definicijo metode in kako klic?</p></li>
+</ol></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Odgovori na vprašanja z DA ali NE!</p><table>
+<colgroup>
+<col style="width: 4%"/>
+<col style="width: 81%"/>
+<col style="width: 13%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Št.</strong></th>
+<th><strong>Vprašanje</strong></th>
+<th><strong>Odgovori</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Metoda v Javi je blok kode, ki se lahko večkrat pokliče.</td>
+<td>DA / NE</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Vsaka metoda mora imeti vsaj en parameter.</td>
+<td>DA / NE</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Metoda lahko vrne vrednost z ukazom return.</td>
+<td>DA / NE</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Metoda lahko obstaja brez parametrov.</td>
+<td>DA / NE</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Metoda mora biti vedno zapisana znotraj razreda (class).</td>
+<td>DA / NE</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Metoda lahko vrne več vrednosti hkrati.</td>
+<td>DA / NE</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Metoda tipa void ne vrača nobene vrednosti.</td>
+<td>DA / NE</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Metodo lahko pokličemo večkrat iz različnih delov programa.</td>
+<td>DA / NE</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Ime metode mora biti enako imenu razreda.</td>
+<td>DA / NE</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Parametri metode so podatki, ki jih posredujemo metodi ob
+klicu.</td>
+<td>DA / NE</td>
+</tr>
+</tbody>
+</table><table>
+<colgroup>
+<col style="width: 3%"/>
+<col style="width: 60%"/>
+<col style="width: 35%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Št.</strong></th>
+<th><strong>Vprašanje</strong></th>
+<th><strong>Odgovori</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Kaj pomeni ključna beseda void pri metodi?</td>
+<td><p>a) Metoda ima več parametrov</p>
+<p>b) Metoda vrne celo število</p>
+<p>c) Metoda ne vrača vrednosti</p>
+<p>d) Metoda ima napako</p></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Katera deklaracija metode je pravilna?</td>
+<td><p>a) public metoda int()</p>
+<p>b) int metoda()</p>
+<p>c) metoda int()</p>
+<p>d) int = metoda()</p></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Kako pokličemo metodo z imenom izpis brez parametrov?</td>
+<td><p>a) call izpis</p>
+<p>b) izpis;</p>
+<p>c) run izpis()</p>
+<p>d) izpis()</p></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Katera vrstica pravilno vrne vrednost iz metode?</td>
+<td><p>a) back x;</p>
+<p>b) return x;</p>
+<p>c) send x;</p>
+<p>d) output x;</p></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Kaj so parametri metode?</td>
+<td><p>a) Lokalni razredi</p>
+<p>b) Podatki, ki jih metoda prejme</p>
+<p>c) Spremenljivke, ki jih metoda vedno vrne</p>
+<p>d) Komentarji v metodi</p></td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Katera metoda pravilno sprejme parameter tipa int?</td>
+<td><p>a) void izpis(x int)</p>
+<p>b) void izpis(int x)</p>
+<p>c) void int izpis(x)</p>
+<p>d) izpis(int) void</p></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Kaj naredi naslednji klic metode vsota(5, 3);?</td>
+<td><p>a) Deklarira metodo</p>
+<p>b) Briše metodo</p>
+<p>c) Pokliče metodo z dvema argumentoma</p>
+<p>d) Ustvari razred</p></td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Kje lahko deklariramo metodo v Javi?</td>
+<td><p>a) Znotraj razreda</p>
+<p>b) Znotraj komentarja</p>
+<p>c) Znotraj druge metode brez omejitev</p>
+<p>d) Znotraj paketa brez razreda</p></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Kaj pomeni tip pred imenom metode v deklaraciji int vsota(int a, int
+b)?</td>
+<td><p>a) Število parametrov</p>
+<p>b) Tip vrednosti, ki jo metoda vrne</p>
+<p>c) Ime razreda</p>
+<p>d) Tip prvega parametra</p></td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Kaj naredi naslednja metoda void pozdrav(){
+System.out.println("Pozdrav"); }?</td>
+<td><p>a) Vrne niz</p>
+<p>b) Izpiše besedo Pozdrav</p>
+<p>c) Ustvari spremenljivko</p>
+<p>d) Vrne vrednost</p></td>
+</tr>
+</tbody>
+</table><p>Za vsako metodo napiši vsaj dva različna pravilna klica te
+metode.</p><table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>public class Main</p>
+<pre><code>{</code></pre>
+<p>static int sestej(int a, int b)</p>
+<pre><code>{</code></pre>
+<pre><code>int vsota;</code></pre>
+<p>vsota = a + b;</p>
+<pre><code>return vsota;</code></pre>
+<pre><code>}</code></pre>
+<p>static double sestej(double a, double b)</p>
+<pre><code>{</code></pre>
+<pre><code>double vsota;</code></pre>
+<p>vsota = a + b;</p>
+<pre><code>return vsota;</code></pre>
+<pre><code>}</code></pre>
+<p>static double sestej(float a, double b)</p>
+<pre><code>{</code></pre>
+<pre><code>double vsota;</code></pre>
+<p>vsota = a + b;</p>
+<pre><code>return vsota;</code></pre>
+<pre><code>}</code></pre>
+<p>static void sestej_izpis(int a, int b)</p>
+<pre><code>{</code></pre>
+<pre><code>int vsota;</code></pre>
+<p>vsota = a + b;</p>
+<pre><code>System.out.println("4 + 3 = " + vsota);</code></pre>
+<pre><code>}</code></pre>
+<p>static void spremeni(int kaj, int na_kaj)</p>
+<pre><code>{</code></pre>
+<p>kaj = na_kaj;</p>
+<pre><code>}</code></pre>
+<pre><code>public static void main(String[] args) {</code></pre>
+<p>//?????</p>
+<pre><code>}</code></pre></th>
+<th><p>static int polje_sestej(int [] polje)</p>
+<pre><code>{</code></pre>
+<pre><code>int vsota = 0;</code></pre>
+<pre><code>for(int i = 0 ; i &lt; polje.length ; i++)</code></pre>
+<pre><code>{</code></pre>
+<p>vsota = vsota + polje[i];</p>
+<pre><code>}</code></pre>
+<p>return(vsota);</p>
+<pre><code>}</code></pre>
+<p>static void polje_izpis(int [] polje)</p>
+<pre><code>{</code></pre>
+<pre><code>for(int i = 0 ; i &lt; polje.length ; i++)</code></pre>
+<pre><code>{</code></pre>
+<pre><code>System.out.print(polje[i] + " ");</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre>
+<p>static void polje_spremeni(int [] polje, int index, int vrednost)</p>
+<pre><code>{</code></pre>
+<p>polje[index] = vrednost;</p>
+<pre><code>}</code></pre>
+<p>static int [] C(int [] polje)</p>
+<pre><code>{</code></pre>
+<pre><code>int j = 0;</code></pre>
+<pre><code>int n[] = new int[polje.length];</code></pre>
+<pre><code>for(int i = 0 ; i &lt; polje.length ; i++)</code></pre>
+<pre><code>{</code></pre>
+<p>if(polje[i] &lt; 0)</p>
+<pre><code>{</code></pre>
+<p>n[j++]=polje[i];</p>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre>
+<pre><code>return n;</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Rešitve:</p><p><img src="../media/image43.png" style="width:7.49722in;height:3.82847in"/></p><div class="exercise"><label for="a175">Odgovor ali opombe k sliki</label><textarea data-save="" id="a175" rows="3"></textarea><label class="check"><input data-save="" id="d175" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><table>
+<colgroup>
+<col style="width: 4%"/>
+<col style="width: 71%"/>
+<col style="width: 12%"/>
+<col style="width: 12%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Št.</strong></th>
+<th><strong>Vprašanje</strong></th>
+<th><strong>Odgovori</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>Metoda v Javi je blok kode, ki se lahko večkrat pokliče.</td>
+<td>DA / NE</td>
+<td>DA</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>Vsaka metoda mora imeti vsaj en parameter.</td>
+<td>DA / NE</td>
+<td>NE</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>Metoda lahko vrne vrednost z ukazom return.</td>
+<td>DA / NE</td>
+<td>DA</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>Metoda lahko obstaja brez parametrov.</td>
+<td>DA / NE</td>
+<td>DA</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Metoda mora biti vedno zapisana znotraj razreda (class).</td>
+<td>DA / NE</td>
+<td>DA</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>Metoda lahko vrne več vrednosti hkrati.</td>
+<td>DA / NE</td>
+<td><mark>NE</mark></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>Metoda tipa void ne vrača nobene vrednosti.</td>
+<td>DA / NE</td>
+<td>DA</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>Metodo lahko pokličemo večkrat iz različnih delov programa.</td>
+<td>DA / NE</td>
+<td>DA</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>Ime metode mora biti enako imenu razreda.</td>
+<td>DA / NE</td>
+<td>NE</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>Parametri metode so podatki, ki jih posredujemo metodi ob
+klicu.</td>
+<td>DA / NE</td>
+<td>DA</td>
+</tr>
+</tbody>
+</table><p>Kaj program izpiše?</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>public class Main</p>
+<pre><code>{</code></pre>
+<pre><code>public static void main(String[] args) {</code></pre>
+<pre><code>int a = 7;</code></pre>
+<pre><code>int p []= {1,2,3};</code></pre>
+<pre><code>System.out.println(a);</code></pre>
+<p>A(a);</p>
+<pre><code>System.out.println(a);</code></pre>
+<p>polje_izpis(p);</p>
+<p>A(p);</p>
+<pre><code>System.out.println();</code></pre>
+<p>polje_izpis(p);</p>
+<pre><code>}</code></pre>
+<p>static void A(int polje)</p>
+<pre><code>{</code></pre>
+<p>polje = 99;</p>
+<pre><code>}</code></pre>
+<p>static void A(int [] polje)</p>
+<pre><code>{</code></pre>
+<p>polje[polje.length - 1] = 99;</p>
+<pre><code>}</code></pre>
+<p>static void polje_izpis(int [] polje)</p>
+<pre><code>{</code></pre>
+<pre><code>for(int i = 0 ; i &lt; polje.length ; i++)</code></pre>
+<pre><code>{</code></pre>
+<pre><code>System.out.print(polje[i] + " ");</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Komentar</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public static void main(String[] args) {</code></pre>
+<pre><code>int a = 7;</code></pre>
+<pre><code>int p []= {1,2,3};</code></pre>
+<pre><code>System.out.println(a);</code></pre>
+<p>A(a);</p>
+<pre><code>System.out.println(a);</code></pre>
+<p>// če v funkcijo prenesemo primitivno spremenljivko, v našem primeru
+a - int</p>
+<p>// vrednost spremenljivke po izhodu iz f. ostane enaka!</p>
+<p>polje_izpis(p);</p>
+<p>A(p);</p>
+<pre><code>System.out.println();</code></pre>
+<p>polje_izpis(p);</p>
+<p>// če v funkcijo prenesemo objekt (polje, String, razred, ...) -v
+našem primeru polje p, in polje spremenimo</p>
+<p>// vrednost polja po izhodu iz f. ostane spremenjena!</p>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-53">Dodatno interaktivno preverjanje</h2><fieldset class="quiz" data-answer="1"><legend>Kateri indeks ima prvi element polja v Javi?</legend><label><input data-save="" id="q176-0" name="q176" type="radio" value="0"/> 1</label><label><input data-save="" id="q176-1" name="q176" type="radio" value="1"/> 0</label><label><input data-save="" id="q176-2" name="q176" type="radio" value="2"/> -1</label><button class="verify">Preveri</button><output aria-live="polite"></output></fieldset><div class="bottom"><a href="../16-zanke/index.html">← Prejšnje poglavje</a><a href="../18-pomnilnik-v-javi/index.html">Naslednje poglavje →</a></div></article></main></body></html>

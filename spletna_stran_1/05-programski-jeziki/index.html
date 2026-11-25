@@ -1,0 +1,348 @@
+<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Računalništvo</title><link rel="stylesheet" href="../style.css"><script src="../search-data.js" defer></script><script src="../script.js" defer></script></head><body data-base="../"><header><div><strong>Računalništvo</strong><small>Učno gradivo · programiranje in Java</small></div><button id="menu" aria-expanded="true">☰ Poglavja</button><div id="progress"></div></header><aside id="sidebar"><a href="../index.html">Domov</a><br><label for="search">Iskanje po gradivu</label><input id="search" type="search"><div id="results"></div><nav><a class="tab " href="../01-uvodna-ura/index.html"><span>01</span>Uvodna ura</a><a class="tab " href="../02-algoritmi/index.html"><span>02</span>Algoritmi</a><a class="tab " href="../03-pisanje-algoritmov-diagram-poteka/index.html"><span>03</span>Pisanje algoritmov – diagram poteka</a><a class="tab " href="../04-deli-programov---izrazi-stavki-trditev/index.html"><span>04</span>Deli programov - Izrazi, stavki, trditev</a><a class="tab active" href="../05-programski-jeziki/index.html"><span>05</span>Programski jeziki</a><a class="tab " href="../06-programiranje/index.html"><span>06</span>Programiranje</a><a class="tab " href="../07-zlaganje-prevajanje-in-tolmačenje-programske-kode/index.html"><span>07</span>Zlaganje, prevajanje in tolmačenje programske kode</a><a class="tab " href="../08-programski-jezik-java-programiranje-v-javi/index.html"><span>08</span>Programski jezik JAVA – programiranje v javi</a><a class="tab " href="../09-sestavni-deli-programa-java/index.html"><span>09</span>Sestavni deli programa java</a><a class="tab " href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html"><span>10</span>Sintaksa in semantika in osnovna pravila</a><a class="tab " href="../11-spremenljivke/index.html"><span>11</span>Spremenljivke</a><a class="tab " href="../12-operatorji/index.html"><span>12</span>Operatorji</a><a class="tab " href="../13-izpis-na-ekran/index.html"><span>13</span>Izpis na ekran</a><a class="tab " href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html"><span>14</span>Branje vrednosti iz tipkovnice (user input)</a><a class="tab " href="../15-krmilni-stavki/index.html"><span>15</span>Krmilni stavki</a><a class="tab " href="../16-zanke/index.html"><span>16</span>Zanke</a><a class="tab " href="../17-polja-ali-tabele-ang.-array/index.html"><span>17</span>Polja ali tabele (ang. array)</a><a class="tab " href="../18-pomnilnik-v-javi/index.html"><span>18</span>Pomnilnik v javi</a><a class="tab " href="../19-prenos-vrednosti-parametrov-v-metodo/index.html"><span>19</span>Prenos vrednosti parametrov v metodo</a><a class="tab " href="../20-objektno-programiranje/index.html"><span>20</span>Objektno programiranje</a><a class="tab " href="../21-stringi/index.html"><span>21</span>Stringi</a></nav></aside><main><article class="chapter" data-index="4" id="programski-jeziki"><div class="eyebrow">POGLAVJE 05 / 21</div><h1>Programski jeziki</h1><nav aria-label="Podpoglavja" class="subnav"><a class="level-h2" href="#podpoglavje-1">Vrste programskih jezikov</a><a class="level-h2" href="#podpoglavje-2">Za radovedne</a><a class="level-h2" href="#podpoglavje-3">Generacije programskih jezikov</a><a class="level-h2" href="#podpoglavje-4">Here are some key aspects of programming
+languages:</a><a class="level-h2" href="#podpoglavje-5">Za radovedne</a><a class="level-h2" href="#podpoglavje-6">What are some common use cases for assembly
+language?</a></nav><p><strong>Cilji</strong></p><p>Dijak zna razložiti, kaj je programski jezik</p><p>Dijaki</p><ul>
+<li><p>spoznajo različne vrste programskih jezikov glede na namen in
+uporabo</p></li>
+<li><p>spoznajo generacije jezikov in splošne strokovne pojme, povezane
+s programskimi jeziki.</p></li>
+</ul><p>Pojmi Programski jezik,</p><ul>
+<li><p>sintaksa,</p></li>
+<li><p>semantika,</p></li>
+</ul><blockquote>
+<p>postopkovni jeziki,</p>
+<p>nepostopkovni jeziki,</p>
+<p>objektni jeziki,</p>
+</blockquote><p>Def. 1: Programski jezik je umetni <strong>jezik</strong>, namenjen
+<strong>reševanju problemov z računalnikom</strong>. V programskem
+jeziku napišemo navodila - program, ki ga <strong>izvedemo na
+računalniku</strong>. Program moramo pred izvajanjem še
+<strong>prevesti</strong> v računalniku razumljiv jezik –
+<strong>strojni jezik</strong>.</p><p>Def. 2: A programming language is a formal language comprising a set
+of instructions that produce various kinds of output. These languages
+are used to implement algorithms and control the behavior of machines,
+particularly computers. [vir: Copilot na vprašanje What is programming
+language?]</p><p>Def. 3: Programski jezik je (samo) jezik, ki si ga je nekdo izmislil
+in naučil računalnik, da ga »razume«. [<a href="https://www.youtube.com/watch?v=5LeZflr8Zfs&amp;t=132s">Vir</a>]</p><p><strong>Vprašanje</strong>: Si lahko kdorkoli izmisli svoj programski
+jezik? Če da, za kaj mora (še) poskrbeti, da ga lahko uporabi?</p><div class="exercise"><label for="a89">Tvoj odgovor / rešitev</label><textarea data-save="" id="a89" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d89" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Pogramski jeziki: C++, C#, java, python, SQL,</p><p>Da, lahko. Poskrbeti mora za besede, za pravila in tudi za prevod v
+strojni jezik - <strong>prevajalnik</strong>. Moramo napisati
+(sprogramirati) prevajalnik.</p><p>Da bo <strong>programski jezik</strong> razumljiv tudi za računalnik,
+ga moramo <strong>prevesti</strong> v strojni jezik. Postopek se imenuje
+prevajanje (compiling).</p><h2 id="podpoglavje-1"><strong>Vrste programskih jezikov</strong></h2><p>Programskih jezikov je zelo veliko. Razvrstimo jih lahko v
+skupine:</p><ul>
+<li><p>po namembnosti - vrstah problemov, ki jih z njimi rešujemo
+(splošni, spletni, realno časovni, … )</p></li>
+<li><p>kronološko, po času nastanka (generacije)</p></li>
+<li><p>še kako 😊</p></li>
+</ul><table>
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 16%"/>
+<col style="width: 12%"/>
+<col style="width: 14%"/>
+<col style="width: 11%"/>
+<col style="width: 11%"/>
+<col style="width: 15%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>proceduralni</th>
+<th>objektni</th>
+<th>funkcijski</th>
+<th>spletni</th>
+<th>splošni</th>
+<th>označevalni</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>java</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>php</td>
+<td>x</td>
+<td>x</td>
+<td></td>
+<td>x</td>
+<td>x</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Lisp</td>
+<td></td>
+<td></td>
+<td>x</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><del>HTML</del></td>
+<td></td>
+<td></td>
+<td></td>
+<td><del>x</del></td>
+<td></td>
+<td><del>x</del></td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-2"><strong>Za radovedne</strong></h2><p>Programming languages can be broadly <strong>categorized</strong>
+into several types based on their features and use cases. Here are some
+of the main types:</p><ol type="1">
+<li><p>Procedural Languages: These languages follow a set of
+instructions in a sequential manner. Examples include C, Pascal, and
+Fortran.</p></li>
+<li><p>Object-Oriented Languages: These languages are based on the
+concept of “objects,” which can contain data and code. Examples include
+Java, C++, and Python.</p></li>
+<li><p>Functional Languages: These languages focus on mathematical
+functions and avoid changing-state and mutable data. Examples include
+Haskell, Lisp, and Erlang.</p></li>
+<li><p>Scripting Languages: These are often used for automating tasks
+and are usually interpreted rather than compiled. Examples include
+JavaScript, Python, and Ruby.</p></li>
+<li><p>Markup Languages: These are used to define the structure and
+presentation of raw text. Examples include HTML, XML, and
+Markdown.</p></li>
+<li><p>Logic Programming Languages: These languages are based on formal
+logic. An example is Prolog.</p></li>
+<li><p>Concurrent Languages: These languages are designed to handle
+concurrent processes. Examples include Go and Erlang.</p></li>
+<li><p>Database Query Languages: These are used to manage and manipulate
+databases. Examples include SQL and PL/SQL.</p></li>
+</ol><div class="exercise"><label for="a90">Tvoj odgovor / rešitev</label><textarea data-save="" id="a90" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d90" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Each type of programming language has its own strengths and is suited
+to different kinds of tasks. Do you have a specific type you’re
+interested in learning more about?</p><h2 id="podpoglavje-3"><strong>Generacije programskih jezikov</strong></h2><p><img alt="Slika, ki vsebuje besede besedilo, posnetek zaslona, diagram, vrstica Opis je samodejno ustvarjen" src="../media/image18.jpeg" style="width:6.53194in;height:3.67778in"/></p><div class="exercise"><label for="a91">Odgovor ali opombe k sliki</label><textarea data-save="" id="a91" rows="3"></textarea><label class="check"><input data-save="" id="d91" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p>Vir:
+https://medium.com/@ajuatahcodingarena/generations-of-programming-languages-bed30d19ea8e</p><p><img alt="Lightbox" src="../media/image19.jpeg" style="width:6.53194in;height:2.40208in"/></p><div class="exercise"><label for="a92">Odgovor ali opombe k sliki</label><textarea data-save="" id="a92" rows="3"></textarea><label class="check"><input data-save="" id="d92" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p><strong>Generacije PJ -</strong> Vir:
+https://www.geeksforgeeks.org/generation-programming-languages/</p><ol type="1">
+<li><p>Binarni jezik – strojna koda (Binary Machine Code)</p></li>
+<li><p>Zbirnik (Assembly Code)</p></li>
+<li><p>Višji programski jeziki – Java, C, Pascal, C++, C#, Python,
+..)</p></li>
+<li><p>Povpraševalni jeziki, jeziki umetne inteligence – SQL, LIST, …
+)</p></li>
+<li><p>Naravni jeziki (Natural language)</p></li>
+</ol><div class="exercise"><label for="a93">Tvoj odgovor / rešitev</label><textarea data-save="" id="a93" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d93" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 9%"/>
+<col style="width: 16%"/>
+<col style="width: 22%"/>
+<col style="width: 20%"/>
+<col style="width: 30%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Generacija</strong></th>
+<th><strong>Primer</strong></th>
+<th><strong>Prednosti</strong></th>
+<th><strong>Slabosti</strong></th>
+<th><strong>Konnkretni Primer</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.</td>
+<td>Strojni jezik (strojna (binarna) koda – ang. Machine language</td>
+<td><ul>
+<li><p>Ne rabi prevajati</p></li>
+<li><p>Hitreje dela, ker je narejen za vsaki procesor posebej</p></li>
+<li><p>Lahko napišemo boljše za vsak specifični primer
+procesorja</p></li>
+</ul></td>
+<td><ul>
+<li><p>Ni razumljiv (zelo težko razumljiv – računalnik, tisti ki ga zna
+– malo je takih)</p></li>
+<li><p>Moramo pisati program za vsaki procesor posebej</p></li>
+<li><p>Poznati moramo ukaze in načine za vsaki procesor (HW)
+posebej</p></li>
+</ul></td>
+<td>01000110010010101001010101010010010</td>
+</tr>
+<tr class="even">
+<td>2.</td>
+<td>Zbirnik - Assembly language</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3.</td>
+<td>C++, Java, Python, C#, PHP,</td>
+<td><ul>
+<li><p>Lažje razumljiv kot 1. generacija</p></li>
+</ul></td>
+<td><ul>
+<li><p>Moramo ga prevesti ???</p></li>
+<li><p>Ni optimiziran za določene procesorje, opravila</p></li>
+</ul></td>
+<td><p>print("petek")</p>
+<p>x = 7</p>
+<p>if x == 7:</p>
+<p>print("x je 7")</p></td>
+</tr>
+<tr class="even">
+<td>4.</td>
+<td>SQL, MATLAB</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>5.</td>
+<td>Prolog, Mercury</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><table>
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 17%"/>
+<col style="width: 24%"/>
+<col style="width: 21%"/>
+<col style="width: 26%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Generacija</strong></th>
+<th><strong>Primer</strong></th>
+<th><strong>Prednosti</strong></th>
+<th><strong>Slabosti</strong></th>
+<th><strong>Primer</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.</td>
+<td>Strojni jezik (strojna (binarna) koda – ang. Machine language</td>
+<td><ul>
+<li><p>Zelo hiter</p></li>
+<li><p>Direkten dostop do strojne opreme</p></li>
+<li><p>Ne potrebuje prevajalnika ali tolmača</p></li>
+</ul></td>
+<td><ul>
+<li><p>Zelo težaven za branje in pisanje</p></li>
+<li><p>Težave pri iskanju napak in vzdrževanju</p></li>
+</ul></td>
+<td>0100101001000101010</td>
+</tr>
+<tr class="even">
+<td>2.</td>
+<td>Zbirnik - Assembly language</td>
+<td><ul>
+<li><p>Enostavnejši v primerjavi s strojnim</p></li>
+<li><p>Direkten dostop do strojne opreme</p></li>
+</ul></td>
+<td><ul>
+<li><p>Potrebujemo zbirnik za pretvorbo v strojno kodo</p></li>
+<li><p>Nizko nivojski – zahteven za uporabo</p></li>
+<li><p>Razlike med različno strojno opremo (machine-dependent)</p></li>
+</ul></td>
+<td><p>mov fa,11</p>
+<p>push 11</p></td>
+</tr>
+<tr class="odd">
+<td>3.</td>
+<td>C++, Java, Python, C#, PHP,</td>
+<td><ul>
+<li><p>Človeku lažje berljiv</p></li>
+<li><p>Angleška sintaksa</p></li>
+<li><p>S pomočjo prevajalnikov in tolmačev prenosen med različnimi
+sistemi (OS)</p></li>
+<li><p>Podpira strukturno programiranje in modularnost</p></li>
+</ul></td>
+<td><ul>
+<li><p>Izvajanje počasnejše (v primerjavi z nižjimi PJ)</p></li>
+<li><p>Potrebujemo prevajalnik ali tolmač</p></li>
+</ul></td>
+<td><p>if( age &gt;= 18)</p>
+<p>print »ti si polnoleten«</p>
+<p>else</p>
+<p>print »ti si mladoleten«</p></td>
+</tr>
+<tr class="even">
+<td>4.</td>
+<td>SQL, MATLAB</td>
+<td><ul>
+<li><p>Bližje naravnemu jeziku – lažje učenje in uporaba</p></li>
+<li><p>Delo s podatki, poročili, matematičnimi izračuni</p></li>
+</ul></td>
+<td><ul>
+<li><p>Manj nadzora na strojno opremo in ostalimi viri</p></li>
+<li><p>Počasnejši</p></li>
+</ul></td>
+<td><p>SELECT ime, priimek</p>
+<p>FROM dijak</p>
+<p>WHERE starost &gt; =18</p></td>
+</tr>
+<tr class="odd">
+<td>5.</td>
+<td>Prolog, Mercury</td>
+<td><ul>
+<li><p>Rešujemo probleme z podajanjem omejitev in logike namesto jasnih
+(eksplicitnih) navodil</p></li>
+<li><p>Uporaba v umetni inteligenci in ekspertnih sistemih</p></li>
+</ul></td>
+<td><ul>
+<li><p>Zahteven za učenje</p></li>
+<li><p>Omejen v smislu splošnosti problemov</p></li>
+</ul></td>
+<td></td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-4"><strong>Here are some key aspects of programming
+languages:</strong></h2><ol type="1">
+<li><p><strong>Syntax</strong>: This refers to the set of rules that
+define the combinations of symbols that are considered to be correctly
+structured programs in that language.</p></li>
+<li><p><strong>Semantics</strong>: This refers to the meaning of the
+symbols, expressions, and statements within the language.</p></li>
+<li><p><strong>Pragmatics</strong>: This involves the practical aspects
+of using the language, including how it is used to solve problems and
+how it interacts with other languages and systems.</p></li>
+<li><p><strong>Types</strong>: Programming languages can be categorized
+into various types, such as procedural, object-oriented, functional,
+scripting, and more.</p></li>
+<li><p><strong>Compilation and Interpretation</strong>: Some languages
+are compiled, meaning the code is translated into machine language
+before execution. Others are interpreted, meaning the code is executed
+directly by an interpreter.</p></li>
+</ol><div class="exercise"><label for="a94">Tvoj odgovor / rešitev</label><textarea data-save="" id="a94" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d94" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Programming languages enable developers to write programs that can
+perform a wide range of tasks, from simple calculations to complex data
+processing and artificial intelligence.</p><h2 id="podpoglavje-5"><strong>Za radovedne</strong></h2><h2 id="podpoglavje-6"><strong>What are some common use cases for assembly
+language?</strong></h2><p>Assembly language is often used in scenarios where direct hardware
+manipulation, access to specialized processor instructions, or critical
+performance optimization is required. Here are some common use
+cases:</p><ol type="1">
+<li><p>Device Drivers: Assembly language is used to write device drivers
+that control hardware components like printers, disk drives, and
+graphics cards<sup>1</sup>.</p></li>
+<li><p>Embedded Systems: Many embedded systems, such as those in
+automotive controls, medical devices, and consumer electronics, use
+assembly language for efficient and precise
+control<sup>1</sup>.</p></li>
+<li><p>Real-Time Systems: Real-time systems, which require timely and
+deterministic responses, often rely on assembly language to meet strict
+timing constraints<sup>1</sup>.</p></li>
+<li><p>Operating System Kernels: Parts of operating system kernels,
+especially those that need to interact closely with hardware, are
+written in assembly language for performance and
+control<sup>2</sup>.</p></li>
+<li><p>Performance-Critical Applications: In applications where
+performance is critical, such as high-frequency trading systems or
+scientific computing, assembly language can be used to optimize specific
+routines<sup>1</sup>.</p></li>
+<li><p>Bootloaders: Bootloaders, which initialize the operating system
+when a computer starts, are often written in assembly language to ensure
+they run efficiently and correctly<sup>2</sup>.</p></li>
+<li><p>Reverse Engineering and Security: Assembly language is used in
+reverse engineering and security research to analyze and understand the
+behavior of software at a low level<strong><a href="https://www.sololearn.com/blog/what-is-assembly-and-how-is-it-used/"><sup>1</sup></a>.</strong></p></li>
+</ol><div class="exercise"><label for="a95">Tvoj odgovor / rešitev</label><textarea data-save="" id="a95" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d95" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Vir: <a href="https://en.wikipedia.org/wiki/List_of_programming_languages">https://en.wikipedia.org/wiki/List_of_programming_languages</a></p><div class="bottom"><a href="../04-deli-programov---izrazi-stavki-trditev/index.html">← Prejšnje poglavje</a><a href="../06-programiranje/index.html">Naslednje poglavje →</a></div></article></main></body></html>

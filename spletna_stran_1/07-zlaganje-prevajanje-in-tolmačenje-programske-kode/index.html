@@ -1,0 +1,333 @@
+<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Računalništvo</title><link rel="stylesheet" href="../style.css"><script src="../search-data.js" defer></script><script src="../script.js" defer></script></head><body data-base="../"><header><div><strong>Računalništvo</strong><small>Učno gradivo · programiranje in Java</small></div><button id="menu" aria-expanded="true">☰ Poglavja</button><div id="progress"></div></header><aside id="sidebar"><a href="../index.html">Domov</a><br><label for="search">Iskanje po gradivu</label><input id="search" type="search"><div id="results"></div><nav><a class="tab " href="../01-uvodna-ura/index.html"><span>01</span>Uvodna ura</a><a class="tab " href="../02-algoritmi/index.html"><span>02</span>Algoritmi</a><a class="tab " href="../03-pisanje-algoritmov-diagram-poteka/index.html"><span>03</span>Pisanje algoritmov – diagram poteka</a><a class="tab " href="../04-deli-programov---izrazi-stavki-trditev/index.html"><span>04</span>Deli programov - Izrazi, stavki, trditev</a><a class="tab " href="../05-programski-jeziki/index.html"><span>05</span>Programski jeziki</a><a class="tab " href="../06-programiranje/index.html"><span>06</span>Programiranje</a><a class="tab active" href="../07-zlaganje-prevajanje-in-tolmačenje-programske-kode/index.html"><span>07</span>Zlaganje, prevajanje in tolmačenje programske kode</a><a class="tab " href="../08-programski-jezik-java-programiranje-v-javi/index.html"><span>08</span>Programski jezik JAVA – programiranje v javi</a><a class="tab " href="../09-sestavni-deli-programa-java/index.html"><span>09</span>Sestavni deli programa java</a><a class="tab " href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html"><span>10</span>Sintaksa in semantika in osnovna pravila</a><a class="tab " href="../11-spremenljivke/index.html"><span>11</span>Spremenljivke</a><a class="tab " href="../12-operatorji/index.html"><span>12</span>Operatorji</a><a class="tab " href="../13-izpis-na-ekran/index.html"><span>13</span>Izpis na ekran</a><a class="tab " href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html"><span>14</span>Branje vrednosti iz tipkovnice (user input)</a><a class="tab " href="../15-krmilni-stavki/index.html"><span>15</span>Krmilni stavki</a><a class="tab " href="../16-zanke/index.html"><span>16</span>Zanke</a><a class="tab " href="../17-polja-ali-tabele-ang.-array/index.html"><span>17</span>Polja ali tabele (ang. array)</a><a class="tab " href="../18-pomnilnik-v-javi/index.html"><span>18</span>Pomnilnik v javi</a><a class="tab " href="../19-prenos-vrednosti-parametrov-v-metodo/index.html"><span>19</span>Prenos vrednosti parametrov v metodo</a><a class="tab " href="../20-objektno-programiranje/index.html"><span>20</span>Objektno programiranje</a><a class="tab " href="../21-stringi/index.html"><span>21</span>Stringi</a></nav></aside><main><article class="chapter" data-index="6" id="zlaganje-prevajanje-in-tolmačenje-programske-kode"><div class="eyebrow">POGLAVJE 07 / 21</div><h1>Zlaganje, prevajanje in tolmačenje programske kode</h1><nav aria-label="Podpoglavja" class="subnav"><a class="level-h2" href="#podpoglavje-1">Zbirni jezik in zbirnik
+(assembler)</a><a class="level-h2" href="#podpoglavje-2">Za radovedne</a><a class="level-h2" href="#podpoglavje-3">Assembling</a><a class="level-h2" href="#podpoglavje-4">Compiling</a><a class="level-h2" href="#podpoglavje-5">Key Differences</a><a class="level-h2" href="#podpoglavje-6">Prevajalnik</a><a class="level-h2" href="#podpoglavje-7">Za radovedne</a><a class="level-h2" href="#podpoglavje-8">Tolmač</a><a class="level-h2" href="#podpoglavje-9">Za radovedne</a><a class="level-h2" href="#podpoglavje-10">Hibridni pristop</a><a class="level-h2" href="#podpoglavje-11">C++ – klasičen
+prevedeni jezik (compiled language)</a><a class="level-h2" href="#podpoglavje-12">Postopek prevajanja</a><a class="level-h2" href="#podpoglavje-13">Postopek izvajanja</a><a class="level-h2" href="#podpoglavje-14">Odlikuje ga</a><a class="level-h2" href="#podpoglavje-15">C# – preveden + delno
+tolmačen jezik (JIT)</a><a class="level-h2" href="#podpoglavje-16">Postopek prevajanja</a><a class="level-h2" href="#podpoglavje-17">Postopek izvajanja</a><a class="level-h2" href="#podpoglavje-18">Odlikuje ga</a><a class="level-h2" href="#podpoglavje-19">Java – preveden + tolmačen
+jezik (JVM)</a><a class="level-h2" href="#podpoglavje-20">Postopek prevajanja</a><a class="level-h2" href="#podpoglavje-21">Postopek izvajanja</a><a class="level-h2" href="#podpoglavje-22">Odlikuje ga</a><a class="level-h2" href="#podpoglavje-23">Python – tolmačen jezik</a><a class="level-h2" href="#podpoglavje-24">Postopek prevajanja</a><a class="level-h2" href="#podpoglavje-25">Postopek izvajanja</a><a class="level-h2" href="#podpoglavje-26">Odlikuje ga</a><a class="level-h2" href="#podpoglavje-27">Primerjava</a><a class="level-h2" href="#podpoglavje-28">Jeziki podobni
+C++ (prevedeni, hitri, nizko-nivojski)</a><a class="level-h2" href="#podpoglavje-29">Najbolj podobni C++ po prevajanju in hitrem
+izvajanju:</a><a class="level-h2" href="#podpoglavje-30">Ključna lastnost vseh:</a><a class="level-h2" href="#podpoglavje-31">Povzetek, primeren za dijake</a></nav><p><span class="anchor" id="_Toc223519777"></span>Da lahko program,
+zapisan v <strong>izvorni kodi</strong>, zaženemo in preizkusimo,
+potrebujemo ustrezno programsko orodje. <strong>Procesor neposredno
+izvaja samo navodila v strojnem jeziku</strong>, ki so zapisana v
+binarni obliki, torej z ničlami in enicami. Program lahko pripravimo za
+izvajanje oziroma izvajamo na različne načine: z
+<strong>zbirnikom</strong>, <strong>prevajalnikom</strong> ali
+<strong>tolmačem</strong>.</p><p>Zbirnik, prevajalnik in tolmač so <strong>programi</strong>, vendar
+ne opravljajo povsem enake naloge:</p><ul>
+<li><p><strong>Zbirnik (ang. assembler)</strong> prevede program,
+napisan v zbirnem jeziku, v strojno kodo.</p></li>
+<li><p><strong>Prevajalnik (ang. compiler)</strong> pred izvajanjem
+prevede izvorno kodo v drugo obliko, na primer v strojno ali vmesno
+kodo. Prevedeno kodo nato izvedemo z ustreznim računalnikom oziroma
+izvajalnim okoljem.</p></li>
+<li><p><strong>Tolmač (ang. interpreter)</strong> med izvajanjem sproti
+obdeluje in izvaja navodila programa. Pri tem ne izdela nujno ločenega
+programa v strojni kodi. Tolmač je tudi sam program, zato procesor pri
+njegovem delovanju izvaja strojna navodila tolmača.</p></li>
+</ul><p>Pri nekaterih jezikih običajno uporabljamo prevajanje, pri drugih
+tolmačenje, obstaja pa tudi <strong>kombiniran oziroma hibridni
+pristop</strong>. Način izvajanja je odvisen tudi od uporabljenih orodij
+in izvajalnega okolja, ne samo od programskega jezika.</p><p>Razliko med prevajanjem in tolmačenjem si lahko ponazorimo s primerom
+iz vsakdanjega življenja.</p><p><strong>Prevajalec prevede knjigo</strong>, še preden jo bralec začne
+brati. Prevod je shranjen in ga lahko pozneje bere veliko ljudi, ne da
+bi prevajalec moral knjigo vsakič znova prevajati. Podobno prevajalnik
+pripravi prevedeno kodo, ki jo lahko nato večkrat izvedemo brez
+ponovnega prevajanja, dokler je ne spremenimo.</p><p><strong>Tolmač prevaja govor sproti</strong>, medtem ko govornik
+govori. Poslušalci lahko prevodu sledijo že med dogodkom, saj tolmač ne
+čaka na konec celotnega govora. Pri televizijskih poročilih lahko na
+primer vidimo osebo, ki govor tolmači v <strong>znakovni jezik za gluhe
+in naglušne</strong>. Podobno računalniški tolmač sproti obdeluje in
+izvaja navodila programa.</p><p>Ta primerjava je poenostavljena: <strong>tolmačenje ne pomeni nujno
+izvajanja izvorne kode vrstico za vrstico</strong>.</p><p>Primer kombiniranega pristopa je <strong>Java</strong>. Prevajalnik
+javac izvorno kodo prevede v <strong>vmesno kodo (ang.
+bytecode)</strong>. To izvaja <strong>navidezni stroj Java
+(JVM)</strong>, ki jo lahko tolmači ali med izvajanjem s prevajalnikom
+<strong>JIT</strong> prevede v strojno kodo.</p><h2 id="podpoglavje-1">Zbirni jezik in zbirnik
+(assembler)</h2><p><strong>Zbirni jezik (ang. assembly language)</strong> je
+nizkonivojski programski jezik, tesno povezan s strojnim jezikom
+določene procesorske arhitekture. Strojne ukaze zapisujemo s
+simboličnimi imeni, kot so ADD, MOV in SUB, uporabljamo pa lahko tudi
+oznake in simbolična imena za naslove. Program, imenovan <strong>zbirnik
+(ang. assembler)</strong>, prevede program iz zbirnega jezika v strojno
+kodo.</p><p>Ukaz ADD r0, r1, r3 lahko na primer pomeni, da procesor sešteje
+vrednosti v registrih r1 in r3 ter rezultat shrani v register r0.
+Zbirnik ime ukaza in oznake registrov pretvori v ustrezen binarni zapis.
+Natančen zapis in pomen ukaza sta odvisna od izbrane procesorske
+arhitekture.</p><p><img alt="Slika, ki vsebuje besede besedilo, diagram, skica, pisava Opis je samodejno ustvarjen" src="../media/image21.png" style="width:4.51461in;height:2.17043in"/></p><p><strong>Prevajanje zbirnega jezika v strojno kodo.</strong> Zbirnik
+(ang. assembler) pretvori simbolično zapisane ukaze in njihove operande
+v ustrezne strojne ukaze za izbrano procesorsko arhitekturo.</p><p><strong>Binarni zapis na sliki je le ponazoritev</strong>, saj se
+ista bitna kombinacija ponavlja in ne predstavlja dejanskega prevoda
+različnih ukazov na levi.</p><h2 id="podpoglavje-2"><strong>Za radovedne</strong></h2><p>The term “assemble” in assembly language refers to the process of
+converting assembly code into machine code. This is done by a program
+called an assembler. Here’s a bit more detail:</p><ol type="1">
+<li><p><strong>Assembly Language</strong>: This is a low-level
+programming language that uses mnemonic codes to represent machine-level
+instructions. <a href="https://en.wikipedia.org/wiki/Assembly_language">It’s closer to
+the hardware and provides direct control over the computer’s
+operations<sup>1</sup></a>.</p></li>
+<li><p><a href="https://www.geeksforgeeks.org/what-is-assembly-language/"><strong>Assembler</strong>:
+This is a software tool that translates the assembly language code into
+machine code, which is the binary code that the computer’s processor can
+execute<sup>2</sup></a>. The process of translation is called
+“assembling,” hence the term.</p></li>
+<li><p><a href="https://electronicsreference.com/assembly-language/introduction-to-assembly-language/"><strong>Machine
+Code</strong>: The final output of the assembling process is machine
+code, which consists of binary instructions that the computer’s CPU can
+directly execute<sup>3</sup></a>.</p></li>
+</ol><p>So, “assemble” in this context means to take the human-readable
+assembly language and convert it into the machine-readable binary
+code.</p><p>The main difference between assembling and compiling lies in the type
+of code they process and the output they generate:</p><h2 id="podpoglavje-3"><strong>Assembling</strong></h2><ul>
+<li><p><strong>Input</strong>: Assembly language code, which is a
+low-level language using mnemonic codes to represent machine-level
+instructions.</p></li>
+<li><p><strong>Output</strong>: Machine code, which is binary code that
+the computer’s processor can execute directly.</p></li>
+<li><p><strong>Process</strong>: An assembler translates the assembly
+language code into machine code. <a href="https://www.geeksforgeeks.org/difference-between-compiler-and-assembler/">This
+process is <mark>relatively straightforward</mark> because assembly
+language is already quite close to machine
+code<sup>1</sup></a>.</p></li>
+</ul><h2 id="podpoglavje-4"><strong>Compiling</strong></h2><ul>
+<li><p><strong>Input</strong>: High-level programming language code,
+such as C, C++, Java, or Python.</p></li>
+<li><p><strong>Output</strong>: Machine code or sometimes intermediate
+code (like bytecode in Java) that can be further processed or
+executed.</p></li>
+<li><p><strong>Process</strong>: A compiler translates the high-level
+code into machine code. This involves <mark>multiple stages</mark>,
+including lexical analysis, syntax analysis, semantic analysis,
+optimization, and code generation. Compilers also perform error checking
+and optimization to improve the efficiency of the resulting machine
+code.</p></li>
+</ul><h2 id="podpoglavje-5"><strong>Key Differences</strong></h2><ul>
+<li><p><strong>Level of Abstraction</strong>: Assemblers work with
+low-level assembly language, while compilers handle high-level
+programming languages.</p></li>
+<li><p><strong>Complexity</strong>: Compilers are generally more complex
+than assemblers because they need to understand and optimize high-level
+code.</p></li>
+<li><p><strong>Error Handling</strong>: Compilers perform extensive
+error checking and report errors in the source code, whereas assemblers
+primarily check for syntax errors in the assembly code.</p></li>
+</ul><p>Vir:</p><p><a href="http://sasa.musiclab.si/eri1/RACUNALNISTVO_OLD/RAC_SLOJI/prog_stavki_prevajanje_tolmacenje.html">http://sasa.musiclab.si/eri1/RACUNALNISTVO_OLD/RAC_SLOJI/prog_stavki_prevajanje_tolmacenje.html</a></p><p>https://codedamn.com/codedamn-is-sunsetting</p><p>https://www.geeksforgeeks.org/compiler-design/difference-between-compiler-and-assembler/</p><p>https://techdifferences.com/difference-between-compiler-and-assembler.html</p><h2 id="podpoglavje-6">Prevajalnik</h2><p><strong>Prevajalnik (ang. compiler)</strong> je program, ki izvorno
+kodo, napisano v določenem programskem jeziku, prevede v drugo obliko,
+na primer v <strong>strojno ali vmesno kodo</strong>. Med prevajanjem
+preverja pravilnost zapisa in odkrije nekatere sintaktične napake
+(kršitve pravil zapisa jezika, manjkajoča podpičja, ...) . Uspešno
+prevajanje pa še ne pomeni, da program deluje pravilno, saj lahko
+vsebuje logične ali semantične napake.</p><p>Prevajanje poteka <strong>pred izvajanjem prevedene kode</strong>. Ko
+je program preveden in pripravljen za zagon, ga lahko večkrat izvedemo
+brez ponovnega prevajanja. Če izvorno kodo spremenimo, moramo
+spremenjene dele znova prevesti.</p><p>Pri jeziku <strong>C</strong> lahko s prevajalnikom in povezovalnikom
+izdelamo izvršljivo datoteko s strojno kodo. Pri <strong>Javi</strong>
+prevajalnik javac izvorno kodo prevede v vmesno kodo
+(<em>bytecode</em>), ki jo nato izvaja navidezni stroj Java (JVM).</p><h2 id="podpoglavje-7"><strong>Za radovedne</strong></h2><ol type="1">
+<li><p><strong>Process</strong>: A compiler translates the entire
+high-level program into machine code before execution. This machine code
+is then saved as an executable file.</p></li>
+</ol><div class="exercise"><label for="a102">Tvoj odgovor / rešitev</label><textarea data-save="" id="a102" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d102" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p><strong>Postopek</strong>: Prevajalnik prevede vso programsko kodo,
+napisano v višjem programskem jeziku, preden jo lahko zaženemo. Dobljen
+rezultat je shranjen v datoteki in se imenuje strojna koda.</p>
+</blockquote><ol start="2" type="1">
+<li><p><strong>Execution</strong>: The compiled machine code is executed
+directly by the computer’s CPU.</p></li>
+</ol><div class="exercise"><label for="a103">Tvoj odgovor / rešitev</label><textarea data-save="" id="a103" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d103" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p><strong>Zagon</strong>: Prevedena strojna koda se izvede direktno v
+procesurju (CPE).</p>
+</blockquote><ol start="3" type="1">
+<li><p><strong>Performance</strong>: Compiled programs generally run
+faster because the translation is done ahead of time.</p></li>
+</ol><div class="exercise"><label for="a104">Tvoj odgovor / rešitev</label><textarea data-save="" id="a104" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d104" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p><strong>Performance (zmogljivost):</strong> Prevedeni programi so v
+primerjavi s tolmačenimi ali hibridnimi hitrejši, ker se v celoti
+prevedejo pred izvajanjem.</p>
+</blockquote><ol start="4" type="1">
+<li><p><strong>Error Detection</strong>: Compilation catches syntax and
+some semantic errors before the program runs, making debugging
+easier.</p></li>
+</ol><div class="exercise"><label for="a105">Tvoj odgovor / rešitev</label><textarea data-save="" id="a105" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d105" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p><strong>Detekcija napak</strong>: Prevajalnik ujame sintaktične
+napake (in tudi nekatere semantične) pred izvajanjem programa.</p>
+</blockquote><ol start="5" type="1">
+<li><p><strong>Examples</strong>: C, C++, Rust, and Go are examples of
+compiled languages</p></li>
+</ol><div class="exercise"><label for="a106">Tvoj odgovor / rešitev</label><textarea data-save="" id="a106" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d106" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p>Primeri: C, C++, Rust, Go</p>
+</blockquote><p><img alt="Slika, ki vsebuje besede besedilo, diagram, skica, posnetek zaslona Opis je samodejno ustvarjen" src="../media/image22.png" style="width:5.16991in;height:2.45304in"/></p><div class="exercise"><label for="a107">Odgovor ali opombe k sliki</label><textarea data-save="" id="a107" rows="3"></textarea><label class="check"><input data-save="" id="d107" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p>vir:</p><p>https://www.freecodecamp.org/news/compiled-versus-interpreted-languages/</p><h2 id="podpoglavje-8">Tolmač</h2><p><strong>Tolmač (ang. interpreter)</strong> je program, ki med
+izvajanjem <strong>obdeluje in izvaja navodila programa</strong>. Za
+izvajanje zato potrebujemo ustrezen tolmač oziroma izvajalno okolje.
+Predhodna izdelava samostojne izvršljive datoteke s strojno kodo ni
+potrebna.</p><p>Tolmačenje pogosto opisujemo kot sprotno izvajanje ukazov, vendar to
+<strong>ne pomeni nujno izvajanja izvorne kode vrstico za
+vrstico</strong>. Tolmač lahko izvorno kodo najprej pretvori v notranjo
+predstavitev ali vmesno kodo in nato izvaja to obliko.</p><p>Primer je <strong>Python</strong>. Njegova najpogostejša izvedba,
+<strong>CPython</strong>, izvorno kodo najprej prevede v vmesno kodo, ki
+jo nato izvaja tolmač. To kaže, da se lahko prevajanje in tolmačenje pri
+izvajanju istega programa tudi kombinirata.</p><h2 id="podpoglavje-9"><strong>Za radovedne</strong></h2><ol type="1">
+<li><p><strong>Process</strong>: An interpreter translates high-level
+code into machine code line-by-line, executing each line
+immediately.</p></li>
+</ol><blockquote>
+<p><strong>Postopek</strong>: Prevede visoki programski jezik v strojni
+<strong>vrstico po vrstico.</strong> Vsako vrstico izvede takoj
+(sproti).</p>
+</blockquote><ol start="2" type="1">
+<li><p><strong>Execution</strong>: The source code is read and executed
+by the interpreter at runtime.</p></li>
+</ol><blockquote>
+<p><strong>Izvajanje</strong>: Izvorna koda se prebere in izvede
+takoj.</p>
+</blockquote><ol start="3" type="1">
+<li><p><strong>Performance</strong>: Interpreted programs tend to run
+slower because the translation happens during execution.</p></li>
+</ol><blockquote>
+<p><strong>Zmogljivost</strong>: Tolmačeni programi se praviloma
+izvajajo počasneje, ker se prevajajo med izvajanjem.</p>
+</blockquote><ol start="4" type="1">
+<li><p><strong>Error Detection</strong>: Errors are detected at runtime,
+which can make debugging more challenging but allows for more
+flexibility.</p></li>
+</ol><blockquote>
+<p><strong>Detekcija napak</strong>: Napake se najdejo med
+izvajanjem.</p>
+</blockquote><ol start="5" type="1">
+<li><p><strong>Examples</strong>: Python, JavaScript, Ruby, and PHP are
+examples of interpreted languages.</p></li>
+</ol><blockquote>
+<p>Primeri: Python, JavaScript, Ruby, PHP, …</p>
+</blockquote><h2 id="podpoglavje-10">Hibridni pristop</h2><p><strong>Hibridni pristop</strong> združuje prevajanje in tolmačenje.
+Izvorno kodo najprej prevedemo v <strong>vmesno kodo</strong>, ki ni
+namenjena neposrednemu izvajanju na procesorju. Izvaja jo ustrezno
+izvajalno okolje oziroma navidezni stroj, ki jo lahko tolmači ali med
+izvajanjem prevede v strojno kodo.</p><p>Primer je <strong>Java</strong>. Prevajalnik javac izvorno kodo iz
+datoteke .java prevede v vmesno kodo (<em>ang. bytecode</em>), shranjeno
+v datotekah .class. To kodo izvaja <strong>navidezni stroj Java
+(JVM)</strong>. JVM jo lahko tolmači, pogosto izvajane dele pa s
+<strong>prevajalnikom JIT (ang. just-in-time compiler)</strong> med
+izvajanjem prevede v strojno kodo.</p><p>Tak pristop omogoča <strong>prenosljivost in učinkovito
+izvajanje</strong>. Isto vmesno kodo lahko izvajamo na različnih
+platformah, če imajo ustrezen JVM, prevajanje JIT pa lahko pospeši
+izvajanje programa.</p><p><img alt="Slika, ki vsebuje besede besedilo, diagram, pisava, načrt Opis je samodejno ustvarjen" src="../media/image23.png" style="width:5.04174in;height:2.63987in"/></p><p>Razlaga razlik med <strong>prevajanjem</strong> in
+<strong>izvajanjem</strong> za C++ (in podobni), C#, Java in Python</p><h2 id="podpoglavje-11">C++ – klasičen
+prevedeni jezik (compiled language)</h2><h2 id="podpoglavje-12"><strong>Postopek prevajanja</strong></h2><ul>
+<li><p>Kodo (.cpp) prevajalnik <strong>prevede direktno v strojno
+kodo</strong> (EXE, ELF).</p></li>
+<li><p>Rezultat je <strong>samostojen program</strong>, ki ne potrebuje
+tolmača.</p></li>
+</ul><h2 id="podpoglavje-13"><strong>Postopek izvajanja</strong></h2><ul>
+<li><p>Operacijski sistem program naloži in izvaja neposredno na
+procesorju.</p></li>
+<li><p>Zelo hitro izvajanje, brez vmesne virtualne naprave.</p></li>
+</ul><h2 id="podpoglavje-14"><strong>Odlikuje ga</strong></h2><ul>
+<li><p>Največja hitrost, nizek dostop do strojne opreme.</p></li>
+</ul><h2 id="podpoglavje-15">C# – preveden + delno
+tolmačen jezik (JIT)</h2><p>C# deluje preko <strong>.NET CLR (Common Language Runtime)</strong>,
+podobno kot Java preko JVM.</p><h2 id="podpoglavje-16"><strong>Postopek prevajanja</strong></h2><ul>
+<li><p>Kodo (.cs) prevede v <strong>vmesno kodo (IL – Intermediate
+Language)</strong>.</p></li>
+<li><p>Program ne teče neposredno, ampak potrebuje .NET okolje.</p></li>
+</ul><h2 id="podpoglavje-17"><strong>Postopek izvajanja</strong></h2><ul>
+<li><p>CLR vmesno kodo <strong>prevede sproti</strong> (JIT –
+Just-In-Time) v strojno kodo, med izvajanjem.</p></li>
+<li><p>Kombinacija hitrosti in fleksibilnosti.</p></li>
+</ul><h2 id="podpoglavje-18"><strong>Odlikuje ga</strong></h2><ul>
+<li><p>Podobno kot Java – varnost, stabilnost, JIT
+optimizacija.</p></li>
+</ul><h2 id="podpoglavje-19">Java – preveden + tolmačen
+jezik (JVM)</h2><h2 id="podpoglavje-20"><strong>Postopek prevajanja</strong></h2><ul>
+<li><p>Prevajalnik javac pretvori .java v <strong>bytecode</strong>
+(.class).</p></li>
+<li><p>Bytecode ni strojna koda, teče pa na
+<strong>JVM</strong>.</p></li>
+</ul><h2 id="podpoglavje-21"><strong>Postopek izvajanja</strong></h2><ul>
+<li><p>JVM bytecode <strong>tolmači</strong> ali
+<strong>JIT-prevaja</strong> v strojno kodo.</p></li>
+<li><p>Deluje na vseh OS, kjer je JVM → <em>Write once, run
+anywhere</em>.</p></li>
+</ul><h2 id="podpoglavje-22"><strong>Odlikuje ga</strong></h2><ul>
+<li><p>Prenosljivost + varnost + stabilnost.</p></li>
+</ul><h2 id="podpoglavje-23">Python – tolmačen jezik</h2><p>Python ni klasično preveden, ampak <strong>tolmačen</strong>.</p><h2 id="podpoglavje-24"><strong>Postopek prevajanja</strong></h2><ul>
+<li><p>Ko zaženeš .py datoteko, Python najprej ustvari
+<strong>bytecode</strong> (.pyc) za svoj tolmač.</p></li>
+<li><p>To ni pravi “compile”, ampak notranji korak.</p></li>
+</ul><h2 id="podpoglavje-25"><strong>Postopek izvajanja</strong></h2><ul>
+<li><p>Python interpreter (CPython) bytecode <strong>tolmači vrstico po
+vrstico</strong>.</p></li>
+<li><p>To pomeni počasnejše izvajanje.</p></li>
+</ul><h2 id="podpoglavje-26"><strong>Odlikuje ga</strong></h2><ul>
+<li><p>Izredno enostaven, primeren za skripte in hitro razvojno
+delo.</p></li>
+</ul><h2 id="podpoglavje-27">Primerjava</h2><table>
+<colgroup>
+<col style="width: 8%"/>
+<col style="width: 25%"/>
+<col style="width: 16%"/>
+<col style="width: 26%"/>
+<col style="width: 22%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Jezik</strong></th>
+<th><strong>Kako se prevede?</strong></th>
+<th><strong>Kako se izvaja?</strong></th>
+<th><strong>Hitrost</strong></th>
+<th><strong>Potreben runtime?</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>C++</strong></td>
+<td>neposredno v strojno kodo</td>
+<td>OS + CPU</td>
+<td>⭐⭐⭐⭐⭐ najhitrejši</td>
+<td>ne</td>
+</tr>
+<tr class="even">
+<td><strong>C#</strong></td>
+<td>v vmesno kodo (IL)</td>
+<td>CLR JIT</td>
+<td>⭐⭐⭐⭐</td>
+<td>da (CLR/.NET)</td>
+</tr>
+<tr class="odd">
+<td><strong>Java</strong></td>
+<td>v bytecode</td>
+<td>JVM + JIT</td>
+<td>⭐⭐⭐⭐</td>
+<td>da (JVM/JRE)</td>
+</tr>
+<tr class="even">
+<td><strong>Python</strong></td>
+<td>v bytecode (.pyc)</td>
+<td>tolmač</td>
+<td>⭐⭐</td>
+<td>da (Python interpreter)</td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-28">Jeziki podobni
+C++ (prevedeni, hitri, nizko-nivojski)</h2><h2 id="podpoglavje-29"><strong>Najbolj podobni C++ po prevajanju in hitrem
+izvajanju:</strong></h2><ul>
+<li><p><strong>C</strong> – osnova C++ (še bolj nizkonivojski)</p></li>
+<li><p><strong>Rust</strong> – sodobna alternativa C++ (varen pomnilnik,
+hitrost)</p></li>
+<li><p><strong>Go (Golang)</strong> – zelo hiter, statično
+preveden</p></li>
+<li><p><strong>D-lang</strong> – modernejša različica C++</p></li>
+<li><p><strong>Ada</strong> – robusten, uporabljen v letalstvu/vojaški
+industriji</p></li>
+<li><p><strong>Zig</strong> – nov jezik za sistemsko
+programiranje</p></li>
+</ul><h2 id="podpoglavje-30"><strong>Ključna lastnost vseh:</strong></h2><p>Prevajajo se <strong>direktno v strojno kodo</strong>, brez
+virtualnega stroja → zato so zelo hitri.</p><h2 id="podpoglavje-31">Povzetek, primeren za dijake</h2><ul>
+<li><p><strong>C++</strong> → prevede se v strojno kodo → najhitrejši,
+ne potrebuje virtualnega stroja.</p></li>
+<li><p><strong>C#</strong> → prevede se v vmesno kodo → izvaja se v .NET
+okolju (JIT).</p></li>
+<li><p><strong>Java</strong> → prevede se v bytecode → izvaja se v JVM,
+zato deluje na vseh sistemih.</p></li>
+<li><p><strong>Python</strong> → tolmačen jezik → izvaja se vrstico po
+vrstico, zato počasnejši.</p></li>
+</ul><p><strong>Vir:</strong></p><p><a href="https://www.freecodecamp.org/news/compiled-versus-interpreted-languages/">Interpreted
+vs Compiled Programming Languages: What's the Difference?
+(freecodecamp.org)</a></p><p><strong>Viri:</strong></p><p><a href="https://www.youtube.com/watch?v=5LeZflr8Zfs&amp;t=62s">https://www.youtube.com/watch?v=5LeZflr8Zfs&amp;t=62s</a></p><p><a href="https://www.youtube.com/watch?v=4gwYkEK0gOk">https://www.youtube.com/watch?v=4gwYkEK0gOk</a></p><p><a href="https://www.youtube.com/watch?v=wA2oMRmbrfo">https://www.youtube.com/watch?v=wA2oMRmbrfo</a></p><p><a href="https://lusy.fri.uni-lj.si/ucbenik/book/1303/index4.html">https://lusy.fri.uni-lj.si/ucbenik/book/1303/index4.html</a></p><p><a href="https://www.geeksforgeeks.org/generation-programming-languages/">https://www.geeksforgeeks.org/generation-programming-languages/</a></p><p><a href="https://medium.com/@ajuatahcodingarena/generations-of-programming-languages-bed30d19ea8e">https://medium.com/@ajuatahcodingarena/generations-of-programming-languages-bed30d19ea8e</a></p><p><a href="https://www.geeksforgeeks.org/generation-programming-languages/">https://www.geeksforgeeks.org/generation-programming-languages/</a></p><div class="bottom"><a href="../06-programiranje/index.html">← Prejšnje poglavje</a><a href="../08-programski-jezik-java-programiranje-v-javi/index.html">Naslednje poglavje →</a></div></article></main></body></html>

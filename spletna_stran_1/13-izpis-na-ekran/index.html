@@ -1,0 +1,126 @@
+<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Računalništvo</title><link rel="stylesheet" href="../style.css"><script src="../search-data.js" defer></script><script src="../script.js" defer></script></head><body data-base="../"><header><div><strong>Računalništvo</strong><small>Učno gradivo · programiranje in Java</small></div><button id="menu" aria-expanded="true">☰ Poglavja</button><div id="progress"></div></header><aside id="sidebar"><a href="../index.html">Domov</a><br><label for="search">Iskanje po gradivu</label><input id="search" type="search"><div id="results"></div><nav><a class="tab " href="../01-uvodna-ura/index.html"><span>01</span>Uvodna ura</a><a class="tab " href="../02-algoritmi/index.html"><span>02</span>Algoritmi</a><a class="tab " href="../03-pisanje-algoritmov-diagram-poteka/index.html"><span>03</span>Pisanje algoritmov – diagram poteka</a><a class="tab " href="../04-deli-programov---izrazi-stavki-trditev/index.html"><span>04</span>Deli programov - Izrazi, stavki, trditev</a><a class="tab " href="../05-programski-jeziki/index.html"><span>05</span>Programski jeziki</a><a class="tab " href="../06-programiranje/index.html"><span>06</span>Programiranje</a><a class="tab " href="../07-zlaganje-prevajanje-in-tolmačenje-programske-kode/index.html"><span>07</span>Zlaganje, prevajanje in tolmačenje programske kode</a><a class="tab " href="../08-programski-jezik-java-programiranje-v-javi/index.html"><span>08</span>Programski jezik JAVA – programiranje v javi</a><a class="tab " href="../09-sestavni-deli-programa-java/index.html"><span>09</span>Sestavni deli programa java</a><a class="tab " href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html"><span>10</span>Sintaksa in semantika in osnovna pravila</a><a class="tab " href="../11-spremenljivke/index.html"><span>11</span>Spremenljivke</a><a class="tab " href="../12-operatorji/index.html"><span>12</span>Operatorji</a><a class="tab active" href="../13-izpis-na-ekran/index.html"><span>13</span>Izpis na ekran</a><a class="tab " href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html"><span>14</span>Branje vrednosti iz tipkovnice (user input)</a><a class="tab " href="../15-krmilni-stavki/index.html"><span>15</span>Krmilni stavki</a><a class="tab " href="../16-zanke/index.html"><span>16</span>Zanke</a><a class="tab " href="../17-polja-ali-tabele-ang.-array/index.html"><span>17</span>Polja ali tabele (ang. array)</a><a class="tab " href="../18-pomnilnik-v-javi/index.html"><span>18</span>Pomnilnik v javi</a><a class="tab " href="../19-prenos-vrednosti-parametrov-v-metodo/index.html"><span>19</span>Prenos vrednosti parametrov v metodo</a><a class="tab " href="../20-objektno-programiranje/index.html"><span>20</span>Objektno programiranje</a><a class="tab " href="../21-stringi/index.html"><span>21</span>Stringi</a></nav></aside><main><article class="chapter" data-index="12" id="izpis-na-ekran"><div class="eyebrow">POGLAVJE 13 / 21</div><h1>Izpis na ekran</h1><nav aria-label="Podpoglavja" class="subnav"><a class="level-h2" href="#podpoglavje-1">Kaj lahko izpišemo?</a><a class="level-h2" href="#podpoglavje-2">Razlika: print vs println</a><a class="level-h2" href="#podpoglavje-3">Posebni znaki (escape sequences)</a></nav><p>Za izpis na ekran uporabljamo ukaze:</p><p>System.out.print(nekaj)</p><p>System.out.println()</p><p>System.out.println(nekaj)</p><p>V javi lahko z metodama <strong>print</strong> in
+<strong>println</strong> izpišemo veliko več kot samo spremenljivke ali
+literale. Izpisujemo lahko <strong>vse, kar se lahko pretvori v
+besedilni niz (String)</strong>.</p><h2 id="podpoglavje-1"><strong>Kaj lahko izpišemo?</strong></h2><table>
+<colgroup>
+<col style="width: 39%"/>
+<col style="width: 60%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Kaj izpišemo?</strong></th>
+<th><strong>Primer</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Literale</strong> (števila, besedilo, znake …)</td>
+<td>System.out.println(45); System.out.println("Pozdrav");</td>
+</tr>
+<tr class="even">
+<td><strong>Spremenljivke</strong></td>
+<td><pre><code>String ime = "Mark";</code></pre>
+<pre><code>System.out.println(ime);</code></pre></td>
+</tr>
+<tr class="odd">
+<td><strong>Izraze</strong> (računi, logične izraze)</td>
+<td><pre><code>System.out.println(5 + 3);</code></pre>
+<pre><code>System.out.println(a &gt; b);</code></pre></td>
+</tr>
+<tr class="even">
+<td><strong>Klic metode, ki nekaj vrne</strong></td>
+<td>System.out.println(Math.sqrt(25));</td>
+</tr>
+<tr class="odd">
+<td><strong>Objekte</strong> <em>(posredno prek toString())</em></td>
+<td>System.out.println(myObj);</td>
+</tr>
+<tr class="even">
+<td><strong>Kombinacije (besedilo + spremenljivke)</strong></td>
+<td>System.out.println("Star si " + starost + " let.");</td>
+</tr>
+<tr class="odd">
+<td><strong>Formatiran izpis (printf)</strong> <em>(druga
+metoda)</em></td>
+<td>System.out.printf("%.2f", 3.14159);</td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-2"><strong>Razlika: print vs println</strong></h2><table>
+<colgroup>
+<col style="width: 29%"/>
+<col style="width: 70%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Metoda</strong></th>
+<th><strong>Kaj naredi</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>print()</td>
+<td>izpiše brez preskoka vrstice</td>
+</tr>
+<tr class="even">
+<td>println()</td>
+<td>izpiše in gre v novo vrstico</td>
+</tr>
+</tbody>
+</table><p>Primer:</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>System.out.print("A");</code></pre>
+<pre><code>System.out.print("B");</code></pre>
+<pre><code>System.out.println("C");</code></pre>
+<pre><code>System.out.print("D");</code></pre>
+<p>Izpis:</p>
+<p>ABC</p>
+<p>D</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-3"><strong>Posebni znaki (escape sequences)</strong></h2><p>Z print/println lahko izpišemo tudi posebne znake:</p><table>
+<colgroup>
+<col style="width: 30%"/>
+<col style="width: 69%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Zapis</strong></th>
+<th><strong>Izpiše</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>\n</td>
+<td>nova vrstica</td>
+</tr>
+<tr class="even">
+<td>\t</td>
+<td>tabulator</td>
+</tr>
+<tr class="odd">
+<td>\"</td>
+<td>narekovaj</td>
+</tr>
+<tr class="even">
+<td>\\</td>
+<td>poševnica</td>
+</tr>
+</tbody>
+</table><p>Primer:</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>System.out.println("Ime:\t\"Ana\"");</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><div class="bottom"><a href="../12-operatorji/index.html">← Prejšnje poglavje</a><a href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html">Naslednje poglavje →</a></div></article></main></body></html>

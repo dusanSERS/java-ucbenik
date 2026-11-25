@@ -1,0 +1,1081 @@
+<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Računalništvo</title><link rel="stylesheet" href="../style.css"><script src="../search-data.js" defer></script><script src="../script.js" defer></script></head><body data-base="../"><header><div><strong>Računalništvo</strong><small>Učno gradivo · programiranje in Java</small></div><button id="menu" aria-expanded="true">☰ Poglavja</button><div id="progress"></div></header><aside id="sidebar"><a href="../index.html">Domov</a><br><label for="search">Iskanje po gradivu</label><input id="search" type="search"><div id="results"></div><nav><a class="tab " href="../01-uvodna-ura/index.html"><span>01</span>Uvodna ura</a><a class="tab " href="../02-algoritmi/index.html"><span>02</span>Algoritmi</a><a class="tab " href="../03-pisanje-algoritmov-diagram-poteka/index.html"><span>03</span>Pisanje algoritmov – diagram poteka</a><a class="tab " href="../04-deli-programov---izrazi-stavki-trditev/index.html"><span>04</span>Deli programov - Izrazi, stavki, trditev</a><a class="tab " href="../05-programski-jeziki/index.html"><span>05</span>Programski jeziki</a><a class="tab " href="../06-programiranje/index.html"><span>06</span>Programiranje</a><a class="tab " href="../07-zlaganje-prevajanje-in-tolmačenje-programske-kode/index.html"><span>07</span>Zlaganje, prevajanje in tolmačenje programske kode</a><a class="tab " href="../08-programski-jezik-java-programiranje-v-javi/index.html"><span>08</span>Programski jezik JAVA – programiranje v javi</a><a class="tab " href="../09-sestavni-deli-programa-java/index.html"><span>09</span>Sestavni deli programa java</a><a class="tab " href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html"><span>10</span>Sintaksa in semantika in osnovna pravila</a><a class="tab " href="../11-spremenljivke/index.html"><span>11</span>Spremenljivke</a><a class="tab " href="../12-operatorji/index.html"><span>12</span>Operatorji</a><a class="tab " href="../13-izpis-na-ekran/index.html"><span>13</span>Izpis na ekran</a><a class="tab " href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html"><span>14</span>Branje vrednosti iz tipkovnice (user input)</a><a class="tab " href="../15-krmilni-stavki/index.html"><span>15</span>Krmilni stavki</a><a class="tab active" href="../16-zanke/index.html"><span>16</span>Zanke</a><a class="tab " href="../17-polja-ali-tabele-ang.-array/index.html"><span>17</span>Polja ali tabele (ang. array)</a><a class="tab " href="../18-pomnilnik-v-javi/index.html"><span>18</span>Pomnilnik v javi</a><a class="tab " href="../19-prenos-vrednosti-parametrov-v-metodo/index.html"><span>19</span>Prenos vrednosti parametrov v metodo</a><a class="tab " href="../20-objektno-programiranje/index.html"><span>20</span>Objektno programiranje</a><a class="tab " href="../21-stringi/index.html"><span>21</span>Stringi</a></nav></aside><main><article class="chapter" data-index="15" id="zanke"><div class="eyebrow">POGLAVJE 16 / 21</div><h1>Zanke</h1><nav aria-label="Podpoglavja" class="subnav"><a class="level-h2" href="#podpoglavje-1">Vrste zank</a><a class="level-h2" href="#podpoglavje-2">Zanka while</a><a class="level-h2" href="#podpoglavje-3">Sintaksa</a><a class="level-h2" href="#podpoglavje-4">Pogoste napake:</a><a class="level-h3" href="#podpoglavje-5">Negacija pogoja pri zankah</a><a class="level-h2" href="#podpoglavje-6">Zanka do - while</a><a class="level-h2" href="#podpoglavje-7">Sintaksa</a><a class="level-h2" href="#podpoglavje-8">Kdaj uporabljamo do-while?</a><a class="level-h2" href="#podpoglavje-9">Stavek break</a><a class="level-h2" href="#podpoglavje-10">Kdaj uporabimo?</a><a class="level-h2" href="#podpoglavje-11">Stavek continue</a><a class="level-h2" href="#podpoglavje-12">Zanka for</a><a class="level-h2" href="#podpoglavje-13">UČNA URA: ZANKA for</a><a class="level-h2" href="#podpoglavje-14">1. Kaj je zanka for</a><a class="level-h2" href="#podpoglavje-15">2. Zakaj for, če že poznamo while in do-while?</a><a class="level-h2" href="#podpoglavje-16">Zakaj je for boljša izbira v določenih primerih?</a><a class="level-h2" href="#podpoglavje-17">3. Zgradba zanke for</a><a class="level-h2" href="#podpoglavje-18">Pomen posameznih delov:</a><a class="level-h2" href="#podpoglavje-19">4. Kako se zanka for izvaja (korak za korakom)</a><a class="level-h2" href="#podpoglavje-20">5. Primeri uporabe</a><a class="level-h2" href="#podpoglavje-21">Izpis 10 zvezdic</a><a class="level-h2" href="#podpoglavje-22">Izpis sodih števil od 2 do 20</a><a class="level-h2" href="#podpoglavje-23">Štetje nazaj</a><a class="level-h2" href="#podpoglavje-24">6. Pomembne lastnosti zanke for</a><a class="level-h2" href="#podpoglavje-25">7. Pogoste napake pri zanki for</a><a class="level-h2" href="#podpoglavje-26">Napačen pogoj (off-by-one napaka)</a><a class="level-h2" href="#podpoglavje-27">Pozabljen korak → neskončna zanka</a><a class="level-h2" href="#podpoglavje-28">Napačna smer štetja</a><a class="level-h2" href="#podpoglavje-29">Spreminjanje števca znotraj telesa</a><a class="level-h2" href="#podpoglavje-30">8.Kdaj izbrati for, kdaj while?</a><a class="level-h2" href="#podpoglavje-31">Uporabi for, kadar:</a><a class="level-h2" href="#podpoglavje-32">Uporabi while, kadar:</a><a class="level-h2" href="#podpoglavje-33">9.Povzetek</a><a class="level-h2" href="#podpoglavje-34">Zanka v zanki (ugnezdena
+zanka)</a><a class="level-h2" href="#podpoglavje-35">Izziv</a><a class="level-h2" href="#podpoglavje-36">Razlaga</a><a class="level-h2" href="#podpoglavje-37">Vzorec zanke v zanki z zanko while</a><a class="level-h2" href="#podpoglavje-38">Kdaj uporabljamo zanko v zanki?</a><a class="level-h2" href="#podpoglavje-39">Tipične napake</a><a class="level-h2" href="#podpoglavje-40">Dodatno interaktivno preverjanje</a></nav><p>Zanka je programska struktura, ki omogoča večkratno izvajanje istega
+dela kode. Izvajanje zanke je odvisno od pogoja, ki je del zanke.
+Navadno se koda v zanki izvaja, ko je pogoj resničen (true).</p><p>Zanke uporabljamo vedno, ko želimo, da se del programa ponovi
+večkrat, brez da bi morali isti ukaz pisati znova in znova. Gre za eno
+najpomembnejših orodij v programiranju.</p><p>Ker je število ponovitev neke programske kode pogosto odvisno od
+zunanjih dejavnikov (uporabnik, naključne, izračun, ...), je nemogoče
+pisati programe brez uporabe zank.</p><p><img alt="Slika, ki vsebuje besede diagram, besedilo, načrt, tehnična risba Vsebina, ustvarjena z UI, morda ni pravilna." src="../media/image32.png" style="width:4.53013in;height:4.77611in"/></p><p>Slika 1: Zanka. Program se lahko vrne v točko, kjer je že bil.</p><h2 id="podpoglavje-1"><strong>Vrste zank</strong></h2><p>Spoznali bomo tri ključne besede v javi, ki omogočajo, da izbrane
+ukaze izvajamo večkrat zaporedoma. Tem stavkom pravimo zanke. Stavki
+so:</p><ul>
+<li><p>while</p></li>
+<li><p>do – while</p></li>
+<li><p>for</p></li>
+</ul><p>Omenjene zanke so si zelo podobne v tem, da ponavljajo kodo v
+<strong>telesu</strong> zanke, dokler je <strong>pogoj</strong> resničen
+(true). Ko pogoj postane neresničen, se izvajanje kode nadaljuje
+<strong>po</strong> telesu zanke.</p><p>Stavka <em>while</em> in <em>for</em> pogoj preverita
+<strong>preden</strong> se izvede telo. Tako da je mogoče, da se telo
+zanke sploh ne izvede.</p><p>Staevek <em>do-while</em> pa <strong>najprej</strong> izvede telo
+zanke (vsaj enkrat) in šele nato preveri pogoj. Na sliki zgoraj imamo
+primer zanke, ki bi ga lahko implementirali (zapišemo) z zanko for ali
+while. Primer spodaj prikazuje zanko, ki jo lahko implementiramo z zanko
+do—while.</p><p><img alt="Slika, ki vsebuje besede diagram, načrt, tehnična risba, vrstica Vsebina, ustvarjena z UI, morda ni pravilna." src="../media/image33.png" style="width:4.99286in;height:4.27395in"/></p><p>Slika 2: Zanka. Implementiramo jo lahko s stavkom do - while</p><h2 id="podpoglavje-2">Zanka while</h2><h2 id="podpoglavje-3"><strong>Sintaksa</strong></h2><table>
+<colgroup>
+<col style="width: 54%"/>
+<col style="width: 45%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><img src="../media/image34.png" style="width:2.64055in;height:2.10407in"/></th>
+<th><p>primer:</p>
+<p><img src="../media/image35.png" style="width:2.90541in;height:3.72794in"/></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>stavki pred zanko</p>
+<p>while(pogoj)</p>
+<pre><code>{</code></pre>
+<p>telo zanke (stavki v zanki)</p>
+<pre><code>}</code></pre>
+<p>stavki po zanki</p></td>
+<td><p>stavki pred zanko</p>
+<p>while(pogoj)</p>
+<p>telo zanke (stavek v zanki)</p>
+<p>stavki po zanki</p></td>
+</tr>
+<tr class="even">
+<td><p>Primer programa, ki je prikazan z diagramom poteka desno
+zgoraj:</p>
+<pre><code>public class Oper
+
+{
+    
+    public static void main(String[] args)
+    
+    {
+        
+        System.out.println("Začetek programa!");
+        
+        int x = 1;
+        
+        while( x &lt;= 5)
+        
+        {
+            
+            System.out.println(x + ". krog");
+            
+            x++;
+            
+        }
+        
+        System.out.println("Konec zanke");
+        
+    }
+    
+}</code></pre></td>
+<td><p>Primera:</p>
+<pre><code>System.out.println("Začetek programa!");
+
+int y= 1;
+
+while( y &lt;= 5)
+
+System.out.println(y++ + ". krog");
+
+System.out.println("Konec zanke.");</code></pre>
+<p>ali</p>
+<pre><code>System.out.println("Začetek programa!");
+
+int y= 1;
+
+while( y &lt;= 5) System.out.println(y++ + ". krog");
+
+System.out.println("Konec zanke.");</code></pre></td>
+</tr>
+<tr class="odd">
+<td><p>Izpis:</p>
+<p>Začetek programa!</p>
+<p>1. krog</p>
+<p>2. krog</p>
+<p>3. krog</p>
+<p>4. krog</p>
+<p>5. krog</p>
+<p>Konec zanke.</p></td>
+<td><p>Izpis:</p>
+<p>Začetek programa!</p>
+<p>1. krog</p>
+<p>2. krog</p>
+<p>3. krog</p>
+<p>4. krog</p>
+<p>5. krog</p>
+<p>Konec zanke.</p></td>
+</tr>
+</tbody>
+</table><p>Pri vseh treh vrstah zank običajno uporabljamo
+<strong>števec</strong> (pomožno spremenljivko), ki nam omogoča, da se
+ukazi v telesu zanke izvedejo natanko tolikokrat, kot želimo.</p><ol type="1">
+<li><p>Števcu pred začetkom zanke določimo začetno vrednost.</p></li>
+<li><p>Zanko oblikujemo tako, da se v pogoju sklicujemo na ta isti
+števec.</p></li>
+<li><p>V telesu zanke števec spreminjamo (najpogosteje povečujemo ali
+zmanjšujemo), da pogoj čez čas postane neveljaven (false) – s tem se
+zanka pravilno zaključi in program nadaljuje izvajanje izven
+zanke.</p></li>
+</ol><p><img alt="Slika, ki vsebuje besede besedilo, diagram, vrstica, načrt Vsebina, ustvarjena z UI, morda ni pravilna." src="../media/image36.png" style="width:3.65308in;height:4.68729in"/></p><p>Komentar diagrama poteka (zgoraj):</p><ul>
+<li><p>z zeleno barvo je prikazan števec</p></li>
+<li><p>z rdečo barno je prikazan stavek, ki želimo da se
+ponavlja</p></li>
+<li><p>z vijolično barvo je prikazano, da mora biti pogoj izpolnjen
+(true), da se zanka izvaja</p></li>
+</ul><h2 id="podpoglavje-4"><strong>Pogoste napake:</strong></h2><table>
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 67%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Neskončna zanka. Pogoj se nikoli ne spremeni</th>
+<th><pre><code>int i = 1;</code></pre>
+<p>while (i &lt;= 5)</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.println(i);</code></pre>
+<pre><code>// i++; manjka sprememba spremenljivke</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Pogoj se nikoli ne izpolni. Telo se nikoli ne izvede.</td>
+<td><pre><code>int i = 10;</code></pre>
+<p>while (i &lt; 5)</p>
+<pre><code>{</code></pre>
+<p>...</p>
+<pre><code>}</code></pre></td>
+</tr>
+<tr class="even">
+<td>Pogoj se napačno spremeni.</td>
+<td><pre><code>int i = 1;</code></pre>
+<p>while (i &lt;= 5)</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.println(i);</code></pre>
+<p>i -= 1; // spremenljivka gre v napačno smer</p>
+<pre><code>}</code></pre></td>
+</tr>
+<tr class="odd">
+<td>Napačno postavljeno podpičje. Telo zanke je prazno.</td>
+<td><pre><code>int i = 1;</code></pre>
+<pre><code>while (i &lt;= 5);</code></pre>
+<pre><code>{</code></pre>
+<pre><code>System.out.println(i);</code></pre>
+<p>i -= 1; // spremenljivka gre v napačno smer</p>
+<pre><code>}</code></pre></td>
+</tr>
+</tbody>
+</table><h3 id="podpoglavje-5">Negacija pogoja pri zankah</h3><table>
+<colgroup>
+<col style="width: 49%"/>
+<col style="width: 1%"/>
+<col style="width: 48%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th colspan="2"><img alt="Slika, ki vsebuje besede diagram, posnetek zaslona, oblikovanje Vsebina, ustvarjena z UI, morda ni pravilna." src="../media/image37.png" style="width:4.79786in;height:5.588in"/></th>
+<th><p><strong>Kolikokrat se izvede zanka</strong> (kolikokrat se izpiše
+TEST in kolikokrat se spremeni spremenljivka x)?</p>
+<p>Napišimo sled programa!</p>
+<table>
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 17%"/>
+<col style="width: 19%"/>
+<col style="width: 0%"/>
+<col style="width: 16%"/>
+<col style="width: 18%"/>
+<col style="width: 12%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>x</strong></th>
+<th>3</th>
+<th>2</th>
+<th colspan="2">1</th>
+<th>0</th>
+<th>-1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>pogoj</strong></td>
+<td>NE</td>
+<td>NE</td>
+<td colspan="2">NE</td>
+<td>NE</td>
+<td>DA</td>
+</tr>
+<tr class="even">
+<td><strong>izpis</strong></td>
+<td>TEST</td>
+<td colspan="2">TEST</td>
+<td>TEST</td>
+<td>TEST</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Zanka se izvede 4 krat! (4 x se izpiše TEST in 4 x se spremeni
+spremenljivka x - PAZI 4 x se spremeni vrednost spremenljivke, prva
+sprememba v vrednost 3ni narejena v zanki, ampak pred njo!).</p>
+<p><strong>Sedaj pretvorimo diagram poteka v programski jezik
+java!</strong></p>
+<p>Začnimo:</p>
+<p>class Program {</p>
+<pre><code>public static void main (String avgs[]) {</code></pre>
+<pre><code>int x = 3;</code></pre>
+<p>// TUKAJ PA NASTANE TEŽAVA</p>
+<pre><code>}</code></pre>
+<p>Zanke v javi se izvajajo, ko je pogoj izpolnjen (true - DA), va našem
+diagramu pa se zanka izvaja, ko ni izpolnjen (false - NE). Če želimo
+napisati program v javi, moramo diagram poteka spremeniti tako, da
+zamenjamo DA in NE. Ko to naredimo, moramo spemeniti tudi pogoj. To
+naredimo tako, da ga negiramo. To pomeni, da damo pred izraz negacijo
+(!).</p>
+<p>V primeru zgoraj bi to izgledalo tako:</p>
+<p>original pogoj: x &lt; 0</p>
+<p>negiran pogoj: !(x&lt;0) - glej</p>
+<p>In to je to :).</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><img alt="Slika, ki vsebuje besede diagram, posnetek zaslona, vrstica, oblikovanje Vsebina, ustvarjena z UI, morda ni pravilna." src="../media/image38.png" style="width:4.52838in;height:5.15168in"/></td>
+<td colspan="2"><p>Napišemo torej ta program:</p>
+<pre><code>public static void main(String[] args) {</code></pre>
+<pre><code>int x = 3;</code></pre>
+<p>while( <mark>! ( x &lt; 0 )</mark> )</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.print("TEST ");</code></pre>
+<p>x = x - 1;</p>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre>
+<p>Napišimo sled programa sedaj!</p>
+<table>
+<colgroup>
+<col style="width: 15%"/>
+<col style="width: 17%"/>
+<col style="width: 19%"/>
+<col style="width: 0%"/>
+<col style="width: 16%"/>
+<col style="width: 18%"/>
+<col style="width: 12%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>x</strong></th>
+<th>3</th>
+<th>2</th>
+<th colspan="2">1</th>
+<th>0</th>
+<th>-1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>pogoj</strong></td>
+<td>DA</td>
+<td>DA</td>
+<td colspan="2">DA</td>
+<td>DA</td>
+<td>NE</td>
+</tr>
+<tr class="even">
+<td><strong>izpis</strong></td>
+<td>TEST</td>
+<td colspan="2">TEST</td>
+<td>TEST</td>
+<td>TEST</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Ugotovimo, da je pogoj ravno nasproten od prejšnjega. Temu se reče
+negacija.</p>
+<p>Res. Program je identičen. Zanka se izvede 4 x.</p></td>
+</tr>
+<tr class="even">
+<td><img alt="Slika, ki vsebuje besede diagram, posnetek zaslona, oblikovanje Vsebina, ustvarjena z UI, morda ni pravilna." src="../media/image39.png" style="width:5.00818in;height:5.88546in"/></td>
+<td colspan="2"><p>Pogoji, ki imajo na začetku negacijo, lahko zapišemo
+drugače, v bolj razumljivi obliki.</p>
+<p>V našem primeru to pomeni:</p>
+<p>! ( x &lt; 0 ) -&gt; razmišljamo tako: če <mark>x ni manjši od
+0</mark> potem je <mark>x večji ali enak 0</mark></p>
+<p>!(x&lt;0) je enako kot x &gt;= 0</p>
+<p>ostale poenostavitve najdete tukaj</p>
+<p>https://runestone.academy/runestone/books/published/apcsareview/Conditionals/cDeMorgans.html</p>
+<p>Ta program je identičen! Preveri!</p>
+<pre><code>public static void main(String[] args) {</code></pre>
+<pre><code>int x = 3;</code></pre>
+<p>while( <mark>x &gt;= 0</mark> )</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.print("TEST ");</code></pre>
+<p>x = x - 1;</p>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre>
+<p>Napiši sled pograma sam!</p></td>
+</tr>
+</tbody>
+</table><p><strong>Naloga:</strong> Pretvori diagrama poteka program v javi.</p><div class="exercise"><label for="a130">Tvoj odgovor / rešitev</label><textarea data-save="" id="a130" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d130" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><img alt="Slika, ki vsebuje besede diagram, besedilo, skica, risanje Vsebina, ustvarjena z UI, morda ni pravilna." src="../media/image40.png" style="width:2.72955in;height:4.01098in"/></th>
+<th><img alt="Slika, ki vsebuje besede diagram, besedilo, načrt, tehnična risba Vsebina, ustvarjena z UI, morda ni pravilna." src="../media/image32.png" style="width:3.17016in;height:4.77611in"/></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><div class="exercise"><label for="a131">Odgovor ali opombe k sliki</label><textarea data-save="" id="a131" rows="3"></textarea><label class="check"><input data-save="" id="d131" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p><strong>Naloga:</strong> Vpiši število. Tolikokrat nato izpiši svoje
+ime na ekran. Loči z vejicami. Na koncu pika.</p><div class="exercise"><label for="a132">Tvoj odgovor / rešitev</label><textarea data-save="" id="a132" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d132" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p><strong>Naloga:</strong> Uporabnik vpiše dve števili. Če je prvo
+število večje. Števili zamenja. Nato izpiše vsa števila vmes s korakom
+2.</p><div class="exercise"><label for="a133">Tvoj odgovor / rešitev</label><textarea data-save="" id="a133" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d133" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Primer:</p><p>Vpiši prvo število: 10</p><p>Vpiši drugo število: 3</p><p>4 6 8</p><p><strong>Naloga:</strong></p><p>Izpiši vsoto zaporedja prvih 55 števil:</p><div class="exercise"><label for="a134">Tvoj odgovor / rešitev</label><textarea data-save="" id="a134" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d134" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>1 + 2 + 3+ ...</p><p>1/1 + ½ + 1/3 + ...</p><p>1/1<sup>1</sup>+1/1<sup>2</sup>+1/1<sup>3</sup> +</p><p><strong>Naloga:</strong> Izpiši vsoto števk poljubnega celega
+števila.</p><div class="exercise"><label for="a135">Tvoj odgovor / rešitev</label><textarea data-save="" id="a135" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d135" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><h2 id="podpoglavje-6">Zanka do - while</h2><h2 id="podpoglavje-7"><strong>Sintaksa</strong></h2><table>
+<colgroup>
+<col style="width: 49%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>stavki pred zanko</p>
+<p>do</p>
+<pre><code>{</code></pre>
+<p>telo zanke (stavki v zanki)</p>
+<pre><code>}</code></pre>
+<pre><code>while(pogoj);</code></pre>
+<p>stavki po zanki</p></th>
+<th><p>stavki pred zanko</p>
+<p>do</p>
+<p>telo zanke (stavek v zanki)</p>
+<pre><code>while(pogoj);</code></pre>
+<p>stavki po zanki</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td colspan="2"><img src="../media/image41.png" style="width:2.06301in;height:3.93909in"/></td>
+</tr>
+<tr class="even">
+<td><p>Primer:</p>
+<pre><code>public class Oper
+
+{
+    
+    public static void main(String[] args)
+    
+    {
+        
+        System.out.println("Začetek programa!");
+        
+        int i = 0;</code></pre>
+<p>do {</p>
+<pre><code>System.out.println( i + 1 + ". D");</code></pre>
+<p>i++;</p>
+<pre><code>}</code></pre>
+<pre><code>while( i &lt; 10);
+
+System.out.println("Konec zanke");
+
+}
+
+}</code></pre></td>
+<td><p>Primera:</p>
+<pre><code>System.out.println("Začetek programa!");
+
+int y= 1;
+
+while( y &lt;= 5)
+
+System.out.println(y++ + ". krog");
+
+System.out.println("Konec zanke.");</code></pre>
+<p>ali</p>
+<pre><code>System.out.println("Začetek programa!");
+
+int i = 0;</code></pre>
+<p>do</p>
+<pre><code>System.out.println(++i + ". D");</code></pre>
+<pre><code>while( i &lt; 10);
+
+System.out.println("Konec zanke.");</code></pre></td>
+</tr>
+<tr class="odd">
+<td><p>Izpis:</p>
+<p>ZAČETEK</p>
+<p>1. D</p>
+<p>2. D</p>
+<p>3. D</p>
+<p>4. D</p>
+<p>5. D</p>
+<p>Konec zanke</p></td>
+<td><p>Izpis:</p>
+<p>ZAČETEK</p>
+<p>1. D</p>
+<p>2. D</p>
+<p>3. D</p>
+<p>4. D</p>
+<p>5. D</p>
+<p>Konec zanke</p></td>
+</tr>
+</tbody>
+</table><p>Telo zanke <em>do – while</em> se vedno izvede vsaj enkrat, ne glede
+na to, ali je pogoj izpolnjen ali ne. Paziti moramo, da naredimo
+podpičje po stavku <em>while</em>. Pri zanki <em>while</em> tega nismo
+smeli napisati!</p><h2 id="podpoglavje-8"><strong>Kdaj uporabljamo do-while?</strong></h2><p>1. Ko mora uporabnik nekaj vnesti vsaj enkrat.</p><p>Primer: vedno najprej pokažemo meni, potem preverimo, ali želi
+uporabnik nadaljevati.</p><p>2. Ko želimo, da se neko dejanje izvede vsaj enkrat, nato pa se po
+potrebi ponavlja.</p><p>Primer: izpis besedila, nato vprašanje "Ali želiš ponoviti?"</p><p>3. Ko preverjamo pogoj, ki je lahko izpolnjen šele po prvem izvajanju
+zanke</p><p>Primer: program ne more vedeti, ali je vnos pravilen, dokler ga ne
+prebere vsaj enkrat.</p><p><strong>Naloga:</strong> Napiši program, kjer uporabnik vnaša cela
+števila tako dolgo, dokler ne vnese števila 0. Program izpiše, koliko
+števil si vpisal.</p><div class="exercise"><label for="a136">Tvoj odgovor / rešitev</label><textarea data-save="" id="a136" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d136" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p><strong>Naloga</strong>: Napiši program, ki prebere število med 1 in
+10. Če št. ni med mejama, uporabnik vpiše ponovno. Najprej diagram
+poteka, nato program v javi.</p><div class="exercise"><label for="a137">Tvoj odgovor / rešitev</label><textarea data-save="" id="a137" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d137" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Primer:</p><p>Vpiši št: -5</p><p>Število ni med 1 in 10.</p><p>Vpiši št: 15</p><p>Število ni med 1 in 10.</p><p>Vpiši št.: 7</p><p>Število je med 1 in 10. Hvala.</p><p><strong>Naloga:</strong></p><p>Napiši program, ki z uporabo zanke while izpiše številke od 1 do 10
+na zaslon.</p><div class="exercise"><label for="a138">Tvoj odgovor / rešitev</label><textarea data-save="" id="a138" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d138" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>1, 2, 3, 4, 5, 6, 7, 8, 9, 10.</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>byte i = 1;</p>
+<p>while( true )</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.print(i);</code></pre>
+<p>if( i == 10)</p>
+<pre><code>{</code></pre>
+<p>break;</p>
+<pre><code>}</code></pre>
+<pre><code>System.out.print(", ");</code></pre>
+<p>i++;</p>
+<pre><code>}</code></pre>
+<pre><code>System.out.print(".");</code></pre></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><pre><code>for( byte i = 1 ; true ; i++)</code></pre>
+<pre><code>{</code></pre>
+<p>sout(i);</p>
+<p>if( i == 10)</p>
+<pre><code>{</code></pre>
+<p>break;</p>
+<pre><code>}</code></pre>
+<p>sout(", ");</p>
+<pre><code>}</code></pre>
+<p>sout(".");</p></td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-9">Stavek break</h2><p>Stavek break takoj prekine izvajanje najbližje zanke (while, do
+while, for) ali switch bloka. Program nadaljuje z naslednjo vrstico
+izven te strukture.</p><h2 id="podpoglavje-10"><strong>Kdaj uporabimo?</strong></h2><ul>
+<li><p>Ko želimo predčasno ustaviti zanko. Na primer ko najdemo iskano
+vrednost.</p></li>
+<li><p>Preprečimo fall-through v stavku switch.</p></li>
+<li><p>Izboljšati učinkovitost, da ne izvajaš nepotrebnih iteracij
+(prehodov čez zanko), ko veš da so nepotrebni.</p></li>
+</ul><h2 id="podpoglavje-11">Stavek continue</h2><h2 id="podpoglavje-12">Zanka for</h2><p><strong>UČNA URA: ZANKA for</strong> (vir: chatGPT - vprašanje:
+Napiši učno uro o zanki for. Zakaj jo uporabiti, če pa že poznamo whie
+in do-while. Kaj je pomembno. Kako se uporabi. Nekaj pogostih
+napak.)</p><h2 id="podpoglavje-13"><strong>UČNA URA: ZANKA for</strong></h2><h2 id="podpoglavje-14"><strong>1. Kaj je zanka for</strong></h2><p>Zanka <strong>for</strong> je programska struktura, ki omogoča
+<strong>večkratno ponavljanje kode</strong>, kadar
+<strong>vemo</strong>, kolikokrat se mora koda izvesti.</p><p>Uporablja se predvsem takrat, ko:</p><ul>
+<li><p>štejemo ponovitve,</p></li>
+<li><p>delamo z zaporedji števil,</p></li>
+<li><p>prehajamo po poljih, seznamih, tabelah,</p></li>
+<li><p>izvajamo enak postopek n-krat.</p></li>
+</ul><h2 id="podpoglavje-15"><strong>2. Zakaj for, če že poznamo while in do-while?</strong></h2><p>Vse tri zanke so <strong>funkcionalno enakovredne</strong>, vendar
+imajo <strong>različno vlogo</strong>:</p><table>
+<colgroup>
+<col style="width: 19%"/>
+<col style="width: 80%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Zanka</strong></th>
+<th><strong>Kdaj jo uporabimo</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>while</td>
+<td>Ko <strong>ne vemo</strong>, kolikokrat se bo zanka izvedla</td>
+</tr>
+<tr class="even">
+<td>do-while</td>
+<td>Ko se mora koda izvesti <strong>vsaj enkrat</strong></td>
+</tr>
+<tr class="odd">
+<td>for</td>
+<td>Ko <strong>vemo</strong>, kolikokrat se bo zanka izvedla</td>
+</tr>
+<tr class="even">
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-16"><strong>Zakaj je for boljša izbira v določenih primerih?</strong></h2><ul>
+<li><p>bolj <strong>pregledna</strong></p></li>
+<li><p>vse, kar je povezano s ponavljanjem, je <strong>na enem
+mestu</strong></p></li>
+<li><p>manj možnosti za napake (npr. pozabljeno povečanje
+števca)</p></li>
+</ul><p>Primer:</p><pre><code>for (int i = 1; i &lt;= 10; i++) {</code></pre><pre><code>System.out.println(i);</code></pre><pre><code>}</code></pre><p>Enostavno je razvidno:</p><ul>
+<li><p>kje se začne,</p></li>
+<li><p>do kam gre,</p></li>
+<li><p>kako se spreminja števec.</p></li>
+</ul><h2 id="podpoglavje-17"><strong>3. Zgradba zanke for</strong></h2><pre><code>for (inicializacija; pogoj; korak) {</code></pre><p>// telo zanke</p><pre><code>}</code></pre><h2 id="podpoglavje-18"><strong>Pomen posameznih delov:</strong></h2><ol type="1">
+<li><p><strong>Inicializacija</strong></p>
+<ul>
+<li><p>izvede se <strong>enkrat</strong> na začetku</p></li>
+<li><p>običajno deklaracija števca</p></li>
+</ul></li>
+<li><pre><code>int i = 0;</code></pre></li>
+<li><p><strong>Pogoj</strong></p>
+<ul>
+<li><p>preveri se <strong>pred vsako ponovitvijo</strong></p></li>
+<li><p>če je pogoj false, se zanka konča</p></li>
+</ul></li>
+<li><p><strong>Korak</strong></p>
+<ul>
+<li><p>izvede se <strong>po vsaki ponovitvi</strong></p></li>
+<li><p>spreminja števec (i++, i--, i += 2 …)</p></li>
+</ul></li>
+</ol><h2 id="podpoglavje-19"><strong>4. Kako se zanka for izvaja (korak za korakom)</strong></h2><p>Primer:</p><pre><code>for (int i = 1; i &lt;= 3; i++) {</code></pre><pre><code>System.out.println(i);</code></pre><pre><code>}</code></pre><p>Potek:</p><ol type="1">
+<li><p>i = 1</p></li>
+<li><p>preveri: i &lt;= 3 → true</p></li>
+<li><p>izvede telo → izpiše 1</p></li>
+<li><p>i++ → i = 2</p></li>
+<li><p>preveri: i &lt;= 3 → true</p></li>
+<li><p>izvede telo → izpiše 2</p></li>
+<li><p>i++ → i = 3</p></li>
+<li><p>preveri: i &lt;= 3 → true</p></li>
+<li><p>izvede telo → izpiše 3</p></li>
+<li><p>i++ → i = 4</p></li>
+<li><p>preveri: i &lt;= 3 → false → konec</p></li>
+</ol><h2 id="podpoglavje-20"><strong>5. Primeri uporabe</strong></h2><h2 id="podpoglavje-21"><strong>Izpis 10 zvezdic</strong></h2><pre><code>for (int i = 0; i &lt; 10; i++) {</code></pre><pre><code>System.out.print("*");</code></pre><pre><code>}</code></pre><h2 id="podpoglavje-22"><strong>Izpis sodih števil od 2 do 20</strong></h2><pre><code>for (int i = 2; i &lt;= 20; i += 2) {</code></pre><pre><code>System.out.println(i);</code></pre><pre><code>}</code></pre><h2 id="podpoglavje-23"><strong>Štetje nazaj</strong></h2><pre><code>for (int i = 10; i &gt;= 1; i--) {</code></pre><pre><code>System.out.println(i);</code></pre><pre><code>}</code></pre><h2 id="podpoglavje-24"><strong>6. Pomembne lastnosti zanke for</strong></h2><ul>
+<li><p>števec (i) običajno velja <strong>samo znotraj
+zanke</strong></p></li>
+<li><p>lahko imamo tudi <strong>več spremenljivk</strong></p></li>
+</ul><pre><code>for (int i = 0, j = 10; i &lt; j; i++, j--) {</code></pre><pre><code>System.out.println(i + " " + j);</code></pre><pre><code>}</code></pre><ul>
+<li><p>deli zanke so <strong>opcijski</strong>, vendar morajo biti
+podpičja</p></li>
+</ul><pre><code>for (;;) {</code></pre><p>// neskončna zanka</p><pre><code>}</code></pre><h2 id="podpoglavje-25"><strong>7. Pogoste napake pri zanki for</strong></h2><h2 id="podpoglavje-26"><strong>Napačen pogoj (off-by-one napaka)</strong></h2><pre><code>for (int i = 0; i &lt;= 10; i++) // 11 ponovitev</code></pre><p>Namesto:</p><pre><code>for (int i = 0; i &lt; 10; i++) // 10 ponovitev</code></pre><h2 id="podpoglavje-27"><strong>Pozabljen korak → neskončna zanka</strong></h2><pre><code>for (int i = 0; i &lt; 10; ) {</code></pre><pre><code>System.out.println(i);</code></pre><pre><code>}</code></pre><h2 id="podpoglavje-28"><strong>Napačna smer štetja</strong></h2><pre><code>for (int i = 10; i &lt; 1; i--) {</code></pre><p>// nikoli se ne izvede</p><pre><code>}</code></pre><h2 id="podpoglavje-29"><strong>Spreminjanje števca znotraj telesa</strong></h2><pre><code>for (int i = 0; i &lt; 10; i++) {</code></pre><p>i++; // zmeda, preskakovanje vrednosti</p><pre><code>}</code></pre><p><strong>poraba = namesto ==</strong></p><pre><code>for (int i = 0; i = 10; i++) // napaka</code></pre><h2 id="podpoglavje-30"><strong>8.Kdaj izbrati for, kdaj while?</strong></h2><h2 id="podpoglavje-31"><strong>Uporabi for, kadar:</strong></h2><ul>
+<li><p>veš število ponovitev</p></li>
+<li><p>uporabljaš števec</p></li>
+<li><p>prehajaš po zaporedju</p></li>
+</ul><h2 id="podpoglavje-32"><strong>Uporabi while, kadar:</strong></h2><ul>
+<li><p>ponavljanje temelji na dogodku ali vnosu</p></li>
+<li><p>število ponovitev ni znano</p></li>
+</ul><h2 id="podpoglavje-33"><strong>9.Povzetek</strong></h2><ul>
+<li><p>for je najbolj pregledna zanka za <strong>znano število
+ponovitev</strong></p></li>
+<li><p>vsebuje <strong>inicializacijo, pogoj in korak</strong></p></li>
+<li><p>zmanjša možnost napak</p></li>
+<li><p>zelo pogosta v praksi (polja, seznami, algoritmi)</p></li>
+</ul><p><strong>Naloga</strong>: Naredi isto z zanko for.</p><div class="exercise"><label for="a139">Tvoj odgovor / rešitev</label><textarea data-save="" id="a139" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d139" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p><strong>Vprašanje:</strong> Kolikokrat najmanj je izvede zanka for
+(while)?</p><div class="exercise"><label for="a140">Tvoj odgovor / rešitev</label><textarea data-save="" id="a140" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d140" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Lahko se tudi ne izvede . 0 - krat.</p><p><strong>Naloga:</strong> Napiši program, ki izpiše vse številke od 1
+do 100, ki so deljive s 3, 5 ali obema. Program naj izpiše te številke
+na zaslon, vsako v novi vrstici.</p><div class="exercise"><label for="a141">Tvoj odgovor / rešitev</label><textarea data-save="" id="a141" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d141" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>for( int i = 0 ; i &lt; 100 ; i++ )</code></pre>
+<p>if( i % 3 == 0 ||i % 5 == 0)</p>
+<pre><code>System.out.print(i);</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Domača naloga. Prepiši tekst iz W3schools o zanki for. Odsek za
+sintakso.</p><p><strong>Naloga</strong>: Izpiši števila 1000, 998, …, 2, 0.</p><div class="exercise"><label for="a142">Tvoj odgovor / rešitev</label><textarea data-save="" id="a142" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d142" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>for( int i = 1000 ; i &gt;= 0 ; i-= 2 )
+// napačno : i - 2</code></pre>
+<pre><code>System.out.print(i);</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p><strong>Naloga</strong>: Spremeni stavek for iz prejšnje naloge v
+while.</p><div class="exercise"><label for="a143">Tvoj odgovor / rešitev</label><textarea data-save="" id="a143" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d143" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>for( int i = 1000 ; i &gt;= 0 ; i-= 2 )</code></pre>
+<pre><code>System.out.print(i);</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Da ne pozabimo. <strong>Dosegljivost spremenljivke</strong>.</p><p>Spremenljivka obstaja (je dosegljiva) samo znotraj bloka, kjer je
+deklarirana. Izven pa ne. Blok je del kode, ovit z zavitim oklepajem. {}
+. Izjema je stavek for brez oklepajev – kjer se ponavlja samo en
+stavek.</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>{</code></pre>
+<pre><code>for( int i = 1000 ; i &gt;= 0 ; i-= 2 )</code></pre>
+<pre><code>{</code></pre>
+<pre><code>System.out.print(i);</code></pre>
+<pre><code>}</code></pre>
+<p>sout(i); // NAPAKA: i ni dosegljiv – ne obstaja</p>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><pre><code>{</code></pre>
+<pre><code>int i;</code></pre>
+<pre><code>for( i = 1000 ; i &gt;= 0 ; i-= 2 )</code></pre>
+<pre><code>{</code></pre>
+<pre><code>System.out.print(i);</code></pre>
+<pre><code>}</code></pre>
+<p>sout(i); // NI več napake: i JE dosegljiv – ne obstaja</p>
+<pre><code>}</code></pre></td>
+</tr>
+</tbody>
+</table><p><strong>Naloga:</strong> Uporabnik vpiše število. Izpiše se toliko
+zvezdic. V eni vrstici.</p><div class="exercise"><label for="a144">Tvoj odgovor / rešitev</label><textarea data-save="" id="a144" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d144" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Primer:</p><p>Vpiši število: 5</p><p>*****</p><p>Rešitev:</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Scanner my_obj = new Scanner(System.in);</p>
+<pre><code>//System.out.print("Vpiši št.:");</code></pre>
+<pre><code>int i = 6; // my_obj.nextInt();</code></pre>
+<pre><code>for( ; i &gt; 0 ; i-- )</code></pre>
+<pre><code>{</code></pre>
+<pre><code>System.out.print("*");</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p><strong>Naloga:</strong> Uporabnik vpiše dve števili. Izpiše se
+pravokotnik iz zvezdic.</p><div class="exercise"><label for="a145">Tvoj odgovor / rešitev</label><textarea data-save="" id="a145" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d145" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Vpiši št. 1:5</p><p>Vpiši št. 2:3</p><p>*****</p><p>*****</p><p>*****</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>int x = 3;</code></pre>
+<pre><code>int y = 2;</code></pre>
+<pre><code>int a = 0;</code></pre>
+<pre><code>for(int z = 0 ; z &lt; y ; a++)</code></pre>
+<pre><code>{</code></pre>
+<p>if( a == x)</p>
+<pre><code>{</code></pre>
+<p>a = 0;</p>
+<pre><code>System.out.println();</code></pre>
+<p>z++;</p>
+<pre><code>}</code></pre>
+<pre><code>System.out.print("*");</code></pre>
+<pre><code>}</code></pre>
+<p>// Šta.: POPRAVI</p>
+<p>// Vsi ostali: slabo!!!!</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>D.N.: Doma sledi algoritmu.</p><p><strong>Naloga</strong>: Spremeni program tako, da dobimo vedno
+kvadrat.</p><div class="exercise"><label for="a146">Tvoj odgovor / rešitev</label><textarea data-save="" id="a146" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d146" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p><strong>Naloga:</strong> Uporabnik vpše eno število, izpišeta se dva
+trikotnika.</p><div class="exercise"><label for="a147">Tvoj odgovor / rešitev</label><textarea data-save="" id="a147" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d147" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Primer:</p><p>Vp. št. : 3</p><p>*</p><p>**</p><p>***</p><p>*</p><p>**</p><p>***</p><p>D.N.: Spremeni zanke for v while.</p><p><strong>Naloga</strong>: Izpiši 17 naključnih števil med -6 in 4.
+Uporabi zanko for.</p><div class="exercise"><label for="a148">Tvoj odgovor / rešitev</label><textarea data-save="" id="a148" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d148" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Pomoč:</p><pre><code>import java.util.Random;</code></pre><p>Random a = new Random();</p><p>a.nextInt(10); // vrne naklj. št. Med 0 in 9 (<strong>zgornje meje ni
+zraven</strong>)</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Random a = new Random();</p>
+<p>a.nextInt(10); // vrne naklj. št. Med 0 in 9</p>
+<p>min -6</p>
+<p>max 4</p>
+<p><strong>Formula:</strong></p>
+<p>Min (od): 1</p>
+<p>Max (do): 5</p>
+<p>a.nextInt(max – min + 1) + min</p>
+<p>preizkus: a.nextInt(5-1+1) + 1</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>import java.util.Random;</code></pre>
+<p>public class Main</p>
+<pre><code>{</code></pre>
+<pre><code>public static void main(String[] args) {</code></pre>
+<p>Random a = new Random();</p>
+<pre><code>for( int x = 0 ; x &lt; 17; x++ )</code></pre>
+<pre><code>{</code></pre>
+<pre><code>System.out.println( a.nextInt(11) - 6 );</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p><strong>Naloga</strong>: Prejšnjo nalogo dopolni tako, da boš izpisal
+najmanjše število. Obenem vsako število izpiši, da lahko preverimo
+pravilnost programa.</p><div class="exercise"><label for="a149">Tvoj odgovor / rešitev</label><textarea data-save="" id="a149" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d149" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>4</p><p>1</p><p>3</p><p>-2</p><p>5</p><p>Min : -2</p><p>Kako to naredimo. Zapiši algoritem. Brez programiranja! Zamisli si,
+da imaš 124121422 števil.</p><p>Maramo pogledati vsako število? Ko pogledamo (če je večje, si ga ne
+zapomnimo, če pa je manjše, pa si ga zapomnimo. Zapomnimo si samo eno
+število. Kje začnemo? Kaj bo v tem »zapomnjenjem« številu na
+začetku?</p><table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Naključna števila</strong></th>
+<th><strong>Min</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>3</td>
+<td>3 (ko si prvo število izmislimo, je to najmanjše, preverjamo pa ne s
+prejšnjim)</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>-2</td>
+<td>-2</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td></td>
+</tr>
+</tbody>
+</table><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public static void main(String[] args) {</code></pre>
+<p>Random a = new Random();</p>
+<pre><code>int stevilo;</code></pre>
+<pre><code>int min = a.nextInt(11) - 6;</code></pre>
+<pre><code>System.out.println(min); // samo prvo</code></pre>
+<pre><code>for( int x = 1 ; x &lt; 5; x++ )</code></pre>
+<pre><code>{</code></pre>
+<p>stevilo = a.nextInt(11) - 6; // 2</p>
+<p>if( stevilo &lt; min )</p>
+<p>min = stevilo;</p>
+<pre><code>System.out.println(stevilo );</code></pre>
+<pre><code>}</code></pre>
+<pre><code>System.out.println("najmanjše je :" + min );</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>D.N. : Napiši in preizkusi program, ki izpiše števila od 1, 2, 3.. do
+10. Uporabi zank do - while.</p><h2 id="podpoglavje-34">Zanka v zanki (ugnezdena
+zanka)</h2><p><strong>Cilji</strong></p><p>Dijaki:</p><ul>
+<li><p>razumejo, kaj pomeni <strong>zanka v zanki</strong>,</p></li>
+<li><p>znajo <strong>razložiti potek izvajanja</strong>,</p></li>
+<li><p>znajo <strong>napisati enostaven program</strong> z ugnezdeno
+zanko,</p></li>
+<li><p>znajo <strong>narisati izpis</strong> programa.</p></li>
+</ul><h2 id="podpoglavje-35"><strong>Izziv</strong></h2><p>Napiši program, kjer uporabnik vpiše obe stranici pravokotnika (a,b).
+Nato nariši pravokotnik iz zvezdic.</p><table>
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+<col style="width: 25%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Primer 1:</strong></th>
+<th><strong>Primer 2:</strong></th>
+<th><strong>Primer 3:</strong></th>
+<th><strong>Primer 4:</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Vnesi a: 5</p>
+<p>Vnesi b: 2</p>
+<p>*****</p>
+<p>*****</p></td>
+<td><p>Vnesi a: 3</p>
+<p>Vnesi b: 7</p>
+<p>***</p>
+<p>***</p>
+<p>***</p>
+<p>***</p>
+<p>***</p></td>
+<td><p>Vnesi a: 8</p>
+<p>Vnesi b: 1</p>
+<p>********</p></td>
+<td><p>Vnesi a: 0</p>
+<p>Vnesi b: 1</p></td>
+</tr>
+</tbody>
+</table><p>Razdelili bomo nalogo na podprobleme in nato podprobleme sestavili v
+celoto (princip deli in vladaj).</p><ul>
+<li><p>Najprej bomo narisali črto iz zvezdic (a).</p>
+<ul>
+<li><p>Izpis sporočila za vnos</p></li>
+<li><p>Branje a</p></li>
+<li><p>Izpis zvezdice (a - krat) – Razmisli, katera zanka bi bila
+primerna?</p></li>
+</ul></li>
+<li><p>Nato bomo naredili novo vrstico.</p></li>
+<li><p>Nato bomo zgornji del kode večkrat ponovili (b).</p>
+<ul>
+<li><p>Zgornji program ponovimo b krat</p></li>
+</ul></li>
+</ul><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>import java.util.Scanner;
+
+
+
+public class BranjeTipkovnica {
+    public static void main(String[] args)
+    {
+        Scanner scn = new Scanner(System.in);
+        System.out.print("Vnesi a: ");
+        int a = scn.nextInt();
+        
+        int i = 0;
+        while(i &lt; a)
+        {
+            System.out.print("*");
+            
+            i++;
+        }
+        
+    }
+}</code></pre>
+<pre><code>System.out.print();</code></pre>
+<pre><code>int j = 0;
+while(j &lt; a)
+{
+    // SEM pride celotna zgoraj napisan koda
+    j++;</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>System.out.print("Vnesi a: ");</code></pre>
+<pre><code>int a = scn.nextInt();</code></pre>
+<pre><code>System.out.print("Vnesi b: ");</code></pre>
+<pre><code>int b = scn.nextInt();</code></pre>
+<pre><code>int j = 0; // ZAČETEK ZUNANJE ZANKE</code></pre>
+<p><mark>while(j &lt; b)</mark></p>
+<pre><code>{</code></pre>
+<p><mark>// ZAČETEK notranje zanke</mark></p>
+<pre><code>int i = 0;</code></pre>
+<p><mark>while(i &lt; a)</mark></p>
+<pre><code>{</code></pre>
+<pre><code>System.out.print("*");</code></pre>
+<p><mark>i++;</mark></p>
+<pre><code>}</code></pre>
+<pre><code>System.out.println();</code></pre>
+<p><mark>// KONEC NOTRANJE ZANKE</mark></p>
+<p><mark></mark></p>
+<p><mark>j++;</mark></p>
+<p><mark>}</mark> <mark>// KONEC ZUNANJE ZANKE</mark></p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p><img src="../media/image42.png" style="width:3.5625in;height:3.65069in"/></p><h2 id="podpoglavje-36"><strong>Razlaga</strong></h2><ul>
+<li><p>Zanka v zanki je sestavljena iz <strong>zunanje</strong> zanke in
+<strong>notranje</strong> zanke.</p></li>
+<li><p>Zunanja zanka določa, kolikokrat se bo izvedla notranja
+zanka.</p></li>
+<li><p>Vsaka zanka mora imeti <strong>svoje</strong> spremenljivke za
+štetje ponovitev zanke (npr.: zunanja x , notranja pa y).</p></li>
+<li><p>Spremenljivke notranje in zunanje so lahko tudi soodvisne
+(primer: izris trikotnika iz zvezdic)</p></li>
+<li><p>Za notranjo in zunanjo zanko lahko uporabimo poljubno zanko
+(while, do-while, for).</p></li>
+</ul><h2 id="podpoglavje-37"><strong>Vzorec zanke v zanki z zanko while</strong></h2><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>int j = 0;</code></pre>
+<p>while( j &lt; ? )</p>
+<pre><code>{</code></pre>
+<pre><code>int i = 0;</code></pre>
+<p>while(i &lt; ? )</p>
+<pre><code>{</code></pre>
+<p>// Stavki ki se ponavljajo</p>
+<p>i++;</p>
+<pre><code>}</code></pre>
+<p>j++;</p>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>import java.util.Scanner;<br/>
+<br/>
+public class BranjeTipkovnica {<br/>
+public static void main(String[] args)<br/>
+{<br/>
+Scanner scn = new Scanner(System.<em>in</em>);<br/>
+<br/>
+System.<em>out</em>.print("Vnesi a: ");<br/>
+int a = scn.nextInt();<br/>
+<br/>
+System.<em>out</em>.print("Vnesi b: ");<br/>
+int b = scn.nextInt();<br/>
+<br/>
+int i = 0;<br/>
+while(i &lt; a)<br/>
+{<br/>
+System.<em>out</em>.print("*");<br/>
+<br/>
+i++;<br/>
+}<br/>
+<br/>
+<br/>
+int j = 0;<br/>
+while( j &lt; b)<br/>
+{<br/>
+// Kaj bomo ponavljali<br/>
+<br/>
+j++;<br/>
+}<br/>
+<br/>
+<br/>
+}<br/>
+}</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-38"><strong>Kdaj uporabljamo zanko v zanki?</strong></h2><p>Če ima naloga “vrstice in stolpce” ali “vsak z vsakim”, potrebuješ
+zanko v zanki.</p><p>Zanko v zanki (ugnezdeno zanko) uporabljamo:</p><ul>
+<li><p>Ko imamo opravilo, ki se ponavlja v dveh (ali več) dimenzijah –
+torej ponavljanje znotraj ponavljanja</p></li>
+<li><p>Ko ena naloga vsebuje več pod-nalog (Primer: teden → dnevi,
+razredi → učenci, testi → vprašanj)</p></li>
+<li><p>Ko primerjamo vsak element z vsakim</p></li>
+</ul><p>Če moramo narisati <strong>tabelo</strong>,
+<strong>šahovnico</strong>, <strong>zvezdice v vrsticah</strong>, ali
+<strong>urnik</strong>.</p><p>Če moramo izračunati <strong>poštevanko</strong>.</p><h2 id="podpoglavje-39"><strong>Tipične napake</strong></h2><ul>
+<li><p>notranja in zunanja zanka uporabljata iste spremenljivke</p></li>
+</ul><p><strong>Naloge:</strong></p><table>
+<colgroup>
+<col style="width: 44%"/>
+<col style="width: 27%"/>
+<col style="width: 27%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Pravokotnik iz zvezdic</th>
+<th><p>******</p>
+<p>******</p>
+<p>******</p>
+<p>******</p></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tabela števil</td>
+<td><p>1 2 3 4 5</p>
+<p>1 2 3 4 5</p>
+<p>1 2 3 4 5</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Množilna tabela</td>
+<td><p>Velikost: 5</p>
+<p>1 2 3 4 5</p>
+<p>2 4 6 8 10</p>
+<p>3 6 9 12 15</p>
+<p>4 8 12 16 20</p>
+<p>5 10 15 20 25</p></td>
+<td><p>Začneš z izpisom prve (ene) vrstice,</p>
+<p>Nato okoli narediš zanko.</p></td>
+</tr>
+<tr class="odd">
+<td>Trikotnik iz zvezdic</td>
+<td><p>Velikost: 5</p>
+<p>*</p>
+<p>**</p>
+<p>***</p>
+<p>****</p>
+<p>*****</p></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Koordinate</td>
+<td><p>(1,1)</p>
+<p>(1,2)</p>
+<p>(1,3)</p>
+<p>(2,1)</p>
+<p>(2,2)</p>
+<p>(2,3)</p>
+<p>(3,1)</p>
+<p>(3,2)</p>
+<p>(3,3)</p></td>
+<td></td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-40">Dodatno interaktivno preverjanje</h2><fieldset class="quiz" data-answer="1"><legend>Katera zanka se izvede vsaj enkrat?</legend><label><input data-save="" id="q150-0" name="q150" type="radio" value="0"/> while</label><label><input data-save="" id="q150-1" name="q150" type="radio" value="1"/> do-while</label><label><input data-save="" id="q150-2" name="q150" type="radio" value="2"/> for</label><button class="verify">Preveri</button><output aria-live="polite"></output></fieldset><div class="bottom"><a href="../15-krmilni-stavki/index.html">← Prejšnje poglavje</a><a href="../17-polja-ali-tabele-ang.-array/index.html">Naslednje poglavje →</a></div></article></main></body></html>

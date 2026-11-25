@@ -1,0 +1,729 @@
+<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Računalništvo</title><link rel="stylesheet" href="../style.css"><script src="../search-data.js" defer></script><script src="../script.js" defer></script></head><body data-base="../"><header><div><strong>Računalništvo</strong><small>Učno gradivo · programiranje in Java</small></div><button id="menu" aria-expanded="true">☰ Poglavja</button><div id="progress"></div></header><aside id="sidebar"><a href="../index.html">Domov</a><br><label for="search">Iskanje po gradivu</label><input id="search" type="search"><div id="results"></div><nav><a class="tab " href="../01-uvodna-ura/index.html"><span>01</span>Uvodna ura</a><a class="tab " href="../02-algoritmi/index.html"><span>02</span>Algoritmi</a><a class="tab " href="../03-pisanje-algoritmov-diagram-poteka/index.html"><span>03</span>Pisanje algoritmov – diagram poteka</a><a class="tab " href="../04-deli-programov---izrazi-stavki-trditev/index.html"><span>04</span>Deli programov - Izrazi, stavki, trditev</a><a class="tab " href="../05-programski-jeziki/index.html"><span>05</span>Programski jeziki</a><a class="tab " href="../06-programiranje/index.html"><span>06</span>Programiranje</a><a class="tab " href="../07-zlaganje-prevajanje-in-tolmačenje-programske-kode/index.html"><span>07</span>Zlaganje, prevajanje in tolmačenje programske kode</a><a class="tab " href="../08-programski-jezik-java-programiranje-v-javi/index.html"><span>08</span>Programski jezik JAVA – programiranje v javi</a><a class="tab " href="../09-sestavni-deli-programa-java/index.html"><span>09</span>Sestavni deli programa java</a><a class="tab " href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html"><span>10</span>Sintaksa in semantika in osnovna pravila</a><a class="tab " href="../11-spremenljivke/index.html"><span>11</span>Spremenljivke</a><a class="tab " href="../12-operatorji/index.html"><span>12</span>Operatorji</a><a class="tab " href="../13-izpis-na-ekran/index.html"><span>13</span>Izpis na ekran</a><a class="tab " href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html"><span>14</span>Branje vrednosti iz tipkovnice (user input)</a><a class="tab " href="../15-krmilni-stavki/index.html"><span>15</span>Krmilni stavki</a><a class="tab " href="../16-zanke/index.html"><span>16</span>Zanke</a><a class="tab " href="../17-polja-ali-tabele-ang.-array/index.html"><span>17</span>Polja ali tabele (ang. array)</a><a class="tab " href="../18-pomnilnik-v-javi/index.html"><span>18</span>Pomnilnik v javi</a><a class="tab active" href="../19-prenos-vrednosti-parametrov-v-metodo/index.html"><span>19</span>Prenos vrednosti parametrov v metodo</a><a class="tab " href="../20-objektno-programiranje/index.html"><span>20</span>Objektno programiranje</a><a class="tab " href="../21-stringi/index.html"><span>21</span>Stringi</a></nav></aside><main><article class="chapter" data-index="18" id="prenos-vrednosti-parametrov-v-metodo"><div class="eyebrow">POGLAVJE 19 / 21</div><h1>Prenos vrednosti parametrov v metodo</h1><nav aria-label="Podpoglavja" class="subnav"><a class="level-h2" href="#podpoglavje-1">Opis:</a><a class="level-h2" href="#podpoglavje-2">Zaključek:</a><a class="level-h2" href="#podpoglavje-3">Zaključki o metodah:</a><a class="level-h2" href="#podpoglavje-4">Podpis metode (Method
+signature)</a><a class="level-h3" href="#podpoglavje-5">Preoblaganje
+metod - method overloading (function overloading)</a><a class="level-h2" href="#podpoglavje-6">Povzetek</a><a class="level-h2" href="#podpoglavje-7">Uvod (motivacija)</a><a class="level-h2" href="#podpoglavje-8">Razlaga pojma</a><a class="level-h2" href="#podpoglavje-9">Primer programa</a><a class="level-h3" href="#podpoglavje-10">Metoda main</a></nav><p>Pri klicu metode se izvajanje programa prenese na mesto, kjer je
+metoda definirana. Metoda za svoje delovanje pogosto potrebuje
+parametre, zato se ob klicu v metodo prenesejo tudi vrednosti teh
+parametrov.</p><p>Za izvajanje programa skrbi <strong>JVM</strong>, ki za delo
+uporablja delovni pomnilnik (RAM). Pomnilnik pri tem logično razdeli na
+<strong>sklad (stack)</strong> in <strong>kopico (heap)</strong>.</p><p><strong>Sklad (stack)</strong> je del pomnilnika, kjer se shranjujejo
+klici metod in njihove lokalne spremenljivke. Upravljanje sklada je
+samodejno in zelo hitro, podatki pa se odstranijo takoj, ko se metoda
+konča.</p><p><strong>Kopica (heap)</strong> je del pomnilnika, kjer se ustvarjajo
+objekti (npr. polja in objekti razredov). Do teh objektov dostopamo
+preko <strong>referenc</strong>, ki so shranjene v spremenljivkah.</p><p>Spremenljivke na skladu lahko vsebujejo <strong>vrednosti</strong>
+primitivnih tipov ali <strong>reference</strong> na objekte, ki se
+nahajajo na kopici. Objekti na kopici ostanejo v pomnilniku, dokler jih
+ne odstrani <strong>garbage collector</strong>.</p><p>Več:
+https://www.youtube.com/watch?v=_GK3WoFFKUE&amp;list=PLsyeobzWxl7pe_IiTfNyr55kwJPWbgxB5&amp;index=29</p><p><strong>Naloga</strong>: Skiciraj, kaj se dogaja v pomnilniku.</p><div class="exercise"><label for="a177">Tvoj odgovor / rešitev</label><textarea data-save="" id="a177" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d177" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 3%"/>
+<col style="width: 96%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>1</th>
+<th>public class Primer {</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>public static void spremeni(int x) {</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>x = 10;</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>}</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td> </td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td>public static void main(String[] args) {</td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>int x = 5;</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>spremeni(x);</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>System.out.println(x); // Izpiše 5, ker je kopija spremenjena</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>}</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>}</td>
+</tr>
+</tbody>
+</table><p><strong>Naloga</strong>: Skiciraj, kaj se dogaja v pomnilniku.</p><div class="exercise"><label for="a178">Tvoj odgovor / rešitev</label><textarea data-save="" id="a178" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d178" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 3%"/>
+<col style="width: 96%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>1</th>
+<th>public class Primer {</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>public static void spremeni(int [] x) {</td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>if( x.length &gt; 1)</td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>x[1] = 10;</td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>}</td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>public static void main(String[] args) {</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>int []a = new int[4];</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>int []y = {1,6,3,4}; // to je objekt (NI primitivna
+spremenljivka)</td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>System.out.print(y[1]);</td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>spremeni(y);</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>System.out.print(y[1]);</td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td>}</td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td>}</td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-1"><strong>Opis:</strong></h2><table>
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 89%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>številka vrstice v programu</strong></th>
+<th><strong>kaj se zgodi v tej vrstici</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>7</td>
+<td><p>main je vstopna točka v program,</p>
+<p>tukaj se začne izvajati program.</p>
+<p>na skladu kreiramo novo spremenljivko z imenom <strong>args</strong>
+za hranjenje naslova (v kopici).</p></td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td><p>desna stran izraza (na desni strani od enačaja)</p>
+<p>kreiramo nov objekt na kipci</p>
+<p>objekt je polje celih števil in ima štiri mesta, vanj se vpišejo
+privzete vrednosti 0</p>
+<p>obenem se vrne naslov prvega elementa tega polja</p>
+<p>leva stran enačaja</p>
+<p>na skladu se ustvari nova spremenljivka z imenom <strong>a</strong>
+za hranjenje naslova</p>
+<p>v spremenljivko se vpiše naslov, ki ga je vrnila desna stran
+izraza</p></td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td><p>desna stran izraza (na desni strani od enačaja)</p>
+<p>kreiramo nov objekt na kipci</p>
+<p>objekt je polje celih števil in ima štiri mesta, vanj se vpišejo
+vrednosti, ki so zapisane v zavitem oklepaju: 1,6,3,4</p>
+<p>obenem se vrne naslov prvega elementa tega polja</p>
+<p>leva stran enačaja</p>
+<p>na skladu se ustvari nova spremenljivka z imenom <strong>y</strong>
+za hranjenje naslova</p>
+<p>v spremenljivko se vpiše naslov, ki ga je vrnila desna stran
+izraza</p></td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>izpišemo drugo vrednost iz polja, ki se nahaja na naslovu, ki je
+shranjen v spremenljivki <strong>y</strong></td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>v metodo spremeni se prenese vrednost spremenljivke y (to je naslov
+objekta v kopici)</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td><p>izvajanja programa se nadaljuje v tej vrstici; primerja se podpis
+metode</p>
+<p>ustvari se nov</p>
+<p>na skladu se ustvari nova spremenljivka z imenom <strong>x</strong>
+za hranjenje naslova</p>
+<p>v spremenljivko <strong>x</strong> se prenese (shrani) vrednost iz
+spremenljivke y iz vrstice 11</p></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td><p>preveri, če ima spremenljivka lastnost od objekt (polje) na
+naslovu, ki je shranjen v spremenljivki x, večjo vrednost kot 1</p>
+<p>če da, se program nadaljuje v vrstici 4</p>
+<p>če ne, se program nadaljuje v vrstici 5</p></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td><p>ker je bil pogoj v vrstici 3 ovrednoten kot true nadaljujemo v
+tej vrstici</p>
+<p>na naslovu x poiščemo polje in na drugo mesto v tem polju shranimo
+vrednost 10</p></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td><p>konec metode</p>
+<p>uniči se spremenljivka x</p>
+<p>program se nadaljuje tam, kjer je bil pred klicem metode</p></td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>metoda nič ne vrne, zato se program nadaljuje v naslednji
+vrstici</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>izpišemo drugo vrednost iz polja, ki se nahaja na naslovu, ki je
+shranjen v spremenljivki <strong>y</strong></td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td><p>konec metode</p>
+<p>uniči se spremenljivka a</p>
+<p>uniči se spremenljivka y</p>
+<p>uniči se spremenljivka args</p></td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td>konča se program</td>
+</tr>
+<tr class="even">
+<td></td>
+<td>garbagge collector uniči objekte v kopici (dve polji celih
+števil</td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-2"><strong>Zaključek:</strong></h2><p>Pri klicu metod, ko je argument objekt, se v metodo prenese
+referenca. Posledično se spremembe, ki jih nad parametrom metode
+(objektom) delamo v metodi izven metode poznajo.</p><p>Pri klicu metod, ko je argument primitivna spremenljivka, se v metodo
+prenese vrednosti. Posledično se spremembe, ki jih nad parametrom metode
+delamo v metodi izven metode ne poznajo.</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public class Primer {</code></pre>
+<pre><code>public static void spremeni(int x) {</code></pre>
+<p>x = 10; // vrednost spremenljivke x se nastavi na 10</p>
+<pre><code>}</code></pre>
+<pre><code>public static void spremeni(int [] x) {</code></pre>
+<p>x[1] = 10;</p>
+<pre><code>}</code></pre>
+<pre><code>public static void main(String[] args) {</code></pre>
+<pre><code>int x = 5; // x je primitivna spremenljivka</code></pre>
+<pre><code>System.out.println(x); // Izpiše 5</code></pre>
+<p>spremeni(x);</p>
+<pre><code>System.out.println(x); // Izpiše 5 (sprememba v metodi
+ne vpliva)</code></pre>
+<p>int []y = {1,6,3}; // to je objekt (NI primitivna spremenljivka)</p>
+<pre><code>System.out.print(y[1]); // 6</code></pre>
+<p>spremeni(y);</p>
+<pre><code>System.out.print(y[1]); // 10</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>public void izpis(int[] y)</p>
+<pre><code>{</code></pre>
+<pre><code>for( int i = 0 ; i &lt; y.length ; i++)</code></pre>
+<pre><code>System.out.print(y[i] + " ");</code></pre>
+<pre><code>}</code></pre>
+<pre><code>public static int spremeni(int[] y) {</code></pre>
+<pre><code>int st = 0;</code></pre>
+<pre><code>for( int i = 0 ; i &lt; y.length ; i++)</code></pre>
+<pre><code>if( y[i] &lt; 0){</code></pre>
+<p>st++;</p>
+<p>y[i] = y[i]*-1;</p>
+<pre><code>}</code></pre>
+<pre><code>return st;</code></pre>
+<pre><code>}</code></pre>
+<pre><code>public static void main(String[] args) {</code></pre>
+<p>int[] y = {2,-1,4,3,3};</p>
+<p>izpis(y);</p>
+<pre><code>System.out.println(spremeni(y));</code></pre>
+<p>izpis(y);</p>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Sledi algoritmu. Skiciraj pomnilnik. Posebej označi sklad in kopico.
+Vsako vrstico v kodi opiši z besedami.</p><table>
+<colgroup>
+<col style="width: 3%"/>
+<col style="width: 52%"/>
+<col style="width: 3%"/>
+<col style="width: 38%"/>
+<col style="width: 1%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>1</th>
+<th>public void izpis(int[] y)</th>
+<th>4</th>
+<th>Začne se metoda izpis. Y bo imel vrednost</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>2</td>
+<td>{</td>
+<td>5</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>3</td>
+<td>for( int i = 0 ; i &lt; y.length ; i++)</td>
+<td>6</td>
+<td>Ustvari se spremenljivka i. Na skladu. Dobi vrednost 0.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>4</td>
+<td>System.out.print(y[i] + " ");</td>
+<td>7.</td>
+<td>Izpiše se 2, -1, ..</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>5</td>
+<td>}</td>
+<td>8</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>6</td>
+<td> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>7</td>
+<td>public static int spremeni(int[] y) {</td>
+<td>10</td>
+<td>Na skladu se ustvari se nova spremenljivka y.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>int st = 0;</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>for( int i = 0 ; i &lt; y.length ; i++)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>10</td>
+<td>if( y[i] &lt; 0){</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>11</td>
+<td>st++;</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>y[i] = y[i]*-1;</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td>}</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td>return st;</td>
+<td></td>
+<td>Na meto klica metode se prenese vrendost spremenljivke st.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>15</td>
+<td>}</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>16</td>
+<td> </td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>17</td>
+<td>public static void main(<mark>String[] args</mark>) {</td>
+<td>1</td>
+<td><p>ZAČETEK izvajanja programa.</p>
+<p>Na skladu ustvarimo novo spremenljivko z imenom args.</p>
+<p>V to spremenljivko bo (najbrž) shranjen naslov (referrenca).</p></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>18</td>
+<td>int[] y = {2,-1,4,3,3};</td>
+<td>2</td>
+<td>Na kopici se ustvari »polje«. V polje se shranijo vrednosti:
+2,-1,4,3,3, Ta izraz na desni <strong>vrne naslov</strong>. Ta naslov se
+shrani na sklad v spremenljivko y.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>19</td>
+<td>izpis(y);</td>
+<td>3</td>
+<td>Izvede se klic metode izpis. Vrednost spremenljivke y se prenese v
+metodo. Ta y predstavlja naslov, kjer se nahaja polje.</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>20</td>
+<td>System.out.println(spremeni(y));</td>
+<td>9</td>
+<td>Klice se metoda spremeni. V metodo se prenese vrednost y (to je
+naslov)… na koncu se izpiše vrednost, ki jo metoda vrne.</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>21</td>
+<td>izpis(y);</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>22</td>
+<td>}</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-3"><strong>Zaključki o metodah:</strong></h2><ul>
+<li><p>v metodi ni branja (System.in) in izpisa (System.out), razen če
+ni posebej zahtevano v nalogi oz. če je to namen naloge</p></li>
+<li><p>metoda lahko vrne eno vrednost</p></li>
+<li><p>če želimo vrniti več vrednosti uporabimo polje</p></li>
+<li><p>vrednost, ki jo metoda vrne, lahko shranimo, izpišemo, drugače
+uporabimo</p></li>
+<li><p>metoda naj opravljajo samo delo, ki ga morajo.</p></li>
+</ul><table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Napiši metodo, ki izračuna vsoto dveh c. števil.</th>
+<th><p>public static int nevem(int a, int b)</p>
+<pre><code>{</code></pre>
+<pre><code>return a + b;</code></pre>
+<pre><code>}</code></pre>
+<p><mark><del>public static void nevem(int a, int b)</del></mark></p>
+<pre><code>{</code></pre>
+<pre><code>System.out.print(a + b);</code></pre>
+<pre><code>}</code></pre>
+<p>main()</p>
+<pre><code>{</code></pre>
+<pre><code>int x = scn.nextInt(); // izven meotde</code></pre>
+<pre><code>int y = scn.nextInt(); // izven metode</code></pre>
+<p>nevem(x,y);</p>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Napiši metodo, ki izračuna vsoto dveh c. števil in rezultat
+<strong>izpiše</strong>.</td>
+<td><p>public static void nevem(int a, int b)</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.print(a + b);</code></pre>
+<pre><code>}</code></pre></td>
+</tr>
+<tr class="even">
+<td><p>Napiši metodo, ki vrne <mark>maximalno in minamalno</mark>
+vrednost <mark>polja</mark>. Metoda se imenuje <mark>test</mark>. Za
+iskanje min in max ze imamo metodi z imeni: min(int [] p) in max(int []
+p). Uporabi ju.</p>
+<p>Klic metode: test(p);</p></td>
+<td><p>Ime: <mark>test</mark></p>
+<p>Vhodni podatek: več celih števil (<mark>polje celih
+števil</mark>)</p>
+<p>Int [] x</p>
+<p>Izhodni podatek: <mark>dve števili (polje celih števil)</mark></p>
+<p>Definicija:</p>
+<p>static int [] test( int [] x)</p>
+<pre><code>{</code></pre>
+<pre><code>int mi = min(x);</code></pre>
+<pre><code>int ma = max(x);</code></pre>
+<p>int []rez ={mi,ma};</p>
+<pre><code>return rez;</code></pre>
+<pre><code>}</code></pre></td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-4">Podpis metode (Method
+signature)</h2><p>Podpis metode je ime metode skupaj s seznamom parametrov (njihovo
+število, tip in vrstni red). Podpis metode ne vključuje povratnega tipa,
+prav tako ne vključuje imena parametrov.</p><p>Naloga: Napiši primere <strong>podpisov</strong> metod:</p><div class="exercise"><label for="a179">Tvoj odgovor / rešitev</label><textarea data-save="" id="a179" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d179" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p><del><mark>Static void</mark> metoda1(int a, int b)</del></p><p><del>Static void metoda1(int a, float b)</del></p><p><del>static void metoda(int x, int y)</del></p><p><del>sestej(3,4)</del></p><p>metoda(int , int )</p><p>metoda1(int, int)</p><p>metoda2(float, float)</p><p>nekaj(float, int)</p><p>luka(String, int)</p><p>marko()</p><p>konec(int[])</p><p>metoda2(float,float)</p><p>To pomeni, da Java metode razlikuje glede na:</p><ul>
+<li><p>ime metode</p></li>
+<li><p>tipe parametrov</p></li>
+<li><p>število parametrov</p></li>
+<li><p>vrstni red parametrov</p></li>
+</ul><p>Java uporablja podpis metode, da ugotovi, katero metodo mora
+poklicati.</p><table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Definiciji:</strong></p>
+<p>static void izpis(int a) {</p>
+<pre><code>System.out.println(a);</code></pre>
+<pre><code>}</code></pre>
+<p>static void izpis(float a) {</p>
+<pre><code>System.out.println(a);</code></pre>
+<pre><code>}</code></pre></th>
+<th><p><strong>Podpisa:</strong></p>
+<p>izpis(int)</p>
+<p>izpis(float)</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public class Primer {
+    
+    
+    
+    static void izpis(int a) { // metoda 1
+        
+        System.out.println("Prva metoda");
+        
+    }
+    
+    
+    
+    static void izpis(int b) { // metoda 2 (isti podpis kot zgoraj →
+        napaka)
+        
+        System.out.println("Druga metoda");
+        
+    }</code></pre>
+<pre><code>static double izpis(int c) { // metoda 3 (isti podpis kot zgoraj →
+    napaka)
+    
+    System.out.println("Tretja metoda");</code></pre>
+<pre><code>return true;
+
+}</code></pre>
+<pre><code>static void izpis(int b) { // metoda 4 (isto ime, drugačen parameter
+    → OK)
+    
+    System.out.println("Tretja metoda");
+    
+}</code></pre>
+<pre><code>static void izpis(double a) { // metoda 5 (isto ime, drugačen
+    parameter → OK)
+    
+    System.out.println("Peta metoda");
+    
+}</code></pre>
+<pre><code>static void izpis(int a, int b) { // metoda 6 (isto ime, drugačno
+    število parametrov → OK)
+    
+    System.out.println("Šesta metoda");
+    
+}</code></pre>
+<pre><code>static void prikaz(int a) { // metoda 7 (drugačno ime → OK)
+    
+    System.out.println("Sedma metoda");
+    
+}
+
+}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p><strong>Podpisi metod:</strong></p>
+<p>izpis(int)</p>
+<p><mark>izpis(int)</mark></p>
+<p>izpis(int)</p>
+<p>izpis(int,int)</p>
+<p>izpis(int[])</p>
+<p>izpis(double)</p>
+<p>prikaz(int)</p></td>
+</tr>
+</tbody>
+</table><p><strong>Naloga</strong>: Zapiši podpise metod in označi metode, ki
+jih je treba prilagoditi, da program ne bo imel sintaktičnih napak.</p><div class="exercise"><label for="a180">Tvoj odgovor / rešitev</label><textarea data-save="" id="a180" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d180" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 53%"/>
+<col style="width: 46%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Definicije:</strong></p>
+<p>static void izpis(int a) {</p>
+<pre><code>}</code></pre>
+<p>static void izpis(double a) {</p>
+<pre><code>}</code></pre>
+<p>static void izpis(int a, int b) {</p>
+<pre><code>}</code></pre>
+<p>static int izpis(int a, int b) {</p>
+<pre><code>return 1;</code></pre>
+<pre><code>}</code></pre>
+<p>static void prikaz() {</p>
+<pre><code>}</code></pre>
+<p>static void prikaz(String beseda) {</p>
+<pre><code>}</code></pre>
+<p>static void prikaz(String beseda, int stevilo) {</p>
+<pre><code>}</code></pre>
+<p>static void racunaj(int a, double b) {</p>
+<pre><code>}</code></pre>
+<p>static String racunaj(double a, int b) {</p>
+<pre><code>return "Zakaj?";</code></pre>
+<pre><code>}</code></pre>
+<p>static void racunaj(int a, double b) {</p>
+<pre><code>}</code></pre></th>
+<th><strong>Podpisi</strong><u>:</u></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p><strong>Naloga:</strong> Napiši definicije metod (brez telesa) za
+sledeče podpise.</p><div class="exercise"><label for="a181">Tvoj odgovor / rešitev</label><textarea data-save="" id="a181" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d181" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Podpisi:</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h3 id="podpoglavje-5">Preoblaganje
+metod - method overloading (function overloading)</h3><p><strong>Cilji učne ure</strong></p><h2 id="podpoglavje-6"><strong>Povzetek</strong></h2><ul>
+<li><p>razumeti pojem preoblaganja metod</p></li>
+<li><p>razumeti, kaj je podpis metode</p></li>
+<li><p>znati napisati več metod z enakim imenom in različnimi
+parametri</p></li>
+<li><p>razumeti, katero metodo Java izbere</p></li>
+</ul><p>Po koncu ure dijaki razumejo, da ima lahko razred več metod z istim
+imenom, če se razlikujejo po <strong>parametrih</strong>.</p><h2 id="podpoglavje-7"><strong>Uvod (motivacija)</strong></h2><p>Predstavljajmo si <strong>kalkulator</strong>.</p><p>Kalkulator zna:</p><ul>
+<li><p>sešteti <strong>dve števili</strong></p></li>
+<li><p>sešteti <strong>tri števila</strong></p></li>
+<li><p>sešteti <strong>decimalna števila</strong></p></li>
+</ul><p>Operacija je vedno <strong>seštevanje</strong>, zato bi bilo
+nelogično imeti metode:</p><p>sestejDveStevili()</p><p>sestejTriStevila()</p><p>sestejDecimalna()</p><p>Veliko bolj logično je:</p><p>sestej()</p><p>in Java sama ugotovi, katero metodo mora uporabiti.</p><p>Temu rečemo <strong>preoblaganje metod</strong>.</p><h2 id="podpoglavje-8"><strong>Razlaga pojma</strong></h2><p>Preoblaganje metod pomeni, da ima lahko razred več metod z istim
+imenom, vendar z različnimi parametri - torej z različnim podpisom.</p><h2 id="podpoglavje-9"><strong>Primer programa</strong></h2><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public class Kalkulator {</code></pre>
+<p>static int sestej(int a, int b) {</p>
+<pre><code>return a + b;</code></pre>
+<pre><code>}</code></pre>
+<p>static int sestej(int a, int b, int c) {</p>
+<pre><code>return a + b + c;</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><pre><code>public class Kalkulator {</code></pre><p>static int sestej(int a, int b) {</p><pre><code>return a + b;</code></pre><pre><code>}</code></pre><p>static int sestej(int a, int b, int c) {</p><pre><code>return a + b + c;</code></pre><pre><code>}</code></pre><p>static double sestej(double a, double b) {</p><pre><code>return a + b;</code></pre><pre><code>}</code></pre><pre><code>public static void main(String[] args) {</code></pre><pre><code>System.out.println(sestej(2,3));</code></pre><pre><code>System.out.println(sestej(2,3,4));</code></pre><pre><code>System.out.println(sestej(2.5,3.1));</code></pre><pre><code>}</code></pre><pre><code>}</code></pre><p>Rezultat:</p><p>5</p><p>9</p><p>5.6</p><p>Java glede na <strong>argumente</strong> izbere pravo metodo.</p><p>vir:</p><p>https://en.wikipedia.org/wiki/Function_overloading</p><p>https://www.w3schools.com/java/java_methods_overloading.asp</p><p><strong>Naloga</strong>: Zapiši dve metodi za seštevanje števil s
+sledečima podpisomo:</p><div class="exercise"><label for="a182">Tvoj odgovor / rešitev</label><textarea data-save="" id="a182" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d182" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>sestej(float,float,float)</p><p>sestej(float[])</p><h3 id="podpoglavje-10">Metoda main</h3><div class="bottom"><a href="../18-pomnilnik-v-javi/index.html">← Prejšnje poglavje</a><a href="../20-objektno-programiranje/index.html">Naslednje poglavje →</a></div></article></main></body></html>

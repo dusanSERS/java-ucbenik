@@ -1,0 +1,506 @@
+<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Računalništvo</title><link rel="stylesheet" href="../style.css"><script src="../search-data.js" defer></script><script src="../script.js" defer></script></head><body data-base="../"><header><div><strong>Računalništvo</strong><small>Učno gradivo · programiranje in Java</small></div><button id="menu" aria-expanded="true">☰ Poglavja</button><div id="progress"></div></header><aside id="sidebar"><a href="../index.html">Domov</a><br><label for="search">Iskanje po gradivu</label><input id="search" type="search"><div id="results"></div><nav><a class="tab " href="../01-uvodna-ura/index.html"><span>01</span>Uvodna ura</a><a class="tab " href="../02-algoritmi/index.html"><span>02</span>Algoritmi</a><a class="tab " href="../03-pisanje-algoritmov-diagram-poteka/index.html"><span>03</span>Pisanje algoritmov – diagram poteka</a><a class="tab " href="../04-deli-programov---izrazi-stavki-trditev/index.html"><span>04</span>Deli programov - Izrazi, stavki, trditev</a><a class="tab " href="../05-programski-jeziki/index.html"><span>05</span>Programski jeziki</a><a class="tab " href="../06-programiranje/index.html"><span>06</span>Programiranje</a><a class="tab " href="../07-zlaganje-prevajanje-in-tolmačenje-programske-kode/index.html"><span>07</span>Zlaganje, prevajanje in tolmačenje programske kode</a><a class="tab active" href="../08-programski-jezik-java-programiranje-v-javi/index.html"><span>08</span>Programski jezik JAVA – programiranje v javi</a><a class="tab " href="../09-sestavni-deli-programa-java/index.html"><span>09</span>Sestavni deli programa java</a><a class="tab " href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html"><span>10</span>Sintaksa in semantika in osnovna pravila</a><a class="tab " href="../11-spremenljivke/index.html"><span>11</span>Spremenljivke</a><a class="tab " href="../12-operatorji/index.html"><span>12</span>Operatorji</a><a class="tab " href="../13-izpis-na-ekran/index.html"><span>13</span>Izpis na ekran</a><a class="tab " href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html"><span>14</span>Branje vrednosti iz tipkovnice (user input)</a><a class="tab " href="../15-krmilni-stavki/index.html"><span>15</span>Krmilni stavki</a><a class="tab " href="../16-zanke/index.html"><span>16</span>Zanke</a><a class="tab " href="../17-polja-ali-tabele-ang.-array/index.html"><span>17</span>Polja ali tabele (ang. array)</a><a class="tab " href="../18-pomnilnik-v-javi/index.html"><span>18</span>Pomnilnik v javi</a><a class="tab " href="../19-prenos-vrednosti-parametrov-v-metodo/index.html"><span>19</span>Prenos vrednosti parametrov v metodo</a><a class="tab " href="../20-objektno-programiranje/index.html"><span>20</span>Objektno programiranje</a><a class="tab " href="../21-stringi/index.html"><span>21</span>Stringi</a></nav></aside><main><article class="chapter" data-index="7" id="programski-jezik-java-programiranje-v-javi"><div class="eyebrow">POGLAVJE 08 / 21</div><h1>Programski jezik JAVA – programiranje v javi</h1><nav aria-label="Podpoglavja" class="subnav"><a class="level-h2" href="#podpoglavje-1">Značilnosti programskega
+jezika java:</a><a class="level-h2" href="#podpoglavje-2">Objektno usmerjen jezik (OOP – object orienting programming
+language) – NUJNO ZNATI</a><a class="level-h2" href="#podpoglavje-3">Prenosljivost (Write Once, Run Anywhere) – NUJNO
+ZNATI</a><a class="level-h2" href="#podpoglavje-4">Statično tipiziran jezik</a><a class="level-h2" href="#podpoglavje-5">Varnost</a><a class="level-h2" href="#podpoglavje-6">Samodejno upravljanje pomnilnika</a><a class="level-h2" href="#podpoglavje-7">Večnitnost (multithreading)</a><a class="level-h2" href="#podpoglavje-8">Velika standardna knjižnica (Java API)</a><a class="level-h2" href="#podpoglavje-9">Neodvisna od platforme - NUJNO ZNATI</a><a class="level-h2" href="#podpoglavje-10">Zanesljivost in stabilnost</a><a class="level-h2" href="#podpoglavje-11">Razširljivost in dobro podprto okolje</a><a class="level-h2" href="#podpoglavje-12">Prvi program v javi</a><a class="level-h2" href="#podpoglavje-13">Postopek reševanja:</a><a class="level-h2" href="#podpoglavje-14">Pisanje programa (programske
+kode)</a><a class="level-h3" href="#podpoglavje-15">NOTEPAD (Beležnica – Windows)</a><a class="level-h2" href="#podpoglavje-16">Osnovne lastnosti</a><a class="level-h2" href="#podpoglavje-17">Prednosti</a><a class="level-h2" href="#podpoglavje-18">Slabosti</a><a class="level-h3" href="#podpoglavje-19">NOTEPAD++</a><a class="level-h2" href="#podpoglavje-20">Osnovne lastnosti</a><a class="level-h2" href="#podpoglavje-21">Prednosti</a><a class="level-h2" href="#podpoglavje-22">Slabosti</a><a class="level-h3" href="#podpoglavje-23">VISUAL STUDIO CODE (VS Code)</a><a class="level-h2" href="#podpoglavje-24">Osnovne lastnosti</a><a class="level-h2" href="#podpoglavje-25">Prednosti</a><a class="level-h2" href="#podpoglavje-26">Slabosti</a><a class="level-h3" href="#podpoglavje-27">NETBEANS</a><a class="level-h2" href="#podpoglavje-28">Osnovne lastnosti</a><a class="level-h2" href="#podpoglavje-29">Prednosti</a><a class="level-h2" href="#podpoglavje-30">Slabosti</a><a class="level-h2" href="#podpoglavje-31">Osnovne lastnosti</a><a class="level-h2" href="#podpoglavje-32">Prednosti</a><a class="level-h2" href="#podpoglavje-33">Slabosti</a><a class="level-h3" href="#podpoglavje-34">INTELLIJ IDEA (Community
+ali Ultimate)</a><a class="level-h2" href="#podpoglavje-35">Osnovne lastnosti</a><a class="level-h2" href="#podpoglavje-36">Prednosti</a><a class="level-h2" href="#podpoglavje-37">Slabosti</a><a class="level-h2" href="#podpoglavje-38">Primerjalna tabela</a><a class="level-h2" href="#podpoglavje-39">Kateri je »najboljši« glede
+na opis?</a><a class="level-h2" href="#podpoglavje-40">Kateri
+je »najboljši« glede na raziskavo na Stack Overflow (2023)?</a><a class="level-h2" href="#podpoglavje-41">Prevajanje programa</a><a class="level-h2" href="#podpoglavje-42">Zagon programa</a><a class="level-h2" href="#podpoglavje-43">Postopek nameščanja
+in nastavitve poti (PATH)</a><a class="level-h2" href="#podpoglavje-44">Kaj potrebujemo:</a></nav><p><strong>Java je objektno usmerjen, splošnonamenski programski
+jezik.</strong> Izvorna koda se prevede v vmesno kodo, ki jo izvaja
+navidezni stroj Java (JVM). To omogoča izvajanje istega prevedenega
+programa na različnih platformah z ustreznim JVM, kar povzema načelo
+»piši enkrat, zaženi povsod«. Java se uporablja za razvoj spletnih in
+namiznih aplikacij, strežniških sistemov ter aplikacij za Android. Pri
+Androidu se koda izvaja v okolju Android Runtime (ART).</p><h2 id="podpoglavje-1">Značilnosti programskega
+jezika java:</h2><h2 id="podpoglavje-2"><strong>Objektno usmerjen jezik (OOP – object orienting programming
+language) – NUJNO ZNATI</strong></h2><ul>
+<li><p>Vse v Javi je organizirano v razrede in objekte.</p></li>
+<li><p>Podpira: dedovanje, polimorfizem, enkapsulacijo,
+abstrakcijo.</p></li>
+</ul><h2 id="podpoglavje-3"><strong>Prenosljivost (Write Once, Run Anywhere) – NUJNO
+ZNATI</strong></h2><ul>
+<li><p>Program se prevede v <strong>bytecode</strong>, ki teče na
+<strong>JVM</strong>.</p></li>
+<li><p>Isti program lahko teče na Windows, Linux, macOS …</p></li>
+</ul><h2 id="podpoglavje-4"><strong>Statično tipiziran jezik</strong></h2><ul>
+<li><p>Tip spremenljivke je znan že med prevajanjem.</p></li>
+<li><p>Manj napak in boljša optimizacija.</p></li>
+</ul><h2 id="podpoglavje-5"><strong>Varnost</strong></h2><ul>
+<li><p>JVM deluje kot zaščitna plast med programom in operacijskim
+sistemom.</p></li>
+<li><p>Vgrajen varnostni model in upravljanje dovoljenj.</p></li>
+</ul><h2 id="podpoglavje-6"><strong>Samodejno upravljanje pomnilnika</strong></h2><ul>
+<li><p>Java ima <strong>garbage collector</strong>, ki samodejno
+odstrani neuporabljene objekte.</p></li>
+<li><p>Programerju ni treba ročno sproščati pomnilnika.</p></li>
+</ul><h2 id="podpoglavje-7"><strong>Večnitnost (multithreading)</strong></h2><ul>
+<li><p>Java ima vgrajeno podporo za delo z več niti hkrati.</p></li>
+<li><p>Omogoča hitrejše in paralelno izvajanje programov.</p></li>
+</ul><h2 id="podpoglavje-8"><strong>Velika standardna knjižnica (Java API)</strong></h2><ul>
+<li><p>Zelo obsežen nabor že pripravljenih razredov:</p>
+<ul>
+<li><p>zbirke podatkov (Collections)</p></li>
+<li><p>datoteke in I/O</p></li>
+<li><p>mrežno programiranje</p></li>
+<li><p>grafika, datumi, čas, varnost, …</p></li>
+</ul></li>
+</ul><h2 id="podpoglavje-9"><strong>Neodvisna od platforme - NUJNO ZNATI</strong></h2><ul>
+<li><p>Bytecode se izvaja na JVM, zato Java ni vezana na strojno opremo
+ali OS.</p></li>
+</ul><h2 id="podpoglavje-10"><strong>Zanesljivost in stabilnost</strong></h2><ul>
+<li><p>Strogo preverjanje kode med prevajanjem in med
+izvajanjem.</p></li>
+<li><p>Manj verjetno sesuvanje programov.</p></li>
+</ul><h2 id="podpoglavje-11"><strong>Razširljivost in dobro podprto okolje</strong></h2><ul>
+<li><p>Velika skupnost, bogata dokumentacija, dolgoročna
+podpora.</p></li>
+<li><p>Uporablja se v podjetjih, mobilnih napravah (Android),
+strežnikih, IoT …</p></li>
+</ul><h2 id="podpoglavje-12">Prvi program v javi</h2><p><strong>Naloga</strong>: Napiši program v programskem jeziku java, ki
+na zaslon izpiše tvoje ime in priimek. Opiši postopek priprave, pisanja,
+prevajanja in zagona in testiranja programa.</p><div class="exercise"><label for="a108">Tvoj odgovor / rešitev</label><textarea data-save="" id="a108" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d108" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p><strong>Primer pričakovanega izpisa</strong>:</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>Jaka Krajnc</th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-13"><strong>Postopek reševanja:</strong></h2><ol type="1">
+<li><p><strong>Razumevanje naloge</strong><br/>
+Določimo, kaj mora program narediti. V našem primeru mora izpisati ime
+in priimek. Vhodnih podatkov ni.</p></li>
+<li><p><strong>Načrtovanje rešitve – zapis algoritma</strong><br/>
+Postopek predstavimo z diagramom poteka, psevdokodo ali opisom v
+slovenščini: začetek → izpis imena in priimka → konec.</p></li>
+<li><p><strong>Pisanje izvorne kode</strong><br/>
+Algoritem zapišemo v programskem jeziku Java in datoteko
+shranimo.</p></li>
+<li><p><strong>Prevajanje programa</strong><br/>
+Izvorno kodo prevedemo v vmesno kodo. Če prevajalnik sporoči napake, jih
+odpravimo in program znova prevedemo.</p></li>
+<li><p><strong>Zagon programa</strong><br/>
+Program zaženemo in opazujemo njegov izpis.</p></li>
+<li><p><strong>Testiranje programa</strong><br/>
+Dejanski izpis primerjamo s pričakovanim. Preverimo, ali sta ime in
+priimek pravilno zapisana, v pravilnem vrstnem redu in ločena s
+presledkom.</p></li>
+<li><p><strong>Odpravljanje napak in ponovno preverjanje</strong><br/>
+Če odkrijemo napake, popravimo kodo ali po potrebi načrt rešitve.
+Program nato znova prevedemo, zaženemo in testiramo.</p></li>
+</ol><h2 id="podpoglavje-14">Pisanje programa (programske
+kode)</h2><p>Za pisanje programa (izvorne kode) uporabimo:</p><ul>
+<li><p>navaden urejevalnik besedila, kot je beležnica (Notepad)</p></li>
+<li><p>napredni urejevalnik kot sta Notepad++ ali Visual Studio
+Code</p></li>
+<li><p>integrirano razvojno orodje (ang. integrated development
+environment (IDE)) kot so IntelliJ IDEA, Eclipse, NetBeans.</p></li>
+</ul><p>Vsako od omenjenih ima prednosti in slabosti.</p><h3 id="podpoglavje-15">NOTEPAD (Beležnica – Windows)</h3><p><strong>Vrsta:</strong> Zelo osnovni urejevalnik besedil<br/>
+<strong>Najbolj primeren za:</strong> hitre zapiske, branje log datotek,
+preproste .txt in .ini datoteke</p><h2 id="podpoglavje-16"><strong>Osnovne lastnosti</strong></h2><ul>
+<li><p>Privzet program v Windows.</p></li>
+<li><p>Brez dodatnih funkcij.</p></li>
+<li><p>Deluje zelo hitro.</p></li>
+</ul><h2 id="podpoglavje-17"><strong>Prednosti</strong></h2><ul>
+<li><p>Minimalen in izjemno lahek.</p></li>
+<li><p>Takoj se odpre, primeren za hitre popravke konfiguracij.</p></li>
+<li><p>Brez navlake, ne potrebuje namestitve.</p></li>
+</ul><h2 id="podpoglavje-18"><strong>Slabosti</strong></h2><ul>
+<li><p>Brez barvanja kode (syntax highlighting).</p></li>
+<li><p>Brez vtičnikov, brez naprednih funkcij.</p></li>
+<li><p>Neprimeren za resno programiranje.</p></li>
+</ul><h3 id="podpoglavje-19">NOTEPAD++</h3><p><strong>Vrsta:</strong> Napredni urejevalnik besedil<br/>
+<strong>Najbolj primeren za:</strong> spletne datoteke (HTML, CSS, PHP),
+skripte, manjše projekte</p><h2 id="podpoglavje-20"><strong>Osnovne lastnosti</strong></h2><ul>
+<li><p>Odlično barvanje kode za več kot 70 jezikov.</p></li>
+<li><p>Ogromno vtičnikov (FTP, regex, primerjanje datotek …)</p></li>
+<li><p>Prilagodljiv vmesnik, multi-tab.</p></li>
+</ul><h2 id="podpoglavje-21"><strong>Prednosti</strong></h2><ul>
+<li><p>Izjemno lahek, hiter in prenosljiv (.zip verzija).</p></li>
+<li><p>Podpira makre, regex, vtičnike.</p></li>
+<li><p>Odličen za sysadmina, spletne razvijalce in urejanje
+konfiguracij.</p></li>
+</ul><h2 id="podpoglavje-22"><strong>Slabosti</strong></h2><ul>
+<li><p>Ni pravo razvojno okolje (IDE).</p></li>
+<li><p>Nima integrirane pametne pomoči pri programiranju
+(intellisense).</p></li>
+<li><p>Ni primeren za velike projekte (Java, C#, Kotlin …).</p></li>
+</ul><h3 id="podpoglavje-23">VISUAL STUDIO CODE (VS Code)</h3><p><strong>Vrsta:</strong> Lahko, modularno IDE (kodni urejevalnik z
+zmogljivimi razširitvami)<br/>
+<strong>Najbolj primeren za:</strong> web razvoj, Python, Node.js, C#,
+C++, Java (z razširitvami)</p><h2 id="podpoglavje-24"><strong>Osnovne lastnosti</strong></h2><ul>
+<li><p>Izjemno razširljiv (tisoče extensionov).</p></li>
+<li><p>IntelliSense podpora (predlogi, dokumentacija).</p></li>
+<li><p>Git integracija, terminal, debugger.</p></li>
+</ul><h2 id="podpoglavje-25"><strong>Prednosti</strong></h2><ul>
+<li><p>Najbolj priljubljen urejevalnik na svetu.</p></li>
+<li><p>Deluje hitro, a omogoča IDE funkcije.</p></li>
+<li><p>Odličen za začetnike in napredne uporabnike.</p></li>
+<li><p>Podpora praktično za vse jezike.</p></li>
+</ul><h2 id="podpoglavje-26"><strong>Slabosti</strong></h2><ul>
+<li><p>Za Java, C++ in večje projekte potrebuje več nastavitev.</p></li>
+<li><p>Extensioni lahko upočasnijo delovanje.</p></li>
+<li><p>Ni tako “globoko” IDE kot IntelliJ IDEA ali Eclipse.</p></li>
+</ul><h3 id="podpoglavje-27">NETBEANS</h3><p><strong>Vrsta:</strong> Polno IDE<br/>
+<strong>Najbolj primeren za:</strong> Java, PHP, C/C++; šole (zaradi
+enostavnosti)</p><h2 id="podpoglavje-28"><strong>Osnovne lastnosti</strong></h2><ul>
+<li><p>Vgrajena podpora za Java SE, Java EE.</p></li>
+<li><p>Enostavna namestitev in uporaba.</p></li>
+<li><p>Vgrajen GUI designer (Swing, JavaFX).</p></li>
+</ul><h2 id="podpoglavje-29"><strong>Prednosti</strong></h2><ul>
+<li><p>Dober za začetnike (čist in predvidljiv).</p></li>
+<li><p>Enostavna podpora za Maven in Gradle.</p></li>
+<li><p>“All-in-one”, ni treba dodajati vtičnikov.</p></li>
+</ul><h2 id="podpoglavje-30"><strong>Slabosti</strong></h2><ul>
+<li><p>Počasnejši od VS Code in IntelliJ IDEA.</p></li>
+<li><p>Manj vtičnikov kot Eclipse.</p></li>
+<li><p>Nekoliko zastarel občutek.</p></li>
+</ul><p>ECLIPSE</p><p><strong>Vrsta:</strong> Zelo zmogljivo, modularno IDE<br/>
+<strong>Najbolj primeren za:</strong> Java, enterprise projekte, razvoj
+v podjetjih</p><h2 id="podpoglavje-31"><strong>Osnovne lastnosti</strong></h2><ul>
+<li><p>Bogata podpora za Java, C/C++, Python, Android (prej), web
+orodja.</p></li>
+<li><p>Možnost ogromne razširitve z vtičniki.</p></li>
+<li><p>Globoka integracija z enterprise orodji (Maven, Jenkins, SVN
+…).</p></li>
+</ul><h2 id="podpoglavje-32"><strong>Prednosti</strong></h2><ul>
+<li><p>Odličen za velike in kompleksne projekte.</p></li>
+<li><p>Stabilno, profesionalno okolje.</p></li>
+<li><p>Ogromno vtičnikov.</p></li>
+</ul><h2 id="podpoglavje-33"><strong>Slabosti</strong></h2><ul>
+<li><p>Težek, počasnejši start.</p></li>
+<li><p>Pogosti konflikti med vtičniki.</p></li>
+<li><p>Manj prijazen začetnikom.</p></li>
+</ul><h3 id="podpoglavje-34">INTELLIJ IDEA (Community
+ali Ultimate)</h3><p><strong>Vrsta:</strong> Premium IDE<br/>
+<strong>Najbolj primeren za:</strong> Java, Kotlin, Android, Spring,
+velike projekte</p><h2 id="podpoglavje-35"><strong>Osnovne lastnosti</strong></h2><ul>
+<li><p>Najbolj inteligentna pomoč pri programiranju (smart
+completion).</p></li>
+<li><p>Vgrajeni sistemi za refaktoring, testiranje, gradnjo (Gradle,
+Maven).</p></li>
+<li><p>Ultimate verzija ima še: Spring, React, SQL, Python, Docker
+…</p></li>
+</ul><h2 id="podpoglavje-36"><strong>Prednosti</strong></h2><ul>
+<li><p>Najboljše Java/Kotlin IDE na trgu.</p></li>
+<li><p>Uporabniku prijazen, pregleden.</p></li>
+<li><p>Odličen za akademske in profesionalne projekte.</p></li>
+<li><p>Veliko avtomatizacije: code suggestions, refactoring …</p></li>
+</ul><h2 id="podpoglavje-37"><strong>Slabosti</strong></h2><ul>
+<li><p>Težji program, potrebuje več RAM-a.</p></li>
+<li><p>Ultimate je plačljiv.</p></li>
+<li><p>Za zelo stare računalnike ni idealen.</p></li>
+</ul><h2 id="podpoglavje-38">Primerjalna tabela</h2><table>
+<colgroup>
+<col style="width: 13%"/>
+<col style="width: 17%"/>
+<col style="width: 14%"/>
+<col style="width: 27%"/>
+<col style="width: 27%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Orodje</strong></th>
+<th><strong>Tip</strong></th>
+<th><strong>Hitrost</strong></th>
+<th><strong>Najboljše za</strong></th>
+<th><strong>Slabosti</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Notepad</strong></td>
+<td>osn. urejevalnik</td>
+<td>⭐⭐⭐⭐</td>
+<td>hitre zapiske</td>
+<td>nič za programiranje</td>
+</tr>
+<tr class="even">
+<td><strong>Notepad++</strong></td>
+<td>nap. urejevalnik</td>
+<td>⭐⭐⭐⭐</td>
+<td>skripte, HTML, PHP</td>
+<td>brez prave IDE logike</td>
+</tr>
+<tr class="odd">
+<td><strong>VS Code</strong></td>
+<td>hibrid IDE</td>
+<td>⭐⭐⭐</td>
+<td>web, Python, JS</td>
+<td>zahteva nastavitve</td>
+</tr>
+<tr class="even">
+<td><strong>NetBeans</strong></td>
+<td>IDE</td>
+<td>⭐⭐</td>
+<td>Java, šole</td>
+<td>počasnejši, manj moderen</td>
+</tr>
+<tr class="odd">
+<td><strong>Eclipse</strong></td>
+<td>IDE</td>
+<td>⭐</td>
+<td>velike projekte</td>
+<td>lahko kompliciran</td>
+</tr>
+<tr class="even">
+<td><strong>IntelliJ IDEA</strong></td>
+<td>premium IDE</td>
+<td>⭐⭐⭐</td>
+<td>Java/Kotlin, profesionalno</td>
+<td>težek, Ultimate plačljiv</td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-39">Kateri je »najboljši« glede
+na opis?</h2><ul>
+<li><p><strong>Za dijake</strong> → VS Code ali NetBeans</p></li>
+<li><p><strong>Za profesionalni Java razvoj</strong> → IntelliJ
+IDEA</p></li>
+<li><p><strong>Za C++ ali enterprise Java</strong> → Eclipse</p></li>
+<li><p><strong>Za hitre urejevalske naloge</strong> → Notepad++</p></li>
+<li><p><strong>Za konfiguracijske datoteke</strong> → preprosto
+Notepad</p></li>
+</ul><p>Vir: ChatGPT</p><h2 id="podpoglavje-40">Kateri
+je »najboljši« glede na raziskavo na Stack Overflow (2023)?</h2><ul>
+<li><p>Visual Studio Code (VS Code) je uporabljalo <strong>≈ 73,7
+%</strong> vseh razvijalcev</p></li>
+<li><p>IntelliJ IDEA je bilo uporabljeno pri ≈ <strong>26,8 %</strong>
+vseh razvijalcev</p></li>
+<li><p>Eclipse je bil uporabljen pri ≈ <strong>9,9 %</strong> vseh
+razvijalcev.</p></li>
+</ul><h2 id="podpoglavje-41">Prevajanje programa</h2><p>Da lahko program zaženemo, ga moramo pred tem prevesti (compile).
+Rezultat prevajanja je vmesna koda (bytecode).</p><p>Prevajalnik za programsko kodo je del paketa JDK (java developement
+kit).</p><p><img src="../media/image24.png" style="width:6.52778in;height:3.04028in"/></p><div class="exercise"><label for="a109">Odgovor ali opombe k sliki</label><textarea data-save="" id="a109" rows="3"></textarea><label class="check"><input data-save="" id="d109" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p>JDK (Java Development Kit) je celoten paket, ki ga potrebujemo za
+razvoj programov java. Sestavljen je iz več delov. Nekateri so namenjeni
+za <em>izvajanje</em>, drugi za <em>pisanje in prevajanje</em>
+programov.</p><p>JDK namestimo tako, da na spletu najdemo in prenesemo eno izmed
+različic:</p><ul>
+<li><p>OpenJDK (odprtokodna različica – brezplačana tudi za komercialno
+delo)</p></li>
+<li><p>Oracle JDK (brezplačna, vendar plačljiva za komercialno
+uporabo.</p></li>
+<li><p>katero drugo</p></li>
+</ul><p>Nato program namestimo:</p><p><img alt="Slika, ki vsebuje besede besedilo, pisava, posnetek zaslona Vsebina, ustvarjena z UI, morda ni pravilna." src="../media/image25.png" style="width:2.58369in;height:0.94805in"/></p><div class="exercise"><label for="a110">Odgovor ali opombe k sliki</label><textarea data-save="" id="a110" rows="3"></textarea><label class="check"><input data-save="" id="d110" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p><img alt="Slika, ki vsebuje besede besedilo, elektronika, posnetek zaslona, zaslon Vsebina, ustvarjena z UI, morda ni pravilna." src="../media/image26.png" style="width:3.42115in;height:2.6206in"/></p><div class="exercise"><label for="a111">Odgovor ali opombe k sliki</label><textarea data-save="" id="a111" rows="3"></textarea><label class="check"><input data-save="" id="d111" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p>Za prevajanje izvorne kode (source code) uporabimo prevajalnik
+<em>javac</em>. V ukazni vrstici se pomaknemo v mapo z izvorno datoteko
+in vpišemo ukaz:</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>javac ime_programa.java</p>
+<p>primer:</p>
+<p>javac Naloga.java</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Če prevajanje uspe, nastane ena ali več datotek s končnico .class, ki
+vsebujejo vmesno kodo (ang. bytecode). Pri preprostem programu z
+razredom Naloga nastane datoteka Naloga.class.</p><p>Vmesna koda je neodvisna od platforme. Isti prevedeni program lahko
+zato brez ponovnega prevajanja izvajamo v različnih operacijskih
+sistemih, na primer Windows, Linux in macOS, če imajo nameščen ustrezen
+JVM in program ne uporablja knjižnic ali funkcij, vezanih na določeno
+platformo.</p><p><img alt="Slika, ki vsebuje besede besedilo, posnetek zaslona, pisava Vsebina, ustvarjena z UI, morda ni pravilna." src="../media/image27.png" style="width:4.34201in;height:4.8028in"/></p><div class="exercise"><label for="a112">Odgovor ali opombe k sliki</label><textarea data-save="" id="a112" rows="3"></textarea><label class="check"><input data-save="" id="d112" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Za radovedne: Zakaj Java uporablja vmesno kodo
+(bytecode)?</strong></p>
+<ul>
+<li><p><strong>Prenosljivost (ang. portability)</strong> – isto vmesno
+kodo lahko izvajamo na različnih platformah z ustreznim JVM, brez
+ponovnega prevajanja izvorne kode. Od tod načelo »piši enkrat, zaženi
+povsod«.</p></li>
+<li><p><strong>Varnost</strong> – JVM pred izvajanjem preverja
+pravilnost in skladnost vmesne kode z določenimi pravili, kar pomaga
+preprečevati nekatere nevarne operacije. To še ne zagotavlja, da je
+program povsem varen.</p></li>
+<li><p><strong>Učinkovitost</strong> – JVM lahko s prevajalnikom
+<strong>JIT</strong> med izvajanjem prevede pogosto izvajane dele vmesne
+kode v strojno kodo in jih optimizira.</p></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-42">Zagon programa</h2><p>Vmesna koda (bytecode) je univerzalni strojni jezik programov java,
+ki ga izvaja JVM (java virtual machine) namesto tvojega fizičnega
+procesorja (CPU). JVM je del JDK paketa in se namesti avtomatsko ob
+namestitvi JDK. Namen je, da so programi neodvisni od platforme (Win,
+Linux, Mac).</p><p><img alt="Slika, ki vsebuje besede besedilo, diagram, posnetek zaslona, načrt Vsebina, ustvarjena z UI, morda ni pravilna." src="../media/image28.png" style="width:6.46531in;height:3.18867in"/></p><p>Program zaženemo z ukazom java. Končnice .<em>class</em> ne
+napišemo:</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>java ime_programa</p>
+<p>Primer:</p>
+<p>java Naloga.java</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p><img alt="Slika, ki vsebuje besede besedilo, posnetek zaslona, pisava Vsebina, ustvarjena z UI, morda ni pravilna." src="../media/image29.png" style="width:4.1905in;height:3.3919in"/></p><p><img alt="Slika, ki vsebuje besede besedilo, diagram, pisava, načrt Opis je samodejno ustvarjen" src="../media/image23.png" style="width:6.26681in;height:3.28132in"/></p><p>Pri nameščanju omenjene programske opreme (JDK) moramo izbrati
+različico, ki ustreza našemu operacijskemu sistemu (npr. Windows, Linux
+ali macOS), saj vsaka platforma zahteva svojo prilagojeno izvedbo.</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Za radovedne</strong></p>
+<p><strong>Naloge JVM</strong></p>
+<ul>
+<li><p><strong>naloži</strong> Java bytecode v pomnilnik,</p></li>
+<li><p><strong>preveri</strong> varnost in pravilnost kode,</p></li>
+<li><p><strong>izvede</strong> bytecode na računalniku,</p></li>
+<li><p><strong>upravljanje pomnilnika</strong> (garbage
+collector),</p></li>
+<li><p>omogoča, da Java programi tečejo <strong>neodvisno od
+operacijskega sistema</strong>.</p></li>
+</ul>
+<p><strong>Kako JVM izvaja program?</strong></p>
+<p>JVM ima dva mehanizma za izvedbo bytecode-a:</p>
+<p><strong>Tolmačenje (interpreting)</strong></p>
+<ul>
+<li><p>JVM bere bytecode ukaz za ukaz in ga sproti izvaja.</p></li>
+<li><p>Hitro začne delovati, a je nekoliko počasnejše kot prevajanje
+vnaprej (C++).</p></li>
+</ul>
+<p><strong>JIT – Just-In-Time prevajanje</strong></p>
+<ul>
+<li><p>JVM pogosto uporabljene dele programa (t. i. “hot spots”)
+<strong>prevede v strojno kodo</strong> med samim izvajanjem.</p></li>
+<li><p>Tako postane program veliko hitrejši.</p></li>
+</ul></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-43">Postopek nameščanja
+in nastavitve poti (PATH)</h2><ol type="1">
+<li><p>Namesti java prevajalnik in zaganjalnik (paket Java JDK) za
+Windows – prenesi iz spletne strani Oracle. Prenesi 64 bitno različico
+msi.</p></li>
+<li><p>Iz poti izbriši vse vnose JDK!</p></li>
+<li><p>Nastavi PATH – pot do java prevajalnika. Pot nastaviš nadzorna
+plošča/urejanje spremenljivk okolja za svoj račun/path.</p></li>
+</ol><blockquote>
+<p><img src="../media/image30.png" style="width:4.32935in;height:1.17874in"/></p>
+<p><img src="../media/image31.png" style="width:3.73851in;height:3.53493in"/></p>
+</blockquote><ol start="4" type="1">
+<li><p>Odpreš command line (ukazni poziv). Prestaviš se v svojo mapo z
+vajami. (d:\RAC\VAJA01).</p></li>
+<li><p>Ustvariš novo datoteko <mark>naloga01.java</mark>. (notepad
+naloga01.java)</p></li>
+<li><p>Napiši prvi program v javi</p></li>
+<li><p>Prevedi program: <mark>javac ime_programa.java</mark>. Ustvari se
+datoteka class. To je vmesna koda.</p></li>
+<li><p>Zaženi program: <mark>java ime_programa</mark>.</p></li>
+</ol><h2 id="podpoglavje-44"><strong>Kaj potrebujemo:</strong></h2><ul>
+<li><p>Urejevalnik besedila (program)</p></li>
+<li><p>Prevajalnik za javo (program)</p></li>
+<li><p>Zaganjalnik (program)</p></li>
+</ul><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Napisali prvi program – tekstovna datoteka. Uporabili bomo
+navadni urejevalnik besedila. Program bo napisan v PJ java.</p>
+<ol type="1">
+<li><p>Datoteka bo imela ime kot je <strong>ime razreda</strong>! (ali
+obratno ime razreda mora biti enako kot ime datoteke)</p></li>
+<li><p>Program (datoteko) bomo shranili v tole mapo
+<mark>nekaj:\nekja\...\RAC\VAJE\VAJA06</mark></p>
+<ol type="a">
+<li><p>Modri del poljuben</p></li>
+<li><p>Rumeni del vsi enako</p></li>
+<li><p>Ime datoteke Vaja01.java</p></li>
+<li><p>Programi v javi imajo končnico .java</p></li>
+</ol></li>
+<li><p>Program bomo prevedli.</p>
+<ol type="a">
+<li><p>Cmd (ukazna vrstica)</p></li>
+<li><p>Postavi se v pravo mapo</p>
+<ol type="i">
+<li><p>Izberi pogon (Ukaz: crko_pogona:[enter])</p></li>
+<li><p>Postavi se v korensko mapo (Ukaz: cd /[enter])</p></li>
+<li><p>Idi v mapo (Ukaz:cd ime_mape[enter]) (mogoče boš morala ponoviti
+večkrat, če imaš več pdmap)</p></li>
+<li><p>Prevajanje poteka s programom javac (java compiler)</p>
+<ol type="1">
+<li><p>Ukaz: javac imeprograma.java[enter]</p></li>
+<li><p>program se prevede v vmesno kodo (intermidiate code)</p></li>
+</ol></li>
+</ol></li>
+</ol></li>
+<li><p>Program bomo zagnali.</p>
+<ol type="a">
+<li><p>Ukaz:java imeprograma (brez končnice)[enter]</p></li>
+</ol></li>
+</ol></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Postopek za VS code</p>
+<ol type="1">
+<li><p>Namesti jdk na računalnik.</p>
+<ol type="a">
+<li><p>Najdi na spletu – JDK za windows – installer file (msi,
+exe).</p></li>
+<li><p>Shrani na ključek.</p></li>
+<li><p>Namesti s ključka.</p></li>
+</ol></li>
+<li><p>Napiši program v javi (VS Code)</p>
+<ol type="a">
+<li><p>Ime datoteke : Naloga01.java</p></li>
+<li><p>Program naj na ekran izpiše: »Ime Priimek«. Ogrodje najdete <a href="https://www.w3schools.com/java/java_syntax.asp">tukaj</a>.</p>
+<ol type="i">
+<li><p>Pazi na ime razreda</p></li>
+</ol></li>
+<li><p>Prevedi program.</p>
+<ol type="i">
+<li><p>CMD</p></li>
+<li><p>D: (izberi pogon)</p></li>
+<li><p>cd / (v korensko mapo)</p></li>
+<li><p>cd programi</p></li>
+<li><p>cd RAC</p></li>
+<li><p>cd vaje</p></li>
+<li><p>cd vaja02</p></li>
+<li><p>javac ime_programa.java (prevedi)</p></li>
+<li><p>dir (preveri vsebino mape)</p></li>
+<li><p>java ime_programa (zagon)</p></li>
+</ol></li>
+<li><p>Zaženi program.</p></li>
+</ol></li>
+<li><p>Od-namesti (uninstall jdk)</p>
+<ol type="a">
+<li><p>Od-inštaliraj jdk!</p></li>
+<li><p>Najdi JRE na spletu.</p></li>
+<li><p>Namesti JRE.</p></li>
+<li><p>Zaženi program ponovno.</p></li>
+<li><p>Prevedi program ponovno.</p></li>
+</ol></li>
+</ol></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><div class="bottom"><a href="../07-zlaganje-prevajanje-in-tolmačenje-programske-kode/index.html">← Prejšnje poglavje</a><a href="../09-sestavni-deli-programa-java/index.html">Naslednje poglavje →</a></div></article></main></body></html>

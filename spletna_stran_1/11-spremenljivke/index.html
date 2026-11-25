@@ -1,0 +1,577 @@
+<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Računalništvo</title><link rel="stylesheet" href="../style.css"><script src="../search-data.js" defer></script><script src="../script.js" defer></script></head><body data-base="../"><header><div><strong>Računalništvo</strong><small>Učno gradivo · programiranje in Java</small></div><button id="menu" aria-expanded="true">☰ Poglavja</button><div id="progress"></div></header><aside id="sidebar"><a href="../index.html">Domov</a><br><label for="search">Iskanje po gradivu</label><input id="search" type="search"><div id="results"></div><nav><a class="tab " href="../01-uvodna-ura/index.html"><span>01</span>Uvodna ura</a><a class="tab " href="../02-algoritmi/index.html"><span>02</span>Algoritmi</a><a class="tab " href="../03-pisanje-algoritmov-diagram-poteka/index.html"><span>03</span>Pisanje algoritmov – diagram poteka</a><a class="tab " href="../04-deli-programov---izrazi-stavki-trditev/index.html"><span>04</span>Deli programov - Izrazi, stavki, trditev</a><a class="tab " href="../05-programski-jeziki/index.html"><span>05</span>Programski jeziki</a><a class="tab " href="../06-programiranje/index.html"><span>06</span>Programiranje</a><a class="tab " href="../07-zlaganje-prevajanje-in-tolmačenje-programske-kode/index.html"><span>07</span>Zlaganje, prevajanje in tolmačenje programske kode</a><a class="tab " href="../08-programski-jezik-java-programiranje-v-javi/index.html"><span>08</span>Programski jezik JAVA – programiranje v javi</a><a class="tab " href="../09-sestavni-deli-programa-java/index.html"><span>09</span>Sestavni deli programa java</a><a class="tab " href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html"><span>10</span>Sintaksa in semantika in osnovna pravila</a><a class="tab active" href="../11-spremenljivke/index.html"><span>11</span>Spremenljivke</a><a class="tab " href="../12-operatorji/index.html"><span>12</span>Operatorji</a><a class="tab " href="../13-izpis-na-ekran/index.html"><span>13</span>Izpis na ekran</a><a class="tab " href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html"><span>14</span>Branje vrednosti iz tipkovnice (user input)</a><a class="tab " href="../15-krmilni-stavki/index.html"><span>15</span>Krmilni stavki</a><a class="tab " href="../16-zanke/index.html"><span>16</span>Zanke</a><a class="tab " href="../17-polja-ali-tabele-ang.-array/index.html"><span>17</span>Polja ali tabele (ang. array)</a><a class="tab " href="../18-pomnilnik-v-javi/index.html"><span>18</span>Pomnilnik v javi</a><a class="tab " href="../19-prenos-vrednosti-parametrov-v-metodo/index.html"><span>19</span>Prenos vrednosti parametrov v metodo</a><a class="tab " href="../20-objektno-programiranje/index.html"><span>20</span>Objektno programiranje</a><a class="tab " href="../21-stringi/index.html"><span>21</span>Stringi</a></nav></aside><main><article class="chapter" data-index="10" id="spremenljivke"><div class="eyebrow">POGLAVJE 11 / 21</div><h1>Spremenljivke</h1><nav aria-label="Podpoglavja" class="subnav"><a class="level-h2" href="#podpoglavje-1">Definicija</a><a class="level-h2" href="#podpoglavje-2">Lastnosti spremenljivke</a><a class="level-h2" href="#podpoglavje-3">Zakaj uporabljamo spremenljivke?</a><a class="level-h2" href="#podpoglavje-4">Preprosta razlaga</a><a class="level-h2" href="#podpoglavje-5">Deklaracija</a><a class="level-h2" href="#podpoglavje-6">Podatkovni tip</a><a class="level-h2" href="#podpoglavje-7">Zakaj so podatkovni tipi pomembni?</a><a class="level-h2" href="#podpoglavje-8">Skupine podatkovnih tipov</a><a class="level-h2" href="#podpoglavje-9">Primitivni podatkovni tipi</a><a class="level-h2" href="#podpoglavje-10">Lastnosti:</a><a class="level-h2" href="#podpoglavje-11">Referenčni (objektni) podatkovni tip</a><a class="level-h2" href="#podpoglavje-12">Lastnosti:</a><a class="level-h2" href="#podpoglavje-13">Pravila poimenovanje spremenljivk:</a><a class="level-h2" href="#podpoglavje-14">Konstantna spremenljivka</a><a class="level-h2" href="#podpoglavje-15">Literali</a><a class="level-h2" href="#podpoglavje-16">Preverjanje znanja</a><a class="level-h2" href="#podpoglavje-17">Pretvarjanje med tipi (type casting)</a><a class="level-h2" href="#podpoglavje-18">Kaj?</a><a class="level-h2" href="#podpoglavje-19">Širjenje - Widening Casting</a><a class="level-h2" href="#podpoglavje-20">Casting</a><a class="level-h2" href="#podpoglavje-21">Casting in Java is the process of converting one data type
+into another.</a><a class="level-h2" href="#podpoglavje-22">Dodatno interaktivno preverjanje</a></nav><h2 id="podpoglavje-1"><strong>Definicija</strong></h2><p>Spremenljivka je imenovan prostor v računalniškem pomnilniku (RAM), v
+katerega program začasno shranjuje podatke (npr. števila, besede,
+rezultate izračunov). Vrednost spremenljivke se lahko med izvajanjem
+programa spreminja, zato ji pravimo <em>spremenljivka</em>.
+Spremenljivke uporabimo za hranjenje vrednosti, ki jih bomo kasneje v
+programu še potrebovali.</p><h2 id="podpoglavje-2"><strong>Lastnosti spremenljivke</strong></h2><ul>
+<li><p>ima <strong>ime</strong> (npr. starost, ime, vsota)</p></li>
+<li><p>ima <strong>vrednost</strong> (npr. 15, "Ana")</p></li>
+<li><p>ima <strong>tip podatka</strong> (npr. število, znak, besedilo
+…)</p></li>
+<li><p>vrednost se <strong>lahko spremeni</strong></p></li>
+<li><p>ko se vrednost spremeni, nova vrednost nadomesti staro (stara več
+ni dostopna)</p></li>
+</ul><h2 id="podpoglavje-3"><strong>Zakaj uporabljamo spremenljivke?</strong></h2><ul>
+<li><p>da shranjujemo podatke med izvajanjem programa za
+<strong>kasnejšo uporabo</strong></p></li>
+<li><p>da lahko računamo, preverjamo pogoje, prikazujemo
+rezultate</p></li>
+<li><p>da lahko program dela z različnimi podatki (vnos uporabnika,
+števila, besedila)</p></li>
+</ul><h2 id="podpoglavje-4"><strong>Preprosta razlaga</strong></h2><p>Predstavljaj si spremenljivko kot <strong>škatlo z
+nalepko</strong>:</p><ul>
+<li><p>nalepka = ime spremenljivke</p></li>
+<li><p>kar je v škatli = trenutna vrednost</p></li>
+<li><p>lahko zamenjaš vsebino, ime pa ostane isto</p></li>
+</ul><h2 id="podpoglavje-5"><strong>Deklaracija</strong></h2><p>Deklaracija spremenljivke je napoved, da bomo spremenljivko
+uporabljali. Spremenljivke ne moremo uporabljati, če je
+<strong>prej</strong> ne deklariramo. Spremenljivko z istim imenom lahko
+deklariramo samo enkrat.</p><p>podatkovni_tip ime_spremenljivke;</p><p>primer:</p><pre><code>int x;</code></pre><pre><code>String y;</code></pre><p>byte z;</p><p>char znak1, znak2;</p><p><strong>Naloga</strong>:</p><p>Ustvari spremenljivko za hranjenje spola (m ali ž). Spremenljivko
+poimenuj spol. V spremenljivko shrani vrednost m. Izpiši vrednost
+spremenljivke v tej obliki (spol=m). Enako naredi za ime razreda (3.ag)
+in starost (18).</p><h2 id="podpoglavje-6">Podatkovni tip</h2><p><strong>Podatkovni tip</strong> v javi določa:</p><ul>
+<li><p><strong>vrsto podatka</strong> (npr. celo število, realno
+število, znak, besedilo ali logično vrednost), ki ga lahko shranjuje
+spremenljivka</p></li>
+<li><p>koliko pomnilnika (<strong>velikost</strong>) bo zasedel v
+primarnem pomnilniku (RAM) (npr. 1B, 2B, 4B ali 8B, pri čemer je 1B = 8
+bitov)</p></li>
+<li><p>kakšne <strong>operacije</strong> lahko izvajamo nad podatki in
+kaj te operacije pomenijo</p></li>
+</ul><p>Ker je java <strong>strogo tipiziran jezik</strong> (tudi »type
+safety« ali »strictly typed« ), moramo ob deklaraciji vedno navesti tip
+spremenljivke (npr. byte, int, char, long, float, double, boolean). Pri
+nekaterih drugi programskih jezikih, to ni potrebno (PHP, python,
+...)</p><p>Podatkovni tip določa tudi, kakšne operacije lahko izvajamo nad
+podatki.</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Primeri:</strong></p>
+<p>Dve celi števili: 1 + 1 = 2 (+ seštevanje)</p>
+<p>Niz in celo število: "1" + 1 = 11 (+ dodajanje, združevanje,
+concatenation)</p>
+<p>Dve celi števili: 1/2 = 0 (/ celoštevilsko deljenje)</p>
+<p>Realno število in celo število: 1.0/2 = 0.5 (/ realno številsko
+deljenje)</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Prav tako opisuje <strong>način</strong> fizičnega shranjevanja
+podatkov v pomnilniku, kar omogoča optimizirano porabo pomnilnika ter
+učinkovito delovanje programa.</p><h2 id="podpoglavje-7"><strong>Zakaj so podatkovni tipi pomembni?</strong></h2><ul>
+<li><p>java preveri pravilnost programiranja že ob prevajanju</p></li>
+<li><p>program je bolj <strong>varen</strong>, <strong>hitrejši</strong>
+in <strong>pregleden</strong></p></li>
+<li><p>varuje pred napakami, kot je seštevanje besedil (napaka)</p></li>
+</ul><h2 id="podpoglavje-8"><strong>Skupine podatkovnih tipov</strong></h2><p>Podatkovne tipe v Javi lahko razdelimo v dve glavni skupini, ki se
+razlikujeta po načinu shranjevanja, delovanju in uporabi:</p><ul>
+<li><p><strong>primitivni</strong> (primitive data type)</p></li>
+<li><p><strong>referenčni</strong> (reference or non-primitive data
+tpye)</p></li>
+</ul><h2 id="podpoglavje-9"><strong>Primitivni podatkovni tipi</strong></h2><p>To so <strong>osnovni</strong>, vnaprej določeni tipi, ki jih pozna
+java.</p><h2 id="podpoglavje-10"><strong>Lastnosti:</strong></h2><ul>
+<li><p>imena se začnejo z malo črko (int, char, ...)</p></li>
+<li><p>shranjujejo <strong>enostavne vrednosti</strong></p></li>
+<li><p>velikost v pomnilniku je <strong>fiksna</strong></p></li>
+<li><p>ne vsebujejo metod</p></li>
+<li><p>vrednosti se shranjujejo <strong>direktno v pomnilnik</strong>
+(ne kot objekti)</p></li>
+<li><p>so <strong>hitrejši</strong></p></li>
+</ul><table>
+<colgroup>
+<col style="width: 11%"/>
+<col style="width: 16%"/>
+<col style="width: 32%"/>
+<col style="width: 39%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Tip</strong></th>
+<th><strong>Velikost v pomnilniku (byte)</strong></th>
+<th><strong>Pomen</strong></th>
+<th><strong>Primer</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>byte</td>
+<td>1</td>
+<td>celo število (-128 do 127)</td>
+<td>byte a = 10;</td>
+</tr>
+<tr class="even">
+<td>short</td>
+<td>2</td>
+<td>manjše celo število</td>
+<td>short s = 300;</td>
+</tr>
+<tr class="odd">
+<td>int</td>
+<td>4</td>
+<td>standardno celo število</td>
+<td>int x = 1000;</td>
+</tr>
+<tr class="even">
+<td>long</td>
+<td>8</td>
+<td>veliko celo število</td>
+<td>long velik = 100000L;</td>
+</tr>
+<tr class="odd">
+<td>float</td>
+<td>4</td>
+<td>decimalno število (manj natančno)</td>
+<td>float f = 3.14<mark>f</mark>;</td>
+</tr>
+<tr class="even">
+<td>double</td>
+<td>8</td>
+<td>decimalno število (bolj natančno)</td>
+<td>double d = 3.141592;</td>
+</tr>
+<tr class="odd">
+<td>char</td>
+<td>2</td>
+<td>en znak</td>
+<td>char c = <mark>'</mark>A<mark>'</mark>;</td>
+</tr>
+<tr class="even">
+<td>boolean</td>
+<td>1bit</td>
+<td>logična vrednost (true/false)</td>
+<td>boolean b = <mark>true</mark>;</td>
+</tr>
+</tbody>
+</table><p><strong>Naloga</strong>: Izračunaj, katere vrednosti lahko shrani
+short. Koliko je teh vrednosti in kater so? Prikaži postopek
+računanja!</p><div class="exercise"><label for="a119">Tvoj odgovor / rešitev</label><textarea data-save="" id="a119" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d119" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p><strong>Razlaga</strong>:</p><p>Short 2 B = 16b -&gt; 1bit za predznak, 15 bitov za število</p><p>2na 15 = 32678</p><p>-32678 …0 … 32677</p><p><strong>Naloga</strong>: Izračunaj, katere vrednosti lahko shrani
+byte. Koliko je teh vrednosti in kater so? Prikaži postopek
+računanja!</p><div class="exercise"><label for="a120">Tvoj odgovor / rešitev</label><textarea data-save="" id="a120" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d120" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p><strong>Razlaga</strong>: 1B = 8bit</p><p>1bit predznak</p><p>7bit stevilo</p><p>2na7 = 128 na pozitini in negatvni strani + nula (0)</p><p>-128 ...0 ... 127</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>Za radovedne</strong></p>
+<p><strong>Naloga</strong>: Kaj pa float - realnoštevilski podatkovni
+tipi</p>
+<p><strong>Razlaga</strong>: Zapis v pomnilniku</p>
+<table>
+<colgroup>
+<col style="width: 36%"/>
+<col style="width: 10%"/>
+<col style="width: 53%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Del</strong></th>
+<th><strong>Št. bitov</strong></th>
+<th><strong>Kaj pomeni</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Predznak</td>
+<td>1 bit</td>
+<td>določa pozitivno/negativno</td>
+</tr>
+<tr class="even">
+<td>Eksponent</td>
+<td>8 bitov</td>
+<td>določa potenco (premik decimalne točke)</td>
+</tr>
+<tr class="odd">
+<td>Mantisa (oz. frakcija, significand)</td>
+<td>23 bitov</td>
+<td>zapis vseh bitov števila brez pripadajoče potence</td>
+</tr>
+</tbody>
+</table>
+<p>Vir: <a href="https://medium.com/@vikramkumar/how-java-stores-floating-point-numbers-in-memory-step-by-step-b8d2a0f3df08">https://medium.com/@vikramkumar/how-java-stores-floating-point-numbers-in-memory-step-by-step-b8d2a0f3df08</a></p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-11"><strong>Referenčni (objektni) podatkovni tip</strong></h2><p>So <strong>vsi tipi, ki niso primitivni</strong>, in predstavljajo
+<strong>objekte</strong> oziroma strukture podatkov.</p><h2 id="podpoglavje-12"><strong>Lastnosti:</strong></h2><ul>
+<li><p>začnejo se z veliko črko (npr.: String, Scanner, Random,
+...)</p></li>
+<li><p>ne shranjujejo same vrednosti, ampak <strong>referenco
+(naslov)</strong> v pomnilniku</p></li>
+<li><p>vsebujejo <strong>metode</strong> in dodatne
+funkcionalnosti</p></li>
+<li><p>velikost v pomnilniku <strong>ni fiksna</strong></p></li>
+<li><p>so <strong>počasnejši</strong>, a zmogljivejši</p></li>
+</ul><table>
+<colgroup>
+<col style="width: 51%"/>
+<col style="width: 48%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Tip</strong></th>
+<th><strong>Primer</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>String</td>
+<td>niz znakov</td>
+</tr>
+<tr class="even">
+<td>ArrayList</td>
+<td>seznam</td>
+</tr>
+<tr class="odd">
+<td>Scanner</td>
+<td>branje iz konzole</td>
+</tr>
+<tr class="even">
+<td>uporabniški razredi</td>
+<td>npr. Student, Avto</td>
+</tr>
+</tbody>
+</table><p>Objekt ustvarimo malo drugače kot primitivno spremenljivko. Izjema je
+String! Prepoznamo ga po besedici new.</p><p>Primer:</p><p>Scanner scn = <mark>new</mark> Scanner(System.in);</p><p>Random rnd = <mark>new</mark> Random();</p><pre><code>String stavek = "To je stavek!"; // IZJEMA!!!</code></pre><p><strong>Inicializacija</strong> spremenljivke. Spremenljivki določimo
+(prvo - začetno) vrednost.</p><p>x = 7;</p><p>y = "Marko";</p><p>z = 9;</p><pre><code>float f = 1.5f;</code></pre><p>V enem stavku, lahko deklariramo in/ali inicializiramo več
+spremenljivk naenkrat. Ločimo jih z vejico.</p><pre><code>int x = 5, y, z = 50;</code></pre><h2 id="podpoglavje-13"><strong>Pravila poimenovanje spremenljivk:</strong></h2><ul>
+<li><p>Imena lahko vsebujejo: črke, številke, podčrtaj, dolar.</p></li>
+<li><p>Ime se mora začeti s črko ali podčrtajem ali dolarjem.</p></li>
+<li><p>Ime ne sem vsebovati presledka.</p></li>
+<li><p>Imena so »case sensitive«. Stevilo, stevilo, STEVILO so različne
+spremenljivke.</p></li>
+<li><p>Ime ne sme biti rezervirana beseda (int, byte, for, while, if,
+…).</p></li>
+<li><p>Imena spremenljivk morajo biti <strong>unikatna</strong>. Dve
+spremenljivki ne smeta imeti istega imena.</p></li>
+</ul><p>Primeri pravilnega poimenovanja:</p><ul>
+<li><p>Person</p></li>
+<li><p>AccountDetails</p></li>
+<li><p>_$Order (though $ as a starting character is not
+recommended)</p></li>
+<li><p>Customer_123</p></li>
+</ul><p>Primeri NE-pravilnega poimenovanja:</p><ul>
+<li><p>1Person (zečne se s števko)</p></li>
+<li><p>class (rezervirana beseda java)</p></li>
+<li><p>Customer-Info (vsebuje pomišljaj)</p></li>
+</ul><p>Uporabimo stil »<strong>camelCase</strong>«:</p><ul>
+<li><p>firstName</p></li>
+<li><p>totalPrice</p></li>
+<li><p>studentAge</p></li>
+</ul><p>Izogibamo se okrajšavam ali nerazumljivim imenom, da je koda bolj
+berljiva in vzdrževana.</p><h2 id="podpoglavje-14"><strong>Konstantna spremenljivka</strong></h2><p>Konstantna spremenljivka je primitivna spremenljivka, katere vrednost
+programer ali uporabnik ne more spremeniti, ko je enkrat določena.</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>final int PI = 3.14;</p>
+<p>PI = 5; // ne gre – konstante spremenljivke ne moremo spreminjati, ko
+enkrat ime vrednost,</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Imena konstantnih spremenljivk navadno pišemo s samimi velikimi
+črkami.</p><h2 id="podpoglavje-15"><strong>Literali</strong></h2><p><strong>Literali v javi</strong> so <strong>neposredno zapisane
+vrednosti</strong> v programu. To so stalne, fiksne vrednosti, ki jih
+zapišemo kar v kodo, brez izračuna ali spremenljivk.</p><p>Primeri literalov:</p><ul>
+<li><p>številski: 10, 3.14, -5, 7.2f</p></li>
+<li><p>logični: true, false</p></li>
+<li><p>znakovni: 'A', '\n'</p></li>
+<li><p>nizovni: "Pozdrav"</p></li>
+<li><p>posebni: null</p></li>
+</ul><p>več:</p><p><a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html">https://docs.oracle.com/javase/tutorial/java/nutsandbolts/datatypes.html</a></p><p><strong>Vprašanje</strong>: Zakaj je pri char lahko '\n'? To
+<mark>NI-</mark>sta dva znaka!</p><div class="exercise"><label for="a121">Tvoj odgovor / rešitev</label><textarea data-save="" id="a121" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d121" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p><strong>Odg</strong>: Obstajajo posebni znaki.</p><table>
+<colgroup>
+<col style="width: 18%"/>
+<col style="width: 81%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Zapis</strong></th>
+<th><strong>Pomen</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><mark>'\n'</mark></td>
+<td><mark>Nova vrstica</mark></td>
+</tr>
+<tr class="even">
+<td>'\t'</td>
+<td>Tabulator (presledek)</td>
+</tr>
+<tr class="odd">
+<td>'\b'</td>
+<td>Brisanje znaka (backspace)</td>
+</tr>
+<tr class="even">
+<td>'\r'</td>
+<td>Vrnitev na začetek vrstice</td>
+</tr>
+<tr class="odd">
+<td>'\''</td>
+<td>Enojni narekovaj '</td>
+</tr>
+<tr class="even">
+<td><mark>'\"'</mark></td>
+<td><mark>Dvojni narekovaj "</mark></td>
+</tr>
+<tr class="odd">
+<td>'\\'</td>
+<td>Poševnica nazaj \</td>
+</tr>
+</tbody>
+</table><p><strong>Doseg spremenljivke</strong> <strong>(scope)</strong></p><p>Doseg spremenljivke (tudi veljavnost ali ang. scope) pomeni, v
+katerem delu programa je spremenljivka dosegljiva (vidna) in jo lahko
+uporabljamo.</p><p>Spremenljivka je dosegljiva samo v območju, kjer jo deklariramo.
+Območje ali programski blok (ang. block of code) je območje med zavitimi
+oklepaji { }.</p><p>Blok kode lahko stoji samostojno ali pa je del stavka
+<strong>if</strong>, <strong>else</strong>, <strong>while</strong>,
+<strong>do while</strong>, <strong>for, switch.</strong></p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Primer1:</p>
+<p>public class Main</p>
+<p>{ <strong>// ZAČETEK BLOKA 1</strong></p>
+<p>public static void main(String[] args)</p>
+<p>{ <strong>// ZAČETEK BLOKA 2</strong></p>
+<pre><code>int x = 100;</code></pre>
+<p>x = x + 10;</p>
+<pre><code>System.out.println(x);</code></pre>
+<p>} <strong>// KONEC BLOKA 2</strong></p>
+<p>} <strong>// KONEC BLOKA 1</strong></p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Primer 2:</p>
+<p>public class Main</p>
+<pre><code>{</code></pre>
+<p>public static void main(String[] args)</p>
+<pre><code>{</code></pre>
+<p>// Tukaj NE moremo uporabljati spremenljivke x</p>
+<p>{ // Začetek bloka 3</p>
+<p>// Tukaj NE moremo uporabljati spremenljivke x</p>
+<pre><code>int x = 100; // deklaracija spremenljivke</code></pre>
+<p>// Tukaj LAHKO uporabljamo spremenljivko x</p>
+<pre><code>System.out.println(x);</code></pre>
+<p>} // Konec bloka 3</p>
+<p>// Tukaj NE moremo uporabljati spremenljivke x</p>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Komentar: Spremenljivke, ki so deklarirane znotraj bloka kode, so
+dostopne samo v kodi med zavitimi oklepaji in šele po vrstici, v kateri
+je bila spremenljivka deklarirana.</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Primer 3:</p>
+<pre><code>import java.util.Scanner;
+
+
+
+public class zankaDo</code></pre>
+<pre><code>{
+    
+    public static void main(String[] args)
+    
+    {
+        
+        Scanner scn = new Scanner(System.in);
+        
+        int vsota = 0;
+        
+        do</code></pre>
+<pre><code>{
+    
+    System.out.print("Vnesi število:");
+    
+    int vnos = scn.nextInt();
+    
+    vsota = vsota + vnos;
+    
+}
+
+while( vnos != 0); // spremenljivka vnos tukaj NE moremo uporabljati</code></pre>
+<pre><code>System.out.println("Vsota števil je " + vsota + ".");
+
+}
+
+}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Komentar: Spremenljivka <em>vnos</em> je veljavna samo do konca
+bloka, v katerem je deklarirana. Pogoj zanke do while se preverja izven
+bloka, zato spremenljivka ni dosegljiva in program javi napako: cannot
+find symbol (ali podobno).</p><p>vir: https://www.w3schools.com/java/java_scope.asp</p><h2 id="podpoglavje-16"><strong>Preverjanje znanja</strong></h2><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Kje se hranijo vrednosti, ki jih shranimo v spremenljivke?</p>
+<ol type="a">
+<li><p>v primarnem pomnilniku (RAM)</p></li>
+<li><p>na trajni pomnilniški enoti (SSD, HDD)</p></li>
+<li><p>na tračni enoti</p></li>
+<li><p>predpomnilniku (Cache)</p></li>
+</ol>
+<p>Koliko vrednosti lahko naenkrat shranimo v primitivno spremenljivko
+(npr.: int)?</p>
+<ol start="5" type="a">
+<li><p>0</p></li>
+<li><p>1</p></li>
+<li><p>2</p></li>
+<li><p>več (odvisno od prostora v RAMu)</p></li>
+</ol>
+<p>Kaj predstavlja pojem deklaracija?</p>
+<ol type="a">
+<li><p>Določanje začetne vrednosti spremenljivke</p></li>
+<li><p>Brisanje spremenljivke</p></li>
+<li><p>Ustvarjanje spremenljivke</p></li>
+<li><p>Spreminjanje vrednosti spremenljivke</p></li>
+</ol>
+<p>Kako se pravilno deklarira spremenljivka za cela števila?</p>
+<ol type="a">
+<li><pre><code>int c;</code></pre></li>
+<li><p>c int;</p></li>
+<li><p>int = c;</p></li>
+<li><p>c = int;</p></li>
+</ol>
+<p>V spremenljivko podatkovne tipa int lahko shranimo.</p>
+<ol type="a">
+<li><p>vsa cela števila</p></li>
+<li><p>samo določena cela pozitivna števila</p></li>
+<li><p>samo določena cela negativna in pozitivna števila</p></li>
+<li><p>samo določena realna negativna in pozitivna števila</p></li>
+</ol>
+<p>Uredi po podatkovne tipe po velikosti, ki jo zasede v pomnilniku.
+Najprej tiste z najmanj.</p>
+<ol type="a">
+<li><p>byte, int, short, long</p></li>
+<li><p>long, short, byte, int</p></li>
+<li><p>byte, short, int, long</p></li>
+<li><p>short, byte, int, long</p></li>
+</ol>
+<p>Katera vrstica prevede program nal.java?</p>
+<ol type="a">
+<li><p>compile nal.java</p></li>
+<li><p>java nal.java</p></li>
+<li><p>comp nala.java</p></li>
+<li><p>javac nal.java</p></li>
+<li><p>javac nal</p></li>
+</ol>
+<p>Označi napake za program, ki je shranjen v datoteki Naloga.java!</p>
+<table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public class Vaja {</code></pre>
+<p>System.out.println("Hello World!")</p>
+<pre><code>public static void main(String[] args) {</code></pre>
+<p>system.out.println("I am learning Java.");</p>
+<p>x int;</p>
+<p>x = 3</p>
+<pre><code>char x;</code></pre>
+<p>x = c;</p>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-17"><strong>Pretvarjanje med tipi (type casting)</strong></h2><p><strong>Pretvorba tipa</strong> (angl. <em>Type casting</em>) je
+postopek, pri katerem vrednost enega primitivnega podatkovnega tipa
+dodeliš drugemu tipu.</p><h2 id="podpoglavje-18"><strong>Kaj?</strong></h2><p><strong>Primer:</strong></p><pre><code>int x1 = 9; //</code></pre><p>byte y1 = x1; // dela? (DA/<mark>NE</mark>) ZAKAJ?</p><p>x1 -&gt; y1 TA – x1 je večja »vedro«, y1 pa je manjše »vedro«, lahko
+prek teče? DA</p><p>Y1 -&gt; x1</p><p>byte x2 = 9;</p><p>int y2 = x2 // dela? ZAKAJ? X2 (manjša) -&gt; y2 (večja) - OK</p><h2 id="podpoglavje-19"><strong>Širjenje - Widening Casting</strong></h2><p><strong>Widening Casting</strong> (automatically) - converting a
+smaller type to a larger type size (pretvarjanje manjšega tipa v
+večjega<br/>
+byte -&gt; short -&gt; char -&gt; int -&gt; long -&gt; float -&gt;
+double</p><p><strong>Ožanje - Narrowing Casting (manually) -</strong> converting a
+larger type to a smaller size type (pretvajanje večjega v
+manjšega)<br/>
+double -&gt; float -&gt; long -&gt; int -&gt; char -&gt; short -&gt;
+byte</p><p>Naloga: Kaj vse lahko napišemo na mesto vprašaja?</p><div class="exercise"><label for="a122">Tvoj odgovor / rešitev</label><textarea data-save="" id="a122" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d122" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><pre><code>double x = 9.1;</code></pre><pre><code>int y = ( ? )x; // lossy conversion</code></pre><p><strong>Odg:</strong> int, byte, short, char</p><h2 id="podpoglavje-20"><strong>Casting</strong></h2><h2 id="podpoglavje-21"><strong>Casting in Java is the process of converting one data type
+into another.</strong></h2><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public static void main(String[] args) {</code></pre>
+<pre><code>int x = 1;</code></pre>
+<pre><code>int y = 2;</code></pre>
+<pre><code>// kolicnik_i = x / y; // 1/2=0.5</code></pre>
+<pre><code>float kolicnik_f = x / (float)y ;</code></pre>
+<pre><code>//System.out.println(kolicnik_i);</code></pre>
+<pre><code>System.out.println(kolicnik_f);</code></pre>
+<p>// operator / ima več različic (isto je z nekaterimi drugimi
+operatorji)</p>
+<p>// vsak / ni /</p>
+<p>// / = /</p>
+<p>// 1. / operator za celoštevisko deljenje (ko sta obe št. int)</p>
+<p>// 2. / operator za realnoštevilsko deljenje (ko je vsaj en operand
+(število) float)</p>
+<p>// kako naredimo operand iz int v float</p>
+<p>// a) množimo z float primer: x *1.0f</p>
+<p>// b) eksplicitna pretvorba tipa (casting) (novi tip)ime_spremenljike
+primer: (float)x</p>
+<pre><code>String prvi = "Danes";</code></pre>
+<pre><code>String drugi = "Jurti";</code></pre>
+<pre><code>System.out.println(prvi + drugi + 1 + 2 ); // Error??</code></pre>
+<pre><code>System.out.println( 1 + 2 + prvi + drugi );</code></pre>
+<pre><code>char c = 'a';</code></pre>
+<p>// kateri je najmanjši celoštevilski podatkovni tip?</p>
+<p>byte i_b = 123;</p>
+<p>short i_s = 312;</p>
+<pre><code>int i_i = 312;</code></pre>
+<pre><code>long i_l = 312;</code></pre>
+<p>i_b = (byte)i_s; // eksplicitno pretvorimo v prmeren tip - PAZI -
+lahko so nepričakovni rezultati</p>
+<pre><code>//i_b = i_s; // napak, ker je i_s "večji" podatkovni tip</code></pre>
+<pre><code>//i_s = i_b; // nič ne izgubimo, nikoli, v nobenem primeru in
+GRE!</code></pre>
+<pre><code>//System.out.println(i_b);</code></pre>
+<pre><code>char ch = 'a';</code></pre>
+<pre><code>char ch_1 = 91;</code></pre>
+<p>ch++;</p>
+<pre><code>//ch_1++;</code></pre>
+<pre><code>System.out.println(ch);</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-22">Dodatno interaktivno preverjanje</h2><fieldset class="quiz" data-answer="1"><legend>Kateri tip v Javi predstavlja logično vrednost?</legend><label><input data-save="" id="q123-0" name="q123" type="radio" value="0"/> int</label><label><input data-save="" id="q123-1" name="q123" type="radio" value="1"/> boolean</label><label><input data-save="" id="q123-2" name="q123" type="radio" value="2"/> double</label><button class="verify">Preveri</button><output aria-live="polite"></output></fieldset><div class="bottom"><a href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html">← Prejšnje poglavje</a><a href="../12-operatorji/index.html">Naslednje poglavje →</a></div></article></main></body></html>

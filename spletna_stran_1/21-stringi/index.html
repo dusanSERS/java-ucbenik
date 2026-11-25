@@ -1,0 +1,294 @@
+<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Računalništvo</title><link rel="stylesheet" href="../style.css"><script src="../search-data.js" defer></script><script src="../script.js" defer></script></head><body data-base="../"><header><div><strong>Računalništvo</strong><small>Učno gradivo · programiranje in Java</small></div><button id="menu" aria-expanded="true">☰ Poglavja</button><div id="progress"></div></header><aside id="sidebar"><a href="../index.html">Domov</a><br><label for="search">Iskanje po gradivu</label><input id="search" type="search"><div id="results"></div><nav><a class="tab " href="../01-uvodna-ura/index.html"><span>01</span>Uvodna ura</a><a class="tab " href="../02-algoritmi/index.html"><span>02</span>Algoritmi</a><a class="tab " href="../03-pisanje-algoritmov-diagram-poteka/index.html"><span>03</span>Pisanje algoritmov – diagram poteka</a><a class="tab " href="../04-deli-programov---izrazi-stavki-trditev/index.html"><span>04</span>Deli programov - Izrazi, stavki, trditev</a><a class="tab " href="../05-programski-jeziki/index.html"><span>05</span>Programski jeziki</a><a class="tab " href="../06-programiranje/index.html"><span>06</span>Programiranje</a><a class="tab " href="../07-zlaganje-prevajanje-in-tolmačenje-programske-kode/index.html"><span>07</span>Zlaganje, prevajanje in tolmačenje programske kode</a><a class="tab " href="../08-programski-jezik-java-programiranje-v-javi/index.html"><span>08</span>Programski jezik JAVA – programiranje v javi</a><a class="tab " href="../09-sestavni-deli-programa-java/index.html"><span>09</span>Sestavni deli programa java</a><a class="tab " href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html"><span>10</span>Sintaksa in semantika in osnovna pravila</a><a class="tab " href="../11-spremenljivke/index.html"><span>11</span>Spremenljivke</a><a class="tab " href="../12-operatorji/index.html"><span>12</span>Operatorji</a><a class="tab " href="../13-izpis-na-ekran/index.html"><span>13</span>Izpis na ekran</a><a class="tab " href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html"><span>14</span>Branje vrednosti iz tipkovnice (user input)</a><a class="tab " href="../15-krmilni-stavki/index.html"><span>15</span>Krmilni stavki</a><a class="tab " href="../16-zanke/index.html"><span>16</span>Zanke</a><a class="tab " href="../17-polja-ali-tabele-ang.-array/index.html"><span>17</span>Polja ali tabele (ang. array)</a><a class="tab " href="../18-pomnilnik-v-javi/index.html"><span>18</span>Pomnilnik v javi</a><a class="tab " href="../19-prenos-vrednosti-parametrov-v-metodo/index.html"><span>19</span>Prenos vrednosti parametrov v metodo</a><a class="tab " href="../20-objektno-programiranje/index.html"><span>20</span>Objektno programiranje</a><a class="tab active" href="../21-stringi/index.html"><span>21</span>Stringi</a></nav></aside><main><article class="chapter" data-index="20" id="stringi"><div class="eyebrow">POGLAVJE 21 / 21</div><h1>Stringi</h1><nav aria-label="Podpoglavja" class="subnav"><a class="level-h2" href="#podpoglavje-1">Nizi</a><a class="level-h2" href="#podpoglavje-2">Pojmi</a><a class="level-h2" href="#podpoglavje-3">Java Strings</a><a class="level-h2" href="#podpoglavje-4">String Length</a><a class="level-h2" href="#podpoglavje-5">Stringi in operatorji</a></nav><p>vir:
+https://www.youtube.com/watch?v=cV-sOpOgof8&amp;list=PLsyeobzWxl7pe_IiTfNyr55kwJPWbgxB5&amp;index=37</p><h2 id="podpoglavje-1"><strong>Nizi</strong></h2><p><em><strong>Cilji</strong></em></p><ul>
+<li><p>Dijaki spoznajo pojem niza, zgradbo niza in operacije nad
+nizi.</p></li>
+<li><p>Spoznajo vgrajeni razred in metode za delo z nizi.</p></li>
+<li><p>Spoznajo parametre metode main().</p></li>
+</ul><h2 id="podpoglavje-2"><em><strong>Pojmi</strong></em></h2><ul>
+<li><p>Zgradba niza,</p></li>
+<li><p>kreiranje niza,</p></li>
+<li><p>dolžina niza,</p></li>
+<li><p>združevanje nizov,</p></li>
+<li><p>podnizi,</p></li>
+<li><p>primerjava nizov,</p></li>
+<li><p>razreda String in</p></li>
+<li><p>StringBuffer;</p></li>
+<li><p>parametri ukazne vrste.</p></li>
+</ul><h2 id="podpoglavje-3"><strong>Java Strings</strong></h2><ul>
+<li><p>Strings are used for storing text.</p></li>
+<li><p>A String variable contains a <strong>collection of
+characters</strong> surrounded by double quotes!</p></li>
+<li><p>Create a variable of type String and assign it a value:</p></li>
+</ul><pre><code>String greeting = "Hello";</code></pre><h2 id="podpoglavje-4"><strong>String Length</strong></h2><p>A String in Java is actually an <strong>object</strong>, which
+contain methods that can perform certain operations on strings.</p><p>For example, the length of a string can be found with
+the length() method:</p><pre><code>String txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";</code></pre><pre><code>System.out.println("The length of the txt string is: " +
+txt.length());</code></pre><p>Ker je String razred (podobno kot Random, Scanner, Math, ..) iz njega
+naredimo objekt in ne spremenljivke. Uporabimo ključno besedo new.
+Primer:</p><pre><code>String txt = new
+String("ABCDEFGHIJKLMNOPQRSTUVWXYZ");</code></pre><pre><code>System.out.println("The length of the txt string is: " +
+txt.length());</code></pre><p>Ključna <strong>razlika</strong> med <strong>spremenljivko</strong>
+in <strong>objektom</strong> je v tem, da je objekt instanca razreda, ki
+živi (Se shrani) na kopici, spremenljivka pa je ime, prostor na skladu,
+ki ima svoje ime in v katerega lahko shranimo vrednost ali referenco
+(naslov).</p><p>Primeri spremenljivke:</p><pre><code>int x;</code></pre><pre><code>boolean y;</code></pre><pre><code>String name;</code></pre><p>Primeri objektov:</p><p>new Random()</p><p>new String()</p><p>new Scanner(System.in)</p><p>Stringi v Javi so <strong>nespremenljivi</strong>. Do posameznih
+elementov lahko dostopamo z metodo charAt(1), podobno kot v poljih
+(array) polje[1], ne moremo pa jih spreminjati, kar pa za polja ne
+velja.</p><p>int [] polje = {1,2,3};</p><pre><code>String stavek = "Danes je lep dan!";</code></pre><pre><code>System.out.print(polje[0]);</code></pre><pre><code>System.out.print(stavek.charAt(0));</code></pre><pre><code>System.out.print(stavek[0]);</code></pre><p>polje[0] = 5; // elemente v polju lahko spreminjamo</p><p><del>stavek.charAt(0) = "S"; //</del> znakov v Stringu ne moremo
+spreminjati</p><table>
+<colgroup>
+<col style="width: 22%"/>
+<col style="width: 27%"/>
+<col style="width: 49%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Method</strong></th>
+<th><strong>Description</strong></th>
+<th><strong>Example</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>length()</td>
+<td>Returns number of characters</td>
+<td>name.length() → 3</td>
+</tr>
+<tr class="even">
+<td>charAt(int)</td>
+<td>Gets character at position</td>
+<td>name.charAt(0) → 'A'</td>
+</tr>
+<tr class="odd">
+<td>toUpperCase()</td>
+<td>All characters to uppercase</td>
+<td>name.toUpperCase() → "ANA"</td>
+</tr>
+<tr class="even">
+<td>contains(String)</td>
+<td>Checks if it contains part</td>
+<td>name.contains("n") → true</td>
+</tr>
+<tr class="odd">
+<td>equals(String)</td>
+<td>Compares two Strings</td>
+<td>"Ana".equals("ana") → false</td>
+</tr>
+<tr class="even">
+<td><mark>substring(int, int)</mark></td>
+<td><mark>Gets part of the String</mark></td>
+<td><mark>"Hello".substring(0, 2) → "He"</mark></td>
+</tr>
+</tbody>
+</table><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public class StringExample {</code></pre>
+<pre><code>public static void main(String[] args) {</code></pre>
+<pre><code>String name = "Julija";</code></pre>
+<pre><code>System.out.println("Name: " + name);</code></pre>
+<pre><code>System.out.println("Length: " + name.length());</code></pre>
+<pre><code>System.out.println("First letter: " + name.charAt(0));</code></pre>
+<pre><code>System.out.println("Uppercase: " + name.toUpperCase());</code></pre>
+<pre><code>System.out.println("Contains 'li': " + name.contains("li"));</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Name: Julija</p>
+<p>Length: 6</p>
+<p>First letter: J</p>
+<p>Uppercase: JULIJA</p>
+<p>Contains 'li': true</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-5"><strong>Stringi in operatorji</strong></h2><table>
+<colgroup>
+<col style="width: 5%"/>
+<col style="width: 28%"/>
+<col style="width: 66%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th>+</th>
+<th><p><strong>Združevanje</strong> nizov.</p>
+<p>Če imamo dva (ali več) stringa ju z operatorjem + združimo v
+enega.</p>
+<p>Če je na eni strani opertorja + string, se drugi operand avtomatično
+pretvori v string.</p></th>
+<th><pre><code>String firstName = "Ana";</code></pre>
+<pre><code>String lastName = "Novak";</code></pre>
+<pre><code>String fullName = firstName + " " + lastName;</code></pre>
+<pre><code>System.out.println(fullName); // Ana Novak</code></pre>
+<pre><code>String result = "Age: " + 30; // "Age: 30"</code></pre>
+<pre><code>String a = "a" + 1.5f;</code></pre>
+<p>a = "a" + "a";</p>
+<p>a = "a" + 1.5f;</p>
+<p>a = "a" + 1;</p>
+<p>a = "a" + '1';</p>
+<p>a = "a" + true;</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>==</td>
+<td><p><strong>Ne uporabljaj</strong> za primerjavo stringov
+(besedila)!</p>
+<p>Namesto tega se uporablja <strong>.equals()</strong></p></td>
+<td><pre><code>String a = "Ana";</code></pre>
+<pre><code>String b = "Ana";</code></pre>
+<pre><code>System.out.println(a == b); // Might be true, might be false
+(compares references)</code></pre>
+<pre><code>System.out.println(a.equals(b)); // true (compares content)</code></pre>
+<pre><code>System.out.println(a.equalsIgnoreCase(b)); // true</code></pre></td>
+</tr>
+<tr class="even">
+<td>/,*,%,-</td>
+<td><strong>Ne delujejo</strong> na Stringi</td>
+<td></td>
+</tr>
+</tbody>
+</table><p><strong>Vprašanja (naloge):</strong></p><div class="exercise"><label for="a185">Tvoj odgovor / rešitev</label><textarea data-save="" id="a185" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d185" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><ol type="1">
+<li><p>Označi pravilne in napačne klice metod. Napiši razloge ze eno in
+za drugo. Pri pravilnih klicih razloži rezultat.</p></li>
+</ol><div class="exercise"><label for="a186">Tvoj odgovor / rešitev</label><textarea data-save="" id="a186" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d186" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 49%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>// 1.</p>
+<pre><code>String s1 = "hello";</code></pre>
+<pre><code>int len = s1.length();</code></pre>
+<p>// 2.</p>
+<pre><code>String s2 = "banana";</code></pre>
+<pre><code>String s3 = s2.replace('a', 'o');</code></pre>
+<p>// 3.</p>
+<pre><code>String joined = String.join("-", "2025", "04", "18");</code></pre>
+<p>// 4.</p>
+<pre><code>int l = String.length();</code></pre>
+<p>// 5.</p>
+<pre><code>String s = "test";</code></pre>
+<pre><code>String s2 = s.replace('e');</code></pre></th>
+<th><p>// 6.</p>
+<pre><code>String result = String.join("-");</code></pre>
+<p>// 7.</p>
+<pre><code>String sub = "java".substring(4, 2);</code></pre>
+<p>// 8.</p>
+<pre><code>String s4 = "test";</code></pre>
+<pre><code>String result2 = s4.append("123");</code></pre>
+<p>// 9.</p>
+<pre><code>boolean starts = "Maribor".startsWith("Mari");</code></pre>
+<p>// 10.</p>
+<pre><code>String sub = "programiranje".substring(0, 7);</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><ol start="2" type="1">
+<li><p>Podan je objekt niz z naslednjo deklaracijo:</p></li>
+</ol><div class="exercise"><label for="a187">Tvoj odgovor / rešitev</label><textarea data-save="" id="a187" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d187" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<pre><code>String niz = "Matura ni težka!";</code></pre>
+<p>Kaj se izpiše z izvedbo naslednjih stavkov?</p>
+<pre><code>System.out.println(niz.indexOf("a"));</code></pre>
+</blockquote><pre><code>System.out.println(niz.toUpperCase());</code></pre><ol start="3" type="1">
+<li><p>Dane imamo te programske stavke:</p></li>
+</ol><div class="exercise"><label for="a188">Tvoj odgovor / rešitev</label><textarea data-save="" id="a188" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d188" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<pre><code>String s= "petek. ";</code></pre>
+<p>s="Super! Danes je " + s;</p>
+<pre><code>System.out.println(s);</code></pre>
+</blockquote><p>Kaj izpiše ta del kode?</p><p>A Super! Danes je</p><p>B Super! Danes je petek.</p><p>C Nič.</p><p>D Super! Danes je petek.</p><ol start="4" type="1">
+<li><p>Napišite zaporedje stavkov, s katerim ugotovite in izpišete,
+koliko črk angleške abecede je med leksikografsko najmanjšo in največjo
+črko niza s. Privzemite, da so v nizu s le male črke angleške
+abecede.</p></li>
+</ol><div class="exercise"><label for="a189">Tvoj odgovor / rešitev</label><textarea data-save="" id="a189" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d189" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Primer: če je String s = "abbbbbaaab";, program izpiše 0, če pa
+je</p><pre><code>String s="matura";, program izpiše 19.</code></pre><ol start="5" type="1">
+<li><p>V programu imamo to deklaracijo:</p></li>
+</ol><blockquote>
+<pre><code>String niz = new String("Dober dan.");</code></pre>
+<p>Kaj izpiše stavek?</p>
+<pre><code>System.out.println(niz.charAt(niz.length()-1));</code></pre>
+<p>A D</p>
+<p>B a</p>
+<p>C n</p>
+<p>D .</p>
+</blockquote><ol start="6" type="1">
+<li><p>Kaj se izpiše na zaslon po izvedbi spodnje kode?</p></li>
+</ol><pre><code>String niz = new String("MATURA");</code></pre><pre><code>for(int i=niz.length()-1; i&gt;=0; i--)</code></pre><pre><code>System.out.print(niz.charAt(i));</code></pre><p>A MATURA</p><p>B MATUR</p><p>C RUTAM</p><p>D ARUTAM</p><ol start="7" type="1">
+<li><p>Kaj izpiše izsek programa?</p></li>
+</ol><pre><code>String s = "matura";</code></pre><p>s.concat(" programiranje ");</p><p>s.replace('a','x'); System.out.print(s);</p><p>A matura</p><p>B matura programiranje</p><p>C mxtura programiranje</p><p>D mxturx progrxmirxnje</p><p><strong>Naloga:</strong></p><p>Napiši metodo, ki poljuben niz razdeli na enake dele (če se da) in
+vrne polje nizov. Vhodni podatek naj bo niz in število delov. Če se ne
+da razdeliti na enake dele, naj bodo zadnji nizi manjši. Podnize (dele
+nizov) dobiš z metodo <em>substring</em>.</p><div class="exercise"><label for="a190">Tvoj odgovor / rešitev</label><textarea data-save="" id="a190" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d190" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Primer: razdeli (“123456789”,3) -&gt; {“123”,”456”,”789“}</p><p>Primer: razdeli(“123456789”,2) -&gt; {“12345”,6789”}</p><p>Napiši glavo metode v javi.</p><p>Napiši algoritem z besedami.</p><p>Napiši algoritem v javi.</p><p>»kjn5321lk5321lk5321lk!«,12 -&gt;</p><p>»98432175980«, 1 -&gt;</p><p>»p043ti5429k290598k0b2p5štl5t222«,12-&gt;</p><p>»980eru96ujzi5t49«,2-&gt;</p><p>»eri90t43t«,2-&gt;</p><p>»123«,5-&gt;NAPAKA</p><p>»123«,0-&gt; NAPAKA</p><p>»123«,1-&gt; »123«</p><p>»123«,2-&gt;</p><p>»123«,3 -&gt; »1«,«2«,«3«</p><p>»1«-&gt;3</p><p>»123«</p><p>»01231456780«-&gt;2</p><p><mark>Najdemo primere, ki niso izvedljivi.</mark></p><p>Kdaj ni izvedljivo:</p><ol type="1">
+<li><p>Ko je število delov 0</p></li>
+<li><p>Ko niz dolg 0</p></li>
+<li><p>Če je število delov večja kot dolžina niza</p></li>
+</ol><p><mark>Najdemo primere, ki se lepo izidejo in so enostavni za
+razumeti.</mark></p><p>»123«,1-&gt; »123«</p><p>»123«,3 -&gt; b = {»1«,«2«,«3«}</p><p>I = a.length / d</p><p>B</p><p><mark>Najdemo primere, ki se ne izidejo lepo.</mark></p><p>Najdemo izjeme.</p><p>Public static String[] razdeli(String a, int d)</p><pre><code>{</code></pre><pre><code>}</code></pre><p>»123«,2-&gt;«12«,«3«</p><p>a.length() / d -&gt;1</p><p>a.length() % d -&gt; 1</p><p>»123«,«123«,«12«,«12«</p><p>»123456«,4-&gt;12,34,5,6</p><p>6 % 4 = 1 ost 2</p><p>Rešitev:</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>public class Main</p>
+<pre><code>{</code></pre>
+<p>public static String[] razdeli(String a, int d)</p>
+<pre><code>{</code></pre>
+<p>String []b;</p>
+<p>b = new String[d];</p>
+<pre><code>int z = 0;</code></pre>
+<pre><code>int i = a.length() / d;</code></pre>
+<pre><code>int o = a.length() % d;</code></pre>
+<p>if(d == 0 || a.length() == 0 || d &gt; a.length() )</p>
+<pre><code>{</code></pre>
+<p>// NAPAKA - ????</p>
+<pre><code>}</code></pre>
+<p>else</p>
+<pre><code>{</code></pre>
+<p>// DOMAČA NALOGA</p>
+<pre><code>for( int j = 0 ; j &lt; d ; j++)</code></pre>
+<pre><code>{</code></pre>
+<p>if(o &gt; 0)</p>
+<pre><code>{</code></pre>
+<p>b[j] = a.substring(z,z+i+1);</p>
+<p>o--;</p>
+<p>z += i+1;</p>
+<pre><code>}</code></pre>
+<p>else</p>
+<pre><code>{</code></pre>
+<p>b[j] = a.substring(z,z+i);</p>
+<p>z += i;</p>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre>
+<pre><code>return b;</code></pre>
+<pre><code>}</code></pre>
+<pre><code>public static void main(String[] args) {</code></pre>
+<pre><code>String a = "123456";</code></pre>
+<pre><code>int d = 3;</code></pre>
+<p>String [] novi = razdeli(a,d);</p>
+<pre><code>for (int i = 0 ; i &lt; d ; i++ )</code></pre>
+<pre><code>{</code></pre>
+<pre><code>System.out.println(novi[i]);</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><div class="bottom"><a href="../20-objektno-programiranje/index.html">← Prejšnje poglavje</a></div></article></main></body></html>

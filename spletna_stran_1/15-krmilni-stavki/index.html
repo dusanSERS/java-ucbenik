@@ -1,0 +1,666 @@
+<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Računalništvo</title><link rel="stylesheet" href="../style.css"><script src="../search-data.js" defer></script><script src="../script.js" defer></script></head><body data-base="../"><header><div><strong>Računalništvo</strong><small>Učno gradivo · programiranje in Java</small></div><button id="menu" aria-expanded="true">☰ Poglavja</button><div id="progress"></div></header><aside id="sidebar"><a href="../index.html">Domov</a><br><label for="search">Iskanje po gradivu</label><input id="search" type="search"><div id="results"></div><nav><a class="tab " href="../01-uvodna-ura/index.html"><span>01</span>Uvodna ura</a><a class="tab " href="../02-algoritmi/index.html"><span>02</span>Algoritmi</a><a class="tab " href="../03-pisanje-algoritmov-diagram-poteka/index.html"><span>03</span>Pisanje algoritmov – diagram poteka</a><a class="tab " href="../04-deli-programov---izrazi-stavki-trditev/index.html"><span>04</span>Deli programov - Izrazi, stavki, trditev</a><a class="tab " href="../05-programski-jeziki/index.html"><span>05</span>Programski jeziki</a><a class="tab " href="../06-programiranje/index.html"><span>06</span>Programiranje</a><a class="tab " href="../07-zlaganje-prevajanje-in-tolmačenje-programske-kode/index.html"><span>07</span>Zlaganje, prevajanje in tolmačenje programske kode</a><a class="tab " href="../08-programski-jezik-java-programiranje-v-javi/index.html"><span>08</span>Programski jezik JAVA – programiranje v javi</a><a class="tab " href="../09-sestavni-deli-programa-java/index.html"><span>09</span>Sestavni deli programa java</a><a class="tab " href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html"><span>10</span>Sintaksa in semantika in osnovna pravila</a><a class="tab " href="../11-spremenljivke/index.html"><span>11</span>Spremenljivke</a><a class="tab " href="../12-operatorji/index.html"><span>12</span>Operatorji</a><a class="tab " href="../13-izpis-na-ekran/index.html"><span>13</span>Izpis na ekran</a><a class="tab " href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html"><span>14</span>Branje vrednosti iz tipkovnice (user input)</a><a class="tab active" href="../15-krmilni-stavki/index.html"><span>15</span>Krmilni stavki</a><a class="tab " href="../16-zanke/index.html"><span>16</span>Zanke</a><a class="tab " href="../17-polja-ali-tabele-ang.-array/index.html"><span>17</span>Polja ali tabele (ang. array)</a><a class="tab " href="../18-pomnilnik-v-javi/index.html"><span>18</span>Pomnilnik v javi</a><a class="tab " href="../19-prenos-vrednosti-parametrov-v-metodo/index.html"><span>19</span>Prenos vrednosti parametrov v metodo</a><a class="tab " href="../20-objektno-programiranje/index.html"><span>20</span>Objektno programiranje</a><a class="tab " href="../21-stringi/index.html"><span>21</span>Stringi</a></nav></aside><main><article class="chapter" data-index="14" id="krmilni-stavki"><div class="eyebrow">POGLAVJE 15 / 21</div><h1>Krmilni stavki</h1><nav aria-label="Podpoglavja" class="subnav"><a class="level-h2" href="#podpoglavje-1">Pogojni stavki</a><a class="level-h2" href="#podpoglavje-2">Stavek if</a><a class="level-h2" href="#podpoglavje-3">Stavek if-else</a><a class="level-h2" href="#podpoglavje-4">Stavek switch</a><a class="level-h2" href="#podpoglavje-5">Tako deluje:</a><a class="level-h2" href="#podpoglavje-6">Komentarji:</a><a class="level-h2" href="#podpoglavje-7">Dodatno interaktivno preverjanje</a></nav><p>Krmilni stavki (ang. control statements) so stavki v programskem
+jeziku java, s katerimi nadzorujemo potek izvajanja programa. Omogočajo
+nam, da program ne teče samo od zgoraj navzdol, temveč lahko določene
+stavke:</p><ul>
+<li><p>ponavljamo ali</p></li>
+<li><p>preskočimo.</p></li>
+</ul><p>Ponavljanje in/ali preskakovanje je odvisno od <strong>pogojev, ki so
+del krmilnih stavkov</strong> in jih programer zapiše v programsko kodo
+v za to predviden prostor.</p><p>Stavkom, ki izvedejo samo določen del kode, pravimo <strong>pogojni
+stavki</strong>.</p><p>Stavkom, ki ponavljajo določen del kode pravimo
+<strong>zanke</strong>.</p><h2 id="podpoglavje-1">Pogojni stavki </h2><ul>
+<li><p>If</p></li>
+<li><p>If – else</p></li>
+<li><p>switch case</p></li>
+</ul><h2 id="podpoglavje-2">Stavek if</h2><table>
+<colgroup>
+<col style="width: 38%"/>
+<col style="width: 48%"/>
+<col style="width: 13%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Stavki1</p>
+<p>if( pogoj )</p>
+<pre><code>{</code></pre>
+<p>Stavki2</p>
+<pre><code>}</code></pre>
+<p>Stavki3</p></th>
+<th><p>Stavki1</p>
+<p>if( pogoj )</p>
+<p>Stavek</p>
+<p>Stavki3</p></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><pre><code>int starost = 7;</code></pre>
+<pre><code>System.out.print("ZAČETEK");</code></pre>
+<p>if( starost &gt;= 18)</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.println("Polnoleten dijak");</code></pre>
+<pre><code>}</code></pre>
+<pre><code>System.out.print("KONEC");</code></pre></td>
+<td><pre><code>int starost = 7;</code></pre>
+<pre><code>System.out.print("ZAČETEK");</code></pre>
+<p>if( starost &gt;= 18)</p>
+<pre><code>System.out.print("Polnoleten");</code></pre>
+<pre><code>System.out.print("KONEC");</code></pre></td>
+<td></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><pre><code>int starost = 7;</code></pre>
+<pre><code>System.out.print("ZAČETEK");</code></pre>
+<pre><code>if( starost &gt;= 18) System.out.print("Polnoleten");</code></pre>
+<pre><code>System.out.print("KONEC");</code></pre></td>
+<td></td>
+</tr>
+</tbody>
+</table><p>[nariši diagram poteka]</p><ul>
+<li><p>Stavki1 in stavki3 se izvedejo vedno, stavki 2 pa samo takrat, ko
+je pogoj resničen (true).</p></li>
+<li><p>Če je v stavki2 samo en stavek, oklepajev ne rabimo
+pisati.</p></li>
+</ul><h2 id="podpoglavje-3">Stavek if-else</h2><table>
+<colgroup>
+<col style="width: 46%"/>
+<col style="width: 46%"/>
+<col style="width: 6%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>Stavki1</p>
+<p>if( pogoj )</p>
+<pre><code>{</code></pre>
+<p>Stavki2</p>
+<pre><code>}</code></pre>
+<p>else</p>
+<pre><code>{</code></pre>
+<p>Stavki3</p>
+<pre><code>}</code></pre>
+<p>Stavki4</p></th>
+<th><p>Stavki1</p>
+<p>if( pogoj )</p>
+<p>Stavek2</p>
+<p>else</p>
+<p>Stavek3</p>
+<p>Stavki4</p>
+<p>ali</p>
+<p>if(pogoj) Stavek2</p>
+<p>else Stavek3</p></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><pre><code>int starost = 7;</code></pre>
+<pre><code>System.out.print("ZAČETEK");</code></pre>
+<p>if( starost &gt;= 18)</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.println("Polnoleten dijak");</code></pre>
+<pre><code>}</code></pre>
+<p>else</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.print("Ne-polnoleten ");</code></pre>
+<pre><code>System.out.println("dijak ");</code></pre>
+<pre><code>}</code></pre>
+<pre><code>System.out.print("KONEC");</code></pre></td>
+<td><pre><code>int starost = 7;</code></pre>
+<pre><code>System.out.print("ZAČETEK");</code></pre>
+<p>if( starost &gt;= 18)</p>
+<pre><code>System.out.print("Polnoleten");</code></pre>
+<p>else</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.print("Ne-polnoleten ");</code></pre>
+<pre><code>System.out.println("dijak ");</code></pre>
+<pre><code>}</code></pre>
+<pre><code>System.out.print("KONEC");</code></pre></td>
+<td></td>
+</tr>
+</tbody>
+</table><p>[nariši diagram poteka]</p><ul>
+<li><p>Stavka else ne more biti brez stavka if.</p></li>
+</ul><p><strong>Primer:</strong></p><table>
+<colgroup>
+<col style="width: 64%"/>
+<col style="width: 35%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>if (ocena == 1)</p>
+<pre><code>System.out.println("nzd");</code></pre>
+<p>else if (ocena == 2)</p>
+<pre><code>System.out.println("zd");</code></pre>
+<p>else if (ocena == 3)</p>
+<pre><code>System.out.println("db");</code></pre>
+<p>else if (ocena == 4)</p>
+<pre><code>System.out.println("pd");</code></pre>
+<p>else if (ocena == 5)</p>
+<pre><code>System.out.println("odl");</code></pre>
+<p>else</p>
+<pre><code>System.out.println("napaka");</code></pre></th>
+<th><p>// NAROBE – ZAKAJ???</p>
+<p>if (ocena == 1)</p>
+<pre><code>System.out.println("nzd");</code></pre>
+<p>if (ocena == 2)</p>
+<pre><code>System.out.println("zd");</code></pre>
+<p>if (ocena == 3)</p>
+<pre><code>System.out.println("db");</code></pre>
+<p>if (ocena == 4)</p>
+<pre><code>System.out.println("pd");</code></pre>
+<p>if (ocena == 5)</p>
+<pre><code>System.out.println("odl");</code></pre>
+<p>else</p>
+<pre><code>System.out.println("napaka");</code></pre></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>if (ocena == 1)</p>
+<pre><code>System.out.println("nzd");</code></pre>
+<p>else</p>
+<pre><code>{</code></pre>
+<p>if (ocena == 2)</p>
+<pre><code>System.out.println("zd");</code></pre>
+<p>else</p>
+<pre><code>{</code></pre>
+<p>if (ocena == 3)</p>
+<pre><code>System.out.println("db");</code></pre>
+<p>else</p>
+<pre><code>{</code></pre>
+<p>if (ocena == 4)</p>
+<pre><code>System.out.println("pd");</code></pre>
+<p>else</p>
+<pre><code>{</code></pre>
+<p>if (ocena == 5)</p>
+<pre><code>System.out.println("odl");</code></pre>
+<p>else</p>
+<pre><code>System.out.println("napaka");</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></td>
+<td></td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-4">Stavek switch</h2><p>Namesto pisanja številnih stavkov if..else lahko v nekaterih primerih
+uporabimo stavek switch.</p><p>Predstavljamo si ga lahko kot naročanje hrane v restavraciji:</p><ul>
+<li><p>Če izbereš številko 1, dobiš pico.</p></li>
+<li><p>Če izbereš 2, dobiš burger.</p></li>
+<li><p>Če izbereš 3, dobiš testenine.</p></li>
+<li><p>V nasprotnem primeru ne dobiš ničesar.</p></li>
+</ul><p>Stavek switch lahko nadomesti if-else takrat, ko v pogojnem stavku
+uporabljamo operator je enako (==). Ne moremo pa gu uporabiti v
+primerih, ko bi želeli nadomestiti ostale primerjalne ali logične
+operatorje (&lt;, &gt;, ||, ...).</p><p>Stavek switch izbere enega izmed več blokov kode, ki se nato
+izvede.</p><p>Sintaksa stavka switch:</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>switch(<em>izraz</em>)</p>
+<pre><code>{</code></pre>
+<p>case x:</p>
+<p><em>// stavki 1 (blok kode)</em></p>
+<p>break;</p>
+<p>case y:</p>
+<p><em>// stavki 2 (blok kode)</em></p>
+<p>break;</p>
+<p>...</p>
+<p>default:</p>
+<p><em>// stavki 3</em></p>
+<p>break;</p>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-5"><strong>Tako deluje:</strong></h2><ul>
+<li><p>Izraz v switch se ovrednoti samo enkrat. (izraz je lahko
+računska</p></li>
+<li><p>Rezultat se primerja z vsako vrednostjo case. (primerjava je
+lahko samo ==, ne pa tudi &lt;, &gt;, &lt;=, &gt;=, !=)</p></li>
+<li><p>Če se katera ujema, se izvede ustrezni blok kode.</p></li>
+<li><p>break zaustavi izvajanje switch po izvedenem ujemajočem se
+primeru.</p></li>
+<li><p>če stavkom ne sledi break, se izvede naslednji primer (case),
+brez primerjave</p></li>
+<li><p>default se izvede, če ni nobenega ujemanja</p></li>
+</ul><table>
+<colgroup>
+<col style="width: 48%"/>
+<col style="width: 51%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p><strong>primer switch:</strong></p>
+<pre><code>import java.util.Scanner;</code></pre>
+<p>public class Restavracija</p>
+<pre><code>{</code></pre>
+<p>public static void main(String[] args)</p>
+<pre><code>{</code></pre>
+<p>Scanner sc = new Scanner(System.in);</p>
+<pre><code>System.out.print("Izberi številko (1–3): ");</code></pre>
+<pre><code>int izbira = sc.nextInt();</code></pre>
+<p>switch (izbira)</p>
+<pre><code>{</code></pre>
+<p><mark>case 1:</mark></p>
+<pre><code>System.out.println("Dobiš pico.");</code></pre>
+<p><mark>break;</mark></p>
+<p>case 2:</p>
+<pre><code>System.out.println("Dobiš burger.");</code></pre>
+<p>break;</p>
+<p>case 3:</p>
+<pre><code>System.out.println("Dobiš testenine.");</code></pre>
+<p>break;</p>
+<p>default:</p>
+<pre><code>System.out.println("Ne dobiš ničesar.");</code></pre>
+<p>break;</p>
+<pre><code>}</code></pre>
+<p>sc.close();</p>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+<th><p><strong>enak primer s if-else:</strong></p>
+<pre><code>import java.util.Scanner;</code></pre>
+<p>public class Restavracija</p>
+<pre><code>{</code></pre>
+<p>public static void main(String[] args)</p>
+<pre><code>{</code></pre>
+<p>Scanner sc = new Scanner(System.in);</p>
+<pre><code>System.out.print("Izberi številko (1–3): ");</code></pre>
+<pre><code>int izbira = sc.nextInt();</code></pre>
+<p><mark>if(izbira == 1)</mark></p>
+<pre><code>{</code></pre>
+<pre><code>System.out.println("Dobiš pico.");</code></pre>
+<pre><code>}</code></pre>
+<p>else if(izbira == 2)</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.println("Dobiš burger.");</code></pre>
+<pre><code>}</code></pre>
+<p>else if(izbira == 3)</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.println("Dobiš testenine.");</code></pre>
+<pre><code>}</code></pre>
+<p>else</p>
+<pre><code>{</code></pre>
+<pre><code>System.out.println("Ne dobiš ničesar.");</code></pre>
+<pre><code>}</code></pre>
+<p>sc.close();</p>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><table>
+<colgroup>
+<col style="width: 32%"/>
+<col style="width: 34%"/>
+<col style="width: 32%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public static void main(String[] args)
+
+{
+    
+    Scanner sc = new Scanner(System.in);
+    
+    
+    
+    System.out.print("Izberi spol (m/ž):");</code></pre>
+<pre><code>// preberemo besedilo in ga pretvorimo v znak
+
+char izbira = sc.nextLine().charAt(0);
+
+
+
+switch(izbira)
+
+{
+    
+    case 'm':
+    
+    System.out.println("Vaš spol je moški.");
+    
+    break;
+    
+    case 'ž':
+    
+    System.out.println("Vaš spol je ženski");
+    
+    break;
+    
+    default:
+    
+    System.out.println("Napačen vnos");
+    
+    break;</code></pre>
+<pre><code>}
+
+sc.close();
+
+}</code></pre></th>
+<th><pre><code>public static void main(String[] args)
+
+{
+    
+    Scanner sc = new Scanner(System.in);
+    
+    
+    
+    System.out.print("Izberi spol (m/ž):");
+    
+    char izbira = sc.nextLine().charAt(0);</code></pre>
+<pre><code>switch(izbira)
+
+{
+    
+    case 'm':
+    
+    System.out.println("Vaš spol je moški.");
+    
+    break;
+    
+    case 'M':
+    
+    System.out.println("Vaš spol je moški.");
+    
+    break;
+    
+    case 'ž':
+    
+    System.out.println("Vaš spol je ženski");
+    
+    break;
+    
+    case 'Ž':
+    
+    System.out.println("Vaš spol je ženski");
+    
+    break;
+    
+    default:
+    
+    System.out.println("Napačen vnos");
+    
+    break;
+    
+}
+
+sc.close();
+
+}</code></pre></th>
+<th><pre><code>public static void main(String[] args)
+
+{
+    
+    Scanner sc = new Scanner(System.in);
+    
+    
+    
+    System.out.print("Izberi spol (m/ž):");
+    
+    char izbira = sc.nextLine().charAt(0);</code></pre>
+<pre><code>switch(izbira)
+
+{
+    
+    case 'm':
+    
+    case 'M':
+    
+    System.out.println("Vaš spol je moški.");
+    
+    break;
+    
+    case 'ž':
+    
+    case 'Ž':
+    
+    System.out.println("Vaš spol je ženski");
+    
+    break;
+    
+    default:
+    
+    System.out.println("Napačen vnos");
+    
+    break;
+    
+}
+
+sc.close();
+
+}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><p>Komentar:</p>
+<p>Spremenljivka izbira se primerja z vrednostmi m ali ž. Težava
+nastopi, če uporabnik vpiše veliko črko M. TO lahko rešimo na različne
+načine. Lahko bi vpisano črko pretvorili v malo črko, mi pa bomo v
+naslednjem primeru naredili primerjavo z malo in veliko črko.</p></td>
+<td>Komentar:</td>
+<td>Komentar:</td>
+</tr>
+</tbody>
+</table><p><strong>Naloga:</strong></p><table>
+<colgroup>
+<col style="width: 3%"/>
+<col style="width: 71%"/>
+<col style="width: 9%"/>
+<col style="width: 4%"/>
+<col style="width: 4%"/>
+<col style="width: 8%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th></th>
+<th>Starost = 5</th>
+<th>18</th>
+<th>60</th>
+<th>90</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>import java.util.Scanner;</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td> </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>public class StarostniPreverjanje {</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>public static void main(String[] args) {</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>Scanner sc = new Scanner(System.in);</td>
+<td>X</td>
+<td>x</td>
+<td>x</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td> </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>System.out.print("Vnesite svojo starost: ");</td>
+<td>X</td>
+<td>x</td>
+<td>x</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>int starost = sc.nextInt();</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>X</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td> </td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>if (starost &lt; 18) {</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+<td>x</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>System.out.println("Oseba je mlajša od 18 let.");</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>}</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>else {</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>if (starost &gt;= 65) {</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>System.out.println("Oseba je upokojenec.");</td>
+<td></td>
+<td></td>
+<td></td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>}</td>
+<td></td>
+<td></td>
+<td></td>
+<td>X</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td>else {</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>System.out.println("Oseba je odrasla oseba.");</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td>}</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>}</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr class="odd">
+<td>21</td>
+<td>}</td>
+<td></td>
+<td>X</td>
+<td>X</td>
+<td>X</td>
+</tr>
+<tr class="even">
+<td>22</td>
+<td>}</td>
+<td></td>
+<td>x</td>
+<td>X</td>
+<td>X</td>
+</tr>
+</tbody>
+</table><ol type="1">
+<li><p>Preštej, koliko blokov kode je v programu.</p></li>
+<li><p>Označi začetke in konce posameznih blokov, ki pripadajo pogojnim
+stavkom.</p></li>
+<li><p>Zapiši številke vrstic, ki se izvedejo, če uporabnik vpiše 5, 18,
+60, 90. Pri vsaki možnosti tudi zabeleži izpis in vrednosti
+spremenljivk.</p></li>
+<li><p>Koliko stavkov vsebuje prvi in drugi else stavek?</p></li>
+<li><p>Okrajšaj (izbriši oklepaj {}) vse pogojne stavke, ki vsebujejo
+samo en stavek.</p></li>
+</ol><div class="exercise"><label for="a128">Tvoj odgovor / rešitev</label><textarea data-save="" id="a128" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d128" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><h2 id="podpoglavje-6"><strong>Komentarji:</strong></h2><ul>
+<li><p>Program se začne izvajati v metodi <strong>main</strong></p></li>
+<li><p>Programski stavki se izvajajo en za drugim (navzdol)</p></li>
+<li><p>Pri pogojnem stavku if, se izvedejo vsi stavki v bloku, ki sledi,
+ampak samo, če je pogoj resničen.</p></li>
+<li><p>Če pogoj v stavku ni resničen, se izvedejo stavki v bloku, ki
+sledi delu else.</p></li>
+</ul><h2 id="podpoglavje-7">Dodatno interaktivno preverjanje</h2><fieldset class="quiz" data-answer="0"><legend>Kateri stavek omogoča izbiro med dvema vejama?</legend><label><input data-save="" id="q129-0" name="q129" type="radio" value="0"/> if-else</label><label><input data-save="" id="q129-1" name="q129" type="radio" value="1"/> import</label><label><input data-save="" id="q129-2" name="q129" type="radio" value="2"/> class</label><button class="verify">Preveri</button><output aria-live="polite"></output></fieldset><div class="bottom"><a href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html">← Prejšnje poglavje</a><a href="../16-zanke/index.html">Naslednje poglavje →</a></div></article></main></body></html>

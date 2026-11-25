@@ -1,0 +1,405 @@
+<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Računalništvo</title><link rel="stylesheet" href="../style.css"><script src="../search-data.js" defer></script><script src="../script.js" defer></script></head><body data-base="../"><header><div><strong>Računalništvo</strong><small>Učno gradivo · programiranje in Java</small></div><button id="menu" aria-expanded="true">☰ Poglavja</button><div id="progress"></div></header><aside id="sidebar"><a href="../index.html">Domov</a><br><label for="search">Iskanje po gradivu</label><input id="search" type="search"><div id="results"></div><nav><a class="tab " href="../01-uvodna-ura/index.html"><span>01</span>Uvodna ura</a><a class="tab active" href="../02-algoritmi/index.html"><span>02</span>Algoritmi</a><a class="tab " href="../03-pisanje-algoritmov-diagram-poteka/index.html"><span>03</span>Pisanje algoritmov – diagram poteka</a><a class="tab " href="../04-deli-programov---izrazi-stavki-trditev/index.html"><span>04</span>Deli programov - Izrazi, stavki, trditev</a><a class="tab " href="../05-programski-jeziki/index.html"><span>05</span>Programski jeziki</a><a class="tab " href="../06-programiranje/index.html"><span>06</span>Programiranje</a><a class="tab " href="../07-zlaganje-prevajanje-in-tolmačenje-programske-kode/index.html"><span>07</span>Zlaganje, prevajanje in tolmačenje programske kode</a><a class="tab " href="../08-programski-jezik-java-programiranje-v-javi/index.html"><span>08</span>Programski jezik JAVA – programiranje v javi</a><a class="tab " href="../09-sestavni-deli-programa-java/index.html"><span>09</span>Sestavni deli programa java</a><a class="tab " href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html"><span>10</span>Sintaksa in semantika in osnovna pravila</a><a class="tab " href="../11-spremenljivke/index.html"><span>11</span>Spremenljivke</a><a class="tab " href="../12-operatorji/index.html"><span>12</span>Operatorji</a><a class="tab " href="../13-izpis-na-ekran/index.html"><span>13</span>Izpis na ekran</a><a class="tab " href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html"><span>14</span>Branje vrednosti iz tipkovnice (user input)</a><a class="tab " href="../15-krmilni-stavki/index.html"><span>15</span>Krmilni stavki</a><a class="tab " href="../16-zanke/index.html"><span>16</span>Zanke</a><a class="tab " href="../17-polja-ali-tabele-ang.-array/index.html"><span>17</span>Polja ali tabele (ang. array)</a><a class="tab " href="../18-pomnilnik-v-javi/index.html"><span>18</span>Pomnilnik v javi</a><a class="tab " href="../19-prenos-vrednosti-parametrov-v-metodo/index.html"><span>19</span>Prenos vrednosti parametrov v metodo</a><a class="tab " href="../20-objektno-programiranje/index.html"><span>20</span>Objektno programiranje</a><a class="tab " href="../21-stringi/index.html"><span>21</span>Stringi</a></nav></aside><main><article class="chapter" data-index="1" id="algoritmi"><div class="eyebrow">POGLAVJE 02 / 21</div><h1>Algoritmi</h1><nav aria-label="Podpoglavja" class="subnav"><a class="level-h2" href="#podpoglavje-1">Zaključek:</a><a class="level-h2" href="#podpoglavje-2">Zapis algoritma</a><a class="level-h2" href="#podpoglavje-3">Zapisi algoritma (prednosti, slabosti)</a><a class="level-h2" href="#podpoglavje-4">Lastnosti algoritma</a><a class="level-h2" href="#podpoglavje-5">Diagram poteka</a><a class="level-h2" href="#podpoglavje-6">Kaj pomeni V:x?</a><a class="level-h2" href="#podpoglavje-7">Postopek pisanja algoritmov.</a><a class="level-h2" href="#podpoglavje-8">Napiši diagram poteka za programe:</a><a class="level-h2" href="#podpoglavje-9">Dodatno interaktivno preverjanje</a></nav><p><strong>Cilji:</strong></p><p><strong>Dijaki</strong></p><ul>
+<li><p>poznajo pojem algoritma in našteti njegove lastnosti
+(razumljivost, končnost, enoumnost, razčlenjenost, …) in te lastnosti
+razume,</p></li>
+<li><p>opišejo načine zapisa algoritma in jih prikažejo na
+primeru,</p></li>
+<li><p>izdelajo algoritem v obliki diagram poteka,</p></li>
+<li><p>opredelijo pojem programskega jezika in razložijo njegovo
+funkcijo,</p></li>
+<li><p>poznajo različne vrste programskih jezikov in jih razvrstijo po
+namenu in uporabi,</p></li>
+<li><p>razloži, kaj je program in napiše primer računalniškega
+programa</p></li>
+</ul><p><strong>Naloge iz maturitetnih pol na temo algoritmi in programski
+jeziki:</strong></p><div class="exercise"><label for="a2">Tvoj odgovor / rešitev</label><textarea data-save="" id="a2" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d2" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p><img src="../media/image2.png" style="width:6.53194in;height:1.55903in"/></p><div class="exercise"><label for="a3">Odgovor ali opombe k sliki</label><textarea data-save="" id="a3" rows="3"></textarea><label class="check"><input data-save="" id="d3" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p><img src="../media/image3.png" style="width:6.53194in;height:2.24514in"/></p><div class="exercise"><label for="a4">Odgovor ali opombe k sliki</label><textarea data-save="" id="a4" rows="3"></textarea><label class="check"><input data-save="" id="d4" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p><img src="../media/image4.png" style="width:3.3338in;height:4.26101in"/></p><div class="exercise"><label for="a5">Odgovor ali opombe k sliki</label><textarea data-save="" id="a5" rows="3"></textarea><label class="check"><input data-save="" id="d5" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p><img src="../media/image5.png" style="width:2.81289in;height:1.84401in"/></p><div class="exercise"><label for="a6">Odgovor ali opombe k sliki</label><textarea data-save="" id="a6" rows="3"></textarea><label class="check"><input data-save="" id="d6" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p><img src="../media/image6.png" style="width:3.47965in;height:4.71941in"/></p><div class="exercise"><label for="a7">Odgovor ali opombe k sliki</label><textarea data-save="" id="a7" rows="3"></textarea><label class="check"><input data-save="" id="d7" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p><img src="../media/image7.png" style="width:2.61495in;height:1.59397in"/></p><div class="exercise"><label for="a8">Odgovor ali opombe k sliki</label><textarea data-save="" id="a8" rows="3"></textarea><label class="check"><input data-save="" id="d8" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p><img src="../media/image8.png" style="width:6.53194in;height:2.17083in"/></p><div class="exercise"><label for="a9">Odgovor ali opombe k sliki</label><textarea data-save="" id="a9" rows="3"></textarea><label class="check"><input data-save="" id="d9" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p><img src="../media/image9.png" style="width:6.53194in;height:1.92083in"/></p><div class="exercise"><label for="a10">Odgovor ali opombe k sliki</label><textarea data-save="" id="a10" rows="3"></textarea><label class="check"><input data-save="" id="d10" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p><img src="../media/image10.png" style="width:6.53194in;height:2.07847in"/></p><div class="exercise"><label for="a11">Odgovor ali opombe k sliki</label><textarea data-save="" id="a11" rows="3"></textarea><label class="check"><input data-save="" id="d11" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p><img src="../media/image11.png" style="width:6.53194in;height:6.73264in"/></p><div class="exercise"><label for="a12">Odgovor ali opombe k sliki</label><textarea data-save="" id="a12" rows="3"></textarea><label class="check"><input data-save="" id="d12" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p><img src="../media/image12.png" style="width:6.53194in;height:2.73542in"/></p><div class="exercise"><label for="a13">Odgovor ali opombe k sliki</label><textarea data-save="" id="a13" rows="3"></textarea><label class="check"><input data-save="" id="d13" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p><img src="../media/image13.png" style="width:6.53194in;height:2.10972in"/></p><div class="exercise"><label for="a14">Odgovor ali opombe k sliki</label><textarea data-save="" id="a14" rows="3"></textarea><label class="check"><input data-save="" id="d14" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p>Vaje:</p><ul>
+<li><p>Risanje po navodilu</p></li>
+<li><p>Zapis algoritma</p></li>
+</ul><blockquote>
+<p><strong>Naloga</strong>: sledi algoritmu (delaj, to kar ti
+naroči)</p>
+</blockquote><div class="exercise"><label for="a15">Tvoj odgovor / rešitev</label><textarea data-save="" id="a15" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d15" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 37%"/>
+<col style="width: 33%"/>
+<col style="width: 28%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>ZAČETEK</p>
+<p>vsota ← 0</p>
+<p>ŠTEVILKA ← 1</p>
+<p>PONAVLJAJ DOKLER vsota ni enaka -3:</p>
+<p>vsota ← vsota + ŠTEVILKA</p>
+<p>ŠTEVILKA ← ŠTEVILKA + 1</p>
+<p>Izpiši(vsota)</p>
+<p>KONEC</p></th>
+<th><ol type="1">
+<li><p>ZAČETEK</p></li>
+<li><p>vsota ← 0</p></li>
+<li><p>ŠTEVILKA ← 1</p></li>
+<li><p>vsota ← vsota + ŠTEVILKA</p></li>
+<li><p>ŠTEVILKA ← ŠTEVILKA + 1</p></li>
+<li><p>Izpiši(vsota)</p></li>
+<li><p>ČE vsota ni -3 se vrni na korak 4</p></li>
+<li><p>KONEC</p></li>
+</ol></th>
+<th><ol type="1">
+<li><p>ZAČETEK</p></li>
+<li><p>vsota ← 0</p></li>
+<li><p>ŠTEVILKA ← 1</p></li>
+<li><p>Če je vsota -3 idi na korak 9</p></li>
+<li><p>vsota ← vsota + ŠTEVILKA</p></li>
+<li><p>ŠTEVILKA ← ŠTEVILKA + 1</p></li>
+<li><p>Izpiši(vsota)</p></li>
+<li><p>Če vsota ni -3 se vrni na korak 5</p></li>
+<li><p>KONEC</p></li>
+</ol></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><h2 id="podpoglavje-1"><strong>Zaključek:</strong></h2><ul>
+<li><p>Algoritem se nikoli ne konča (po navadi to ni dobro)</p></li>
+<li><p>Algoritem ni bil najbolj jasen (nismo ga vsi razumeli, bila so
+podvprašanja) – to se je pokazalo pri številki -3 (nismo vedeli ali
+odštevam …)</p></li>
+</ul><p><strong>Naloga:</strong></p><ol type="1">
+<li><p>Spremeni algoritem tako, da se bo končal.</p></li>
+<li><p>Spremeni algoritem tako, da bo imel neki smisel (MAT).</p></li>
+<li><p><strong>Spremeni algoritem tako, da sešteje prvih 100 naravnih
+števil (D.N.)</strong></p></li>
+</ol><div class="exercise"><label for="a16">Tvoj odgovor / rešitev</label><textarea data-save="" id="a16" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d16" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><p>ZAČETEK</p>
+<p>vsota ← 0</p>
+<p>ŠTEVILKA ← 1</p>
+<p>PONAVLJAJ DOKLER vsota ni enaka 3:</p>
+<p>vsota ← vsota + ŠTEVILKA</p>
+<p>ŠTEVILKA ← ŠTEVILKA + 1</p>
+<p>Izpiši(vsota)</p>
+<p>KONEC</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><p>Def.1: Algoritem je <strong>navodilo</strong>, s katerim rešujemo
+določen <strong>problem</strong>. Običajno je zapisan kot <strong>seznam
+korakov</strong>, ki nas pripeljejo do <strong>rešitve
+problema</strong>. [<a href="https://ucilnice.arnes.si/pluginfile.php/220291/mod_resource/content/1/4-algoritem.pdf">vir</a>]</p><p>Def. 2: Algoritem je v matematiki in računalništvu končno zaporedje
+natančno določenih, računalniško izvedljivih navodil, običajno
+namenjenih reševanju težav ali za izvajanje izračuna. [<a href="https://sl.wikipedia.org/wiki/Algoritem">vir</a>]</p><p>Def. 3: Algoritem je seznam pravil, ki jih je treba upoštevati pri
+reševanju problema. [<a href="http://sasa.musiclab.si/eri1/INFORMATIKA/programiranje/algoritem.html">vir</a>]</p><p>Def. 4: Algoritem je zaporedje korakov, ki nas privedejo do cilja.
+Algoritmi morajo biti hitri, končni in enolični. Uporabljamo jih v
+vsakdanjem življenju, računalništvu in sodobni tehnologiji. [<a href="https://eucbeniki.sio.si/vega1/24/index4.html">vir</a>]</p><p>Def. 5.: An algorithm is a step-by-step procedure or formula for
+solving a problem. It is a set of well-defined instructions that take an
+input, process it, and produce an output. Algorithms are fundamental to
+computer science and programming, as they form the basis for writing
+programs to perform specific tasks. [Copilot na vprašanje – What is
+algorithm?]</p><p>Algoritem je podrobna vrsta navodil za izvajanje nekega dela ali
+reševanje problema. Ne-tehnično gledano uporabljamo algoritme v
+vsakodnevnih nalogah, kot je recept za peko kolačkov ali priročnik v
+smislu "naredi sam".</p><p>Kako podrobno razdelamo korake, je odvisno od tega, kdo izvaja
+algoritem (človek, računalnik). Če algoritem izvaja računalnik, potem
+govorimo o računalniškem programu. Primer algoritma iz vsakdanjega
+življenja je kuharski recept. [vir]</p><h2 id="podpoglavje-2"><strong>Zapis algoritma</strong></h2><p>Kako lahko algoritem zapišemo? Obstaja več načinov.</p><table>
+<colgroup>
+<col style="width: 21%"/>
+<col style="width: 78%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Zapis algoritma</strong></th>
+<th><strong>Primer</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Naravni jezik</td>
+<td><p><strong>Sestavine</strong>:</p>
+<p>4 beljaki</p>
+<p>moka</p>
+<p>sladkor (po želji)</p>
+<p>2 čajni žlici pecilnega</p>
+<p>praška</p>
+<p>mleko</p>
+<p>vanilin sladkor</p>
+<p><strong>Postopek</strong>:</p>
+<p>Stepemo beljake v sneg in jim dodamo sladkor, nato spet dobro
+stepemo, da dobimo lepo kremo. Nato dodamo še ostale sestavine. V ponvi
+spečemo</p>
+<p>palačinke in jih namažemo z nadevom (po želji).</p></td>
+</tr>
+<tr class="even">
+<td>Grafično – npr. diagram poteka</td>
+<td><img src="../media/image14.png" style="width:3.01084in;height:4.07349in"/></td>
+</tr>
+<tr class="odd">
+<td>Programski jezik</td>
+<td><p>if (stevilo &gt; 4)</p>
+<p>stevilo = stevilo + 1;</p>
+<p>else</p>
+<p>exit(0);</p></td>
+</tr>
+<tr class="even">
+<td><em>Psevdokod</em></td>
+<td><p>če (število &gt; 4)</p>
+<p>povečaj število za 1</p>
+<p>sicer</p>
+<p>končaj_program</p></td>
+</tr>
+<tr class="odd">
+<td>Drugi načini</td>
+<td>??</td>
+</tr>
+</tbody>
+</table><div class="exercise"><label for="a17">Odgovor ali opombe k sliki</label><textarea data-save="" id="a17" rows="3"></textarea><label class="check"><input data-save="" id="d17" type="checkbox"/> Opravljeno</label><button class="clear">Počisti odgovor</button></div><p><strong>Vprašanje:</strong> Od česa je odvisna način zapisa
+algoritma?</p><div class="exercise"><label for="a18">Tvoj odgovor / rešitev</label><textarea data-save="" id="a18" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d18" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p><strong>Odgovor:</strong> Odvisno od namena (za kaj ga bomo
+potrebovali) in tistega, ki ga bo izvajal (računalnik, človek).</p><h2 id="podpoglavje-3"><strong>Zapisi algoritma (prednosti, slabosti)</strong></h2><table>
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 26%"/>
+<col style="width: 29%"/>
+<col style="width: 27%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Način zapisa</strong></th>
+<th><strong>Značilnosti</strong></th>
+<th><strong>Pozitivne lastnosti</strong></th>
+<th><strong>Negativne lastnosti</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Besedni zapis</strong></td>
+<td>Algoritem je zapisan v stavkih v naravnem jeziku (slovenščina ali
+angleščina).</td>
+<td><strong>Enostaven</strong> za razumevanje.<br/>
+Ni potrebno znanje programiranja.<br/>
+Primeren za vsakdanjo uporabo.</td>
+<td>Dolg in obsežen zapis za kompleksne probleme.<br/>
+Lahko pride do <strong>dvoumnosti</strong>.<br/>
+Težko za neposredno izvajanje s strani računalnika.</td>
+</tr>
+<tr class="even">
+<td><strong>Psevdokoda</strong></td>
+<td>Poenostavljen zapis, ki spominja na programski jezik, a je bolj
+čitljiv.</td>
+<td>Lažje pretvorljivo v program.<br/>
+Pregledno za algoritme z več koraki.<br/>
+Jasna logika.</td>
+<td>Zahteva osnovno znanje strukture algoritma.<br/>
+Ni standardizirana vsakdo Lahko piše po svoje.</td>
+</tr>
+<tr class="odd">
+<td><strong>Diagram poteka (flowchart)</strong></td>
+<td>Grafični prikaz z osnovnimi simboli: oval (začetek/konec),
+pravokotnik (akcija), romb (pogoj), puščice (tok).</td>
+<td><p><strong>Pregleden</strong> vizualni prikaz.<br/>
+Dobro za razumevanje zapletenih postopkov. Pomaga pri odkrivanju napak v
+logiki.</p>
+<p>Dober za načrtovanje.</p></td>
+<td><strong>Težko</strong> za dolge ali zelo <strong>kompleksne</strong>
+algoritme.<br/>
+Potrebno veliko <strong>časa</strong> za risanje kompleksnih
+algoritmov.</td>
+</tr>
+<tr class="even">
+<td><strong>Programska koda</strong></td>
+<td>Algoritem je zapisan v pravem programskem jeziku (Python, Java, C,
+…), računalnik ga lahko izvede.</td>
+<td><p>Neposredno <strong>izvedljivo na računalniku</strong>.<br/>
+<strong>Natančno</strong>, <strong>brez dvoumnosti</strong>.<br/>
+Omogoča izvajanje kompleksnih algoritmov in ponavljajočih se
+operacij.</p>
+<p>Omogoča testiranje in preverjanje rezultatov.</p></td>
+<td>Zahteva <strong>znanje</strong> programiranja.<br/>
+<strong>Težko berljivo za začetnike</strong> brez izkušenj.<br/>
+Ni vizualno pregledno kot diagram.</td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-4"><strong>Lastnosti algoritma</strong></h2><ul>
+<li><p>pravilnost – algoritem mora pravilno rešiti problem. Za določene
+vhodne podatke mora »izračunati« pravilne izhodne podatke.</p></li>
+<li><p><strong>popolnost</strong> – vedno vrne rešitev; če
+obstaja.</p></li>
+<li><p>razumljivost – izvajalec (človek, računalnik) ga mora (enoumno)
+razumeti,</p></li>
+<li><p><strong>končnost</strong> – izvajanje se mora po določenem
+številu korakov končati (ne sme biti neskončen),</p></li>
+<li><p><strong>enoumnost (nedvoumnost)</strong> – obstaja le en način
+interpretacije ukazov - <a href="https://www.youtube.com/watch?v=cDA3_5982h8&amp;t=158s">vir</a></p></li>
+<li><p>determinizem – če sledimo ukazom, se bo želeni rezultat vedno
+dosegel – z drugimi besedami, pri istem vhodu, moramo dobiti vedno isti
+izhod. Računalnik je deterministični stroj. Računalnik se ne zna
+odločati.</p></li>
+<li><p><strong>splošnost</strong> – algoritem mora rešiti čim širši
+spekter problemov – če je to mogoče</p></li>
+<li><p><strong>učinkovitost</strong> (časovne kompleksnost) – algoritem
+mora biti hiter</p></li>
+<li><p>robustnost – pravilno obvladamo nepravilne, nepričakovane,
+ekstremne vhodne podatke brez prekinitev, napak</p></li>
+</ul><p><strong>Vir:</strong></p><p><a href="https://ucilnice.arnes.si/pluginfile.php/220291/mod_resource/content/1/4-algoritem.pdf">https://ucilnice.arnes.si/pluginfile.php/220291/mod_resource/content/1/4-algoritem.pdf</a></p><p><a href="http://sasa.musiclab.si/eri1/RACUNALNISTVO_OLD/PROGRAMIRANJE/01_lastnostiPostopkov/01_postopki_lastnosti.html">http://sasa.musiclab.si/eri1/RACUNALNISTVO_OLD/PROGRAMIRANJE/01_lastnostiPostopkov/01_postopki_lastnosti.html</a></p><p><a href="https://www.youtube.com/watch?v=cDA3_5982h8">https://www.youtube.com/watch?v=cDA3_5982h8</a></p><p>Dve vrsti napak pri programih (algoritmih).</p><p><strong>Sintaktične</strong>: pravopisne napake –
+<strong>program</strong> ne dela</p><p><strong>Semantične</strong>: pomenske napake –
+<strong>progam</strong> dela – napačno (lahko samo v zelo redkih
+primerih – TEŽAVA)</p><p>1 +1 = 2</p><p><strong>Vprašanja iz ProGO</strong></p><div class="exercise"><label for="a19">Tvoj odgovor / rešitev</label><textarea data-save="" id="a19" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d19" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><ol type="1">
+<li><p>Razloži latinski pregovor: “Kdor hitro da, dvakrat da.”</p></li>
+</ol><div class="exercise"><label for="a20">Tvoj odgovor / rešitev</label><textarea data-save="" id="a20" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d20" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p>ODG: Najdi na wikipediai</p>
+<p>ODG: oba odgovra predstavljen pri pouku sta logična in pravilna</p>
+</blockquote><ol start="2" type="1">
+<li><p>Kaj je značilnost proceduralnega znanja.</p></li>
+</ol><div class="exercise"><label for="a21">Tvoj odgovor / rešitev</label><textarea data-save="" id="a21" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d21" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p>Za pridobivanje je potrebna vaja.</p>
+<p>Zanje, ki ga uporabljamo v praksi. Vožnja avtomobila.</p>
+<p>Zanje , kako se nekaj naredi. Postopek.</p>
+</blockquote><ol start="3" type="1">
+<li><p>Kakšna je razlika med proceduralnim in deklarativnim
+znanjem?</p></li>
+</ol><div class="exercise"><label for="a22">Tvoj odgovor / rešitev</label><textarea data-save="" id="a22" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d22" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p>Deklarativno – KAJ, KDAJ?</p>
+<p>Proceduralno – KAKO (nekaj narediti, rešiti problem)?</p>
+</blockquote><ol start="4" type="1">
+<li><p>Na kakšen način lahko pridemo do dobrega proceduralnega
+znanja?</p></li>
+</ol><div class="exercise"><label for="a23">Tvoj odgovor / rešitev</label><textarea data-save="" id="a23" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d23" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p>Z ponavljanjem <strong>vaje</strong>. Fajn je znati tudi dejstna –
+deklarativno znanje. Izkušnje skozi različne situacije. Učenje iz napak.
+Učenje iz tujih napak. Vaja dela mojstra . Mojster pa dela vajo. Vaja
+skozi igro. Poslušanje - sprejemanje kritik.</p>
+</blockquote><ol start="5" type="1">
+<li><p>Kako je programiranje povezano s proceduralnim znanjem?</p></li>
+</ol><div class="exercise"><label for="a24">Tvoj odgovor / rešitev</label><textarea data-save="" id="a24" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d24" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p>Programiranje je pisanje navodil.</p>
+</blockquote><ol start="6" type="1">
+<li><p>Opiši pojem <strong>programiranje</strong> in
+<strong>program</strong>!</p></li>
+</ol><div class="exercise"><label for="a25">Tvoj odgovor / rešitev</label><textarea data-save="" id="a25" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d25" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p>Program je <strong>skupek navodil</strong>, ki vodijo do cilja. Je
+zaporedje ukazov. Programskih ukazov. Napisan je v <strong>programskem
+jeziku</strong>. Umetni jezik. <strong>Ali je to čisto res? Preveri! Ni
+čsito res, v širšem pomenu besede , je lahko program tudi kakšno drugo
+navodilo (televizijski progrma).</strong></p>
+<p>Programiranje je <strong>proces</strong> (postopek) katerega cilj je
+program.</p>
+</blockquote><ol start="7" type="1">
+<li><p>Program lahko opišemo z navodili. </p>
+<ol type="1">
+<li><p>V kakšni obliki lahko izrazimo navodilo? </p></li>
+</ol></li>
+</ol><div class="exercise"><label for="a26">Tvoj odgovor / rešitev</label><textarea data-save="" id="a26" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d26" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p><strong>Naravni jezik, umetni – programski, psevdokod, grafični
+(diagram poteka)</strong></p>
+</blockquote><ol type="1">
+<li><p>Kakšne vrste stavek je navodilo? (Trditev. Vprašanje. Velitev.
+Prošnja.) </p></li>
+</ol><div class="exercise"><label for="a27">Tvoj odgovor / rešitev</label><textarea data-save="" id="a27" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d27" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p>Velitev1</p>
+</blockquote><ol type="1">
+<li><p>Napiši dva konkretna primera!</p></li>
+</ol><div class="exercise"><label for="a28">Tvoj odgovor / rešitev</label><textarea data-save="" id="a28" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d28" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p>Izpiši(»Zdravo«),</p>
+<p>Vsota = 2 + 3</p>
+<p>Pojdi čez vrata!</p>
+<p>Vstani!</p>
+</blockquote><ol start="8" type="1">
+<li><p>Zakaj programiramo v programskem jeziku in ne v naravnem jeziku
+(kar bi tudi bilo možno)?</p></li>
+</ol><div class="exercise"><label for="a29">Tvoj odgovor / rešitev</label><textarea data-save="" id="a29" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d29" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p>Če bi želeli v naravnem jeziku program napisati, bi morali ful bolj
+na dolgo in podrobna!</p>
+<p>Navodilo mora biti enoumno!</p>
+</blockquote><ol start="9" type="1">
+<li><p>Kaj je skupno različnim programskim jezikom in tudi nakterim
+različnim naravnim jezikom?</p></li>
+<li><p>Kako bi opisali trojco pri programiranju: vhod, osrednji del,
+izhod. V razlagi uporabi besedo algoritem!</p></li>
+<li><p>Kdaj kot rezultat dobimo izpis in kdaj izdelek? Na kakšen način
+lahko rezultat izpišemo v računalniku? Je še kakšen drug način, za
+predstavitev rezultata?</p></li>
+<li><p>Ali je vrstni red izvajanja pomemben? Razloži na poljubnem
+primeru!</p></li>
+<li><p>Razloži pojem konstanta. Kaj “sestavlja” konstanto?</p></li>
+</ol><div class="exercise"><label for="a30">Tvoj odgovor / rešitev</label><textarea data-save="" id="a30" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d30" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><blockquote>
+<p>Je vrednost, ki se med izvajanjem program ne spremeni!</p>
+<p>Spremenjivka se spreminja, konstanta pa NE!</p>
+<p>X = 1</p>
+<p>V x shrani vrednost 1.</p>
+</blockquote><ol start="14" type="1">
+<li><p>Kdaj uporabimo konstante? </p></li>
+<li><p>Lahko pišemo programe tudi brez uporabe konstant?</p></li>
+<li><p>Kakšna je razlika med ukazoma za izpis (spodaj b in c)</p>
+<ol type="1">
+<li><p>a=”test”</p></li>
+</ol>
+<ol type="1">
+<li><p>izpis “a”</p></li>
+</ol>
+<ol type="1">
+<li><p>izpis a</p></li>
+</ol></li>
+<li><p>Kateri lik uporabimo za izpis?</p></li>
+</ol><div class="exercise"><label for="a31">Tvoj odgovor / rešitev</label><textarea data-save="" id="a31" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d31" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><h2 id="podpoglavje-5"><strong>Diagram poteka</strong></h2><ul>
+<li><p>Kaj je diagram poteka?</p></li>
+</ul><blockquote>
+<p>Kako lahko zapišemo algoritem?</p>
+<p>Diagram poteka, programski jezik, psevdokod, naravni jezik!</p>
+<p>Je način, kako lahko zapišemo (opišemo) algoritem. Je grafični način.
+S simboli. In znaki. In števili.</p>
+</blockquote><ul>
+<li><p>Čemu je namenjen? Za kaj ga uporabljamo?</p></li>
+<li><p>Katere simbole lahko uporabimo?</p></li>
+</ul><p>Primer:</p><p><strong>Naloga</strong>: Sledi algoritmu. Zapiši: spremembo
+spremenljivk, izpis.</p><div class="exercise"><label for="a32">Tvoj odgovor / rešitev</label><textarea data-save="" id="a32" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d32" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><h2 id="podpoglavje-6"><strong>Kaj pomeni V:x?</strong></h2><p>Počakaj, da uporabnik nekaj vpiše in pritisne enter. Ko vpiše se
+vpisana vrednost shrani v x.</p><p>Opisali smo vse simbole in jih razložili.</p><h2 id="podpoglavje-7"><strong>Postopek pisanja algoritmov.</strong></h2><p>Za vsak problem bomo:</p><ol type="1">
+<li><p>Natančno prebrali navodila.</p></li>
+<li><p>Napisali dva (ali več, če je to potrebno) različnih scenarijev, s
+katerima bomo prikazali, ali razumemo problem.</p></li>
+<li><p>Napisali rešitev problema (algoritem) – diagram poteka.</p></li>
+<li><p>Test – sledili bomo napisanemu algoritmu iz točke 3 in primerjali
+našo rešitev s točko 2. Pri sledi bomo v tabeli zapisovali spremembe
+vrednosti spremenljivk ter vpis in izpis.</p></li>
+<li><p>Če se rezultati v točki 2 in 4 ujemajo, je rešitev pravilna, če
+ne, moramo ponoviti korake 3 in 4. (Morda celo spremeniti točko
+2.)</p></li>
+</ol><div class="exercise"><label for="a33">Tvoj odgovor / rešitev</label><textarea data-save="" id="a33" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d33" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><h2 id="podpoglavje-8"><strong>Napiši diagram poteka za programe:</strong></h2><div class="exercise"><label for="a34">Tvoj odgovor / rešitev</label><textarea data-save="" id="a34" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d34" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><ol type="1">
+<li><p>Program naj sešteje števili 3 in 7, rezultat shrani v
+spremenljivko <em>n</em> in izpiše rezultat na ekran.</p></li>
+<li><p>Program, kjer uporabnik vpiše dve števili. Izpiše se vsota.
+Napiši uporabniku prijazen program.</p></li>
+<li><p>Program izračuna ostanek pri deljenju števil 7 in 3 in rezultat
+shrani v spremenljivko x. Na ekran izpiše »Ostanek pri deljenju števil 7
+in 3 je 1«. Ostanek izpišemo iz spremenljivke. (operator za računanje
+ostanka je %)</p></li>
+<li><p>Program, ki uporabnika vpraša po vnosu dveh števil. Nato program
+izračuna in v spremenljivki shrani produkt in količnik števil. Najprej
+izpiše produkt, po pritisku tipke enter pa še količnik. Po pritisku
+tipke enter se program konča. Naredi uporabniku prijazen
+program.</p></li>
+<li><p>Program, kjer uporabnik vpiše dve celi števili. Program izpiše:
+količnik in ostanek. Pazi, da izpišeš samo cela števila. Uporabi samo
+standardne aritmetične operatorje (+,-,/,*,%,=).</p></li>
+</ol><div class="exercise"><label for="a35">Tvoj odgovor / rešitev</label><textarea data-save="" id="a35" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d35" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p><strong>Vprašanja iz vaj:</strong></p><div class="exercise"><label for="a36">Tvoj odgovor / rešitev</label><textarea data-save="" id="a36" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d36" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><ol type="1">
+<li><p>Napiši en primer vejitve z diagramom poteka, ki jo računalnik zna
+razrešiti in en primer vejitve, ki jo računalnik ne zna razrešiti.
+Razloži zakaj! Kateri način bo prepovedan?</p></li>
+<li><p>Kateri simbol uporabljamo za odločitve v diagramu poteka. Kaj
+napišemo znotraj simbola? Kako to preberemo? Koliko izhodov je iz
+odločitve? Kako vemo, po kateri poti bomo nadaljevali program?</p></li>
+</ol><div class="exercise"><label for="a37">Tvoj odgovor / rešitev</label><textarea data-save="" id="a37" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d37" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p><strong>Naloge:</strong></p><ol type="1">
+<li><p>Napiši diagram poteka, kjer uporabnik vpiše dve števili. Nato
+števili izpiše po velikosti. Najprej manjše, doda vejico in presledek,
+nato še večje. Na koncu doda piko.</p></li>
+<li><p>Napiši diagram, kjer uporabnik vpiše starost in spol (m/ž). Nato
+sledi izpis: »Si polnoleten«, »Si polnoletna«, »Nisi polnoleten«, »Nisi
+polnoletna« odvisno od vnosa uporabnika.</p></li>
+<li><p>Napiši diagram poteka, ki izpiše Janja Garnbret 3 krat na
+ekran.</p></li>
+<li><p>Napiši diagram poteka, ki izpiše Janja Garnbret 100 krat na
+ekran. Razmisli, kako bi program okrajšal s ponavljanjem.</p></li>
+</ol><div class="exercise"><label for="a38">Tvoj odgovor / rešitev</label><textarea data-save="" id="a38" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d38" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><h2 id="podpoglavje-9">Dodatno interaktivno preverjanje</h2><fieldset class="quiz" data-answer="0"><legend>Kateri zapis je primer psevdokode?</legend><label><input data-save="" id="q39-0" name="q39" type="radio" value="0"/> Opis korakov s poenostavljenimi ukazi</label><label><input data-save="" id="q39-1" name="q39" type="radio" value="1"/> Model ER</label><label><input data-save="" id="q39-2" name="q39" type="radio" value="2"/> Razredni diagram</label><button class="verify">Preveri</button><output aria-live="polite"></output></fieldset><fieldset class="quiz" data-answer="0"><legend>Ali mora biti algoritem končen?</legend><label><input data-save="" id="q40-0" name="q40" type="radio" value="0"/> Da</label><label><input data-save="" id="q40-1" name="q40" type="radio" value="1"/> Ne</label><button class="verify">Preveri</button><output aria-live="polite"></output></fieldset><div class="bottom"><a href="../01-uvodna-ura/index.html">← Prejšnje poglavje</a><a href="../03-pisanje-algoritmov-diagram-poteka/index.html">Naslednje poglavje →</a></div></article></main></body></html>

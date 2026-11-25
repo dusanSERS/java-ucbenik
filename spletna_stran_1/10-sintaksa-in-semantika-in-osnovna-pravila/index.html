@@ -1,0 +1,142 @@
+<!doctype html><html lang="sl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Računalništvo</title><link rel="stylesheet" href="../style.css"><script src="../search-data.js" defer></script><script src="../script.js" defer></script></head><body data-base="../"><header><div><strong>Računalništvo</strong><small>Učno gradivo · programiranje in Java</small></div><button id="menu" aria-expanded="true">☰ Poglavja</button><div id="progress"></div></header><aside id="sidebar"><a href="../index.html">Domov</a><br><label for="search">Iskanje po gradivu</label><input id="search" type="search"><div id="results"></div><nav><a class="tab " href="../01-uvodna-ura/index.html"><span>01</span>Uvodna ura</a><a class="tab " href="../02-algoritmi/index.html"><span>02</span>Algoritmi</a><a class="tab " href="../03-pisanje-algoritmov-diagram-poteka/index.html"><span>03</span>Pisanje algoritmov – diagram poteka</a><a class="tab " href="../04-deli-programov---izrazi-stavki-trditev/index.html"><span>04</span>Deli programov - Izrazi, stavki, trditev</a><a class="tab " href="../05-programski-jeziki/index.html"><span>05</span>Programski jeziki</a><a class="tab " href="../06-programiranje/index.html"><span>06</span>Programiranje</a><a class="tab " href="../07-zlaganje-prevajanje-in-tolmačenje-programske-kode/index.html"><span>07</span>Zlaganje, prevajanje in tolmačenje programske kode</a><a class="tab " href="../08-programski-jezik-java-programiranje-v-javi/index.html"><span>08</span>Programski jezik JAVA – programiranje v javi</a><a class="tab " href="../09-sestavni-deli-programa-java/index.html"><span>09</span>Sestavni deli programa java</a><a class="tab active" href="../10-sintaksa-in-semantika-in-osnovna-pravila/index.html"><span>10</span>Sintaksa in semantika in osnovna pravila</a><a class="tab " href="../11-spremenljivke/index.html"><span>11</span>Spremenljivke</a><a class="tab " href="../12-operatorji/index.html"><span>12</span>Operatorji</a><a class="tab " href="../13-izpis-na-ekran/index.html"><span>13</span>Izpis na ekran</a><a class="tab " href="../14-branje-vrednosti-iz-tipkovnice-user-input/index.html"><span>14</span>Branje vrednosti iz tipkovnice (user input)</a><a class="tab " href="../15-krmilni-stavki/index.html"><span>15</span>Krmilni stavki</a><a class="tab " href="../16-zanke/index.html"><span>16</span>Zanke</a><a class="tab " href="../17-polja-ali-tabele-ang.-array/index.html"><span>17</span>Polja ali tabele (ang. array)</a><a class="tab " href="../18-pomnilnik-v-javi/index.html"><span>18</span>Pomnilnik v javi</a><a class="tab " href="../19-prenos-vrednosti-parametrov-v-metodo/index.html"><span>19</span>Prenos vrednosti parametrov v metodo</a><a class="tab " href="../20-objektno-programiranje/index.html"><span>20</span>Objektno programiranje</a><a class="tab " href="../21-stringi/index.html"><span>21</span>Stringi</a></nav></aside><main><article class="chapter" data-index="9" id="sintaksa-in-semantika-in-osnovna-pravila"><div class="eyebrow">POGLAVJE 10 / 21</div><h1>Sintaksa in semantika in osnovna pravila</h1><nav aria-label="Podpoglavja" class="subnav"><a class="level-h2" href="#podpoglavje-1">Sintaksa (syntax)</a><a class="level-h2" href="#podpoglavje-2">Primeri pravil sintakse:</a><a class="level-h2" href="#podpoglavje-3">Kaj se zgodi, če sintaksa NI pravilna?</a><a class="level-h2" href="#podpoglavje-4">Semantika</a><a class="level-h2" href="#podpoglavje-5">Povzetek - najkrajša razlaga</a><a class="level-h2" href="#podpoglavje-6">Zgradba programa</a><a class="level-h2" href="#podpoglavje-7">Osnovna pravila
+izvajanja programa v javi</a><a class="level-h2" href="#podpoglavje-8">Osnovna pravila oblikovanja kode (indentacija)</a></nav><h2 id="podpoglavje-1">Sintaksa (syntax)</h2><p><strong>Sintaksa</strong> pomeni <em>pravila, po katerih mora biti
+koda pravilno zapisana</em>, da jo Java lahko prevede.</p><h2 id="podpoglavje-2"><strong>Primeri pravil sintakse:</strong></h2><ul>
+<li><p>stavek mora imeti <strong>podpičje</strong>:</p></li>
+</ul><blockquote>
+<pre><code>int x = 5;</code></pre>
+</blockquote><ul>
+<li><p>oklepaji morajo biti pravilno zaprti:</p></li>
+</ul><blockquote>
+<pre><code>if (x &gt; 0) { ... }</code></pre>
+</blockquote><ul>
+<li><p>spremenljivke se morajo <strong>deklarirati</strong> pred
+uporabo:</p></li>
+</ul><blockquote>
+<pre><code>int starost;</code></pre>
+</blockquote><ul>
+<li><p>ime razreda mora ustrezati imenu datoteke, če je razred
+public.</p></li>
+</ul><h2 id="podpoglavje-3"><strong>Kaj se zgodi, če sintaksa NI pravilna?</strong></h2><p>Java izpiše napako pri prevajanju (compile-time error), npr.:</p><p>';' expected</p><p>Sintaktične napake preprečijo, da bi izdelali vmesno kodo in da bi
+program lahko zagnali.</p><h2 id="podpoglavje-4">Semantika</h2><p>Semantika pomeni pomen kode – kaj program dejansko naredi, ko se
+izvaja.</p><p>Gre za logiko in smisel, podobno kot pomen stavkov v naravnem
+jeziku.</p><p><strong>Primer</strong>: sintaktično pravilno, semantično napačno</p><pre><code>int x = 10 / 0;</code></pre><ul>
+<li><p>Sintaksa je OK (vse je pravilno zapisano).</p></li>
+<li><p><strong>Semantika je napačna</strong>, ker deljenje z 0 nima
+smisla → med izvajanjem dobimo napako:</p></li>
+</ul><p>ArithmeticException: / by zero</p><p>Drug primer:</p><pre><code>int starost = -5;</code></pre><ul>
+<li><p>Sintaksa OK.</p></li>
+<li><p>Semantično pa starost −5 <em>nima smisla</em> → logična napaka,
+program sicer teče, a napačno.</p></li>
+</ul><p>Pri semantičnih napakah torej pride do dveh možnosti:</p><ul>
+<li><p>Program se prevede vendar ne deluje pravilno. Če nismo pazljivi,
+tega sploh ne opazimo.</p></li>
+<li><p>Program se prevede. Med izvajanjem se zaustavi in javi napako
+vrste RunTimeError.</p></li>
+</ul><h2 id="podpoglavje-5"><strong>Povzetek - najkrajša razlaga</strong></h2><ul>
+<li><p><strong>Sintaksa</strong> = “Ali je pravilno zapisano?”</p></li>
+<li><p><strong>Semantika</strong> = “Ali dela to, kar mora?”</p></li>
+</ul><h2 id="podpoglavje-6">Zgradba programa</h2><ul>
+<li><p><strong>Vsaka koda v Javi je zapisana znotraj razreda (ang.
+class).</strong></p></li>
+<li><p>Če je razred public, mora imeti datoteka enako ime kot ta razred.
+(Dokler ne spoznamo podrobnosti določila puiblic, bodo vsi razredi
+public)</p></li>
+<li><p>Datoteke s kodo v Javi imajo končnico .java.</p></li>
+<li><p>Datoteka lahko vsebuje več razredov, vendar je lahko največ en
+označen kot public.<br/>
+Tisti public razred določa ime datoteke.</p></li>
+<li><p><strong>Imena razredov pišemo z veliko začetnico</strong>. ostala
+pravila so enaka kot za imena spremenljivk.</p></li>
+</ul><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>public class Main {</code></pre>
+<pre><code>public static void main(String[] args) {</code></pre>
+<p>// začetek izvajanje izvajanja programa – <strong>začetek</strong>
+<strong>metode</strong> <strong>main</strong></p>
+<pre><code>System.out.println("Hello World");</code></pre>
+<p>// konec izvajanja programa – <strong>konec</strong>
+<strong>metode</strong> <strong>main</strong></p>
+<pre><code>}</code></pre>
+<pre><code>}</code></pre></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>ime datoteke: Main.java</td>
+</tr>
+</tbody>
+</table><h2 id="podpoglavje-7">Osnovna pravila
+izvajanja programa v javi</h2><ol type="1">
+<li><p><strong>Program se začne izvajati v metodi main</strong></p></li>
+</ol><div class="exercise"><label for="a115">Tvoj odgovor / rešitev</label><textarea data-save="" id="a115" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d115" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><ul>
+<li><p>Java program se vedno začne izvajati pri tej metodi:</p>
+<ul>
+<li><p>public static void main(String[] args)</p></li>
+</ul></li>
+<li><p>Brez te metode se program ne zažene (razen pri posebnih primerih,
+npr. JavaFX).</p></li>
+</ul><ol start="2" type="1">
+<li><p><strong>Izvajanje poteka od zgoraj navzdol</strong></p></li>
+</ol><div class="exercise"><label for="a116">Tvoj odgovor / rešitev</label><textarea data-save="" id="a116" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d116" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><ul>
+<li><p>Java izvršuje vrstice <strong>po vrsti</strong>, tako kot so
+zapisane v metodi main.</p></li>
+<li><p>Obstajajo izjeme:</p>
+<ul>
+<li><p><strong>pogojni stavki</strong> (if, else) lahko kakšno kodo
+preskočijo,</p></li>
+<li><p><strong>zanke</strong> (for, while, do-while) lahko del kode
+ponavljajo večkrat,</p></li>
+<li><p><strong>return</strong> lahko predčasno zaključi metodo.</p></li>
+<li><p><strong>break</strong> (prekine zanko, prekine stavek
+switch)</p></li>
+</ul></li>
+</ul><ol start="3" type="1">
+<li><p><strong>Stavek se zaključi s podpičjem ;</strong></p></li>
+</ol><div class="exercise"><label for="a117">Tvoj odgovor / rešitev</label><textarea data-save="" id="a117" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d117" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><ul>
+<li><p>V Javi večina izjav (statements) konča vrstico z
+<strong>;</strong></p></li>
+</ul><blockquote>
+<pre><code>int x = 5;</code></pre>
+<pre><code>System.out.println(x);</code></pre>
+</blockquote><ul>
+<li><p>Izjema so <em>kontrolne strukture</em> in <em>bloki</em>, ki
+<strong>nimajo</strong> podpičja:</p>
+<ul>
+<li><pre><code>if (...) { ... }</code></pre></li>
+<li><pre><code>for (...) { ... }</code></pre></li>
+<li><pre><code>while (...) { ... }</code></pre></li>
+<li><p>definicija metode</p></li>
+<li><p>definicija razreda</p></li>
+</ul></li>
+</ul><h2 id="podpoglavje-8"><strong>Osnovna pravila oblikovanja kode (indentacija)</strong></h2><ol start="4" type="1">
+<li><p><strong>Po vsakem odpiralnem zavitem oklepaju { naredimo
+zamikanje v desno</strong></p></li>
+</ol><div class="exercise"><label for="a118">Tvoj odgovor / rešitev</label><textarea data-save="" id="a118" placeholder="Vpiši odgovor, algoritem ali programsko kodo …" rows="4"></textarea><label class="check"><input data-save="" id="d118" type="checkbox"/> Označi kot opravljeno</label><button class="clear" type="button">Počisti odgovor</button><small>Odprta naloga – rešitev preveri sam ali z učiteljem.</small></div><p>Primer:</p><pre><code>if (x &gt; 0) {</code></pre><pre><code>System.out.println("Pozitivno");</code></pre><pre><code>}</code></pre><ol start="5" type="1">
+<li><p><strong>Vse vrstice znotraj bloka so zamaknjene</strong></p></li>
+</ol><ul>
+<li><p>obvezno zamaknemo s tipko TAB (ki vstavi nevidni znak TAB ali
+včasih štiri (lahko tudi dva) presledka</p></li>
+<li><p>to izboljša <strong>berljivost</strong> in
+<strong>razumevanje</strong> kode</p></li>
+</ul><ol start="6" type="1">
+<li><p><strong>Ko uporabimo zaključni oklepaj }, gremo z zamikom eno
+stopnjo nazaj</strong></p></li>
+</ol><p>Primer:</p><table>
+<colgroup>
+<col style="width: 100%"/>
+</colgroup>
+<thead>
+<tr class="header">
+<th><pre><code>for (int i = 0; i &lt; 5; i++) {</code></pre>
+<pre><code>System.out.println(i);</code></pre>
+<pre><code>}</code></pre>
+<pre><code>System.out.println();// ← tukaj ni več zamika</code></pre></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table><div class="bottom"><a href="../09-sestavni-deli-programa-java/index.html">← Prejšnje poglavje</a><a href="../11-spremenljivke/index.html">Naslednje poglavje →</a></div></article></main></body></html>
